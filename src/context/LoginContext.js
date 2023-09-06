@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
-//import checkIfTokenIsValid from "../helpers/checkIfTokenIsValid";
+import checkIfTokenIsValid from "../helpers/checkIfTokenIsValid";
 
 export const LoginContext = createContext({});
 
