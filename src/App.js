@@ -9,6 +9,9 @@ function App() {
     <>
       HELLO POKE BERRIES!
         NEXT STEP IS TO finish working on the landing page, tomorrow! BYE!
+        <Routes>
+            <Route path={"/landing-page"} element={<Landing/>}/>
+        </Routes>
     </>
   );
 }
