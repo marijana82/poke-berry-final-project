@@ -1,13 +1,13 @@
-
 import './App.css';
+import React, { useContext } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+//import { LoginContext } from "./context/LoginContext";
 
 function App() {
   return (
     <>
       HELLO POKE BERRIES!
-        NEXT STEP IS TO CREATE SOME FILES IN THIS FILE, SAVE THEM AND PUSH THEM TO THE MAIN BRANCH, BEFORE I CAN CREATE A FEATURE BRANCH!
-        BUT THAT I'LL DO WHEN I COME BACK!
-        BYE!
+        NEXT STEP IS TO MAKE HTML AND CSS FOR ALL PAGES, BUT THAT I WILL DO LATER!
     </>
   );
 }
