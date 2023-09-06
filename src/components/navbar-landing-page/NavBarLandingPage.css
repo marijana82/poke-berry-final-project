@@ -1,0 +1,43 @@
+.outer-container-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 10px 0;
+    width: 100%;
+    font-family: Didact Gothic;
+    background: transparent;
+    position: fixed;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+nav ul a,
+nav ul a:visited {
+    text-decoration: none;
+    font-size: 25px;
+    font-family: "Didact Gothic";
+}
+
+.list-navbar {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    text-decoration: snow;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+
+.active-link {
+    border-bottom: 2px solid rebeccapurple;
+}
+
+.default-link {
+    border-bottom: 2px solid transparent;
+}
+
