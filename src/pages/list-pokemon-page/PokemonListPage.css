@@ -19,7 +19,35 @@ body{
 
 .left-content, .right-content {
     flex-basis: 50%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    grid-gap: 2rem;
+}
 
+.left-content {
+    display: grid;
+}
 
+.right-content {
+    width: 50%;
+    text-align: center;
+    color: black;
+    position: fixed;
+    top: 100px;
+    right: 10px;
+}
 
+.right-content img {
+    margin: 2rem;
+    height: 320px;
+}
+
+.right-content h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+.button-group {
+    display: flex;
 }

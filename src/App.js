@@ -6,6 +6,7 @@ import Landing from "./pages/landing-page/Landing";
 import NavBarLandingPage from "./components/navbar-landing-page/NavBarLandingPage";
 import PokemonCard from "./components/pokemon-card/PokemonCard";
 import PokemonSearchPage from "./pages/search-pokemon-page/PokemonSearchPage";
+import PokemonListPage from "./pages/list-pokemon-page/PokemonListPage";
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
     <>
       HELLO POKE BERRIES!
 
-        <PokemonSearchPage/>
+       {/* <PokemonSearchPage/>*/}
+        <PokemonListPage/>
 
 
 
