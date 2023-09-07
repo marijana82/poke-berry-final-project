@@ -1,7 +1,6 @@
 import "./QueryPokemon.css";
 import React, { useState } from "react";
-//import button
-
+import Button from "../button/Button";
 
 function QueryPokemon({searchItemHandler}) {
 
@@ -14,12 +13,14 @@ function QueryPokemon({searchItemHandler}) {
     }
 
 
+
     return(
         <article className="query-container">
 
             <form id="search-form" onSubmit={onFormSubmit}>
                 <label
-                    htmlFor="query-field">
+                    htmlFor="query-field"
+                >WHO'S YOUR POKEMON?
 
                     <input
                         type="text"
@@ -30,10 +31,14 @@ function QueryPokemon({searchItemHandler}) {
                         placeholder="bulbasaur, ivysaur, pikachu ..."
                     />
                 </label>
-                <button
+
+                <Button
                     type="submit"
                     className="search-button"
-                >search me!</button>
+                    disabled={!query}
+                >Search me!
+                </Button>
+
 
 
             </form>
