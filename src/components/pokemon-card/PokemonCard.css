@@ -1,0 +1,62 @@
+.hover-card-container {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.hover-card-container .card-hover {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background-color: white;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+
+}
+
+.hover-card-container .card-hover:hover {
+    height: 320px;
+}
+
+.hover-card-container .card-hover .image-container {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -40%;
+    left: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.hover-card-container .card-hover .image-container .image {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.hover-card-container .card-hover .content {
+    position: relative;
+    top: -140px;
+    padding: 10px 15px;
+    color: #111;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+
+.hover-card-container .card-hover:hover .content {
+    margin-top: 30px;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
