@@ -5,6 +5,7 @@ import { LoginContext } from "./context/LoginContext";
 import Landing from "./pages/landing-page/Landing";
 import NavBarLandingPage from "./components/navbar-landing-page/NavBarLandingPage";
 import PokemonCard from "./components/pokemon-card/PokemonCard";
+import PokemonSearchPage from "./pages/search-pokemon-page/PokemonSearchPage";
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     <>
       HELLO POKE BERRIES!
 
-        <PokemonCard/>
+        <PokemonSearchPage/>
+
 
 
 

@@ -1,21 +1,19 @@
 import "./PokemonCard.css";
-import React from "react";
-import {POKEMON_SPRITES_FRONT} from "../../assets/images/constants";
 
-function PokemonCard() {
+function PokemonCard({assets, type, title, weight, height}) {
+
     return(
         <>
             <div className="hover-card-container">
                 <div className="card-hover">
                     <div className="image-container">
-                        <img src={POKEMON_SPRITES_FRONT} alt="image-of-pokemon"/>
+                        <img src={assets} alt="image-of-pokemon"/>
                     </div>
                     <div className="content">
-                        <h3>TITLE</h3>
-                        <p>Height: HEIGHT cm</p>
-                        <p>Weight: WEIGHT cm</p>
-                        <p>Type: TYPE </p>
-
+                        <h3>{title}</h3>
+                        <p>Height: {height} cm</p>
+                        <p>Weight: {weight} cm</p>
+                        <p>Type: {type} </p>
                     </div>
                 </div>
             </div>

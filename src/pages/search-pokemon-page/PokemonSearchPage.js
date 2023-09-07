@@ -2,11 +2,15 @@ import "./PokemonSearchPage.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import PokemonResults from "../../components/pokemon-results/PokemonResults";
+import QueryPokemon from "../../components/pokemon-query/QueryPokemon";
+import {POKEMON_URL} from "../../constants";
+
 
 
 function PokemonSearchPage() {
 
-    const [endpointPoke, setEndpointPoke] = useState("https://pokeapi.co/api/v2/pokemon");
+    const [endpointPoke, setEndpointPoke] = useState(POKEMON_URL);
     const [searchItem, setSearchItem] = useState("");
     const [pokeDetails, setPokeDetails] = useState([]);
 
@@ -50,17 +54,34 @@ function PokemonSearchPage() {
 
 
 
+
     return(
         <>
-            <div>
-                <article className="container-results">
-                    HERE COME THE RESULTS
-                </article>
+
+            <QueryPokemon
+                searchItemHandler={setSearchItem}
+            />
+
+            <div className="container-pokemon-results">
+                {Object.keys(pokeDetails).length > 0
+                && pokeDetails.name === searchItem ?
+
+                    <article className="berry-result-container">
+
+                        <PokemonResults pokeDetails={pokeDetails}/>
+
+                    </article>
+
+                    :
+
+                    <div className="empty-berry-card">
+                        <p>Or click <Link to={"/berry-overview-page"}>here</Link> for a full berry list.</p>
+                    </div>
+                }
+
             </div>
 
-            <div className="container-empty">
-                <p>CLICK ON LINK FOR A FULL BERRY LIST</p>
-            </div>
+
 
         </>
     )
