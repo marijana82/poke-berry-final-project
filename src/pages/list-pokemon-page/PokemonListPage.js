@@ -26,7 +26,6 @@ function PokemonListPage() {
             setNextEndpoint(response.data.next);
             setPreviousEndpoint(response.data.previous);
             getPokemon(response.data.results);
-            //console.log(pokemonData);
 
         } catch(e) {
             console.error(e);
@@ -39,13 +38,10 @@ function PokemonListPage() {
     async function getPokemon(response) {
         try {
             response.map(async(item) => {
-                //console.log(item.url);
                 const result = await axios.get(item.url);
-                //console.log(result.data);
                 setPokemonData(state => {
                     //1. save existing array, 2. add new array to it
                     state = [...state, result.data];
-                    //to sort out the list by id, don't know why but i'm getting 2 cards for each pokemon!
                     state.sort((a,b) => a.id > b.id ? 1 : -1);
                     return state;
                 })
@@ -69,8 +65,31 @@ function PokemonListPage() {
 
 
                     <div className="button-group">
-                        <Button>Previous</Button>
-                        <Button>Next</Button>
+                        { previousEndpoint &&
+
+                            <Button
+                                clickHandler={() => {
+                                    setPokemonData([])
+                                    setEndpoint(previousEndpoint)
+                                }}
+                            >Previous
+                            </Button>
+                        }
+
+                        {
+                            nextEndpoint &&
+
+                            <Button
+                                clickHandler={() => {
+                                    setPokemonData([])
+                                    setEndpoint(nextEndpoint)
+                                }}
+                            >Next
+                            </Button>
+                        }
+
+
+
 
 
                     </div>

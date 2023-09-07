@@ -17,7 +17,7 @@ function App() {
     <>
       HELLO POKE BERRIES!
 
-       {/* <PokemonSearchPage/>*/}
+        {/*<PokemonSearchPage/>*/}
         <PokemonListPage/>
 
 

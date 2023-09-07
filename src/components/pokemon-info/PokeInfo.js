@@ -20,22 +20,25 @@ function PokeInfo({ data }) {
                                 return(
                                     <>
                                         <div className="group">
-                                            <button>{ability.ability.name}</button>
+                                            <h2>{ability.ability.name}</h2>
                                         </div>
 
                                     </>
                                 )
                             })}
 
-
-
-
                         </div>
                         <div className="base-stat">
-                            <h3>Hp: 30</h3>
-                            <h3>Attack: 52</h3>
-                            <h3>Defence: 43</h3>
-                            <h3>Weight: {data.weight}</h3>
+
+                            {data.stats && data.stats.map((stat) => {
+                                return(
+                                    <>
+                                        <h3>{stat.stat.name} : {stat.base_stat}</h3>
+                                    </>
+                                )
+                            })}
+
+
                         </div>
 
                     </>
