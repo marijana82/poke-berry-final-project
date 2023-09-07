@@ -11,7 +11,7 @@
 .hover-card-container .card-hover {
     position: relative;
     max-width: 300px;
-    height: 215px;
+    height: 115px;
     background-color: white;
     margin: 30px 10px;
     padding: 20px 15px;
@@ -24,27 +24,27 @@
 }
 
 .hover-card-container .card-hover:hover {
-    height: 320px;
+    height: 200px;
 }
 
 .hover-card-container .card-hover .image-container {
     position: relative;
     width: 260px;
-    height: 260px;
-    top: -40%;
+    height: 360px;
+    top: -50%;
     left: 8px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
-.hover-card-container .card-hover .image-container .image {
+.hover-card-container .card-hover .image-container img {
     max-width: 100%;
     border-radius: 15px;
 }
 
 .hover-card-container .card-hover .content {
     position: relative;
-    top: -140px;
+    top: -130px;
     padding: 10px 15px;
     color: #111;
     text-align: center;
@@ -55,7 +55,7 @@
 
 
 .hover-card-container .card-hover:hover .content {
-    margin-top: 30px;
+    margin-top: 40px;
     visibility: visible;
     opacity: 1;
     transition-delay: 0.2s;
