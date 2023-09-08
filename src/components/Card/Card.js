@@ -9,7 +9,7 @@ function Card({ pokemon, loading, pokemonClick }) {
         <>
 
             {
-               // loading ? <h1>The page is loading, thank you for waiting!</h1> :
+               pokemon &&
 
                     pokemon.map((onePokemon) => {
                         return(

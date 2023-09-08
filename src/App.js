@@ -7,6 +7,7 @@ import NavBarLandingPage from "./components/navbar-landing-page/NavBarLandingPag
 import PokemonCard from "./components/pokemon-card/PokemonCard";
 import PokemonSearchPage from "./pages/search-pokemon-page/PokemonSearchPage";
 import PokemonListPage from "./pages/list-pokemon-page/PokemonListPage";
+import BerryListPage from "./pages/list-berry-page/BerryListPage";
 
 
 function App() {
@@ -18,7 +19,12 @@ function App() {
       HELLO POKE BERRIES!
 
         {/*<PokemonSearchPage/>*/}
-        <PokemonListPage/>
+
+        {/*<PokemonListPage/>*/}
+
+        <BerryListPage/>
+
+
 
 
 
