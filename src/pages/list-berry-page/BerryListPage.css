@@ -38,18 +38,19 @@ body{
 
 .right-content img {
     margin: 2rem;
-    height: 320px;
+    height: 100px;
 }
 
 .right-content h1 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
-
 }
 
 .button-group {
     display: flex;
     flex-direction: column;
 }
+
+
 

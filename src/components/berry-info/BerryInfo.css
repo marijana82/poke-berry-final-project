@@ -1,0 +1,26 @@
+.berry-flavors {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.berry-flavors .group {
+    background-color: darkorange;
+    color: white;
+    padding: 7px;
+    margin: 3px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+.stats {
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 18px;
+
+
+
+}

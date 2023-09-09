@@ -1,16 +1,27 @@
 import "./CardBerry.css";
 import React from "react";
-import {POKEMON_SPRITES_CHARMANDER} from "../../assets/images/constants";
+import {CHERRY_BERRY, POKEMON_SPRITES_CHARMANDER} from "../../assets/images/constants";
 
 
-function CardBerry() {
+function CardBerry({ berryData, infoBerry }) {
     return(
         <>
-            <div className="card">
-                <h1>1</h1>
-                <img src={POKEMON_SPRITES_CHARMANDER} alt="photo-of-pokemon"/>
-                <h2>Charmander</h2>
-            </div>
+            {berryData &&
+                berryData.map((item) => {
+                    return(
+                        <>
+                            <div className="card" key={item.id} onClick={() => infoBerry(item)}>
+                                <h1>{item.id}</h1>
+                                <img src={CHERRY_BERRY} alt="photo-of-berry"/>
+                                <h2>{item.item.name}</h2>
+                            </div>
+
+
+                        </>
+                        )
+                })
+            }
+
 
 
         </>
