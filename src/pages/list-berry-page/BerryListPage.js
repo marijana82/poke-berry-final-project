@@ -9,13 +9,13 @@ import axios from "axios";
 function BerryListPage() {
 
     const [berryData, setBerryData] = useState([]);
+    const [berryDex, setBerryDex] = useState();
     const [berryItemData, setBerryItemData] = useState([]);
-    const [loading, toggleLoading] = useState(false);
-    const [error, setError] = useState(false);
     const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry");
     const [nextEndpointBerry, setNextEndpointBerry] = useState("");
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
-    const [berryDex, setBerryDex] = useState([]);
+    const [loading, toggleLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     async function fetchBerryData() {
         toggleLoading(true);
@@ -23,7 +23,10 @@ function BerryListPage() {
 
         try {
             const response = await axios.get(endpointBerry);
-            console.log(response.data.results);
+            //console.log(response.data.results);
+            const responseItem = await axios.get('https://pokeapi.co/api/v2/item/145');
+            console.log(responseItem.data);
+            setBerryItemData(responseItem.data);
 
             setNextEndpointBerry(response.data.next);
             setPreviousEndpointBerry(response.data.previous);
@@ -31,7 +34,8 @@ function BerryListPage() {
             //call getBerry function, and pass it response.data.results as parameter
             //this parameter contains an array, consisting of objects with a key-value pair (name, url)
             getBerry(response.data.results);
-            toggleLoading(false);
+            //toggleLoading(false);
+
 
         } catch(e) {
             console.error(e);
@@ -58,7 +62,7 @@ function BerryListPage() {
 
 
                     //*******
-                    //getBerryItem(resultBerry.data.item);
+                   // getBerryItem(responseItem);
                 });
                 //*******
                 /*setBerryItemData(stateItem => {
@@ -75,7 +79,7 @@ function BerryListPage() {
 
     //******write this function in a new component
 
-    /*async function getBerryItem(resultBerry) {
+    /*async function getBerryAttributes(resultBerry) {
         try {
             resultBerry.map(async(item) => {
                 const resultItem = await axios.get(item.url);
@@ -87,11 +91,8 @@ function BerryListPage() {
         }
     }*/
 
-
-
     useEffect(() => {
         fetchBerryData();
-
     }, [endpointBerry]);
 
     return(
@@ -99,7 +100,9 @@ function BerryListPage() {
             <div className="container">
                 <div className="left-content">
 
-                    <CardBerry berryData={berryData} infoBerry={berryX => setBerryDex(berryX)}/>
+                    {/*parameter dataContainer has to be filled with data from CardBerry*/}
+
+                    <CardBerry berryData={berryData} key={berryData.id} infoBerryHandler={dataContainer => setBerryDex(dataContainer)}/>
 
                     <div className="button-group">
                         <Button>Previous</Button>
@@ -110,7 +113,7 @@ function BerryListPage() {
                 </div>
 
                 <div className="right-content">
-                    <BerryInfo dataToClick={berryDex}/>
+                    <BerryInfo data={berryDex} itemData={berryItemData} />
                 </div>
 
 

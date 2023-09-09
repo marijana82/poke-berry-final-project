@@ -37,14 +37,14 @@ function PokemonListPage() {
     //function 2: fetching data about specific pokemon, by passing response as parameter
     async function getPokemon(response) {
         try {
-            response.map(async(item) => {
-                const result = await axios.get(item.url);
-                setPokemonData(state => {
+            response.map(async(poke) => {
+                const result = await axios.get(poke.url);
+                setPokemonData(statePoke => {
                     //1. save existing array, 2. add new array to it
-                    state = [...state, result.data];
-                    state.sort((a,b) => a.id > b.id ? 1 : -1);
-                    return state;
-                })
+                    statePoke = [...statePoke, result.data];
+                    statePoke.sort((a,b) => a.id > b.id ? 1 : -1);
+                    return statePoke;
+                });
             })
 
         } catch (e) {

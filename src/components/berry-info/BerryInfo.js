@@ -2,42 +2,73 @@ import "./BerryInfo.css";
 import React from "react";
 import {CHERRY_BERRY} from "../../assets/images/constants";
 
-function BerryInfo({ dataToClick }) {
+function BerryInfo({ data, itemData }) {
 
-    console.log(dataToClick);
+    console.log(data);
 
 
     return(
+
         <>
-            <h1>Cherry Berry</h1>
-            <img src={CHERRY_BERRY} alt="pokeberry-image"/>
-            <div className="berry-flavors">
-                <div className="group">
-                    <h2>spicy</h2>
-                </div>
-                <div className="group">
-                    <h2>dry</h2>
-                </div>
-                <div className="group">
-                    <h2>sweet</h2>
-                </div>
-                <div className="group">
-                    <h2>bitter</h2>
-                </div>
-                <div className="group">
-                    <h2>sour</h2>
-                </div>
-            </div>
-            <div className="stats">
-                <h3>Firmness: soft</h3>
-                <h3>Natural gift type: fire</h3>
-                <h3>Size: 20</h3>
-                <h3>Smoothness: 25</h3>
-            </div>
+            { data && itemData &&
+
+                <>
+                    <h1>{data.item.name}</h1>
+                    <img src={CHERRY_BERRY} alt="pokeberry-image"/>
+
+                    <div className="berry-flavors">
+                        {
+                            data && data.flavors && data.flavors.map((flavor) => {
+                                return(
+                                    <>
+                                        {flavor.potency > 0 &&
+
+                                            <div className="group">
+                                                <h2>{flavor.flavor.name}</h2>
+                                            </div>
+
+                                        }
+
+                                    </>
+                                )
+                            })}
+
+                    </div>
+                    <div className="stats">
+                        <h3>Firmness: {data.firmness.name}</h3>
+                        <h3>Eaten by {data.natural_gift_type.name} type pokemon </h3>
+                        <h3>Power: {data.natural_gift_power} hp</h3>
+                        <h3>Size: {data.size} mm</h3>
+                    </div>
+                    <div className="item-section">
+
+                        <img src={itemData.sprites.default} alt="item-image"/>
+                        <p>this is {itemData.name}</p>
+                        <p>it is used for {itemData.category.name}</p>
+                        {
+                            itemData && itemData.effect_entries.map((entry) => {
+                                return(
+                                    <>
+                                        <p>It has {entry.effect}</p>
+                                        <p>{entry.short_effect}</p>
+                                    </>
+                                )
+                            })
+                        }
+
+
+
+
+                    </div>
+
+                </>
+
+            }
 
 
         </>
-    )
+    );
+
 }
 
 export default BerryInfo;
