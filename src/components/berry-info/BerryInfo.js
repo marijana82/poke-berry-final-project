@@ -1,20 +1,21 @@
 import "./BerryInfo.css";
 import React from "react";
-import {CHERRY_BERRY} from "../../assets/images/constants";
+import BerryItem from "../../berry-item/BerryItem";
 
-function BerryInfo({ data, itemData }) {
+function BerryInfo({ data }) {
 
     console.log(data);
+
+    //how to set data.item.url in the state OR how to get the data out of it in another way?
 
 
     return(
 
         <>
-            { data && itemData &&
+            { data &&
 
                 <>
                     <h1>{data.item.name}</h1>
-                    <img src={CHERRY_BERRY} alt="pokeberry-image"/>
 
                     <div className="berry-flavors">
                         {
@@ -26,9 +27,7 @@ function BerryInfo({ data, itemData }) {
                                             <div className="group">
                                                 <h2>{flavor.flavor.name}</h2>
                                             </div>
-
                                         }
-
                                     </>
                                 )
                             })}
@@ -40,33 +39,17 @@ function BerryInfo({ data, itemData }) {
                         <h3>Power: {data.natural_gift_power} hp</h3>
                         <h3>Size: {data.size} mm</h3>
                     </div>
-                    <div className="item-section">
 
-                        <img src={itemData.sprites.default} alt="item-image"/>
-                        <p>this is {itemData.name}</p>
-                        <p>it is used for {itemData.category.name}</p>
-                        {
-                            itemData && itemData.effect_entries.map((entry) => {
-                                return(
-                                    <>
-                                        <p>It has {entry.effect}</p>
-                                        <p>{entry.short_effect}</p>
-                                    </>
-                                )
-                            })
-                        }
+                    <BerryItem itemUrl={data.item.url}/>
 
 
-
-
-                    </div>
 
                 </>
 
             }
 
+            </>
 
-        </>
     );
 
 }

@@ -10,7 +10,7 @@ function BerryListPage() {
 
     const [berryData, setBerryData] = useState([]);
     const [berryDex, setBerryDex] = useState();
-    const [berryItemData, setBerryItemData] = useState([]);
+    //const [berryItemData, setBerryItemData] = useState([]);
     const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry");
     const [nextEndpointBerry, setNextEndpointBerry] = useState("");
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
@@ -24,9 +24,9 @@ function BerryListPage() {
         try {
             const response = await axios.get(endpointBerry);
             //console.log(response.data.results);
-            const responseItem = await axios.get('https://pokeapi.co/api/v2/item/145');
-            console.log(responseItem.data);
-            setBerryItemData(responseItem.data);
+            //const responseItem = await axios.get('https://pokeapi.co/api/v2/item/100');
+            //console.log(responseItem.data);
+            //setBerryItemData(responseItem.data);
 
             setNextEndpointBerry(response.data.next);
             setPreviousEndpointBerry(response.data.previous);
@@ -105,15 +105,37 @@ function BerryListPage() {
                     <CardBerry berryData={berryData} key={berryData.id} infoBerryHandler={dataContainer => setBerryDex(dataContainer)}/>
 
                     <div className="button-group">
-                        <Button>Previous</Button>
-                        <Button>Next</Button>
+
+                        {previousEndpointBerry &&
+                            <Button
+                                clickHandler={() => {
+                                    setBerryData([]);
+                                    setEndpointBerry(previousEndpointBerry)
+                                }}
+                            >Previous
+                            </Button>
+                        }
+
+
+                        {nextEndpointBerry &&
+                            <Button
+                                clickHandler={() => {
+                                    setBerryData([]);
+                                    setEndpointBerry(nextEndpointBerry)
+                                }}
+                            >Next
+                            </Button>
+                        }
+
+
+
                     </div>
 
 
                 </div>
 
                 <div className="right-content">
-                    <BerryInfo data={berryDex} itemData={berryItemData} />
+                    <BerryInfo data={berryDex} />
                 </div>
 
 
