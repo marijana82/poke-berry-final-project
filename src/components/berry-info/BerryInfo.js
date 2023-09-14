@@ -1,7 +1,7 @@
 import "./BerryInfo.css";
 import React, {useState} from "react";
-import BerryItem from "../../berry-item/BerryItem";
-import Button from "../button/Button";
+import BerryItem from "../berry-item/BerryItem";
+
 
 function BerryInfo({ data }) {
     console.log(data);
