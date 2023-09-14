@@ -15,19 +15,25 @@ body{
     margin: auto;
     padding-top: 100px;
     display: flex;
+    flex-direction: row;
 }
 
 .left-content, .right-content {
+
     flex-basis: 50%;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
-    grid-gap: 2rem;
+    /*grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    grid-gap: 2rem;*/
+    display: flex;
+    flex-direction: column;
 }
 
 .left-content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-content {
+    display: flex;
     width: 50%;
     text-align: center;
     color: black;

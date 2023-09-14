@@ -21,7 +21,8 @@ function BerryInfo({ data }) {
                 <>
                     <h1>{data.item.name}</h1>
 
-                   <BerryFlavor berryFlavor={data.flavors}/>
+                   <BerryFlavor
+                       berryFlavor={data.flavors}/>
 
                     <div className="stats">
                         <h3>Firmness: {data.firmness.name}</h3>
@@ -33,11 +34,13 @@ function BerryInfo({ data }) {
                     <Button
                         type="button"
                         clickHandler={handleClick}
-                    >SHOW ME MORE!</Button>
+                    >SHOW ME MORE!
+                    </Button>
 
                     {isShownOnClick &&
 
-                    <BerryItem itemUrl={data.item.url}/>
+                    <BerryItem
+                        itemUrl={data.item.url}/>
 
                     }
 

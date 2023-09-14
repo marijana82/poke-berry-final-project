@@ -10,7 +10,7 @@ function PokemonListPage() {
     const [pokemonData, setPokemonData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    const [endpoint, setEndpoint] = useState('https://pokeapi.co/api/v2/pokemon/');
+    const [endpoint, setEndpoint] = useState('https://pokeapi.co/api/v2/pokemon/?limit=12&offset=12');
     const [nextEndpoint, setNextEndpoint] = useState('');
     const [previousEndpoint, setPreviousEndpoint] = useState('');
     const [pokedex, setPokedex] = useState();
@@ -61,7 +61,11 @@ function PokemonListPage() {
             <div className="container">
                 <div className="left-content">
 
-                    <Card pokemon={pokemonData} loading={loading} key={pokemonData.id} pokemonClick={poke => setPokedex(poke)}/>
+                    <Card
+                        pokemon={pokemonData}
+                        loading={loading}
+                        key={pokemonData.id}
+                        pokemonClick={poke => setPokedex(poke)}/>
 
 
                     <div className="button-group">
@@ -87,11 +91,6 @@ function PokemonListPage() {
                             >Next
                             </Button>
                         }
-
-
-
-
-
                     </div>
 
                 </div>

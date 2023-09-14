@@ -5,7 +5,6 @@ import CardBerry from "../../components/card/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
 
-
 function BerryListPage() {
 
     const [berryData, setBerryData] = useState([]);
@@ -30,7 +29,6 @@ function BerryListPage() {
             getBerry(response.data.results);
             //toggleLoading(false);
 
-
         } catch(e) {
             console.error(e);
             setError(true);
@@ -51,15 +49,12 @@ function BerryListPage() {
                     stateBerry.sort((a, b) => a.id > b.id ? 1 : -1 );
                     return stateBerry;
                 });
-
             })
 
             } catch(e) {
             console.error(e);
         }
     }
-
-
 
     useEffect(() => {
         fetchBerryData();
@@ -71,10 +66,12 @@ function BerryListPage() {
                 <div className="left-content">
 
                     {/*parameter dataContainer has to be filled with data from CardBerry*/}
-                    <CardBerry berryData={berryData} key={berryData.id} infoBerryHandler={dataContainer => setBerryDex(dataContainer)}/>
+                    <CardBerry
+                        berryData={berryData}
+                        key={berryData.id}
+                        infoBerryHandler={dataContainer => setBerryDex(dataContainer)}/>
 
                     <div className="button-group">
-
                         {previousEndpointBerry &&
                             <Button
                                 clickHandler={() => {
@@ -85,7 +82,6 @@ function BerryListPage() {
                             </Button>
                         }
 
-
                         {nextEndpointBerry &&
                             <Button
                                 clickHandler={() => {
@@ -95,18 +91,13 @@ function BerryListPage() {
                             >Next
                             </Button>
                         }
-
-
-
                     </div>
-
-
                 </div>
 
                 <div className="right-content">
-                    <BerryInfo data={berryDex} />
+                    <BerryInfo
+                        data={berryDex} />
                 </div>
-
 
             </div>
 
