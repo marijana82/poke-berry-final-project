@@ -3,6 +3,7 @@ import React from "react";
 import {CHERRY_BERRY, POKEMON_SPRITES_CHARMANDER} from "../../assets/images/constants";
 
 
+
 function CardBerry({ berryData, infoBerryHandler }) {
     return(
         <>

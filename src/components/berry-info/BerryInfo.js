@@ -1,19 +1,24 @@
 import "./BerryInfo.css";
-import React from "react";
+import React, {useState} from "react";
 import BerryItem from "../../berry-item/BerryItem";
+import Button from "../button/Button";
 
 function BerryInfo({ data }) {
-
     console.log(data);
 
-    //how to set data.item.url in the state OR how to get the data out of it in another way?
+    const [isShownOnClick, setIsShownOnClick] = useState(false);
+
+    const handleClick = event => {
+        console.log("the button is clicked!")
+        setIsShownOnClick(current => !current);
+    }
+
+
 
 
     return(
-
         <>
             { data &&
-
                 <>
                     <h1>{data.item.name}</h1>
 
@@ -40,18 +45,27 @@ function BerryInfo({ data }) {
                         <h3>Size: {data.size} mm</h3>
                     </div>
 
+                    <button
+                        type="button"
+                        onClick={handleClick}
+                    >SHOW ME MORE!</button>
+
+                    {isShownOnClick &&
+
                     <BerryItem itemUrl={data.item.url}/>
 
+                    }
+
+                    </>
+
+                    }
 
 
-                </>
-
-            }
-
-            </>
+                    </>
 
     );
 
 }
+
 
 export default BerryInfo;
