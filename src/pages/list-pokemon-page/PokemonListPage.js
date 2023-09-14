@@ -1,7 +1,7 @@
 import "./PokemonListPage.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "../../components/Card/Card";
+import Card from "../../components/card/Card";
 import PokeInfo from "../../components/pokemon-info/PokeInfo";
 import Button from "../../components/button/Button";
 

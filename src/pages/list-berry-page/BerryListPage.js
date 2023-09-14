@@ -1,7 +1,7 @@
 import "./BerryListPage.css";
 import React, { useState, useEffect } from "react";
 import BerryInfo from "../../components/berry-info/BerryInfo";
-import CardBerry from "../../components/Card/CardBerry";
+import CardBerry from "../../components/card/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
 

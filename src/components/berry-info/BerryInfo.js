@@ -1,6 +1,7 @@
 import "./BerryInfo.css";
 import React, {useState} from "react";
 import BerryItem from "../berry-item/BerryItem";
+import Button from "../button/Button";
 
 
 function BerryInfo({ data }) {
@@ -45,10 +46,10 @@ function BerryInfo({ data }) {
                         <h3>Size: {data.size} mm</h3>
                     </div>
 
-                    <button
+                    <Button
                         type="button"
-                        onClick={handleClick}
-                    >SHOW ME MORE!</button>
+                        clickHandler={handleClick}
+                    >SHOW ME MORE!</Button>
 
                     {isShownOnClick &&
 
