@@ -20,9 +20,9 @@ function App() {
 
         {/*<PokemonSearchPage/>*/}
 
-        <PokemonListPage/>
+       {/* <PokemonListPage/>*/}
 
-        {/*<BerryListPage/>*/}
+        <BerryListPage/>
 
 
 

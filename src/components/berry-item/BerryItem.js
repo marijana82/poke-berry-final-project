@@ -1,6 +1,7 @@
 import "./BerryItem.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import HeldByPokemon from "../held-by-pokemon/HeldByPokemon";
 
 
 function BerryItem({ itemUrl }) {
@@ -30,35 +31,24 @@ function BerryItem({ itemUrl }) {
                 <div className="berry-information-container">
                     <div className="berry-name-container">
                         <img src={berryItem.sprites.default} alt="item-berry"/>
+                        <h2>Category: </h2>
                         <h3>{berryItem.category.name}</h3>
                     </div>
 
                     {berryItem && berryItem.effect_entries.map((entry) => {
                             return(
                                 <div className="berry-effect-container">
+                                    <h2>Effect: </h2>
                                     <p>{entry.effect}</p>
+                                    <h2>Short effect: </h2>
                                     <p>{entry.short_effect}</p>
                                 </div>
                             )
                         })}
 
-                    <p><b>{berryItem.name}</b> is held by the following pokemon:</p>
-
-                    {berryItem && berryItem.held_by_pokemon.map((heldBy) => {
-                        return(
-                            <div className="berry-held-by-pokemon-container">
-                                <ul>
-                                    <li key={berryItem.id}>
-                                        {heldBy.pokemon.name}
-                                    </li>
-                                </ul>
-
-                            </div>
-                        );
+                    {berryItem ? <HeldByPokemon berryItem={berryItem}/> : <p>No items to show.</p>}
 
 
-                    })
-                    }
 
 
                 </div>
