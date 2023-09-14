@@ -10,7 +10,7 @@ function BerryListPage() {
 
     const [berryData, setBerryData] = useState([]);
     const [berryDex, setBerryDex] = useState();
-    const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry");
+    const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry/?limit=12&offset=12");
     const [nextEndpointBerry, setNextEndpointBerry] = useState("");
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
     const [loading, toggleLoading] = useState(false);
