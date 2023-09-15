@@ -6,11 +6,12 @@
 }
 
 body{
-    background-color: #FCEEC8;
+    background-color: gold;
 
 }
 
 .container {
+    border: 1px solid red;
     width: 90%;
     margin: auto;
     padding-top: 100px;
