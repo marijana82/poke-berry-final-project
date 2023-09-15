@@ -1,15 +1,32 @@
 import "./CardBerry.css";
-import React from "react";
+import React, {useState} from "react";
 import { CHERRY_BERRY } from "../../assets/images/constants";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
 
 
 
 function CardBerry({ berryData, infoBerryHandler }) {
+
+    const [searchString, setSearchString] = useState("");
+    const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true
+
     return(
         <>
+            <div className="hover-card-container">
+                <div className="card-hover">
+                    <input
+                        type="text"
+                        onChange={e => setSearchString(e.target.value)}
+                        className="filter-by-letter"
+                        placeholder="first letter"
+                    />
+
+                </div>
+
+            </div>
+
             {berryData &&
-                berryData.map((item) => {
+                berryData.filter(startsWith(searchString)).map((item) => {
                     return(
                         <>
                             <div
