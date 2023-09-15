@@ -13,15 +13,22 @@ function CardBerry({ berryData, infoBerryHandler }) {
                     return(
                         <>
                             <div
-                                className="card"
+                                className="hover-card-container"
                                 key={item.id}
-                                onClick={() => infoBerryHandler(item)}>
+                                onClick={() => infoBerryHandler(item)}
+                            >
 
-                                <h1>{item.id}</h1>
-                                <img
-                                    src={CHERRY_BERRY}
-                                    alt="photo-of-berry"/>
-                                <h2>{item.item.name}</h2>
+                                <div className="card-hover">
+                                    <div className="image-container">
+                                        <img
+                                            src={CHERRY_BERRY}
+                                            alt="photo-of-berry"/>
+                                    </div>
+                                    <div className="content">
+                                        <h2>{item.item.name}</h2>
+                                        <h3>{item.id}</h3>
+                                    </div>
+                                </div>
                             </div>
                         </>
                         )

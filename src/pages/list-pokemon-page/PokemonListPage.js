@@ -58,8 +58,9 @@ function PokemonListPage() {
 
     return(
         <>
-            <div className="container">
-                <div className="left-content">
+            <div className="main-pokemon-list-container">
+
+                <div className="left-content-container">
 
                     <PokemonCard
                         pokemon={pokemonData}
@@ -69,9 +70,8 @@ function PokemonListPage() {
                     />
 
 
-                    <div className="button-group">
+                    <div className="button-group-container">
                         { previousEndpoint &&
-
                             <Button
                                 clickHandler={() => {
                                     setPokemonData([])
@@ -95,7 +95,7 @@ function PokemonListPage() {
                     </div>
 
                 </div>
-                <div className="right-content">
+                <div className="right-content-container">
                     <PokeInfo data={pokedex}/>
 
                 </div>

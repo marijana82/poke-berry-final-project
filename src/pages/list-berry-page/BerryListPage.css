@@ -1,62 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Merriweather&family=Roboto:wght@300&family=Rock+Salt&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-}
 
-body{
-    background-color: gold;
 
-}
 
-.container {
-    border: 1px solid red;
-    width: 90%;
-    margin: auto;
-    padding-top: 100px;
-    display: flex;
-    flex-direction: row;
-}
-
-.left-content, .right-content {
-    display: flex;
-    flex-basis: 50%;
-    flex-direction: column;
-    margin-bottom: 10px;
-    padding: 5px;
-    /*grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
-    grid-gap: 2rem;*/
-}
-
-.left-content {
-    display: flex;
-}
-
-.right-content {
-    width: 50%;
-    text-align: center;
-    color: black;
-    position: fixed;
-    top: 100px;
-    right: 10px;
-}
-
-.right-content img {
-    margin: 30px;
-    height: 100px;
-}
-
-.right-content h1 {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.button-group {
-    display: flex;
-    flex-direction: row;
-}
 
 
 

@@ -62,8 +62,8 @@ function BerryListPage() {
 
     return(
         <>
-            <div className="container">
-                <div className="left-content">
+            <div className="main-pokemon-list-container">
+                <div className="left-content-container">
 
                     {/*parameter dataContainer has to be filled with data from CardBerry*/}
                     <CardBerry
@@ -71,7 +71,7 @@ function BerryListPage() {
                         key={berryData.id}
                         infoBerryHandler={dataContainer => setBerryDex(dataContainer)}/>
 
-                    <div className="button-group">
+                    <div className="button-group-container">
                         {previousEndpointBerry &&
                             <Button
                                 clickHandler={() => {
@@ -94,7 +94,7 @@ function BerryListPage() {
                     </div>
                 </div>
 
-                <div className="right-content">
+                <div className="right-content-container">
                     <BerryInfo
                         data={berryDex} />
                 </div>

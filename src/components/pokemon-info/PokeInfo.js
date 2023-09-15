@@ -10,7 +10,7 @@ function PokeInfo({ data }) {
         <div className="main-pokemon-info-container">
             {
 
-                (!data) ? "Want to get to know your pokemon? Click on one to see how cool they are!..." : (
+                (!data) ? <h2>"Want to get to know your pokemon? Click on one on the left side of the screen to see how cool they are!..."</h2> : (
 
                     <>
                         <h1>{data.name}</h1>

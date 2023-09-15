@@ -3,12 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 380px;
+    width: 480px;
     height: auto;
     border: 9px ridge darkorange;
     padding: 10px;
     border-radius: 18px;
-    background: linear-gradient(to right, yellow, orangered);
+    background: linear-gradient(to right, deepskyblue, lightblue);
 }
 
 
@@ -20,8 +20,7 @@
     justify-content: center;
     text-align: center;
     background: linear-gradient(to left, royalblue, lightcyan);
-    border-top-right-radius: 13px;
-    border-top-left-radius: 13px;
+    border-radius: 11px;
 }
 
 

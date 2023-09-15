@@ -16,19 +16,19 @@ function BerryInfo({ data }) {
     }
 
     return(
-        <>
-            { data &&
+        <div className="main-pokemon-info-container">
+            { (!data) ? <h2>Click on the berry to get more info</h2> :
                 <>
                     <h1>{data.item.name}</h1>
 
                    <BerryFlavor
                        berryFlavor={data.flavors}/>
 
-                    <div className="stats">
-                        <h3>Firmness: {data.firmness.name}</h3>
-                        <h3>Eaten by {data.natural_gift_type.name} type pokemon </h3>
-                        <h3>Power: {data.natural_gift_power} hp</h3>
-                        <h3>Size: {data.size} mm</h3>
+                    <div className="base-stat">
+                        <h3>{data.firmness.name}</h3>
+                        <h3>eaten by {data.natural_gift_type.name} type pokemon </h3>
+                        <h3>{data.natural_gift_power} hp</h3>
+                        <h3>{data.size} mm</h3>
                     </div>
 
                     <Button
@@ -49,7 +49,7 @@ function BerryInfo({ data }) {
                     }
 
 
-                    </>
+                    </div>
 
     );
 
