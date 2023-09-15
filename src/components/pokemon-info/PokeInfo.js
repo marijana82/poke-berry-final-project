@@ -7,14 +7,22 @@ import CardPokemonStyled from "../card/CardPokemonStyled";
 function PokeInfo({ data }) {
     console.log(data);
     return(
-        <>
+        <div className="main-pokemon-info-container">
             {
 
                 (!data) ? "Want to get to know your pokemon? Click on one to see how cool they are!..." : (
 
                     <>
                         <h1>{data.name}</h1>
-                        <img src={data.sprites.other.home.front_default} alt="image-pokemon-front"/>
+
+                        <span className="poke-image-container">
+                            <img
+                                src={data.sprites.other.home.front_default}
+                                alt="image-pokemon-front"
+                            />
+                        </span>
+
+
 
                         <div className="abilities">
                             {data.abilities && data.abilities.map((ability) => {
@@ -57,7 +65,7 @@ function PokeInfo({ data }) {
             }
 
 
-        </>
+        </div>
     )
 }
 

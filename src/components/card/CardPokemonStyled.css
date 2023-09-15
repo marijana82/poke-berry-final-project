@@ -8,16 +8,18 @@
     box-shadow: 0 0 10px black;
 }
 
-.pokemon-image {
-    width: 200px;
-    height: 200px;
-}
-
 .image-poke-container{
     text-align: center;
     background: linear-gradient(to right, aquamarine, darkblue);
     border-top-right-radius: 13px;
     border-top-left-radius: 13px;
+}
+
+
+
+.pokemon-image {
+    width: 200px;
+    height: 200px;
 }
 
 
