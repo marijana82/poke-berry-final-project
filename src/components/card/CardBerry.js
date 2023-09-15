@@ -2,6 +2,7 @@ import "./CardBerry.css";
 import React, {useState} from "react";
 import { CHERRY_BERRY } from "../../assets/images/constants";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
+import ButtonReset from "../button-reset/ButtonReset";
 
 
 
@@ -10,6 +11,11 @@ function CardBerry({ berryData, infoBerryHandler }) {
     const [searchString, setSearchString] = useState("");
     const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true
 
+    const resetSearch = () => {
+        console.log("button is clicked")
+        setSearchString("");
+    }
+
     return(
         <>
             <div className="hover-card-container">
@@ -17,8 +23,14 @@ function CardBerry({ berryData, infoBerryHandler }) {
                     <input
                         type="text"
                         onChange={e => setSearchString(e.target.value)}
+                        value={searchString}
                         className="filter-by-letter"
                         placeholder="first letter"
+                    />
+
+                    <ButtonReset
+                        children="X"
+                        resetHandler={resetSearch}
                     />
 
                 </div>

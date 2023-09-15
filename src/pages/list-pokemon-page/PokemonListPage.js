@@ -10,7 +10,7 @@ function PokemonListPage() {
     const [pokemonData, setPokemonData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    const [endpoint, setEndpoint] = useState('https://pokeapi.co/api/v2/pokemon/?limit=12&offset=12');
+    const [endpoint, setEndpoint] = useState('https://pokeapi.co/api/v2/pokemon/?limit=18&offset=18');
     const [nextEndpoint, setNextEndpoint] = useState('');
     const [previousEndpoint, setPreviousEndpoint] = useState('');
     const [pokedex, setPokedex] = useState();

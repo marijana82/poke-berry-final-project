@@ -1,14 +1,42 @@
 import "./PokemonCard.css";
-import React from "react";
+import React, {useState} from "react";
+import ButtonReset from "../button-reset/ButtonReset";
 
-function PokemonCard({pokemon, loading, pokemonClick, key, assets, type, title, weight, height, id}) {
+function PokemonCard({ pokemon, pokemonClick }) {
     console.log(pokemon);
+
+    const [searchString, setSearchString] = useState("");
+    const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true
+
+    const resetSearch = () => {
+        console.log("button is clicked")
+        setSearchString("");
+    }
 
     return(
         <>
+            <div className="hover-card-container">
+                <div className="card-hover">
+                    <input
+                        type="text"
+                        onChange={e => setSearchString(e.target.value)}
+                        value={searchString}
+                        className="filter-by-letter"
+                        placeholder="first letter"
+                    />
+
+                    <ButtonReset
+                        children="x"
+                        resetHandler={resetSearch}
+                    />
+
+                </div>
+            </div>
+
+
             {pokemon &&
 
-                pokemon.map((onePokemon) => {
+                pokemon.filter(startsWith(searchString)).map((onePokemon) => {
                     return(
                         <>
                             <div
