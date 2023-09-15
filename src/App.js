@@ -30,6 +30,7 @@ function App() {
             <Route path="/registration-page" element={<Registration/>}/>
             <Route path="/login-page" element={<Login/>}/>
             <Route path="/pokemon-list-page" element={<PokemonListPage/>}/>
+            <Route path="/berry-list-page" element={<BerryListPage/>}/>
         </Routes>
 
 

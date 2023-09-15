@@ -50,6 +50,14 @@ function NavBarLandingPage() {
                         </NavLink>
                     </li>
 
+                    <li>
+                        <NavLink
+                            to="/berry-list-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Berry list
+                        </NavLink>
+                    </li>
+
                 </ul>
             </div>
         </nav>

@@ -1,22 +1,37 @@
 import "./PokemonCard.css";
+import React from "react";
 
-function PokemonCard({assets, type, title, weight, height}) {
+function PokemonCard({pokemon, loading, pokemonClick, key, assets, type, title, weight, height, id}) {
+    console.log(pokemon);
 
     return(
         <>
-            <div className="hover-card-container">
-                <div className="card-hover">
-                    <div className="image-container">
-                        <img src={assets} alt="image-of-pokemon"/>
-                    </div>
-                    <div className="content">
-                        <h3>{title}</h3>
-                        <p>Height: {height} cm</p>
-                        <p>Weight: {weight} cm</p>
-                        <p>Type: {type} </p>
-                    </div>
-                </div>
-            </div>
+            {pokemon &&
+
+                pokemon.map((onePokemon) => {
+                    return(
+                        <>
+                            <div
+                                className="hover-card-container"
+                                key={onePokemon.id}
+                                onClick={() => pokemonClick(onePokemon)}
+                            >
+                                <div className="card-hover">
+                                    <div className="image-container">
+                                        <img src={onePokemon.sprites.other.dream_world.front_default}
+                                             alt="image-of-pokemon"/>
+                                    </div>
+                                    <div className="content">
+                                        <h2>{onePokemon.name}</h2>
+                                        <h3>id: {onePokemon.id}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    )
+                })
+            }
+
         </>
     )
 }

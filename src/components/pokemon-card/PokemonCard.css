@@ -1,53 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Merriweather&family=Mooli&family=Roboto:wght@300&family=Rock+Salt&display=swap');
+
 .hover-card-container {
     position: relative;
-    width: 1100px;
+    width: 300px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    padding: 30px;
+    padding: 10px;
 }
 
 .hover-card-container .card-hover {
     position: relative;
-    max-width: 300px;
-    height: 115px;
-    background-color: white;
-    margin: 30px 10px;
-    padding: 20px 15px;
+    max-width: 220px;
+    height: 125px;
+    background-color: deepskyblue;
+    margin: 30px 30px;
+    padding: 15px 10px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    transition: 0.3s ease-in-out;
-    border-radius: 15px;
-
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: 0.4s ease-in-out;
+    border-radius: 30px;
 }
 
 .hover-card-container .card-hover:hover {
-    height: 200px;
+    height: 180px;
 }
 
 .hover-card-container .card-hover .image-container {
     position: relative;
-    width: 260px;
+    width: 220px;
     height: 360px;
+    margin-left: 6px;
+    padding-left: 18px;
     top: -50%;
-    left: 8px;
+    left: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .hover-card-container .card-hover .image-container img {
-    max-width: 100%;
+    max-width: 150px;
+    max-height: 150px;
     border-radius: 15px;
+    padding: 10px;
 }
 
 .hover-card-container .card-hover .content {
     position: relative;
-    top: -130px;
-    padding: 10px 15px;
-    color: #111;
-    text-align: center;
+    top: -100px;
+    padding: 10px 10px;
+    color: darkblue;
+    font-family: 'Mooli', sans-serif;
+    text-align: right;
     visibility: hidden;
     opacity: 0;
     transition: 0.3s ease-in-out;
@@ -55,7 +62,7 @@
 
 
 .hover-card-container .card-hover:hover .content {
-    margin-top: 40px;
+    margin-top: 30px;
     visibility: visible;
     opacity: 1;
     transition-delay: 0.2s;

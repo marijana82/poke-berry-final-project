@@ -2,13 +2,13 @@ import "./CardPokemonStyled.css";
 import React from "react";
 import {POKEMON_DREAM_WORLD} from "../../assets/images/constants";
 
-function CardPokemonStyled({pokemonName, pokemonType, pokemonStats, pokemonExtra}) {
+function CardPokemonStyled({pokemonName, pokemonType, pokemonStats, pokemonExtra, pokemonImage, pokemonStatName}) {
     return(
         <div className="main-pokemon-card-container">
 
                 <div className="image-poke-container">
                     <img
-                        src={POKEMON_DREAM_WORLD}
+                        src={pokemonImage}
                         alt="pokemon-image"
                         className="pokemon-image"/>
                 </div>
@@ -19,9 +19,7 @@ function CardPokemonStyled({pokemonName, pokemonType, pokemonStats, pokemonExtra
                     <span className="pokemon-type">{pokemonType}</span>
 
                     <div className="pokemon-stats">
-                        <p>{pokemonStats}</p>
-                        <p>Damage: 78</p>
-                        <p>Attacks: Electro ball</p>
+                        <p>{pokemonStatName} : {pokemonStats}</p>
                     </div>
                     <h2 className="pokemon-logo">{pokemonExtra}</h2>
             </div>

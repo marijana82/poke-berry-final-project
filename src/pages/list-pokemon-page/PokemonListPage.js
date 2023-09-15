@@ -4,6 +4,7 @@ import axios from "axios";
 import Card from "../../components/card/Card";
 import PokeInfo from "../../components/pokemon-info/PokeInfo";
 import Button from "../../components/button/Button";
+import PokemonCard from "../../components/pokemon-card/PokemonCard";
 
 
 function PokemonListPage() {
@@ -61,11 +62,12 @@ function PokemonListPage() {
             <div className="container">
                 <div className="left-content">
 
-                    <Card
+                    <PokemonCard
                         pokemon={pokemonData}
                         loading={loading}
                         key={pokemonData.id}
-                        pokemonClick={poke => setPokedex(poke)}/>
+                        pokemonClick={poke => setPokedex(poke)}
+                    />
 
 
                     <div className="button-group">
