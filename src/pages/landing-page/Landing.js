@@ -12,8 +12,6 @@ import NavBarLandingPage from "../../components/navbar-landing-page/NavBarLandin
 function Landing() {
     const navigate = useNavigate();
 
-
-
     return (
         <>
             <NavBarLandingPage/>

@@ -18,11 +18,13 @@ function App() {
     <>
       HELLO POKE BERRIES!
 
+        <Landing/>
+
         {/*<PokemonSearchPage/>*/}
 
        {/* <PokemonListPage/>*/}
 
-        <BerryListPage/>
+        {/*<BerryListPage/>*/}
 
 
 
