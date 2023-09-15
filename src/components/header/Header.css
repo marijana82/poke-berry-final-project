@@ -9,6 +9,7 @@
     background-color: transparent;
     padding: 40px;
     margin: 10px;
+    border: 1px dashed red;
 }
 
 .header-outer-container {

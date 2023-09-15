@@ -11,6 +11,7 @@ import BerryListPage from "./pages/list-berry-page/BerryListPage";
 import Home from "./pages/home-page/Home";
 import Registration from "./pages/registration-page/Registration";
 import Login from "./pages/login-page/Login";
+import NavBar from "./components/navbar-main/NavBar";
 
 
 function App() {
@@ -20,7 +21,6 @@ function App() {
 
   return (
     <>
-      HELLO POKE BERRIES!
 
         <NavBarLandingPage/>
 
@@ -29,6 +29,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/registration-page" element={<Registration/>}/>
             <Route path="/login-page" element={<Login/>}/>
+            <Route path="/pokemon-list-page" element={<PokemonListPage/>}/>
         </Routes>
 
 

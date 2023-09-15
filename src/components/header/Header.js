@@ -13,7 +13,6 @@ function Header({ message, description }) {
                         <img src={POKEMON_SPRITES_CHARMANDER} alt="logo" className="logo"/>
                     </Link>
 
-
                     <h1>{message}</h1>
                     <h2 className="header-description">{description}</h2>
                 </div>

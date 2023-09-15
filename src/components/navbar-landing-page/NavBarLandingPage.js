@@ -26,7 +26,29 @@ function NavBarLandingPage() {
                         </NavLink>
                     </li>
 
-                    <li>HERE CAN COME A SMALL SEARCH BAR</li>
+                    <li>
+                        <NavLink
+                            to="/landing-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Landing page
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink
+                            to="/"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Home page
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink
+                            to="/pokemon-list-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Pokemon list
+                        </NavLink>
+                    </li>
 
                 </ul>
             </div>
