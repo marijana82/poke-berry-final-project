@@ -14,6 +14,15 @@ function Landing() {
 
     return (
         <>
+
+            <header></header>
+            <nav></nav>
+            <section></section>
+            <article></article>
+            <aside></aside>
+            <footer></footer>
+
+
             <NavBarLandingPage/>
 
             <div className="outer-content-box-landing-page">
