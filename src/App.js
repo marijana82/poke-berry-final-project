@@ -8,17 +8,30 @@ import PokemonCard from "./components/pokemon-card/PokemonCard";
 import PokemonSearchPage from "./pages/search-pokemon-page/PokemonSearchPage";
 import PokemonListPage from "./pages/list-pokemon-page/PokemonListPage";
 import BerryListPage from "./pages/list-berry-page/BerryListPage";
+import Home from "./pages/home-page/Home";
+import Registration from "./pages/registration-page/Registration";
+import Login from "./pages/login-page/Login";
 
 
 function App() {
 
+    //isAuthenticated add later!
     //const {isAuthenticated} = useContext(LoginContext);
 
   return (
     <>
       HELLO POKE BERRIES!
 
-        <Landing/>
+        <NavBarLandingPage/>
+
+        <Routes>
+            <Route path="/landing-page" element={<Landing/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/registration-page" element={<Registration/>}/>
+            <Route path="/login-page" element={<Login/>}/>
+        </Routes>
+
+
 
         {/*<PokemonSearchPage/>*/}
 

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Merriweather&family=Roboto:wght@300&display=swap');
+
+.header-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: transparent;
+    padding: 40px;
+    margin: 10px;
+}
+
+.header-outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+}
+
+
+.header-inner-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1200px;
+    felx-grow: 0;
+    flex-shrink: 1;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.header-description {
+    font-family: "Didact Gothic";
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logo {
+    max-width: 100px;
+}
+

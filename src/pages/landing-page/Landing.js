@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 //import main
 //do some other imports, check the old project to see what's missing
 import NavBarLandingPage from "../../components/navbar-landing-page/NavBarLandingPage";
+import Header from "../../components/header/Header";
 
 
 
@@ -15,20 +16,13 @@ function Landing() {
     return (
         <>
 
-            <header></header>
-            <nav></nav>
-            <section></section>
-            <article></article>
-            <aside></aside>
-            <footer></footer>
-
-
-            <NavBarLandingPage/>
+            <Header
+                message="PokeBerry App"
+                description="A simple application that helps you keep your pokemon in one place and let them eat those berries."
+            />
 
             <div className="outer-content-box-landing-page">
-                <caption>
-                    <h1>A simple application that helps you keep your pokemon in one place and let them eat those berries.</h1>
-                </caption>
+
 
                 <div className="inner-content-box-landing-page">
                     <article>
