@@ -1,6 +1,6 @@
 import "./PokemonCard.css";
 import React, {useState} from "react";
-import ButtonReset from "../button-reset/ButtonReset";
+import ButtonReset from "../../button-reset/ButtonReset";
 
 function PokemonCard({ pokemon, pokemonClick }) {
     console.log(pokemon);

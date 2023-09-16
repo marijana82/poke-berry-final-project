@@ -27,11 +27,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-family: Montserrat;
-    font-weight: 800;
-    font-size: 20px;
     color: white;
+    border-radius: 13px;
 
     /*Alignment*/
     position: absolute;
@@ -40,36 +37,24 @@
 }
 
 .card-front{
-    background: lightblue;
-
+    background: blue;
 }
 
 .card-back{
-    background: darkblue;
+    background: linear-gradient(to left, aquamarine, darkblue);
     transform: rotateY(180deg);
-
 }
 
-/*
-Exit transition
-showFront = true -> false
-front -> back
-
-Enter transition
-showFront = false -> true
-back -> front
-*/
+/*styling of flipping the card animation*/
 
 .flip-exit {
     transform: rotateY(0deg);
-
 }
 
 .flip-exit-active {
     transform: rotateY(180deg);
     transition: transform 300ms;
     transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
-
 }
 
 .flip-exit-done {
@@ -79,14 +64,12 @@ back -> front
 
 .flip-enter {
     transform: rotateY(180deg);
-
 }
 
 .flip-enter-active {
     transform: rotateY(0deg);
     transition: transform 300ms;
     transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
-
 }
 
 .flip-enter-done {
@@ -94,32 +77,24 @@ back -> front
 }
 
 /*STYLING FOR POKEMON CARD*/
-
-.back-main-card-container {
-    background: linear-gradient(to right, #fad61f, #fad61f);
-    width: 350px;
-    height: auto;
-    margin: 10%;
-    padding: 10px;
-    border-radius: 18px;
-    box-shadow: 0 0 10px black;
-}
-
 .back-image-container {
     text-align: center;
     background: linear-gradient(to right, aquamarine, darkblue);
     border-top-right-radius: 13px;
     border-top-left-radius: 13px;
+    width: 270px;
+    height: 210px;
+    padding: 5px;
 }
 
 .pokemon-image {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%
 }
 
 .back-content-container {
-    background: linear-gradient(to right, orange, orangered);
-    padding: 10px;
+    background: linear-gradient(to right, blue, aqua);
+    padding: 5px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
 }

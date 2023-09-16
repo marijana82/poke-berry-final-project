@@ -18,13 +18,13 @@ function Card({onClick, pokemonImage, pokemonName, pokemonType, pokemonStatName,
                         />
                     </div>
                     <div className="back-content-container">
-                        <h2 className="pokemon-name">{pokemonName}</h2>
-                        <span className="pokemon-type">{pokemonType}</span>
+                        <h2 className="pokemon-name">Name{pokemonName}</h2>
+                        <span className="pokemon-type">Type{pokemonType}</span>
 
                         <div className="pokemon-stats">
-                            <p>{pokemonStatName} : {pokemonStats}</p>
+                            <p>Stats{pokemonStatName} : {pokemonStats}</p>
                         </div>
-                        <h2 className="pokemon-logo">{pokemonExtra}</h2>
+                        <h2 className="pokemon-logo">Extra information{pokemonExtra}</h2>
 
                     </div>
 

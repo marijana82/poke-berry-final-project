@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PokeInfo from "../../components/pokemon-info/PokeInfo";
 import Button from "../../components/button/Button";
-import PokemonCard from "../../components/pokemon-card/PokemonCard";
+import PokemonCard from "../../components/card/pokemon-card/PokemonCard";
 
 
 function PokemonListPage() {
