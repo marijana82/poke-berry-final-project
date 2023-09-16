@@ -1,0 +1,8 @@
+.flippable-card-container{
+    height: 500px;
+    width: 300px;
+    border-radius: 18px;
+    box-shadow: 0 0 10px black;
+    perspective: 1000px;
+
+}

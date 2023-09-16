@@ -1,0 +1,38 @@
+.card{
+    height: 100%;
+    width: 100%;
+    /*Content Alignment*/
+    position: relative;
+}
+
+.card-back,
+.card-front {
+    height: 100%;
+    width: 100%;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-weight: 800;
+    font-size: 20px;
+    color: white;
+    /*Alignment*/
+    position: absolute;
+
+    transform-style: preserve-3d;
+}
+
+.card-front{
+    background: lightblue;
+
+}
+
+.card-back{
+    background: darkblue;
+    transform: rotateY(180deg);
+
+}

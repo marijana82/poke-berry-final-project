@@ -6,6 +6,7 @@
     padding: 10px;
     border-radius: 18px;
     box-shadow: 0 0 10px black;
+
 }
 
 .image-poke-container{
@@ -14,8 +15,6 @@
     border-top-right-radius: 13px;
     border-top-left-radius: 13px;
 }
-
-
 
 .pokemon-image {
     width: 200px;
@@ -61,3 +60,9 @@
 .pokemon-stats > p {
     letter-spacing: 1px;
 }
+
+
+
+
+
+
