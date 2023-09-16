@@ -1,7 +1,7 @@
 import "./CardPokemonStyled.css";
 import React from "react";
-import {POKEMON_DREAM_WORLD} from "../../assets/images/constants";
-import Button from "../button/Button";
+import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
+import Button from "../../button/Button";
 import {useNavigate} from "react-router-dom";
 
 function CardPokemonStyled({pokemonName, pokemonType, pokemonStats, pokemonExtra, pokemonImage, pokemonStatName, onClick}) {
@@ -10,7 +10,7 @@ function CardPokemonStyled({pokemonName, pokemonType, pokemonStats, pokemonExtra
 
 
     return(
-        <div className="main-pokemon-card-container" onClick={onClick}>
+        <div className="main-pokemon-card-container">
 
             <div className="card-back">
                 <div className="image-poke-container">
