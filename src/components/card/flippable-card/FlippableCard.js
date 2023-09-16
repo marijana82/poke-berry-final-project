@@ -7,20 +7,23 @@ import { useState } from "react";
 
 function FlippableCard() {
 
-    const [showFront, setShowFront] = useState(true);
+    const [showFrontOne, setShowFrontOne] = useState(true);
+    //const [showFrontTwo, setShowFrontTwo] = useState(true);
 
     return(
         <div className="flippable-card-container">
             <CSSTransition
-                in={showFront}
+                in={showFrontOne}
                 timeout={300}
                 classNames="flip"
             >
-                <Card
-                    onClick={() => {
-                        setShowFront((currentValue) => !currentValue);
-                }}/>
+                    <Card
+                        onClick={() => {
+                            setShowFrontOne((currentValue) => !currentValue);
+                        }}/>
+
             </CSSTransition>
+
 
         </div>
     );
