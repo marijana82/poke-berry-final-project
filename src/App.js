@@ -12,6 +12,7 @@ import Home from "./pages/home-page/Home";
 import Registration from "./pages/registration-page/Registration";
 import Login from "./pages/login-page/Login";
 import NavBar from "./components/navbar-main/NavBar";
+import Game from "./pages/games-page/Game";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/login-page" element={<Login/>}/>
             <Route path="/pokemon-list-page" element={<PokemonListPage/>}/>
             <Route path="/berry-list-page" element={<BerryListPage/>}/>
+            <Route path="/game-page" element={<Game/>}/>
         </Routes>
 
 

@@ -58,6 +58,14 @@ function NavBarLandingPage() {
                         </NavLink>
                     </li>
 
+                    <li>
+                        <NavLink
+                            to="/game-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Games
+                        </NavLink>
+                    </li>
+
                 </ul>
             </div>
         </nav>
