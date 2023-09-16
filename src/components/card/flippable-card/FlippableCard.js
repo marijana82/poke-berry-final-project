@@ -19,13 +19,11 @@ function FlippableCard() {
                 <Card
                     onClick={() => {
                         setShowFront((currentValue) => !currentValue);
-
-
                 }}/>
             </CSSTransition>
 
         </div>
-    )
+    );
 }
 
 export default FlippableCard;

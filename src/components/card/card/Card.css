@@ -1,8 +1,18 @@
 .card{
     height: 100%;
     width: 100%;
+
+    transform-style: preserve-3d;
+
+    border-radius: 18px;
+    box-shadow: 0 0 10px black;
+    border: 5px solid white;
+
     /*Content Alignment*/
     position: relative;
+
+    user-select: none;
+    cursor: pointer;
 }
 
 .card-back,
@@ -13,13 +23,16 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
+    /*Content Alignment*/
     display: flex;
     justify-content: center;
     align-items: center;
+
     font-family: Montserrat;
     font-weight: 800;
     font-size: 20px;
     color: white;
+
     /*Alignment*/
     position: absolute;
 
@@ -34,6 +47,7 @@
 .card-back{
     background: darkblue;
     transform: rotateY(180deg);
+
 }
 
 /*
@@ -54,10 +68,27 @@ back -> front
 .flip-exit-active {
     transform: rotateY(180deg);
     transition: transform 300ms;
+    transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
 
 }
 
 .flip-exit-done {
     transform: rotateY(180deg);
+}
 
+
+.flip-enter {
+    transform: rotateY(180deg);
+
+}
+
+.flip-enter-active {
+    transform: rotateY(0deg);
+    transition: transform 300ms;
+    transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
+
+}
+
+.flip-enter-done {
+    transform: rotateY(0deg);
 }
