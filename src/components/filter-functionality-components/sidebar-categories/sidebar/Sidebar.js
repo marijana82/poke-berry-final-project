@@ -4,7 +4,7 @@ import {FiHeart} from "react-icons/fi";
 import Category from "../category/Category";
 import BerryFirmness from "../berry-firmness/BerryFirmness";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
-import BerrySearch from "../../../../pages/search-berry-page/BerrySearch";
+import BerrySize from "../berry-size/BerrySize";
 
 
 function Sidebar() {
@@ -18,7 +18,7 @@ function Sidebar() {
                 <Category/>
                 <BerryFirmness/>
                 <BerryFlavor/>
-                <BerrySearch/>
+                <BerrySize/>
 
             </section>
             Sidebar
