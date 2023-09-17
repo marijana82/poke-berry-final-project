@@ -1,0 +1,66 @@
+.sidebar-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar-items{
+    margin-top: 20px;
+}
+
+.sidebar-label-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.sidebar-label-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+}
+
+
+.sidebar-label-container input:checked ~ .checkmark {
+    background-color: deepskyblue;
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.sidebar-label-container input:checked ~ .checkmark::after {
+    display: block;
+}
+
+.sidebar-label-container .checkmark::after {
+    top: 7px;
+    left: 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: antiquewhite;
+}
+
+.line {
+    margin-top: 3rem;
+    border-color: gold;
+}
+
+

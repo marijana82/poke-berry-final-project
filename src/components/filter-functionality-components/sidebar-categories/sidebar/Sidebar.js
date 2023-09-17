@@ -2,6 +2,9 @@ import "./Sidebar.css";
 import React from "react";
 import {FiHeart} from "react-icons/fi";
 import Category from "../category/Category";
+import BerryFirmness from "../berry-firmness/BerryFirmness";
+import BerryFlavor from "../berry-flavor/BerryFlavor";
+import BerrySearch from "../../../../pages/search-berry-page/BerrySearch";
 
 
 function Sidebar() {
@@ -13,7 +16,9 @@ function Sidebar() {
                 </div>
 
                 <Category/>
-
+                <BerryFirmness/>
+                <BerryFlavor/>
+                <BerrySearch/>
 
             </section>
             Sidebar
