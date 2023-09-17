@@ -1,3 +1,4 @@
+import "./QuizGame.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
@@ -5,6 +6,7 @@ import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
 function QuizGame() {
 
     const [pokemonData, setPokemonData] = useState([]);
+    const [pokemonName, setPokemonName] = useState("");
     const [userGuess, setUserGuess] = useState("");
     const [message, setMessage] = useState("");
     const [isLoading, toggleIsLoading] = useState(false);
@@ -22,6 +24,8 @@ function QuizGame() {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}/`);
             console.log(response.data);
             setPokemonData(response.data);
+            setPokemonName(response.data.name);
+            setMessage("");
 
 
         } catch(e) {
@@ -36,11 +40,13 @@ function QuizGame() {
     //to check user's guess
     function checkUserGuess() {
         if (userGuess.toLowerCase() === pokemonData.name.toLowerCase()) {
-            setMessage("Well done! You made a good guess!");
+            setMessage("Well done! This pokemon's name is " + userGuess.toUpperCase() + " ! ");
         } else {
-            setMessage("It seems you gave a wrong answer. Consider joining the PokeBerry community to learn more about pokemon!")
+            setMessage("It seems you gave a wrong answer. This pokemon's name is: " + pokemonName.toUpperCase() + ".")
         }
     }
+
+
 
     useEffect(() => {
         fetchRandomPokemon();
@@ -54,47 +60,98 @@ function QuizGame() {
     }
 
 
+
+
     return(
         <>
-            <div>
-                <h1>Pokemon Quiz Game</h1>
+            <div className="game-container">
+
                 {isLoading  ?
                     <p>The game is loading...</p>
                     :
                     (
-                        <div>
+                        <div className="game-stats-container">
 
-                            {pokemonData && pokemonData.sprites &&
-                                <img src={pokemonData.sprites.other.home.front_default} alt={pokemonData.name}/>
-                            }
+                            <div className="game-title-container">
+                                <h1 className="game-title">Pokemon Quiz Game</h1>
+                            </div>
 
-                            <p>Do you know what is this Pokemon's name?</p>
+                            <div className="game-image-container">
+                                {pokemonData && pokemonData.sprites &&
+                                    <img
+                                        src={pokemonData.sprites.other.home.front_default}
+                                        alt={pokemonData.name}
+                                        className="game-image"
+                                    />
+                                }
 
-                            <input
-                                type="text"
-                                placeholder="Give it a try"
-                                value={userGuess}
-                                onChange={handleInputChange}
-                            />
-                            <button
-                                type="button"
-                                onClick={checkUserGuess}
-                            >I feel lucky!
-                            </button>
-                            <p>{message}</p>
+                            </div>
 
-                            <button
-                                type="button"
-                                onClick={() => fetchRandomPokemon()}
-                            >
-                                Give it a new try!
-                            </button>
+                            <div className="game-navigation-container">
 
+                               {/*TESTING FROM HERE TO THE INPUT TAG*/}
+                                {userGuess.length > 0 && userGuess !== pokemonData.name ?
+
+                                    (
+                                        <div className="hints-container">
+                                            <h3>This pokemon <b>weights {pokemonData.weight} gram </b> and has <b>base experience of {pokemonData.base_experience} hp.</b></h3>
+                                            <br/>
+                                            <h2><b>Abilities:</b></h2>
+                                            {pokemonData && pokemonData.abilities &&
+                                                pokemonData.abilities.map((ability) => {
+                                                    return(
+                                                        <ul>
+                                                            <li>{ability.ability.name}</li>
+                                                        </ul>
+                                                    )
+                                                })}
+
+                                            <h2><b>Type:</b></h2>
+                                            {pokemonData && pokemonData.types &&
+                                                pokemonData.types.map((type) => {
+                                                    return(
+                                                        <ul>
+                                                            <li>{type.type.name}</li>
+                                                        </ul>
+                                                    )
+                                                })}
+
+                                            <p className="wrong-answer">{message}</p>
+                                        </div>
+                                    ) :
+
+                                    <p className="correct-answer">{message}</p>
+
+                                }
+
+                                <input
+                                    type="text"
+                                    placeholder="Need a hint? Start typing..."
+                                    value={userGuess}
+                                    onChange={handleInputChange}
+                                    className="game-input"
+                                />
+
+                                <div className="game-button-container">
+                                    <button
+                                        type="button"
+                                        onClick={checkUserGuess}
+                                        className="game-button"
+                                    >I feel lucky!
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={() => fetchRandomPokemon()}
+                                        className="game-button"
+                                    >Try again!
+                                    </button>
+
+
+                                </div>
+                            </div>
                         </div>
-
-
                     )}
-
             </div>
 
         </>

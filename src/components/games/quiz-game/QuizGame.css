@@ -1,0 +1,168 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 20px;
+    border: 5px solid red;
+}
+
+.game-title-container {
+    background-color: gold;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.game-stats-container {
+    border: white;
+    box-sizing: border-box;
+}
+
+.game-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.game-stats h2 {
+    padding-bottom: 20px;
+}
+
+/*List styling*/
+.hints-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+.hints-container ul {
+    list-style-type: none;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+}
+
+.hints-container li {
+    list-style-type: none;
+}
+
+.hints-container h3, h2 {
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.correct-answer {
+    color: forestgreen;
+    font-size: 20px;
+    font-family: Chalkboard;
+    padding: 15px;
+}
+
+.wrong-answer {
+    color: red;
+    font-size: 20px;
+    font-family: Chalkboard;
+    padding: 15px;
+}
+
+/*Image styling*/
+.game-image-container {
+    width: 100%;
+    background: linear-gradient(to right, lightgoldenrodyellow, antiquewhite);
+    box-sizing: border-box;
+}
+
+.game-image {
+    width: 100%;
+}
+
+.game-title {
+    font-family: Chalkboard;
+}
+
+/*Input and button container styling*/
+.game-navigation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: gold;
+    box-sizing: border-box;
+}
+
+/*Game input styling*/
+.game-input {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 5px solid darkorange;
+    border-radius: 16px;
+    background-color: lightyellow;
+    font-family: Chalkboard;
+    font-size: 30px;
+}
+
+/*Game button styling*/
+
+.game-button {
+    width: 160px;
+    height: 60px;
+    background-color: gold;
+    border: 3px solid goldenrod;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    box-shadow: 1px 1px 0px 0px darkorange;
+}
+
+.game-button:hover {
+    background-color: orange;
+    transition: 0.8s;
+}
+
+.game-button:focus {
+    outline-color: transparent;
+    outline-style: solid;
+    box-shadow: 0 0 0 5px darkorange;
+    transition: 0.8s;
+}
+
+.game-button:active {
+    background: indianred;
+}
+
+.game-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user-message-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+

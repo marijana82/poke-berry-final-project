@@ -7,7 +7,9 @@ import Header from "../../components/header/Header";
 function Game() {
     return(
         <>
-            <Header/>
+            <Header
+                message="Welcome to the games page!"
+            />
             <QuizGame/>
 
         </>
