@@ -13,12 +13,20 @@ function BerriesToFilter() {
             BERRIES TO FILTER
             <section className="berry-card-container">
                 <section className="berry-card">
-                    <img src={CHERRY_BERRY} alt="berry-picture"/>
+                    <img
+                        src={CHERRY_BERRY}
+                        alt="berry-picture"
+                        className="berry-picture"
+                    />
                     <div className="card-details">
                         <h3 className="card-title">CARD TITLE</h3>
                         <section className="card-reviews">
-                            <AiFillStar/>
-                            <AiFillHeart/>
+                            <AiFillStar
+                                className="star"
+                            />
+                            <AiFillHeart
+                                className="star"
+                            />
                             <span className="reviews">total reviews</span>
                         </section>
                         <section className="card-price">
