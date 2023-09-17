@@ -1,0 +1,28 @@
+.main-filter-navigation-container {
+    display: flex;
+    border-bottom: 2px solid red;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    z-index: 999;
+    margin-left: 20px;
+}
+
+.filter-search-input {
+    padding: 12px 20px;
+    border: none;
+    background: lightblue;
+    outline: none;
+    margin-right: 20px;
+    border-radius: 5px;
+    position: relative;
+    width: 280px;
+}
+
+.navigation-icons {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 2rem;
+    color: darkmagenta;
+
+}
