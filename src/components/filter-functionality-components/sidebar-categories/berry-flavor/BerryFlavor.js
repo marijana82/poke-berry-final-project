@@ -5,27 +5,26 @@ import React from "react";
 function BerryFlavor() {
     return(
         <>
-            <div>
-
-
+            <div className="margin-left">
+                <h2 className="sidebar-title flavor-title">Flavors</h2>
 
             <label
-                className="sidebar-label-container"
-            >Size small
+                className="sidebar-label-container flavor-title"
+            >Sweet
                 <input type="radio" value= "" name="test2"/>
                 <span className="checkmark"></span>
             </label>
 
             <label
                 className="sidebar-label-container"
-            >Size medium
+            >Sour
                 <input type="radio" name="test2"/>
                 <span className="checkmark"></span>
             </label>
 
             <label
                 className="sidebar-label-container"
-            >Size large
+            >Spicy
                 <input type="radio" name="test2"/>
                 <span className="checkmark"></span>
             </label>

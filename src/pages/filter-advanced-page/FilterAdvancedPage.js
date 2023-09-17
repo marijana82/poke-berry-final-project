@@ -5,6 +5,7 @@ import BerriesToFilter from "../../components/filter-functionality-components/be
 import RecommendedFilter from "../../components/filter-functionality-components/recommended-filter/RecommendedFilter";
 import Header from "../../components/header/Header";
 import Sidebar from "../../components/filter-functionality-components/sidebar-categories/sidebar/Sidebar";
+import Footer from "../../components/footer/Footer";
 
 
 function FilterAdvancedPage() {
@@ -16,6 +17,7 @@ function FilterAdvancedPage() {
             <NavigationFilter/>
             <RecommendedFilter/>
             <BerriesToFilter/>
+            <Footer/>
 
         </>
     )

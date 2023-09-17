@@ -1,0 +1,45 @@
+.footer-outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    /*border: 5px dashed red;*/
+    background: goldenrod;
+}
+
+.footer-inner-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    align-items: center;
+    margin: 10px;
+    /* border: 3px dashed blue;*/
+    width: 100%;
+    background: goldenrod;
+
+
+}
+
+.footer-content-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*border: 5px dashed black;*/
+    padding: 25px;
+    margin: 10px;
+    font-family: Didact Gothic;
+    background: goldenrod;
+
+}
+
+.footer-message {
+
+}
+
+.footer-description {
+
+}
