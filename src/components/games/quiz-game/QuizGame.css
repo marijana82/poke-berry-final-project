@@ -53,10 +53,19 @@
     padding-left: 0px;
     padding-bottom: 5px;
     margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hints-container li {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .hints-container h3, h2 {

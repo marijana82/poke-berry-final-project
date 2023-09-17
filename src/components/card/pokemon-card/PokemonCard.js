@@ -8,6 +8,9 @@ function PokemonCard({ pokemon, pokemonClick }) {
     const [searchString, setSearchString] = useState("");
     const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true
 
+
+
+
     const resetSearch = () => {
         console.log("button is clicked")
         setSearchString("");
@@ -34,8 +37,7 @@ function PokemonCard({ pokemon, pokemonClick }) {
             </div>
 
 
-            {pokemon &&
-
+            {
                 pokemon.filter(startsWith(searchString)).map((onePokemon) => {
                     return(
                         <>
@@ -52,6 +54,7 @@ function PokemonCard({ pokemon, pokemonClick }) {
                                     <div className="content">
                                         <h2>{onePokemon.name}</h2>
                                         <h3>id: {onePokemon.id}</h3>
+
                                     </div>
                                 </div>
                             </div>
@@ -59,6 +62,8 @@ function PokemonCard({ pokemon, pokemonClick }) {
                     )
                 })
             }
+
+
 
         </>
     )

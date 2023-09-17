@@ -66,6 +66,14 @@ function NavBarLandingPage() {
                         </NavLink>
                     </li>
 
+                    <li>
+                        <NavLink
+                            to="/filter-advanced-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Filter Advanced
+                        </NavLink>
+                    </li>
+
                 </ul>
             </div>
         </nav>

@@ -74,6 +74,7 @@ function BerryListPage() {
                     <div className="button-group-container">
                         {previousEndpointBerry &&
                             <Button
+                                styling="game-button"
                                 clickHandler={() => {
                                     setBerryData([]);
                                     setEndpointBerry(previousEndpointBerry)
@@ -84,6 +85,7 @@ function BerryListPage() {
 
                         {nextEndpointBerry &&
                             <Button
+                                styling="game-button"
                                 clickHandler={() => {
                                     setBerryData([]);
                                     setEndpointBerry(nextEndpointBerry)

@@ -3,6 +3,9 @@ import React, {useState} from "react";
 import { CHERRY_BERRY } from "../../../assets/images/constants";
 import BerryFlavor from "../../berry-flavor/BerryFlavor";
 import ButtonReset from "../../button-reset/ButtonReset";
+import BerryInfo from "../../berry-info/BerryInfo";
+import BerryItem from "../../berry-item/BerryItem";
+import berryItem from "../../berry-item/BerryItem";
 
 
 
@@ -52,6 +55,7 @@ function CardBerry({ berryData, infoBerryHandler }) {
                                         <img
                                             src={CHERRY_BERRY}
                                             alt="photo-of-berry"/>
+
                                     </div>
                                     <div className="content">
                                         <h2>{item.item.name}</h2>

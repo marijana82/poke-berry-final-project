@@ -73,6 +73,7 @@ function PokemonListPage() {
                     <div className="button-group-container">
                         { previousEndpoint &&
                             <Button
+                                styling="game-button"
                                 clickHandler={() => {
                                     setPokemonData([])
                                     setEndpoint(previousEndpoint)
@@ -85,6 +86,7 @@ function PokemonListPage() {
                             nextEndpoint &&
 
                             <Button
+                                styling="game-button"
                                 clickHandler={() => {
                                     setPokemonData([])
                                     setEndpoint(nextEndpoint)

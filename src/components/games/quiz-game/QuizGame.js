@@ -2,6 +2,7 @@ import "./QuizGame.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
+import Button from "../../button/Button";
 
 function QuizGame() {
 
@@ -96,7 +97,7 @@ function QuizGame() {
                                         <div className="hints-container">
                                             <h3>This pokemon <b>weights {pokemonData.weight} gram </b> and has <b>base experience of {pokemonData.base_experience} hp.</b></h3>
                                             <br/>
-                                            <h2><b>Abilities:</b></h2>
+                                            <h2><b>Abilities</b></h2>
                                             {pokemonData && pokemonData.abilities &&
                                                 pokemonData.abilities.map((ability) => {
                                                     return(
@@ -106,7 +107,7 @@ function QuizGame() {
                                                     )
                                                 })}
 
-                                            <h2><b>Type:</b></h2>
+                                            <h2><b>Type</b></h2>
                                             {pokemonData && pokemonData.types &&
                                                 pokemonData.types.map((type) => {
                                                     return(
@@ -133,19 +134,19 @@ function QuizGame() {
                                 />
 
                                 <div className="game-button-container">
-                                    <button
+                                    <Button
                                         type="button"
-                                        onClick={checkUserGuess}
-                                        className="game-button"
+                                        clickHandler={checkUserGuess}
+                                        styling="game-button"
                                     >I feel lucky!
-                                    </button>
+                                    </Button>
 
-                                    <button
+                                    <Button
                                         type="button"
-                                        onClick={() => fetchRandomPokemon()}
-                                        className="game-button"
+                                        clickHandler={() => fetchRandomPokemon()}
+                                        styling="game-button"
                                     >Try again!
-                                    </button>
+                                    </Button>
 
 
                                 </div>

@@ -13,6 +13,7 @@ import Registration from "./pages/registration-page/Registration";
 import Login from "./pages/login-page/Login";
 import NavBar from "./components/navbar-main/NavBar";
 import Game from "./pages/games-page/Game";
+import FilterAdvancedPage from "./pages/filter-advanced-page/FilterAdvancedPage";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path="/pokemon-list-page" element={<PokemonListPage/>}/>
             <Route path="/berry-list-page" element={<BerryListPage/>}/>
             <Route path="/game-page" element={<Game/>}/>
+            <Route path="/filter-advanced-page" element={<FilterAdvancedPage/>}/>
         </Routes>
 
 

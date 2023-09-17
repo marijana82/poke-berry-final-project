@@ -31,7 +31,10 @@ function BerryItem({ itemUrl }) {
                 <div className="berry-information-container">
 
                         <span className="berry-image-container">
-                            <img src={berryItem.sprites.default} alt="item-berry" className="berry-image"/>
+                            <img
+                                src={berryItem.sprites.default}
+                                alt="item-berry"
+                                className="berry-image"/>
                         </span>
 
                     <div className="berry-name-container">
