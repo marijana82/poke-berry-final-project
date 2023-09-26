@@ -1,8 +1,9 @@
 import "./Category.css";
 import React from "react";
+import InputFilter from "../../input-filter/InputFilter";
 
 
-function Category() {
+function Category({handleChange}) {
     return(
         <>
             <div>
@@ -10,33 +11,39 @@ function Category() {
             </div>
 
             <div>
-                <label
-                    className="sidebar-label-container"
+                <label className="sidebar-label-container"
                 >All
-                    <input type="radio" name="test"/>
+                    <input
+                        type="radio"
+                        onChange={handleChange}
+                        value=""
+                        name="test"
+                    />
                     <span className="checkmark"></span>
                 </label>
+                {/*Flavors, Firmness, Size*/}
 
-                <label
-                    className="sidebar-label-container"
-                >Flavors
-                    <input type="radio" name="test"/>
-                    <span className="checkmark"></span>
-                </label>
+                <InputFilter
+                    handleChange={handleChange}
+                    value="size"
+                    title="size"
+                    name="test"
+                />
 
-                <label
-                    className="sidebar-label-container"
-                >Firmness
-                    <input type="radio" name="test"/>
-                    <span className="checkmark"></span>
-                </label>
+                <InputFilter
+                    handleChange={handleChange}
+                    value="smoothness"
+                    title="smoothness"
+                    name="test"
+                />
 
-                <label
-                    className="sidebar-label-container"
-                >Size
-                    <input type="radio" name="test"/>
-                    <span className="checkmark"></span>
-                </label>
+
+                <InputFilter
+                    handleChange={handleChange}
+                    value="growth_time"
+                    title="growth time"
+                    name="test"
+                />
 
             </div>
 

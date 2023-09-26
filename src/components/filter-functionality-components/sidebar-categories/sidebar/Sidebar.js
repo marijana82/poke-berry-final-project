@@ -7,7 +7,8 @@ import BerryFlavor from "../berry-flavor/BerryFlavor";
 import BerrySize from "../berry-size/BerrySize";
 
 
-function Sidebar() {
+function Sidebar({handleChange}) {
+
     return(
         <>
             <section className="sidebar">
@@ -15,10 +16,9 @@ function Sidebar() {
                     <h1><FiHeart/></h1>
                 </div>
 
-                <Category/>
-                <BerryFirmness/>
-                <BerryFlavor/>
-                <BerrySize/>
+                <Category handleChange={handleChange}/>
+                <BerryFlavor handleChange={handleChange}/>
+                <BerrySize handleChange={handleChange}/>
 
             </section>
             Sidebar
