@@ -1,9 +1,16 @@
 import "./PokemonCard.css";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import ButtonReset from "../../button-reset/ButtonReset";
+import FavoritesContext from "../../../context/FavoritesContext";
+import {AiFillHeart, AiFillStar} from "react-icons/ai";
+import Button from "../../button/Button";
 
 function PokemonCard({ pokemon, pokemonClick }) {
     console.log(pokemon);
+
+    //favorites context destructuring
+    const { favoritePokemon, updateFavoritePokemon } = useContext(FavoritesContext);
+
 
     const [searchString, setSearchString] = useState("");
     const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true
@@ -39,6 +46,14 @@ function PokemonCard({ pokemon, pokemonClick }) {
 
             {
                 pokemon.filter(startsWith(searchString)).map((onePokemon) => {
+
+                    const onClickHeart = () => {
+                        updateFavoritePokemon(onePokemon.name);
+                    }
+
+                    const heart = favoritePokemon.includes(onePokemon.name) ? <AiFillHeart/> : "?";
+
+
                     return(
                         <>
                             <div
@@ -54,6 +69,11 @@ function PokemonCard({ pokemon, pokemonClick }) {
                                     <div className="content">
                                         <h2>{onePokemon.name}</h2>
                                         <h3>id: {onePokemon.id}</h3>
+                                        <Button
+                                            clickHandler={onClickHeart}
+                                            styling="button-favorite"
+                                        >Favorite {heart}
+                                        </Button>
 
                                     </div>
                                 </div>
@@ -63,10 +83,8 @@ function PokemonCard({ pokemon, pokemonClick }) {
                 })
             }
 
-
-
         </>
-    )
+    );
 }
 
 export default PokemonCard;

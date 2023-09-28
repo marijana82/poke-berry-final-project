@@ -1,10 +1,15 @@
 import "./PokemonListPage.css";
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import PokeInfo from "../../components/pokemon-info/PokeInfo";
 import Button from "../../components/button/Button";
 import PokemonCard from "../../components/card/pokemon-card/PokemonCard";
+import FavoritesContext, { FavoritesProvider } from "../../context/FavoritesContext";
+import Pagination from "../../components/pagination/Pagination";
+import FavoriteCard from "../../components/card/card-favorite/FavoriteCard";
 
+//favorites key
+const favoritesKey = "favorite";
 
 function PokemonListPage() {
     const [pokemonData, setPokemonData] = useState([]);
@@ -17,8 +22,12 @@ function PokemonListPage() {
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [notFound, setNotFound] = useState(false);
+    //favorites use state
+    const [favorites, setFavorites] = useState([]);
 
     const itemsPerPage = 24;
+
+    const { favoritePokemon } = useContext(FavoritesContext);
 
     //function 1: fetching the general pokemon data + previous and next
     async function fetchPokeData() {
@@ -62,6 +71,32 @@ function PokemonListPage() {
     }, [endpoint]);
 
 
+    //favorites loading function + useEffect
+    function loadFavoritePokemon() {
+        const pokemonFav = JSON.parse(window.localStorage.getItem(favoritesKey)) || [];
+        setFavorites(pokemonFav);
+    }
+
+    useEffect(() => {
+        loadFavoritePokemon();
+    }, []);
+
+    //favorites update function
+    function updateFavoritePokemon(name) {
+        const updatedPokeFav = [...favorites];
+        const indexFavorites = favorites.indexOf(name);
+        if(indexFavorites >= 0) {
+            updatedPokeFav.splice(indexFavorites, 1);
+        } else {
+            updatedPokeFav.push(name);
+        }
+
+        window.localStorage.setItem(favoritesKey, JSON.stringify(updatedPokeFav));
+        setFavorites(updatedPokeFav);
+    }
+
+
+
     //function that handles page change
     function handlePageChange(newPage) {
         setPokemonData([]); //clear existing data
@@ -71,13 +106,23 @@ function PokemonListPage() {
     }
 
 
+
+
     return(
         <>
+            <FavoritesProvider
+                value={{
+                    favoritePokemon: favorites,
+                    updateFavoritePokemon: updateFavoritePokemon,
+                }}
+            >
+
             <div className="main-pokemon-list-container">
 
                 <div className="left-content-container">
 
                     <div className="button-group-container">
+
                         { previousEndpoint &&
                             <Button
                                 styling="game-button"
@@ -85,6 +130,15 @@ function PokemonListPage() {
                             >Previous
                             </Button>
                         }
+
+
+                        <Pagination
+                            page={page}
+                            totalPages={totalPages}
+                            favoritePokemon={favorites.length}
+                        />
+
+
 
                         {
                             nextEndpoint &&
@@ -96,10 +150,6 @@ function PokemonListPage() {
                             </Button>
                         }
 
-                        <div className="page-counter-container">
-                            <p>Page {page} of {totalPages}</p>
-                        </div>
-
                     </div>
 
                     <PokemonCard
@@ -108,6 +158,8 @@ function PokemonListPage() {
                         key={pokemonData.id}
                         pokemonClick={poke => setPokedex(poke)}
                     />
+
+
 
 
                     <div className="button-group-container">
@@ -137,9 +189,10 @@ function PokemonListPage() {
                             </Button>
                         }
 
-                        <div className="page-counter-container">
-                            <p>Page {page} of {totalPages}</p>
-                        </div>
+                        <Pagination
+                            page={page}
+                            totalPages={totalPages}
+                        />
 
                     </div>
 
@@ -150,6 +203,9 @@ function PokemonListPage() {
                     <PokeInfo data={pokedex}/>
                 </div>
             </div>
+
+
+            </FavoritesProvider>
         </>
     )
 }
