@@ -1,4 +1,4 @@
-import "FormLogin.css";
+import "./FormLogin.css";
 import React, {useContext, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import FormInput from "../../form-input/FormInput";
@@ -10,7 +10,7 @@ function FormLogin() {
 
     const [nameLogin, setNameLogin] = useState("");
     const [passwordLogin, setPasswordLogin] = useState("");
-    const [error, toggleError] = useState(false);
+
 
    // const { loginFunction } = useContext(LoginContext);
    // const navigate = useNavigate();
@@ -60,7 +60,7 @@ function FormLogin() {
 
                 <Button
                     type="button"
-                    clickHandler={handleReset()}
+                    clickHandler={handleReset}
                 >Reset all
                 </Button>
             </div>

@@ -9,7 +9,7 @@ function NavBarLandingPage() {
     return(
         <nav className="outer-container-navigation">
             <div className="inner-container-navigation">
-                <ul>
+                <ul className="nav-container">
                     <li>
                         <NavLink
                             to="/registration-page"
@@ -22,7 +22,7 @@ function NavBarLandingPage() {
                         <NavLink
                             to="/login-page"
                             className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                        >Register
+                        >Login
                         </NavLink>
                     </li>
 

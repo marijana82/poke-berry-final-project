@@ -1,4 +1,4 @@
-.outer-container-navigation {
+.nav-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
