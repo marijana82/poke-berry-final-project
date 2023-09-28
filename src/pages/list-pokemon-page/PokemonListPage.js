@@ -10,11 +10,15 @@ function PokemonListPage() {
     const [pokemonData, setPokemonData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    const [endpoint, setEndpoint] = useState('https://pokeapi.co/api/v2/pokemon/?limit=18&offset=18');
+    const [endpoint, setEndpoint] = useState('https://pokeapi.co/api/v2/pokemon/?limit=24&offset=24');
     const [nextEndpoint, setNextEndpoint] = useState('');
     const [previousEndpoint, setPreviousEndpoint] = useState('');
     const [pokedex, setPokedex] = useState();
+    const [page, setPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(0);
+    const [notFound, setNotFound] = useState(false);
 
+    const itemsPerPage = 24;
 
     //function 1: fetching the general pokemon data + previous and next
     async function fetchPokeData() {
@@ -25,6 +29,7 @@ function PokemonListPage() {
             const response = await axios.get(endpoint);
             setNextEndpoint(response.data.next);
             setPreviousEndpoint(response.data.previous);
+            setTotalPages(Math.ceil(response.data.count / itemsPerPage)); //calculate total pages
             getPokemon(response.data.results);
 
         } catch(e) {
@@ -56,11 +61,46 @@ function PokemonListPage() {
         fetchPokeData();
     }, [endpoint]);
 
+
+    //function that handles page change
+    function handlePageChange(newPage) {
+        setPokemonData([]); //clear existing data
+        setPage(newPage);
+        const newOffset = (newPage - 1) * itemsPerPage;
+        setEndpoint(`https://pokeapi.co/api/v2/pokemon/?limit=${itemsPerPage}&offset=${newOffset}`);
+    }
+
+
     return(
         <>
             <div className="main-pokemon-list-container">
 
                 <div className="left-content-container">
+
+                    <div className="button-group-container">
+                        { previousEndpoint &&
+                            <Button
+                                styling="game-button"
+                                clickHandler={() => handlePageChange(page - 1)}
+                            >Previous
+                            </Button>
+                        }
+
+                        {
+                            nextEndpoint &&
+
+                            <Button
+                                styling="game-button"
+                                clickHandler={() => handlePageChange(page + 1)}
+                            >Next
+                            </Button>
+                        }
+
+                        <div className="page-counter-container">
+                            <p>Page {page} of {totalPages}</p>
+                        </div>
+
+                    </div>
 
                     <PokemonCard
                         pokemon={pokemonData}
@@ -74,10 +114,11 @@ function PokemonListPage() {
                         { previousEndpoint &&
                             <Button
                                 styling="game-button"
-                                clickHandler={() => {
+                               /* clickHandler={() => {
                                     setPokemonData([])
                                     setEndpoint(previousEndpoint)
-                                }}
+                                }}*/
+                                clickHandler={() => handlePageChange(page - 1)}
                             >Previous
                             </Button>
                         }
@@ -87,19 +128,26 @@ function PokemonListPage() {
 
                             <Button
                                 styling="game-button"
-                                clickHandler={() => {
+                                /*clickHandler={() => {
                                     setPokemonData([])
                                     setEndpoint(nextEndpoint)
-                                }}
+                                }}*/
+                                clickHandler={() => handlePageChange(page + 1)}
                             >Next
                             </Button>
                         }
+
+                        <div className="page-counter-container">
+                            <p>Page {page} of {totalPages}</p>
+                        </div>
+
                     </div>
+
+
 
                 </div>
                 <div className="right-content-container">
                     <PokeInfo data={pokedex}/>
-
                 </div>
             </div>
         </>

@@ -61,3 +61,13 @@ body{
     margin: 10px;
     padding-left: 25px;
 }
+
+.page-counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+
+}
