@@ -1,7 +1,9 @@
 import "./FormRegister.css";
 import React, {useState} from "react";
 import FormInput from "../../form-input/FormInput";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import isValidEmail from "../../../helpers/IsValidEmail";
+import Button from "../../button/Button";
 
 
 function FormRegister() {
@@ -50,7 +52,7 @@ function FormRegister() {
                 />
 
                 {emailValue.length < 6 && <p className="warning-messages">Please make sure your email is at least 6 characters long.</p> }
-                {/*{!isValidEmail(emailValue) ? <p className="warning-messages">Don't forget to use @ and your email domain.</p> : <p className="message-validated">Thank you!</p>}*/}
+                {!isValidEmail(emailValue) ? <p className="warning-messages">Don't forget to use @ and your email domain.</p> : <p className="message-validated">Thank you!</p>}
                 <FormInput
                     labelText="Your precious email"
                     idAttribute="email"
@@ -61,15 +63,68 @@ function FormRegister() {
                     stateSetter={setEmailValue}
                 />
 
-                <FormInput/>
-                <FormInput/>
-                <FormInput/>
-                <FormInput/>
+                {passwordValue.length < 6 ? <p className="warning-messages">Please make sure your password is at least 6 characters long.</p> : <p className="message-validated">Good choice!</p>}
+                <FormInput
+                    labelText="Your secret password"
+                    idAttribute="password"
+                    inputType="password"
+                    placeholder="Psssst...your password"
+                    nameAttribute="password"
+                    stateValue={passwordValue}
+                    stateSetter={setPasswordValue}
+                />
 
+                {optionalInfoUser < 3 ? <p className="warning-messages">Please let us know where you're from.</p> : <p className="message-validated">Thank you!</p>}
+                <FormInput
+                    labelText="Additional information"
+                    idAttribute="text"
+                    inputType="text"
+                    placeholder="Where do you come from?"
+                    nameAttribute="additional information"
+                    stateValue={optionalInfoUser}
+                    stateSetter={setOptionalInfoUser}
+                />
 
+                {userRole === "user" ? <p className="message-validated">That's right!</p> : <p className="warning-messages">Please log in as "user".</p> }
+                <FormInput
+                    labelText="Your role"
+                    idAttribute="text"
+                    inputType="text"
+                    placeholder="What is your role?"
+                    nameAttribute="role"
+                    stateValue={userRole}
+                    stateSetter={setUserRole}
+                />
+
+                {error && <p>This account already exists. Try registering with a different username and email.</p>}
+
+                <Button
+                    className="registration-button"
+                    type="submit"
+                    disabled={
+                        nameValue.length < 6 &&
+                        emailValue.length < 6 &&
+                        !isValidEmail(emailValue) &&
+                        passwordValue.length < 6 &&
+                        userRole === "" &&
+                        optionalInfoUser === ""
+                        }
+                >Register
+                </Button>
+
+                <Button
+                    type="button"
+                    clickHandler={handleReset}
+                >Reset All
+                </Button>
 
             </div>
 
+            {registerSuccess && <p>You have been successfully registered! <Link to={"/login-page"}>You can now log in!</Link></p>}
+
+            <div className="container-sign-in">
+                <p>Already have an account? <Link to={"/login-page"}>Log in here!</Link></p>
+            </div>
 
         </form>
     )
