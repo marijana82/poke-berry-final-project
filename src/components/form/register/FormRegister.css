@@ -1,0 +1,96 @@
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: normal;
+}
+
+.container-register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.container-sign-in {
+    padding: 16px;
+    text-align: center;
+}
+
+input {
+    padding: 15px;
+    margin: 5px;
+    background: orange;
+    display: inline-block;
+    width: 100%;
+    height: 8vh;
+    border: 3px solid rebeccapurple;
+    font-size: 30px;
+    font-family: Didact Gothic;
+    font-weight: bold;
+    border-radius: 35px;
+}
+
+input:hover {
+    background-color: gold;
+}
+
+input:focus {
+    background-color: lightgoldenrodyellow;
+    outline: none;
+}
+
+.warning-messages {
+    color: crimson;
+}
+
+.message-validated {
+    color: seagreen;
+}
+
+.registration-button {
+    width: 25vh;
+    height: 8vh;
+    border: 3px solid rebeccapurple;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Didact Gothic";
+    color: aliceblue;
+    background: mediumpurple;
+    cursor: pointer;
+    border-radius: 35px;
+}
+
+.registration-button:hover {
+    background: rebeccapurple;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+a {
+    color: orangered;
+}
+
+a:hover {
+    color: lightseagreen;
+    cursor: pointer;
+}
+
+.title-registration-form {
+    font-size: 30px;
+    padding: 10px;
+}
+
+label {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.label-container {
+    padding: 10px;
+    margin: 3px;
+    border: 2px solid white;
+    width: 100vh;
+}
