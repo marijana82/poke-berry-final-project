@@ -8,8 +8,10 @@ import Footer from "../../footer/Footer";
 import {LoginContext} from "../../../context/LoginContext";
 
 
-function BerriesToFilter({filteredData, query, handleInputChange, selectedCategory}) {
-    console.log(filteredData);
+function BerriesToFilter({query, selectedCategory, berryData, handleInputChange}) {
+
+
+
 
     return(
         <>
@@ -17,7 +19,7 @@ function BerriesToFilter({filteredData, query, handleInputChange, selectedCatego
 
             <section className="berry-card-container">
 
-                {filteredData.map((berry) => (
+
 
                     <CardFilter
                         key={berry.id}
@@ -27,14 +29,14 @@ function BerriesToFilter({filteredData, query, handleInputChange, selectedCatego
                         growth={berry.props.growth}
                         soil={berry.props.soil}
                         power={berry.props.power}
-                        //query={query}
-                        //handleInputChange={handleInputChange}
-                        //selectedCategory={selectedCategory}
+                        query={query}
+                        handleInputChange={handleInputChange}
+                        selectedCategory={selectedCategory}
 
                     />
 
 
-                ))}
+
 
 
             </section>

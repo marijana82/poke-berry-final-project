@@ -5,7 +5,6 @@ import {AiFillHeart, AiFillStar} from "react-icons/ai";
 
 
 function CardFilter({name, size, smoothness, growth, soil, power}) {
-    console.log(name);
 
     return(
         <section className="berry-card-container">

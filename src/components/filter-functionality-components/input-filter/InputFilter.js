@@ -2,7 +2,7 @@ import "./InputFilter.css";
 import React from "react";
 
 
-function InputFilter({ handleChange, value, title, name }) {
+function InputFilter({ handleFlavorChange, value, title, name }) {
     return(
         <>
             <label
@@ -11,7 +11,7 @@ function InputFilter({ handleChange, value, title, name }) {
                 <input
                     type="radio"
                     name={name}
-                    onChange={handleChange}
+                    onChange={handleFlavorChange}
                     value={value}
                 />
                 <span className="checkmark"></span>

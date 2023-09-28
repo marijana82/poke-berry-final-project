@@ -4,7 +4,7 @@ import InputFilter from "../../input-filter/InputFilter";
 
 
 
-function BerrySize({handleChange}) {
+function BerrySize() {
     return(
         <>
             <div className="margin-left">
@@ -14,7 +14,7 @@ function BerrySize({handleChange}) {
                 >All
                     <input
                         type="radio"
-                        onChange={handleChange}
+                        //onChange={handleChange}
                         value=""
                         name="test2"
                     />
@@ -22,22 +22,22 @@ function BerrySize({handleChange}) {
                 </label>
 
                 <InputFilter
-                    handleChange={handleChange}
-                    value={10 && 20 && 30}
+                    //handleChange={handleChange}
+                    value="cheri"
                     title="small"
                     name="test2"
                 />
 
                 <InputFilter
-                    handleChange={handleChange}
-                    value={40 && 50 && 60}
+                    //handleChange={handleChange}
+                    value="60"
                     title="medium"
                     name="test2"
                 />
 
                 <InputFilter
-                    handleChange={handleChange}
-                    value={70 && 80 && 90}
+                    //handleChange={handleChange}
+                    value="80"
                     title="large"
                     name="test2"
                 />

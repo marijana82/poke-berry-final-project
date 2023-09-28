@@ -2,12 +2,11 @@ import "./Sidebar.css";
 import React from "react";
 import {FiHeart} from "react-icons/fi";
 import Category from "../category/Category";
-import BerryFirmness from "../berry-firmness/BerryFirmness";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
 import BerrySize from "../berry-size/BerrySize";
 
 
-function Sidebar({handleChange}) {
+function Sidebar({handleFlavorChange}) {
 
     return(
         <>
@@ -16,9 +15,9 @@ function Sidebar({handleChange}) {
                     <h1><FiHeart/></h1>
                 </div>
 
-                <Category handleChange={handleChange}/>
-                <BerryFlavor handleChange={handleChange}/>
-                <BerrySize handleChange={handleChange}/>
+                <Category />
+                <BerryFlavor />
+                <BerrySize />
 
             </section>
             Sidebar

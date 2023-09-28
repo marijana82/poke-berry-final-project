@@ -3,7 +3,7 @@ import React from "react";
 import InputFilter from "../../input-filter/InputFilter";
 
 
-function BerryFlavor({handleChange}) {
+function BerryFlavor() {
     return(
         <>
             <div className="margin-left">
@@ -13,7 +13,7 @@ function BerryFlavor({handleChange}) {
                 >All
                     <input
                         type="radio"
-                        onChange={handleChange}
+                        //onChange={handleChange}
                         value=" "
                         name="test"
                     />
@@ -21,21 +21,21 @@ function BerryFlavor({handleChange}) {
                 </label>
 
                 <InputFilter
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     value={1}
                     title="slow grow"
                     name="test3"
                 />
 
                 <InputFilter
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     value={3}
                     title="medium grow"
                     name="test3"
                 />
 
                 <InputFilter
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     value={4}
                     title="fast grow"
                     name="test3"

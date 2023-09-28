@@ -1,9 +1,10 @@
 import "./Category.css";
 import React from "react";
 import InputFilter from "../../input-filter/InputFilter";
+import berrySize from "../berry-size/BerrySize";
 
 
-function Category({handleChange}) {
+function Category() {
     return(
         <>
             <div>
@@ -12,10 +13,10 @@ function Category({handleChange}) {
 
             <div>
                 <label className="sidebar-label-container"
-                >All
+                >Berry flavor:
                     <input
                         type="radio"
-                        onChange={handleChange}
+                        //onChange={handleFlavorChange}
                         value=""
                         name="test"
                     />
@@ -24,14 +25,14 @@ function Category({handleChange}) {
                 {/*Flavors, Firmness, Size*/}
 
                 <InputFilter
-                    handleChange={handleChange}
+                    //handleChange={handleChange}
                     value="size"
                     title="size"
                     name="test"
                 />
 
                 <InputFilter
-                    handleChange={handleChange}
+                    //handleChange={handleChange}
                     value="smoothness"
                     title="smoothness"
                     name="test"
@@ -39,8 +40,8 @@ function Category({handleChange}) {
 
 
                 <InputFilter
-                    handleChange={handleChange}
-                    value="growth_time"
+                    //handleChange={handleChange}
+                    value="3"
                     title="growth time"
                     name="test"
                 />

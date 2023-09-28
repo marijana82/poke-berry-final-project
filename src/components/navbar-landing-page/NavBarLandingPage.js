@@ -22,9 +22,10 @@ function NavBarLandingPage() {
                         <NavLink
                             to="/login-page"
                             className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                        >Login
+                        >Register
                         </NavLink>
                     </li>
+
 
                     <li>
                         <NavLink
