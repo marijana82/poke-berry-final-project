@@ -1,11 +1,8 @@
 import "./CardBerry.css";
 import React, {useState} from "react";
 import { CHERRY_BERRY } from "../../../assets/images/constants";
-import BerryFlavor from "../../berry-flavor/BerryFlavor";
 import ButtonReset from "../../button-reset/ButtonReset";
-import BerryInfo from "../../berry-info/BerryInfo";
-import BerryItem from "../../berry-item/BerryItem";
-import berryItem from "../../berry-item/BerryItem";
+
 
 
 

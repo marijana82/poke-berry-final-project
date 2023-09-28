@@ -2,10 +2,10 @@ import "./Login.css";
 
 import React from "react";
 import Header from "../../components/header/Header";
-import Main from "../../main/Main";
 import Footer from "../../components/footer/Footer";
 import FormLogin from "../../components/form/login/FormLogin";
 import {Link} from "react-router-dom";
+import Main from "../../components/main/Main";
 
 
 function Login() {
@@ -18,10 +18,10 @@ function Login() {
             <Main>
                 <FormLogin/>
 
-
-
-
             </Main>
+
+
+
 
 
 

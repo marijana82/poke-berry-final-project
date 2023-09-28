@@ -1,7 +1,5 @@
 import "./PokeInfo.css";
 import React from "react";
-import {POKEMON_SPRITES_CHARMANDER} from "../../assets/images/constants";
-import CardPokemonStyled from "../card/card-pokemon-styled/CardPokemonStyled";
 
 
 function PokeInfo({ data }) {

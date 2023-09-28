@@ -2,7 +2,8 @@ import "./Registration.css";
 import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import Main from "../../main/Main";
+import Main from "../../components/main/Main";
+import FormRegister from "../../components/form/register/FormRegister";
 
 
 function Registration() {
@@ -12,10 +13,11 @@ function Registration() {
                 message="Registration page"
             />
 
-            <Main>
+          <Main>
 
-            </Main>
+              <FormRegister/>
 
+          </Main>
 
 
             <Footer

@@ -21,7 +21,7 @@ function BerriesToFilter({query, selectedCategory, berryData, handleInputChange}
 
 
 
-                    <CardFilter
+                   {/* <CardFilter
                         key={berry.id}
                         name={berry.props.name}
                         size={berry.props.size}
@@ -34,7 +34,7 @@ function BerriesToFilter({query, selectedCategory, berryData, handleInputChange}
                         selectedCategory={selectedCategory}
 
                     />
-
+*/}
 
 
 

@@ -124,6 +124,7 @@ function FormRegister() {
 
             <div className="container-sign-in">
                 <p>Already have an account? <Link to={"/login-page"}>Log in here!</Link></p>
+                <p>...or click <Link to={"/"}>here</Link> to go back to home page!</p>
             </div>
 
         </form>

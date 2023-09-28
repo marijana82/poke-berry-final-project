@@ -1,6 +1,5 @@
 import "./CardPokemonStyled.css";
 import React from "react";
-import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
 import Button from "../../button/Button";
 import {useNavigate} from "react-router-dom";
 

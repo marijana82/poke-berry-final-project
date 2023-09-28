@@ -1,7 +1,6 @@
 import "./QuizGame.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
 import Button from "../../button/Button";
 
 function QuizGame() {

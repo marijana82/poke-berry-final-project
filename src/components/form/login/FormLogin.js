@@ -67,6 +67,7 @@ function FormLogin() {
 
             <div className="container-sign-in">
                 <p>Don't have an account yet? <Link to="/registration-page">Register here!</Link></p>
+                <p>...or click <Link to={"/"}>here</Link> to go back to home page!</p>
             </div>
 
         </form>
