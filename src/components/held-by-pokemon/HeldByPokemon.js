@@ -6,7 +6,7 @@ function HeldByPokemon({ berryItem }) {
     return(
         <>
 
-            <h2>{berryItem.name} is held by pokemon:</h2>
+            <h2 className="berry-titles">{berryItem.name} is held by pokemon:</h2>
 
             {berryItem && berryItem.held_by_pokemon.length > 0
 

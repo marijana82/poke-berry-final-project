@@ -1,5 +1,6 @@
 import "./PokeInfo.css";
 import React from "react";
+import {NavLink, Link} from "react-router-dom";
 
 
 function PokeInfo({ data }) {
@@ -46,7 +47,14 @@ function PokeInfo({ data }) {
                                     )
                                 })}
 
-                                <h2 className="pokemon-logo">EXTRA INFORMATION</h2>
+                                <div>
+                                    <Link to={`/single-pokemon-page/${data.name}`}>
+                                        <h2 className="pokemon-logo">CLICK ON THE CARD FOR EXTRA INFORMATION</h2>
+                                    </Link>
+
+                                </div>
+
+
                             </div>
 
 

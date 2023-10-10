@@ -37,26 +37,26 @@ function BerryItem({ itemUrl }) {
                                 className="berry-image"/>
                         </span>
 
+
+
+
                     <div className="berry-name-container">
-                        <h2>Category: </h2>
-                        <h3>{berryItem.category.name}</h3>
+                        <h2 className="berry-titles">Category: </h2>
+                        <p>{berryItem.category.name}</p>
                     </div>
 
                     {berryItem && berryItem.effect_entries.map((entry) => {
                             return(
                                 <div className="berry-effect-container">
-                                    <h2>Effect: </h2>
+                                    <h2 className="berry-titles">Effect: </h2>
                                     <p>{entry.effect}</p>
-                                    <h2>Short effect: </h2>
+                                    <h2 className="berry-titles">Short effect: </h2>
                                     <p>{entry.short_effect}</p>
                                 </div>
                             )
                         })}
 
                     {berryItem ? <HeldByPokemon berryItem={berryItem}/> : <p>No items to show.</p>}
-
-
-
 
                 </div>
 

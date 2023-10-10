@@ -16,12 +16,11 @@ function PokemonCard({ pokemon, pokemonClick }) {
     const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true
 
 
-
-
     const resetSearch = () => {
         console.log("button is clicked")
         setSearchString("");
     }
+
 
     return(
         <>
@@ -46,12 +45,14 @@ function PokemonCard({ pokemon, pokemonClick }) {
 
             {
                 pokemon.filter(startsWith(searchString)).map((onePokemon) => {
+                        const onClickHeart = () => {
+                            updateFavoritePokemon(onePokemon.name);
+                        }
 
-                    const onClickHeart = () => {
-                        updateFavoritePokemon(onePokemon.name);
-                    }
-
-                    const heart = favoritePokemon.includes(onePokemon.name) ? <AiFillHeart/> : "?";
+                        const heart =
+                            favoritePokemon &&
+                            favoritePokemon.includes(onePokemon.name) &&
+                            <AiFillHeart/>;
 
 
                     return(

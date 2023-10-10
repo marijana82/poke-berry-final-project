@@ -5,7 +5,6 @@ function FavoriteCard({pokemonFav, key}) {
     return(
         <div className="favorite-card">
             <p>{pokemonFav}</p>
-
         </div>
     )
 }

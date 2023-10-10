@@ -16,17 +16,18 @@ function BerryInfo({ data }) {
     }
 
     return(
-        <div className="main-pokemon-info-container">
+        <div className="main-berry-info-container">
             { (!data) ? <h2>Click on the berry to get more info</h2> :
                 <>
-                    <h1>{data.item.name}</h1>
+                    <h1 className="berry-name">{data.item.name}</h1>
 
                    <BerryFlavor
-                       berryFlavor={data.flavors}/>
+                       berryFlavor={data.flavors}
+                   />
 
                     <div className="base-stat">
                         <h3>{data.firmness.name}</h3>
-                        <h3>eaten by {data.natural_gift_type.name} type pokemon </h3>
+                        <h3>eaten by {data.natural_gift_type.name} pokemon </h3>
                         <h3>{data.natural_gift_power} hp</h3>
                         <h3>{data.size} mm</h3>
                     </div>
@@ -34,13 +35,15 @@ function BerryInfo({ data }) {
                     <Button
                         type="button"
                         clickHandler={handleClick}
+                        styling="button-favorite"
                     >SHOW ME MORE!
                     </Button>
 
                     {isShownOnClick &&
 
                     <BerryItem
-                        itemUrl={data.item.url}/>
+                        itemUrl={data.item.url}
+                    />
 
                     }
 

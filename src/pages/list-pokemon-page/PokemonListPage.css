@@ -71,3 +71,7 @@ body{
     margin: 10px;
 
 }
+
+.favorites-message-container {
+    border: 1px solid red;
+}

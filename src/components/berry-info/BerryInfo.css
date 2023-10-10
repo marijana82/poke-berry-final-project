@@ -1,3 +1,9 @@
+.berry-name {
+    padding-bottom: 30px;
+    color: gold;
+
+}
+
 .berry-flavors {
     width: 30%;
     margin: auto;
@@ -20,7 +26,21 @@
     margin-top: 15px;
     padding: 5px;
     font-size: 18px;
+}
 
+.base-stat {
+    padding-bottom: 20px;
+}
 
-
+.main-berry-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: auto;
+    border: 9px ridge darkorange;
+    padding: 20px;
+    border-radius: 18px;
+    background: linear-gradient(to right, deepskyblue, lightblue);
 }

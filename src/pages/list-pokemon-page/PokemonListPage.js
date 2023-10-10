@@ -6,7 +6,6 @@ import Button from "../../components/button/Button";
 import PokemonCard from "../../components/card/pokemon-card/PokemonCard";
 import FavoritesContext, { FavoritesProvider } from "../../context/FavoritesContext";
 import Pagination from "../../components/pagination/Pagination";
-import FavoriteCard from "../../components/card/card-favorite/FavoriteCard";
 
 //favorites key
 const favoritesKey = "favorite";
@@ -21,9 +20,17 @@ function PokemonListPage() {
     const [pokedex, setPokedex] = useState();
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
-    const [notFound, setNotFound] = useState(false);
-    //favorites use state
-    const [favorites, setFavorites] = useState([]);
+    //const [notFound, setNotFound] = useState(false);
+
+
+    //const [favorites, setFavorites] = useState([]);
+    const [favorites, setFavorites] = useState(() => {
+        //getting stored value
+        const saved = localStorage.getItem("favorite");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+    });
+
 
     const itemsPerPage = 24;
 
@@ -71,15 +78,6 @@ function PokemonListPage() {
     }, [endpoint]);
 
 
-    //favorites loading function + useEffect
-    function loadFavoritePokemon() {
-        const pokemonFav = JSON.parse(window.localStorage.getItem(favoritesKey)) || [];
-        setFavorites(pokemonFav);
-    }
-
-    useEffect(() => {
-        loadFavoritePokemon();
-    }, []);
 
     //favorites update function
     function updateFavoritePokemon(name) {
@@ -95,6 +93,12 @@ function PokemonListPage() {
         setFavorites(updatedPokeFav);
     }
 
+    //to clear an item from local storage
+    //localStorage.removeItem('favoritesKey');
+
+    //to clear whole data stored in localStorage
+    //localStorage.clear();
+
 
 
     //function that handles page change
@@ -106,8 +110,6 @@ function PokemonListPage() {
     }
 
 
-
-
     return(
         <>
             <FavoritesProvider
@@ -117,92 +119,92 @@ function PokemonListPage() {
                 }}
             >
 
-            <div className="main-pokemon-list-container">
+                <div className="main-pokemon-list-container">
 
-                <div className="left-content-container">
+                    <div className="left-content-container">
 
-                    <div className="button-group-container">
+                        <div className="button-group-container">
 
-                        { previousEndpoint &&
-                            <Button
-                                styling="game-button"
-                                clickHandler={() => handlePageChange(page - 1)}
-                            >Previous
-                            </Button>
-                        }
+                            { previousEndpoint &&
+                                <Button
+                                    styling="game-button"
+                                    clickHandler={() => handlePageChange(page - 1)}
+                                >Previous
+                                </Button>
+                            }
 
 
-                        <Pagination
-                            page={page}
-                            totalPages={totalPages}
-                            favoritePokemon={favorites.length}
+
+                            <Pagination
+                                page={page}
+                                totalPages={totalPages}
+                                favoritePokemon={favorites.length}
+                                chosenFavs={favorites}
+                            />
+
+
+
+                            {
+                                nextEndpoint &&
+
+                                <Button
+                                    styling="game-button"
+                                    clickHandler={() => handlePageChange(page + 1)}
+                                >Next
+                                </Button>
+                            }
+
+                        </div>
+
+                        <PokemonCard
+                            pokemon={pokemonData}
+                            loading={loading}
+                            key={pokemonData.id}
+                            pokemonClick={poke => setPokedex(poke)}
                         />
 
 
+                        <div className="button-group-container">
+                            { previousEndpoint &&
+                                <Button
+                                    styling="game-button"
+                                    /* clickHandler={() => {
+                                         setPokemonData([])
+                                         setEndpoint(previousEndpoint)
+                                     }}*/
+                                    clickHandler={() => handlePageChange(page - 1)}
+                                >Previous
+                                </Button>
+                            }
 
-                        {
-                            nextEndpoint &&
+                            {
+                                nextEndpoint &&
 
-                            <Button
-                                styling="game-button"
-                                clickHandler={() => handlePageChange(page + 1)}
-                            >Next
-                            </Button>
-                        }
+                                <Button
+                                    styling="game-button"
+                                    /*clickHandler={() => {
+                                        setPokemonData([])
+                                        setEndpoint(nextEndpoint)
+                                    }}*/
+                                    clickHandler={() => handlePageChange(page + 1)}
+                                >Next
+                                </Button>
+                            }
+
+                            <Pagination
+                                page={page}
+                                totalPages={totalPages}
+                            />
+
+                        </div>
+
+
 
                     </div>
-
-                    <PokemonCard
-                        pokemon={pokemonData}
-                        loading={loading}
-                        key={pokemonData.id}
-                        pokemonClick={poke => setPokedex(poke)}
-                    />
-
-
-
-
-                    <div className="button-group-container">
-                        { previousEndpoint &&
-                            <Button
-                                styling="game-button"
-                               /* clickHandler={() => {
-                                    setPokemonData([])
-                                    setEndpoint(previousEndpoint)
-                                }}*/
-                                clickHandler={() => handlePageChange(page - 1)}
-                            >Previous
-                            </Button>
-                        }
-
-                        {
-                            nextEndpoint &&
-
-                            <Button
-                                styling="game-button"
-                                /*clickHandler={() => {
-                                    setPokemonData([])
-                                    setEndpoint(nextEndpoint)
-                                }}*/
-                                clickHandler={() => handlePageChange(page + 1)}
-                            >Next
-                            </Button>
-                        }
-
-                        <Pagination
-                            page={page}
-                            totalPages={totalPages}
-                        />
-
+                    <div className="right-content-container">
+                        <PokeInfo data={pokedex}/>
                     </div>
-
-
-
                 </div>
-                <div className="right-content-container">
-                    <PokeInfo data={pokedex}/>
-                </div>
-            </div>
 
 
             </FavoritesProvider>

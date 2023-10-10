@@ -14,6 +14,7 @@ import Login from "./pages/login-page/Login";
 import NavBar from "./components/navbar-main/NavBar";
 import Game from "./pages/games-page/Game";
 import FilterAdvancedPage from "./pages/filter-advanced-page/FilterAdvancedPage";
+import SinglePokemon from "./pages/single-item-page/SinglePokemon";
 
 
 function App() {
@@ -32,9 +33,13 @@ function App() {
             <Route path="/registration-page" element={<Registration/>}/>
             <Route path="/login-page" element={<Login/>}/>
             <Route path="/pokemon-list-page" element={<PokemonListPage/>}/>
+            {/*this is a dynamic route, id is now a property of useParams*/}
+            <Route path="/single-pokemon-page/:id" element={<SinglePokemon/>}/>
             <Route path="/berry-list-page" element={<BerryListPage/>}/>
             <Route path="/game-page" element={<Game/>}/>
             <Route path="/filter-advanced-page" element={<FilterAdvancedPage/>}/>
+
+
         </Routes>
 
 
