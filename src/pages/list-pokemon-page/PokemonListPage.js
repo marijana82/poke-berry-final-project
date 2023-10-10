@@ -134,7 +134,6 @@ function PokemonListPage() {
                             }
 
 
-
                             <Pagination
                                 page={page}
                                 totalPages={totalPages}

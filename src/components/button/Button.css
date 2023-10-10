@@ -37,5 +37,13 @@ button:hover {
 
 button-favorite:hover {
 
+}
 
+.navigate-button {
+    border: none;
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50px;
+    padding: 3px;
+    background-color: red;
 }

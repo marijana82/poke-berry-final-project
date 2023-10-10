@@ -51,7 +51,6 @@ function PokeInfo({ data }) {
                                     <Link to={`/single-pokemon-page/${data.name}`}>
                                         <h2 className="pokemon-logo">CLICK ON THE CARD FOR EXTRA INFORMATION</h2>
                                     </Link>
-
                                 </div>
 
 

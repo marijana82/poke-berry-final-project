@@ -1,10 +1,13 @@
 import "./Header.css";
 import React from "react";
 import {POKEMON_SPRITES_CHARMANDER} from "../../assets/images/constants";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 function Header({ message, description }) {
+
+    //const navigate = useNavigate();
+
     return(
         <header className="header-outer-container">
             <div className="header-inner-conainer">
