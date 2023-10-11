@@ -7,6 +7,17 @@ function TabOne({singlePokemon}) {
 
     const [tabOneInfo, setTabOneInfo] = useState({});
     const [pokeEvolution, setPokeEvolution] = useState({});
+    const [pokeColor, setPokeColor] = useState({});
+    const [pokeImage, setPokeImage] = useState({});
+
+    //to click and unclick
+    const [isShownOnClick, setIsShownOnClick] = useState(false);
+
+    const handleClick = event => {
+        console.log("the button is clicked!")
+        setIsShownOnClick(current => !current);
+        setPokeEvolution(tabOneInfo.evolves_from_species.url);
+    }
 
     async function fetchPokeData() {
 
@@ -39,23 +50,33 @@ function TabOne({singlePokemon}) {
 
                     ?
 
-                <>
-                    <h2>Hi there {singlePokemon.name}!</h2>
+                <div className="tab-one-container">
 
-                    <h3>color: {tabOneInfo.color.name}</h3>
+                        <h2>Hi there {singlePokemon.name}!</h2>
+
+
+                    {/*color*/}
+                    <div
+                        onClick={() => setPokeColor(tabOneInfo.color.url)}
+                    ><h3>color: {tabOneInfo.color.name}</h3>
+                    </div>
+
+
                     <h3>shape: {tabOneInfo.shape.name}</h3>
                     <h3>habitat: {tabOneInfo.habitat.name}</h3>
                     <h3>growth: {tabOneInfo.growth_rate.name}</h3>
 
+
+                    {/*evolution*/}
                         <div
-                            onClick={() => setPokeEvolution(tabOneInfo.evolves_from_species.url)}
+                            //onClick={() => setPokeEvolution(tabOneInfo.evolves_from_species.url)}
+                            onClick={handleClick}
+
                             className="evolution-container"
                         ><h3>evolves from: {tabOneInfo.evolves_from_species.name}</h3>
                         </div>
 
-
-
-                </>
+                </div>
 
                     :
 
@@ -64,7 +85,10 @@ function TabOne({singlePokemon}) {
 
             {tabOneInfo.evolves_from_species
             && singlePokemon
-            && pokeEvolution !=={} ?
+            && pokeEvolution !=={}
+                && isShownOnClick
+
+                ?
 
                 <PokemonEvolution
                     dataEvolution={pokeEvolution}
@@ -72,9 +96,11 @@ function TabOne({singlePokemon}) {
 
                 :
 
-                <p>no information found</p>
+                <p>click for more information</p>
 
             }
+
+
 
 
 

@@ -47,6 +47,12 @@ ul.tab-navigation li.active {
     background: darkorange;
 }
 
-.tab-content-container {
+.tab-one-container {
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }

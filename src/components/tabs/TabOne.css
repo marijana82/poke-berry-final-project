@@ -5,5 +5,18 @@
 
 .evolution-container {
     cursor: pointer;
+}
+
+.tab-title-container {
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0.3px 0.3px 0.7px 0.7px lightskyblue;
+    color: darkblue;
+
+}
+
+.tab-content-container {
 
 }
