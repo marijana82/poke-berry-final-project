@@ -2,6 +2,7 @@ import "./TabTwo.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PokemonAbility from "../pokemon-ability/PokemonAbility";
+import PokemonMoves from "../pokemon-moves/PokemonMoves";
 
 function TabTwo({singlePokemon}) {
 
@@ -31,7 +32,16 @@ function TabTwo({singlePokemon}) {
         <div className="second-tab">
 
             {/*Second tab content will go here*/}
-            <h2>{singlePokemon.name} 's abilities:</h2>
+
+
+                {tabTwoInfo
+                    && tabTwoInfo.abilities
+                    &&
+
+                    <h2>{singlePokemon.name}'s top {tabTwoInfo.abilities.length} abilities:</h2>
+                }
+
+
 
             {tabTwoInfo
                 && tabTwoInfo.abilities
@@ -50,6 +60,7 @@ function TabTwo({singlePokemon}) {
                                         ability={ability.ability.url}
                                     />
 
+
                                 </>
 
                             }
@@ -62,6 +73,21 @@ function TabTwo({singlePokemon}) {
                 :
 
                 <p>Information is loading. Thank you for waiting.</p>
+            }
+
+            {tabTwoInfo &&
+                tabTwoInfo.moves
+
+                ?
+
+                <PokemonMoves
+                    moves={tabTwoInfo.moves}
+                    data={tabTwoInfo}
+                />
+
+                :
+
+                <p>info is loading</p>
             }
 
 

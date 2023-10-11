@@ -2,3 +2,8 @@
     font-size: 10px;
     text-align: center;
 }
+
+.evolution-container {
+    cursor: pointer;
+
+}

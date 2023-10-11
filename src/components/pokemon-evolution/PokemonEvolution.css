@@ -1,0 +1,14 @@
+.extra-information-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: none;
+    box-shadow: 2px 2px 1px 1px yellow;
+    width: 50%;
+    height: 20vh;
+}
+
+.evolution-lettertype {
+    color: deepskyblue;
+}

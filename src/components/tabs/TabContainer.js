@@ -25,13 +25,13 @@ function TabContainer({singlePokemon}) {
                 <li
                     className={activeTab === "tab 1" ? "active" : ""}
                     onClick={handleTabOne}
-                >Pokemon information one
+                >Get to know me
                 </li>
 
                 <li
                     className={activeTab === "tab 2" ? "active" : ""}
                     onClick={handleTabTwo}
-                >Pokemon information two
+                >Abilities & moves
                 </li>
             </ul>
 
