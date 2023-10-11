@@ -5,6 +5,8 @@ import {NavLink, Link} from "react-router-dom";
 
 function PokeInfo({ data }) {
     console.log(data);
+
+
     return(
         <div className="main-pokemon-info-container">
             {
@@ -12,16 +14,17 @@ function PokeInfo({ data }) {
                 (!data) ? <h2>"Want to get to know your pokemon? Click on one on the left side of the screen to see how cool they are!..."</h2> : (
 
                     <>
-                        <h1>{data.name}</h1>
+                        <Link to={`/single-pokemon-page/${data.name}`}>
+                            <h1>{data.name}</h1>
+                            <p>click for extra information</p>
 
-                        <span className="poke-image-container">
+                            <span className="poke-image-container">
                             <img
                                 src={data.sprites.other.home.front_default}
                                 alt="image-pokemon-front"
                             />
                         </span>
-
-
+                        </Link>
 
                         <div className="abilities">
                             {data.abilities && data.abilities.map((ability) => {
@@ -47,18 +50,7 @@ function PokeInfo({ data }) {
                                     )
                                 })}
 
-                                <div>
-                                    <Link to={`/single-pokemon-page/${data.name}`}>
-                                        <h2 className="pokemon-logo">CLICK ON THE CARD FOR EXTRA INFORMATION</h2>
-                                    </Link>
-                                </div>
-
-
                             </div>
-
-
-
-
 
                     </>
 
