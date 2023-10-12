@@ -6,6 +6,17 @@ import axios from "axios";
 function PokemonHabitat({habitat, evolvesFrom}) {
 
     const [pokemonHabitat, setPokemonHabitat] = useState({});
+    //to show a component on hover
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseOver = () => {
+        setIsHovering(true);
+    }
+
+    const handleMouseOut = () => {
+        setIsHovering(false);
+    }
+
 
     async function fetchPokemonHabitat() {
         try{
@@ -38,9 +49,19 @@ function PokemonHabitat({habitat, evolvesFrom}) {
                     pokemonHabitat.pokemon_species &&
                     pokemonHabitat.pokemon_species.map((habitatSpecies) => {
                         return(
-                            <button className="pokemon-list-button">
-                                <h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>
-                            </button>
+
+                            <>
+                                <div
+                                    className="pokemon-list-button"
+                                    onMouseOver={handleMouseOver}
+                                    onMouseOut={handleMouseOut}
+                                >
+                                    <h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>
+                                </div>
+
+
+                            </>
+
                         )
                     })}
             </div>
