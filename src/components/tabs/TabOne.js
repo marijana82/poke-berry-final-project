@@ -146,6 +146,7 @@ function TabOne({singlePokemon}) {
                 <PokemonHabitat
                     habitat={pokeHabitat}
                     evolvesFrom={singlePokemon.name}
+                    singlePokemon={singlePokemon}
                 />
             }
 

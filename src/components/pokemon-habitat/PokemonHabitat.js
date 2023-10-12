@@ -1,16 +1,19 @@
 import "./PokemonHabitat.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import PokemonHoverImage from "../pokemon-hover-image/PokemonHoverImage";
 
 
-function PokemonHabitat({habitat, evolvesFrom}) {
+function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
 
     const [pokemonHabitat, setPokemonHabitat] = useState({});
     //to show a component on hover
     const [isHovering, setIsHovering] = useState(false);
 
+
     const handleMouseOver = () => {
         setIsHovering(true);
+        console.log("mouse is hovering");
     }
 
     const handleMouseOut = () => {
@@ -33,6 +36,11 @@ function PokemonHabitat({habitat, evolvesFrom}) {
         fetchPokemonHabitat();
     }, [habitat]);
 
+
+
+
+
+
     return(
         <>
             { pokemonHabitat &&
@@ -42,6 +50,13 @@ function PokemonHabitat({habitat, evolvesFrom}) {
                 <div className="result-introduction-container">
                     <h4>{evolvesFrom} lives in {pokemonHabitat.name}, just like the other {pokemonHabitat.pokemon_species.length} pokemon: </h4>
                 </div>
+            }
+
+            {singlePokemon && isHovering &&
+                <PokemonHoverImage
+                    singlePokemon={singlePokemon}
+                    isHovering={isHovering}
+                />
             }
 
             <div className="result-introduction-container">
@@ -59,9 +74,7 @@ function PokemonHabitat({habitat, evolvesFrom}) {
                                     <h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>
                                 </div>
 
-
                             </>
-
                         )
                     })}
             </div>

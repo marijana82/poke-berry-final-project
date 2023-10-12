@@ -1,5 +1,5 @@
 .pokemon-list-button {
-    width: 85px;
+    width: 90px;
     height: 40px;
     background-color: orangered;
     border: none;
@@ -9,13 +9,19 @@
     justify-content: space-around;
     align-items: center;
     padding: 3px;
-    margin: 5px;
-
+    margin: 2px;
+    cursor: pointer;
 
 }
 
 .pokemon-list-button:hover {
     background-color: orange;
+
+
+}
+
+.hover-result-container {
+    transition-timing-function: ease-in;
 }
 
 .habitat-lettertype {
@@ -36,5 +42,6 @@
     box-shadow: 0.9px 0.9px 0 0 saddlebrown;
     background-color: peachpuff;
     border-radius: 15px;
-
+    transition-timing-function: ease-in;
 }
+

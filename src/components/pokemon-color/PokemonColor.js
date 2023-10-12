@@ -35,27 +35,18 @@ function PokemonColor({color, evolvesFrom}) {
 
             }
 
-
+            <div className="result-introduction-container">
             {pokemonColor && pokemonColor.pokemon_species &&
                 pokemonColor.pokemon_species.map((pokeSpecies) => {
                     return(
 
-                            /*<ul className="pokemon-color-list">
-                                <li>
-                                    <h4 className="color-lettertype"> {pokeSpecies.name}</h4>
-                                </li>
-                            </ul>*/
-
-
-                        <button>
-                            <h4 className="color-lettertype"> {pokeSpecies.name}</h4>
-                        </button>
-
-
+                        <div className="pokemon-list-button">
+                            <h3 className="habitat-lettertype"> {pokeSpecies.name}</h3>
+                        </div>
 
                     )
-
             })}
+            </div>
 
 
 
