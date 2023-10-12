@@ -3,28 +3,33 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PokemonEvolution from "../pokemon-evolution/PokemonEvolution";
 import PokemonColor from "../pokemon-color/PokemonColor";
+import PokemonHabitat from "../pokemon-habitat/PokemonHabitat";
 
 function TabOne({singlePokemon}) {
 
     const [tabOneInfo, setTabOneInfo] = useState({});
     const [pokeEvolution, setPokeEvolution] = useState({});
     const [pokeColor, setPokeColor] = useState({});
-    const [pokeImage, setPokeImage] = useState({});
+    const [pokeHabitat, setPokeHabitat] = useState({});
 
     //to click and unclick
     const [isEvolutionOnClick, setIsEvolutionOnClick] = useState(false);
     const [isColorOnClick, setIsColorOnClick] = useState(false);
+    const [isHabitatOnClick, setIsHabitatOnClick] = useState(false);
 
     const handleClickEvolution = event => {
-        console.log("the button is clicked!")
         setIsEvolutionOnClick(current => !current);
         setPokeEvolution(tabOneInfo.evolves_from_species.url);
     }
 
     const handleClickColor = event => {
-        console.log("the button is clicked!")
         setIsColorOnClick(current => !current);
         setPokeColor(tabOneInfo.color.url);
+    }
+
+    const handleClickHabitat = event => {
+        setIsHabitatOnClick(current => !current);
+        setPokeHabitat(tabOneInfo.habitat.url);
     }
 
     async function fetchPokeData() {
@@ -72,7 +77,16 @@ function TabOne({singlePokemon}) {
 
 
                     <h3>shape: {tabOneInfo.shape.name}</h3>
-                    <h3>habitat: {tabOneInfo.habitat.name}</h3>
+
+                    {/*habitat*/}
+                    <div
+                        onClick={handleClickHabitat}
+                        className="habitat-container"
+                    ><h3 className="change-color-on-hover-habitat">habitat: {tabOneInfo.habitat.name}</h3>
+                    </div>
+
+
+
                     <h3>growth: {tabOneInfo.growth_rate.name}</h3>
 
 
@@ -119,9 +133,20 @@ function TabOne({singlePokemon}) {
                         color={pokeColor}
                         evolvesFrom={singlePokemon.name}
                     />
+            }
 
 
+            {/*habitat*/}
+            {tabOneInfo.habitat
+                && pokeHabitat !=={}
+                && isHabitatOnClick
 
+                &&
+
+                <PokemonHabitat
+                    habitat={pokeHabitat}
+                    evolvesFrom={singlePokemon.name}
+                />
             }
 
 

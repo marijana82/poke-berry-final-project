@@ -37,7 +37,7 @@ function PokemonEvolution({dataEvolution, evolvesFrom}) {
 
                 <div className="extra-information-container">
 
-                        <h4>{evolution.name} evolves into {evolvesFrom}</h4>
+                        <h4>{evolvesFrom} evolves from {evolution.name}</h4>
                         <h4 className="evolution-lettertype">{evolution.name} is a {evolution.egg_groups[0].name} pokemon.</h4>
                         <h4 className="evolution-lettertype">{evolution.flavor_text_entries[0].flavor_text}</h4>
 
