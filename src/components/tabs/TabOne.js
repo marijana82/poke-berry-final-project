@@ -2,6 +2,7 @@ import "./TabOne.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PokemonEvolution from "../pokemon-evolution/PokemonEvolution";
+import PokemonColor from "../pokemon-color/PokemonColor";
 
 function TabOne({singlePokemon}) {
 
@@ -11,12 +12,19 @@ function TabOne({singlePokemon}) {
     const [pokeImage, setPokeImage] = useState({});
 
     //to click and unclick
-    const [isShownOnClick, setIsShownOnClick] = useState(false);
+    const [isEvolutionOnClick, setIsEvolutionOnClick] = useState(false);
+    const [isColorOnClick, setIsColorOnClick] = useState(false);
 
-    const handleClick = event => {
+    const handleClickEvolution = event => {
         console.log("the button is clicked!")
-        setIsShownOnClick(current => !current);
+        setIsEvolutionOnClick(current => !current);
         setPokeEvolution(tabOneInfo.evolves_from_species.url);
+    }
+
+    const handleClickColor = event => {
+        console.log("the button is clicked!")
+        setIsColorOnClick(current => !current);
+        setPokeColor(tabOneInfo.color.url);
     }
 
     async function fetchPokeData() {
@@ -57,8 +65,9 @@ function TabOne({singlePokemon}) {
 
                     {/*color*/}
                     <div
-                        onClick={() => setPokeColor(tabOneInfo.color.url)}
-                    ><h3>color: {tabOneInfo.color.name}</h3>
+                        onClick={handleClickColor}
+                        className="color-container"
+                    ><h3 className="change-color-on-hover-color">color: {tabOneInfo.color.name}</h3>
                     </div>
 
 
@@ -69,11 +78,9 @@ function TabOne({singlePokemon}) {
 
                     {/*evolution*/}
                         <div
-                            //onClick={() => setPokeEvolution(tabOneInfo.evolves_from_species.url)}
-                            onClick={handleClick}
-
+                            onClick={handleClickEvolution}
                             className="evolution-container"
-                        ><h3>evolves from: {tabOneInfo.evolves_from_species.name}</h3>
+                        ><h3 className="change-color-on-hover-evolution">evolves from: {tabOneInfo.evolves_from_species.name}</h3>
                         </div>
 
                 </div>
@@ -86,17 +93,34 @@ function TabOne({singlePokemon}) {
             {tabOneInfo.evolves_from_species
             && singlePokemon
             && pokeEvolution !=={}
-                && isShownOnClick
+                && isEvolutionOnClick
 
                 ?
 
                 <PokemonEvolution
                     dataEvolution={pokeEvolution}
+                    evolvesFrom={singlePokemon.name}
                 />
 
                 :
 
                 <p>click for more information</p>
+
+            }
+
+            {/*color*/}
+            {tabOneInfo.color
+                && pokeColor !=={}
+                && isColorOnClick
+
+                &&
+
+                    <PokemonColor
+                        color={pokeColor}
+                        evolvesFrom={singlePokemon.name}
+                    />
+
+
 
             }
 

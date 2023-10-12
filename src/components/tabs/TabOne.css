@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
+.color-container {
+    cursor: pointer;
+}
+
 .tab-title-container {
     border-radius: 20px;
     padding: 20px;
@@ -20,3 +24,14 @@
 .tab-content-container {
 
 }
+
+
+
+.change-color-on-hover-evolution:hover {
+    color: forestgreen;
+}
+
+.change-color-on-hover-color:hover {
+    color: royalblue;
+}
+

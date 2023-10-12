@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 
-function PokemonEvolution({dataEvolution}) {
+function PokemonEvolution({dataEvolution, evolvesFrom}) {
 
     const [evolution, setEvolution] = useState([]);
 
@@ -30,12 +30,14 @@ function PokemonEvolution({dataEvolution}) {
         <>
             {evolution &&
                 evolution.name &&
-                evolution.flavor_text_entries
+                evolution.flavor_text_entries &&
+                evolvesFrom
 
                 &&
 
                 <div className="extra-information-container">
 
+                        <h4>{evolution.name} evolves into {evolvesFrom}</h4>
                         <h4 className="evolution-lettertype">{evolution.name} is a {evolution.egg_groups[0].name} pokemon.</h4>
                         <h4 className="evolution-lettertype">{evolution.flavor_text_entries[0].flavor_text}</h4>
 
