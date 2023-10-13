@@ -14,14 +14,19 @@ function PokeInfo({ data }) {
                 (!data) ? <h2>"Want to get to know your pokemon? Click on one on the left side of the screen to see how cool they are!..."</h2> : (
 
                     <>
-                        <Link to={`/single-pokemon-page/${data.name}`}>
-                            <h1>{data.name}</h1>
-                            <p>click for extra information</p>
+                        <Link
+                            to={`/single-pokemon-page/${data.name}`}
+                            style={{textDecoration: 'none', color: 'lightblue'}}
+                        >
+                            <h1 className="transition">{data.name}</h1>
 
-                            <span className="poke-image-container">
+                            <span
+                                className="poke-image-container"
+                            >
                             <img
                                 src={data.sprites.other.home.front_default}
                                 alt="image-pokemon-front"
+                                className="transition"
                             />
                         </span>
                         </Link>
@@ -30,9 +35,8 @@ function PokeInfo({ data }) {
                             {data.abilities && data.abilities.map((ability) => {
                                 return(
                                     <>
-
                                         <div className="group">
-                                            <h2>{ability.ability.name}</h2>
+                                            <h2 className="transition">{ability.ability.name}</h2>
                                         </div>
 
                                     </>

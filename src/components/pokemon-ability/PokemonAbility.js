@@ -33,7 +33,10 @@ function PokemonAbility({ability}) {
                 && abilityState
                 && abilityState.generation
                 ?
-                <h3>{abilityState.generation.name}</h3>
+                <div className="result-introduction-container-generation">
+                    <h3>{abilityState.generation.name}</h3>
+                </div>
+
                 :
                 <p>info is loading</p>
             }
@@ -43,13 +46,21 @@ function PokemonAbility({ability}) {
             {
                 abilityState &&
                 abilityState.flavor_text_entries &&
-                abilityState.flavor_text_entries[0].flavor_text
+                <div className="ability-flavor-text">
+                    <h4>{abilityState.flavor_text_entries[0].flavor_text}</h4>
+                </div>
+
             }
 
             {
                 abilityState &&
                 abilityState.effect_entries &&
-                abilityState.effect_entries[1].effect
+                <div className="ability-flavor-text">
+                    <h4>{abilityState.effect_entries[1].effect}</h4>
+                </div>
+
+
+
             }
 
 

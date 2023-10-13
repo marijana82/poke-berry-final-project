@@ -1,0 +1,21 @@
+.result-introduction-container-moves {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-introduction-container-moves:hover {
+
+
+}
+
+.transition {
+    transition: transform .8s;
+}
+
+.transition:hover {
+    transform: scale(1.1);
+    color: darkblue;
+    cursor: pointer;
+}

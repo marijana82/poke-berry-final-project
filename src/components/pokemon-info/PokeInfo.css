@@ -7,6 +7,7 @@
     height: auto;
     border: 9px ridge darkorange;
     padding: 10px;
+    margin-top: 10px;
     border-radius: 18px;
     background: linear-gradient(to right, deepskyblue, lightblue);
 }
@@ -44,9 +45,10 @@
     border-radius: 50%;
     display: inline-block;
     font-size: 9px;
-    padding-top: 24px;
-    margin: 3px;
+    padding-top: 20px;
+    margin: 2px;
     letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .base-stat {

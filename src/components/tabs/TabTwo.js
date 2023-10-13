@@ -37,10 +37,10 @@ function TabTwo({singlePokemon}) {
                 {tabTwoInfo
                     && tabTwoInfo.abilities
                     &&
-
-                    <h2>{singlePokemon.name}'s top {tabTwoInfo.abilities.length} abilities:</h2>
+                    <div className="result-introduction-container">
+                        <h2>{singlePokemon.name}'s top {tabTwoInfo.abilities.length} abilities:</h2>
+                    </div>
                 }
-
 
 
             {tabTwoInfo
@@ -54,12 +54,13 @@ function TabTwo({singlePokemon}) {
                             {ability &&
 
                                 <>
+                                <div className="result-introduction-container-ability">
                                     <h3>{ability.ability.name}</h3>
+                                </div>
 
                                     <PokemonAbility
                                         ability={ability.ability.url}
                                     />
-
 
                                 </>
 

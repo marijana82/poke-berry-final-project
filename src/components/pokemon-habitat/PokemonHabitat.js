@@ -30,9 +30,9 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
     }, [habitat]);
 
 
+//TODO: user hover in another component, in this component it's too much
 
-
-    //to show the hover image:
+   /* //to show the hover image:
     const handleMouseOver = () => {
         setIsHovering(true);
         //setHoverInfo(pokemonHabitat.url);
@@ -41,7 +41,7 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
 
     const handleMouseOut = () => {
         setIsHovering(false);
-    }
+    }*/
 
 
 
@@ -57,12 +57,12 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
             }
 
 
-            {singlePokemon && isHovering &&
+            {/*{singlePokemon && isHovering &&
                 <PokemonHoverImage
                     singlePokemon={singlePokemon}
                     isHovering={isHovering}
                 />
-            }
+            }*/}
 
 
             <div className="result-introduction-container">
@@ -74,8 +74,8 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
                             <>
                                 <div
                                     className="pokemon-list-button"
-                                    onMouseOver={handleMouseOver}
-                                    onMouseOut={handleMouseOut}
+                                    //onMouseOver={handleMouseOver}
+                                    //onMouseOut={handleMouseOut}
                                 >
                                     <h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>
                                 </div>

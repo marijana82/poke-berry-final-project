@@ -66,30 +66,64 @@ function SinglePokemon() {
 
             <Main>
                 <div className="single-pokemon-content-container">
-                    <Link to={`/pokemon-list-page`}><AiOutlineArrowLeft/></Link>
-                    THIS IS SINGLE POKEMON PAGE, GO BACK TO POKEMON OVERVIEW PAGE
+                    <div className="arrow-back">
+                        <Link to={`/pokemon-list-page`}>
+                            <AiOutlineArrowLeft
+                                style={
+                                    {color: 'blue', fontSize: '34px', fontWeight: 'bold'}}
+                            />
+                        </Link>
+                    </div>
 
 
-                    { singlePokemon &&
+                    <div className="left-content-container-single">
 
-                            <h2>{singlePokemon.name}</h2>
 
-                    }
 
-                    {singlePokemon
-                        && singlePokemon.sprites
-                        && singlePokemon.sprites
-                        && singlePokemon.sprites.other.dream_world
-                        &&
-                        <>
-                            <img src={singlePokemon.sprites.other.dream_world.front_default} alt="image of pokemon"/>
-                            {/*here maybe create image slider*/}
-                        </>
-                    }
+                        { singlePokemon &&
+                            <div className="single-pokemon-name-container">
+                               {/* <div className="arrow-back">
+                                    <Link to={`/pokemon-list-page`}>
+                                        <AiOutlineArrowLeft
+                                            style={
+                                            {color: 'blue', fontSize: '34px', fontWeight: 'bold'}}
+                                        />
+                                    </Link>
+                                </div>*/}
 
-                    <TabContainer
-                        singlePokemon={singlePokemon}
-                    />
+                                <div className="name">
+                                    <h2>{singlePokemon.name}</h2>
+                                </div>
+
+
+                            </div>
+                        }
+
+                        { singlePokemon
+                            && singlePokemon.sprites
+                            && singlePokemon.sprites
+                            && singlePokemon.sprites.other.dream_world
+                            &&
+                            <div className="single-pokemon-image-container">
+                                <img
+                                    src={singlePokemon.sprites.other.dream_world.front_default}
+                                    alt="image of pokemon"
+                                    className="single-pokemon-image"
+                                />
+                                {/*here maybe create image slider*/}
+                            </div>
+                        }
+
+
+                    </div>
+
+
+                    <div className="right-content-container-single">
+                        <TabContainer
+                            singlePokemon={singlePokemon}
+                        />
+
+                    </div>
 
 
                 </div>

@@ -64,7 +64,7 @@ function TabOne({singlePokemon}) {
 
                 <div className="tab-one-container">
 
-                        <h2>Hi there {singlePokemon.name}!</h2>
+                        <h2 className="transition">Hi there {singlePokemon.name}!</h2>
 
 
                     {/*color*/}
