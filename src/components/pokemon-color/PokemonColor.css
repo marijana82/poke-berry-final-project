@@ -1,7 +1,37 @@
-.color-lettertype {
-    color: forestgreen;
+.main-result-container-color {
+    border-radius: 25px;
+    background-color: lightsalmon;
+    padding: 10px;
+    margin: 20px;
 }
 
-.pokemon-color-list {
-    list-style-type: none;
+
+.main-result-container-color:hover {
+    box-shadow: 2px 2px 2px 2px orangered;
 }
+
+
+.main-result-container-habitat {
+    border-radius: 25px;
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 20px;
+}
+
+.main-result-container-habitat:hover{
+    box-shadow: 2px 2px 2px 2px darkgreen;
+}
+
+
+.main-result-container-evolution {
+    border-radius: 25px;
+    background-color: lightblue;
+    padding: 10px;
+    margin: 20px;
+}
+
+.main-result-container-evolution:hover {
+    box-shadow: 2px 2px 2px 2px royalblue;
+}
+
+

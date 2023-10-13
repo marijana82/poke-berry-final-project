@@ -22,7 +22,7 @@ function SinglePokemon() {
 
         const controller = new AbortController();
 
-        async function getSinglePokemon() {
+        async function fetchSinglePokemon() {
 
             setLoading(true);
 
@@ -33,7 +33,6 @@ function SinglePokemon() {
                         {signal: controller.signal})
 
                 if (singleResponse.data) {
-
                     console.log(singleResponse.data);
                     setSinglePokemon(singleResponse.data);
                     setLoading(false);
@@ -47,7 +46,7 @@ function SinglePokemon() {
             }
         }
 
-        void getSinglePokemon();
+        void fetchSinglePokemon();
 
         return function cleanup() {
             controller.abort();

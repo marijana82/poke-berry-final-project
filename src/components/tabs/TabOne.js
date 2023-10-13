@@ -11,26 +11,11 @@ function TabOne({singlePokemon}) {
     const [pokeEvolution, setPokeEvolution] = useState({});
     const [pokeColor, setPokeColor] = useState({});
     const [pokeHabitat, setPokeHabitat] = useState({});
-
     //to click and unclick
     const [isEvolutionOnClick, setIsEvolutionOnClick] = useState(false);
     const [isColorOnClick, setIsColorOnClick] = useState(false);
     const [isHabitatOnClick, setIsHabitatOnClick] = useState(false);
 
-    const handleClickEvolution = event => {
-        setIsEvolutionOnClick(current => !current);
-        setPokeEvolution(tabOneInfo.evolves_from_species.url);
-    }
-
-    const handleClickColor = event => {
-        setIsColorOnClick(current => !current);
-        setPokeColor(tabOneInfo.color.url);
-    }
-
-    const handleClickHabitat = event => {
-        setIsHabitatOnClick(current => !current);
-        setPokeHabitat(tabOneInfo.habitat.url);
-    }
 
     async function fetchPokeData() {
 
@@ -49,6 +34,20 @@ function TabOne({singlePokemon}) {
     }, [singlePokemon]);
 
 
+    const handleClickEvolution = event => {
+        setIsEvolutionOnClick(current => !current);
+        setPokeEvolution(tabOneInfo.evolves_from_species.url);
+    }
+
+    const handleClickColor = event => {
+        setIsColorOnClick(current => !current);
+        setPokeColor(tabOneInfo.color.url);
+    }
+
+    const handleClickHabitat = event => {
+        setIsHabitatOnClick(current => !current);
+        setPokeHabitat(tabOneInfo.habitat.url);
+    }
 
     return(
         <div className="tab-one">
@@ -143,6 +142,7 @@ function TabOne({singlePokemon}) {
 
                 &&
 
+                //TODO compare how I did this to how I want to implement the hover function
                 <PokemonHabitat
                     habitat={pokeHabitat}
                     evolvesFrom={singlePokemon.name}

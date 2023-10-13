@@ -27,7 +27,8 @@ function PokemonEvolution({dataEvolution, evolvesFrom}) {
 
 
     return(
-        <>
+        <div className="main-result-container-evolution">
+
             {evolution &&
                 evolution.name &&
                 evolution.flavor_text_entries &&
@@ -35,21 +36,21 @@ function PokemonEvolution({dataEvolution, evolvesFrom}) {
 
                 &&
 
-                <div className="extra-information-container">
-
+                <>
+                    <div className="result-introduction-container">
                         <h4>{evolvesFrom} evolves from {evolution.name}</h4>
+                    </div>
+
+                    <div className="result-introduction-container">
                         <h4 className="evolution-lettertype">{evolution.name} is a {evolution.egg_groups[0].name} pokemon.</h4>
                         <h4 className="evolution-lettertype">{evolution.flavor_text_entries[0].flavor_text}</h4>
+                    </div>
 
-                </div>
 
+                </>
 
             }
-
-
-
-
-        </>
+        </div>
     )
 }
 

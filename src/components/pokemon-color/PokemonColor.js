@@ -26,18 +26,23 @@ function PokemonColor({color, evolvesFrom}) {
 
     return(
 
-        <>
+        <div className="main-result-container-color">
             { pokemonColor &&
                 pokemonColor.name &&
                 pokemonColor.pokemon_species &&
 
-                <h4>{evolvesFrom} is {pokemonColor.name}, just like these other {pokemonColor.pokemon_species.length} pokemon:</h4>
+                <div className="result-introduction-container">
+                    <h4>{evolvesFrom} is {pokemonColor.name}, just like these other {pokemonColor.pokemon_species.length} pokemon:</h4>
+                </div>
+
+
 
             }
 
             <div className="result-introduction-container">
             {pokemonColor && pokemonColor.pokemon_species &&
                 pokemonColor.pokemon_species.map((pokeSpecies) => {
+
                     return(
 
                         <div className="pokemon-list-button">
@@ -50,7 +55,7 @@ function PokemonColor({color, evolvesFrom}) {
 
 
 
-        </>
+        </div>
 
 
     )

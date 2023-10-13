@@ -2,6 +2,7 @@ import "./PokemonHabitat.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PokemonHoverImage from "../pokemon-hover-image/PokemonHoverImage";
+import PokemonOnMouseOver from "../pokemon-on-mouse-over/PokemonOnMouseOver";
 
 
 function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
@@ -9,16 +10,8 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
     const [pokemonHabitat, setPokemonHabitat] = useState({});
     //to show a component on hover
     const [isHovering, setIsHovering] = useState(false);
+    const [hoverInfo, setHoverInfo] = useState({});
 
-
-    const handleMouseOver = () => {
-        setIsHovering(true);
-        console.log("mouse is hovering");
-    }
-
-    const handleMouseOut = () => {
-        setIsHovering(false);
-    }
 
 
     async function fetchPokemonHabitat() {
@@ -39,10 +32,21 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
 
 
 
+    //to show the hover image:
+    const handleMouseOver = () => {
+        setIsHovering(true);
+        //setHoverInfo(pokemonHabitat.url);
+        console.log("mouse is hovering");
+    }
+
+    const handleMouseOut = () => {
+        setIsHovering(false);
+    }
+
 
 
     return(
-        <>
+        <div className="main-result-container-habitat">
             { pokemonHabitat &&
                 pokemonHabitat.name &&
                 pokemonHabitat.pokemon_species &&
@@ -52,12 +56,14 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
                 </div>
             }
 
+
             {singlePokemon && isHovering &&
                 <PokemonHoverImage
                     singlePokemon={singlePokemon}
                     isHovering={isHovering}
                 />
             }
+
 
             <div className="result-introduction-container">
                 {pokemonHabitat &&
@@ -74,6 +80,18 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
                                     <h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>
                                 </div>
 
+
+                                {/*<PokemonOnMouseOver
+                                    //onMouseOver={handleMouseOver}
+                                    //onMouseOut={handleMouseOut}
+                                    //pokemonHover={poke => setHoverInfo(poke)}
+                                    //PREBACI onMouseOver U PokemonOnMouseOver!!! PROBAJ!
+                                    key={singlePokemon.id}
+                                    //habitatSpecies={habitatSpecies.name}
+                                    //habitatUrl={habitatSpecies.url}
+                                    //singlePokemon={singlePokemon}
+                                />*/}
+
                             </>
                         )
                     })}
@@ -82,7 +100,7 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
 
 
 
-        </>
+        </div>
     )
 }
 
