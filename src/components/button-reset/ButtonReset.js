@@ -4,15 +4,12 @@ import React from "react";
 function ButtonReset({children, resetHandler}) {
     return(
 
-            <div
-                className="reset-button-container"
-            >
                 <button
-                    className="reset-button"
+                    className="reset-button-tab"
                     onClick={resetHandler}
                 >{children}
                 </button>
-            </div>
+
 
 
     )

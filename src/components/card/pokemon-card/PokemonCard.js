@@ -26,18 +26,20 @@ function PokemonCard({ pokemon, pokemonClick }) {
         <>
             <div className="hover-card-container">
                 <div className="card-hover">
+                    <div className="input-container">
                     <input
                         type="text"
                         onChange={e => setSearchString(e.target.value)}
                         value={searchString}
                         className="filter-by-letter"
-                        placeholder="first letter"
+                        placeholder="search"
                     />
 
                     <ButtonReset
-                        children="x"
+                        children="reset"
                         resetHandler={resetSearch}
                     />
+                    </div>
 
                 </div>
             </div>

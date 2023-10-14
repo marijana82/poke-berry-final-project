@@ -5,6 +5,8 @@ import PokemonEvolution from "../pokemon-evolution/PokemonEvolution";
 import PokemonColor from "../pokemon-color/PokemonColor";
 import PokemonHabitat from "../pokemon-habitat/PokemonHabitat";
 import ButtonReset from "../button-reset/ButtonReset";
+import {AiOutlineArrowLeft} from "react-icons/ai";
+import {Link} from "react-router-dom";
 
 function TabOne({singlePokemon}) {
 
@@ -43,7 +45,7 @@ function TabOne({singlePokemon}) {
 
     const resetSearchEvolution = () => {
         console.log("button is clicked")
-        setIsEvolutionOnClick(true);
+        setIsEvolutionOnClick(false);
         setPokeEvolution({});
     }
 
@@ -72,12 +74,11 @@ function TabOne({singlePokemon}) {
 
                     ?
 
-                <div className="tab-one-container">
+                <div className="tab-one-container-text">
 
                     <div className="tab-one-title-container">
                         <h2 className="transition">My name is {singlePokemon.name}.</h2>
                     </div>
-
 
                     <div className="pokemon-stats-container">
 
@@ -106,16 +107,11 @@ function TabOne({singlePokemon}) {
                         <div
                             onClick={handleClickEvolution}
                             className="evolution-container"
-                        ><h3 className="change-color-on-hover-evolution">I evolve from {tabOneInfo.evolves_from_species.name}.</h3>
+                        >
 
-                            {isEvolutionOnClick ?
-
-                                <ButtonReset
-                                children="x"
-                                resetHandler={resetSearchEvolution}
-                                />
-                                : <p>click me to see more info</p>
-                            }
+                            <h3 className="change-color-on-hover-evolution"
+                            >I evolve from {tabOneInfo.evolves_from_species.name}.
+                            </h3>
 
                         </div>
 
@@ -125,9 +121,49 @@ function TabOne({singlePokemon}) {
 
                     :
 
+                    <div className="speech-bubble">
+
                     <p>Information is loading. Thank you for waiting...</p>
+
+                    </div>
             }
 
+            <div className="button-and-bubble-container">
+
+                {isEvolutionOnClick && singlePokemon && tabOneInfo
+                    ?
+                    <ButtonReset
+                        children="close"
+                        resetHandler={resetSearchEvolution}
+                    />
+
+                    :
+
+                    <>
+                        <div className="speech-bubble">
+                            <p>click on color, living area or evolution for more information</p>
+                        </div>
+
+                        <div className="speech-bubble">
+                            <Link to={`/pokemon-list-page`}>
+                                <AiOutlineArrowLeft
+                                    style={
+                                        {color: 'blue', fontSize: '34px', fontWeight: 'bold'}}
+                                />
+                            </Link>
+                            <p>or click here to go back to pokemon overview</p>
+                        </div>
+                    </>
+                }
+
+
+            </div>
+
+
+
+            <div className="tab-one-click-results">
+
+            {/*evolution*/}
             {tabOneInfo.evolves_from_species
             && singlePokemon
             && pokeEvolution !=={}
@@ -139,11 +175,6 @@ function TabOne({singlePokemon}) {
                         dataEvolution={pokeEvolution}
                         evolvesFrom={singlePokemon.name}
                     />
-
-
-
-
-
             }
 
             {/*color*/}
@@ -175,11 +206,7 @@ function TabOne({singlePokemon}) {
                 />
             }
 
-
-
-
-
-
+            </div>
 
 
         </div>

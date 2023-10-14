@@ -67,3 +67,15 @@
     opacity: 1;
     transition-delay: 0.2s;
 }
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.filter-by-letter {
+    margin-bottom: 15px;
+}
