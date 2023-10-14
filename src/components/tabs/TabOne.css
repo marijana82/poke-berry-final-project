@@ -1,7 +1,39 @@
+.tab-one-container {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.tab-one-title-container {
+    padding: 5px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 25px;
+}
+
+
+.pokemon-stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+    margin: 5px;
+    font-size: 18px;
+}
+
 .tab-one p {
     font-size: 10px;
     text-align: center;
 }
+
+
 
 .evolution-container {
     cursor: pointer;

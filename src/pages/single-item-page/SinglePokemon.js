@@ -82,20 +82,9 @@ function SinglePokemon() {
 
                         { singlePokemon &&
                             <div className="single-pokemon-name-container">
-                               {/* <div className="arrow-back">
-                                    <Link to={`/pokemon-list-page`}>
-                                        <AiOutlineArrowLeft
-                                            style={
-                                            {color: 'blue', fontSize: '34px', fontWeight: 'bold'}}
-                                        />
-                                    </Link>
-                                </div>*/}
-
                                 <div className="name">
-                                    <h2>{singlePokemon.name}</h2>
+                                    <h2>Hi there {singlePokemon.name}!</h2>
                                 </div>
-
-
                             </div>
                         }
 

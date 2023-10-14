@@ -45,7 +45,7 @@ function PokemonColor({color, evolvesFrom}) {
 
                     return(
 
-                        <div className="pokemon-list-button">
+                        <div className="pokemon-list-button-this">
                             <h3 className="habitat-lettertype"> {pokeSpecies.name}</h3>
                         </div>
 

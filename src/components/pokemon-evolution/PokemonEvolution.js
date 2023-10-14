@@ -2,8 +2,6 @@ import "./PokemonEvolution.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 
-
-
 function PokemonEvolution({dataEvolution, evolvesFrom}) {
 
     const [evolution, setEvolution] = useState([]);

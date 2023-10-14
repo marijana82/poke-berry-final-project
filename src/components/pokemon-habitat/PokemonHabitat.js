@@ -63,23 +63,11 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
                     pokemonHabitat.pokemon_species.map((habitatSpecies) => {
                         return(
 
-                            <>
-                                <div
-                                    className="pokemon-list-button"
-                                    //onMouseOver={handleMouseOver}
-                                    //onMouseOut={handleMouseOut}
-                                >
-                                    {/*<h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>*/}
-
                                     <PokemonOnMouseOver
                                         key={`${habitatSpecies.name}-${habitatSpecies.url}`}
                                         endpointHabitatSpecies={habitatSpecies.url}
-                                        //query={query}
                                     />
 
-                                </div>
-
-                            </>
                         )
                     })}
             </div>

@@ -45,30 +45,28 @@ function PokemonOnMouseOver({ endpointHabitatSpecies }) {
 
                         <>
                             <div
-                                className="pokemon-list-button"
+                                className="pokemon-list-button-this"
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             >
                                 <h3 className="habitat-lettertype"> {pokemonInHabitat.name}</h3>
-                            </div>
+                                {/*visible on hover*/}
+                                {
+                                    isHovering &&
+                                    pokemonInHabitat &&
+                                    pokemonInHabitat.color &&
+                                    pokemonInHabitat.shape.name &&
 
-
-                            {
-                                isHovering &&
-                                pokemonInHabitat &&
-                                pokemonInHabitat.name &&
-                                pokemonInHabitat.color &&
-                                pokemonInHabitat.shape.name &&
-
-                                <>
                                     <div className="hover-result-container">
-                                        <p>{pokemonInHabitat.name} is visible on hover</p>
                                         <p>{pokemonInHabitat.color.name}</p>
                                         <p>{pokemonInHabitat.shape.name}</p>
                                     </div>
+                                }
+                            </div>
 
-                                </>
-                            }
+
+
+
                         </>
                  }
             </>
