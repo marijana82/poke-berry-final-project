@@ -1,16 +1,13 @@
 import "./PokemonHabitat.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import PokemonHoverImage from "../pokemon-hover-image/PokemonHoverImage";
 import PokemonOnMouseOver from "../pokemon-on-mouse-over/PokemonOnMouseOver";
 
 
 function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
 
     const [pokemonHabitat, setPokemonHabitat] = useState({});
-    //to show a component on hover
-    const [isHovering, setIsHovering] = useState(false);
-    const [hoverInfo, setHoverInfo] = useState({});
+
 
 
 
@@ -57,12 +54,7 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
             }
 
 
-            {/*{singlePokemon && isHovering &&
-                <PokemonHoverImage
-                    singlePokemon={singlePokemon}
-                    isHovering={isHovering}
-                />
-            }*/}
+
 
 
             <div className="result-introduction-container">
@@ -77,20 +69,15 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
                                     //onMouseOver={handleMouseOver}
                                     //onMouseOut={handleMouseOut}
                                 >
-                                    <h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>
+                                    {/*<h3 className="habitat-lettertype"> {habitatSpecies.name}</h3>*/}
+
+                                    <PokemonOnMouseOver
+                                        key={`${habitatSpecies.name}-${habitatSpecies.url}`}
+                                        endpointHabitatSpecies={habitatSpecies.url}
+                                        //query={query}
+                                    />
+
                                 </div>
-
-
-                                {/*<PokemonOnMouseOver
-                                    //onMouseOver={handleMouseOver}
-                                    //onMouseOut={handleMouseOut}
-                                    //pokemonHover={poke => setHoverInfo(poke)}
-                                    //PREBACI onMouseOver U PokemonOnMouseOver!!! PROBAJ!
-                                    key={singlePokemon.id}
-                                    //habitatSpecies={habitatSpecies.name}
-                                    //habitatUrl={habitatSpecies.url}
-                                    //singlePokemon={singlePokemon}
-                                />*/}
 
                             </>
                         )

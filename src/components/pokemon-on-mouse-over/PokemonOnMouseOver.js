@@ -2,66 +2,76 @@ import "./PokemonOnMouseOver.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 
+function PokemonOnMouseOver({ endpointHabitatSpecies }) {
 
-function PokemonOnMouseOver({ habitatUrl, habitatSpecies, onMouseOver, onMouseOut, pokemonClick }) {
-
-    const [pokemonInHabitat, setPokemonInHabitat] = useState({});
+    const [pokemonInHabitat, setPokemonInHabitat] = useState({}); //or null???
+    //to show a component on hover
+    const [isHovering, setIsHovering] = useState(false);
 
     async function fetchPokemonInHabitat() {
         try {
-            const resultPokeInHabitat = await axios.get(`${habitatUrl}`);
+            const resultPokeInHabitat = await axios.get(`${endpointHabitatSpecies}`);
             console.log(resultPokeInHabitat.data);
             setPokemonInHabitat(resultPokeInHabitat.data);
-            getSinglePokeInHab(resultPokeInHabitat.data);
 
         } catch(e) {
             console.error(e);
         }
     }
 
-    function getSinglePokeInHab(urlTypes) {
-        urlTypes.map((type) => {
-            async function fetchSingleUrl() {
-                try {
-                    const responseSingleUrl = await axios.get(`${type.url}`);
-                    console.log(responseSingleUrl);
 
-                } catch(e) {
-                    console.error(e);
-                }
-            }
-            fetchSingleUrl();
-        });
+    //to show the hover image:
+   const handleMouseOver = () => {
+       setIsHovering(true);
+       //setHoverInfo(pokemonHabitat.url);
+       console.log("mouse is hovering");
+   }
 
-    }
+   const handleMouseOut = () => {
+       setIsHovering(false);
+   }
 
 
 
     useEffect(() => {
         fetchPokemonInHabitat();
-    }, []);
+    }, [endpointHabitatSpecies]);
 
     return(
         <>
             {
-                habitatUrl &&
+                endpointHabitatSpecies &&
                 pokemonInHabitat &&
 
                         <>
                             <div
                                 className="pokemon-list-button"
-                                onMouseOver={onMouseOver}
-                                onMouseOut={onMouseOut}
-                                //key={}
-                                //onClick={() => pokemonClick(oneHabitatSpecie)}
+                                onMouseOver={handleMouseOver}
+                                onMouseOut={handleMouseOut}
                             >
                                 <h3 className="habitat-lettertype"> {pokemonInHabitat.name}</h3>
                             </div>
 
-                        </>
-            }
-        </>
-    )
-}
 
+                            {
+                                isHovering &&
+                                pokemonInHabitat &&
+                                pokemonInHabitat.name &&
+                                pokemonInHabitat.color &&
+                                pokemonInHabitat.shape.name &&
+
+                                <>
+                                    <div className="hover-result-container">
+                                        <p>{pokemonInHabitat.name} is visible on hover</p>
+                                        <p>{pokemonInHabitat.color.name}</p>
+                                        <p>{pokemonInHabitat.shape.name}</p>
+                                    </div>
+
+                                </>
+                            }
+                        </>
+                 }
+            </>
+        )
+}
 export default PokemonOnMouseOver;
