@@ -141,7 +141,7 @@ function TabOne({singlePokemon}) {
 
                     <>
                         <div className="speech-bubble">
-                            <p>click on color, living area or evolution for more information</p>
+                            <p>choose color, living area or evolution for more information</p>
                         </div>
 
                         <div className="speech-bubble">
@@ -151,7 +151,7 @@ function TabOne({singlePokemon}) {
                                         {color: 'blue', fontSize: '34px', fontWeight: 'bold'}}
                                 />
                             </Link>
-                            <p>or click here to go back to pokemon overview</p>
+                            <p>or click on arrow to go back to pokemon overview</p>
                         </div>
                     </>
                 }

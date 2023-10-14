@@ -26,10 +26,11 @@ function BerryInfo({ data }) {
                    />
 
                     <div className="base-stat">
-                        <h3>{data.firmness.name}</h3>
-                        <h3>eaten by {data.natural_gift_type.name} pokemon </h3>
-                        <h3>{data.natural_gift_power} hp</h3>
-                        <h3>{data.size} mm</h3>
+                        <h3>Berry {data.name} is {data.firmness.name}.</h3>
+                        <h3>It is favorite food of {data.natural_gift_type.name} pokemon. </h3>
+                        <h3>It takes {data.growth_time} weeks to grow.</h3>
+                        <h3>Its power is {data.natural_gift_power} hp.</h3>
+                        <h3>It has the size of {data.size} mm.</h3>
                     </div>
 
                     <Button

@@ -9,7 +9,7 @@ import ButtonReset from "../../button-reset/ButtonReset";
 function CardBerry({ berryData, infoBerryHandler }) {
 
     const [searchString, setSearchString] = useState("");
-    const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true
+    const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true;
 
     const resetSearch = () => {
         console.log("button is clicked")
@@ -19,22 +19,21 @@ function CardBerry({ berryData, infoBerryHandler }) {
     return(
         <>
             <div className="hover-card-container">
-                <div className="card-hover">
-                    <input
-                        type="text"
-                        onChange={e => setSearchString(e.target.value)}
-                        value={searchString}
-                        className="filter-by-letter"
-                        placeholder="first letter"
-                    />
+                <div className="card-hover-filter">
 
                     <ButtonReset
                         children="X"
                         resetHandler={resetSearch}
                     />
 
+                    <input
+                        type="text"
+                        onChange={e => setSearchString(e.target.value)}
+                        value={searchString}
+                        className="filter-by-letter"
+                        placeholder="berry name"
+                    />
                 </div>
-
             </div>
 
             {berryData &&
@@ -42,22 +41,18 @@ function CardBerry({ berryData, infoBerryHandler }) {
                     return(
                         <>
                             <div
-                                className="hover-card-container"
+                                className="berry-hover-card-container"
                                 key={item.id}
                                 onClick={() => infoBerryHandler(item)}
                             >
 
-                                <div className="card-hover">
+                                <div className="berry-card-hover">
                                     <div className="image-container">
-                                        <img
-                                            src={CHERRY_BERRY}
-                                            alt="photo-of-berry"/>
+                                        <h2>{item.name}</h2>
+                                        <h3>id: {item.id}</h3>
+                                    </div>
 
-                                    </div>
-                                    <div className="content">
-                                        <h2>{item.item.name}</h2>
-                                        <h3>{item.id}</h3>
-                                    </div>
+                                    <div className="content">Pick me!</div>
                                 </div>
                             </div>
                         </>
