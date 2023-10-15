@@ -5,6 +5,7 @@ import CardBerry from "../../components/card/card-berry/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
 import CardFlavorsAll from "../../components/card-items-all/CardFlavorsAll";
+import CardFirmnessAll from "../../components/card-items-all/CardFirmnessAll";
 
 function BerryListPage() {
 
@@ -15,6 +16,7 @@ function BerryListPage() {
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [buttonText, setButtonText] = useState("All berries");
     //to click and unclick
     const [isFlavorOnClick, setIsFlavorOnClick] = useState(false);
     const [pokeFlavor, setPokeFlavor] = useState({});
@@ -24,7 +26,6 @@ function BerryListPage() {
     const [pokeFirmness, setPokeFirmness] = useState({});
 
     const [isAllBerriesOnClick, setIsAllBerriesOnClick] = useState(false);
-
 
 
     async function fetchBerryData() {
@@ -77,7 +78,15 @@ function BerryListPage() {
     /*all*/
     const handleClickAll = event => {
         setIsAllBerriesOnClick(current => !current);
+        setButtonText("Close me");
     }
+
+    setTimeout(() => {
+        setButtonText("All berries");
+    }, 10000);
+
+
+
 
     const resetSearchAll = () => {
         console.log("button is clicked")
@@ -118,7 +127,7 @@ function BerryListPage() {
                     <div className="button-group-container">
                         <Button
                             clickHandler={handleClickAll}
-                        >All</Button>
+                        >{buttonText}</Button>
                         <Button
                             clickHandler={handleClickFlavor}
                         >Flavor</Button>
@@ -132,7 +141,7 @@ function BerryListPage() {
                                 styling="game-button"
                                 clickHandler={() => {
                                     setBerryData([]);
-                                    setEndpointBerry(previousEndpointBerry)
+                                    setEndpointBerry(previousEndpointBerry);
                                 }}
                             >Previous
                             </Button>
@@ -152,31 +161,26 @@ function BerryListPage() {
 
                     {/*parameter dataContainer has to be filled with data from CardBerry*/}
 
-                    {
-                        isAllBerriesOnClick
-                            ?
+                    { isAllBerriesOnClick ? (
                             <CardBerry
                                 berryData={berryData}
                                 key={berryData.id}
                                 infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
                             />
-                            :
-                            <p>click on All for overview</p>
-                    }
-
-
-                    {isFlavorOnClick
-                        ?
+                        )  :  isFlavorOnClick ? (
                         <CardFlavorsAll/>
-                        :
-                        <p>Click on Flavor for overview</p>
-                    }
 
-                    {/*<CardFlavor/>*/}
-                    {/*<CardFirmness/>*/}
+                        ) : isFirmnessOnClick ? (
+                            <CardFirmnessAll/>
 
+                        ) : (
+                        <CardBerry
+                            berryData={berryData}
+                            key={berryData.id}
+                            infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
+                        />
 
-
+                        )}
                 </div>
 
 
@@ -189,7 +193,7 @@ function BerryListPage() {
             </div>
 
         </>
-    )
+    );
 }
 
 export default BerryListPage;
