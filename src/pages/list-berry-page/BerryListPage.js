@@ -4,7 +4,7 @@ import BerryInfo from "../../components/berry-info/BerryInfo";
 import CardBerry from "../../components/card/card-berry/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
-import CardFlavorsAll from "../../components/card-flavors-all/CardFlavorsAll";
+import CardFlavorsAll from "../../components/card-items-all/CardFlavorsAll";
 
 function BerryListPage() {
 
