@@ -88,6 +88,7 @@ function TabOne({singlePokemon}) {
                             onClick={handleClickColor}
                             className="color-container"
                             role="button"
+                            tabIndex='0'
                         ><h3 className="change-color-on-hover-color">My color is  {tabOneInfo.color.name}.</h3>
                         </div>
 
@@ -99,6 +100,7 @@ function TabOne({singlePokemon}) {
                             onClick={handleClickHabitat}
                             className="habitat-container"
                             role="button"
+                            tabIndex='0'
                         ><h3 className="change-color-on-hover-habitat">I live in the {tabOneInfo.habitat.name}.</h3>
                         </div>
 
@@ -111,6 +113,7 @@ function TabOne({singlePokemon}) {
                             onClick={handleClickEvolution}
                             className="evolution-container"
                             role="button"
+                            tabIndex='0'
                         >
 
                             <h3 className="change-color-on-hover-evolution"
