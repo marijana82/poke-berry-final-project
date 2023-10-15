@@ -8,6 +8,7 @@ import ButtonReset from "../button-reset/ButtonReset";
 import {AiOutlineArrowLeft} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
+import onKeyDown from "../../helpers/onKeyDown";
 
 function TabOne({singlePokemon}) {
 
@@ -89,6 +90,7 @@ function TabOne({singlePokemon}) {
                             className="color-container"
                             role="button"
                             tabIndex='0'
+                            onKeyDown={onKeyDown}
                         ><h3 className="change-color-on-hover-color">My color is  {tabOneInfo.color.name}.</h3>
                         </div>
 
@@ -101,6 +103,7 @@ function TabOne({singlePokemon}) {
                             className="habitat-container"
                             role="button"
                             tabIndex='0'
+                            onKeyDown={onKeyDown}
                         ><h3 className="change-color-on-hover-habitat">I live in the {tabOneInfo.habitat.name}.</h3>
                         </div>
 
@@ -114,6 +117,7 @@ function TabOne({singlePokemon}) {
                             className="evolution-container"
                             role="button"
                             tabIndex='0'
+                            onKeyDown={onKeyDown}
                         >
 
                             <h3 className="change-color-on-hover-evolution"
