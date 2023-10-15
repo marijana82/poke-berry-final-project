@@ -4,6 +4,7 @@ import BerryInfo from "../../components/berry-info/BerryInfo";
 import CardBerry from "../../components/card/card-berry/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
+import CardFlavorsAll from "../../components/card-flavors-all/CardFlavorsAll";
 
 function BerryListPage() {
 
@@ -17,6 +18,8 @@ function BerryListPage() {
     //to click and unclick
     const [isFlavorOnClick, setIsFlavorOnClick] = useState(false);
     const [pokeFlavor, setPokeFlavor] = useState({});
+    const [flavorDex, setFlavorDex] = useState();
+
     const [isFirmnessOnClick, setIsFirmnessOnClick] = useState(false);
     const [isAllBerriesOnClick, setIsAllBerriesOnClick] = useState(false);
 
@@ -127,7 +130,12 @@ function BerryListPage() {
                         infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
                     />
 
-                    {isFlavorOnClick ? <p>Card Flavor</p> : <p>no flavor available</p>}
+                    {isFlavorOnClick
+                        ?
+                        <CardFlavorsAll/>
+                        :
+                        <p>no flavor available</p>
+                    }
 
                     {/*<CardFlavor/>*/}
                     {/*<CardFirmness/>*/}
