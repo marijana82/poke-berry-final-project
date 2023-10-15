@@ -14,6 +14,11 @@ function BerryListPage() {
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState(false);
+    //to click and unclick
+    const [isFlavorOnClick, setIsFlavorOnClick] = useState(false);
+    const [pokeFlavor, setPokeFlavor] = useState({});
+    const [isFirmnessOnClick, setIsFirmnessOnClick] = useState(false);
+    const [isAllBerriesOnClick, setIsAllBerriesOnClick] = useState(false);
 
     async function fetchBerryData() {
         toggleLoading(true);
@@ -60,6 +65,21 @@ function BerryListPage() {
         fetchBerryData();
     }, [endpointBerry]);
 
+
+    /*flavor*/
+    const handleClickFlavor = event => {
+        setIsFlavorOnClick(current => !current);
+        setPokeFlavor({}); //tabOneInfo.evolves_from_species.url
+    }
+
+    const resetSearchFlavor = () => {
+        console.log("button is clicked")
+        setIsFlavorOnClick(false);
+        setPokeFlavor({});
+    }
+
+
+
     return(
         <>
             <div className="main-pokemon-list-container">
@@ -67,9 +87,10 @@ function BerryListPage() {
 
                     <div className="button-group-container">
                         <Button>All</Button>
-                        <Button>Taste</Button>
+                        <Button
+                            clickHandler={handleClickFlavor}
+                        >Flavor</Button>
                         <Button>Firmness</Button>
-
                     </div>
 
 
@@ -96,37 +117,22 @@ function BerryListPage() {
                             </Button>
                         }
                     </div>
+
 
 
                     {/*parameter dataContainer has to be filled with data from CardBerry*/}
                     <CardBerry
                         berryData={berryData}
                         key={berryData.id}
-                        infoBerryHandler={dataContainer => setBerryDex(dataContainer)}/>
+                        infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
+                    />
 
-                    <div className="button-group-container">
-                        {previousEndpointBerry &&
-                            <Button
-                                styling="game-button"
-                                clickHandler={() => {
-                                    setBerryData([]);
-                                    setEndpointBerry(previousEndpointBerry)
-                                }}
-                            >Previous
-                            </Button>
-                        }
+                    {isFlavorOnClick ? <p>Card Flavor</p> : <p>no flavor available</p>}
 
-                        {nextEndpointBerry &&
-                            <Button
-                                styling="game-button"
-                                clickHandler={() => {
-                                    setBerryData([]);
-                                    setEndpointBerry(nextEndpointBerry)
-                                }}
-                            >Next
-                            </Button>
-                        }
-                    </div>
+                    {/*<CardFlavor/>*/}
+                    {/*<CardFirmness/>*/}
+
+
 
                 </div>
 
