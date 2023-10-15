@@ -37,13 +37,10 @@ function BerryItem({ itemUrl }) {
                                 className="berry-image"/>
                         </span>
 
-
-
-
-                    <div className="berry-name-container">
+                    {/*<div className="berry-name-container">
                         <h2 className="berry-titles">Category: </h2>
                         <p>{berryItem.category.name}</p>
-                    </div>
+                    </div>*/}
 
                     {berryItem && berryItem.effect_entries.map((entry) => {
                             return(

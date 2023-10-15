@@ -19,21 +19,27 @@ function CardBerry({ berryData, infoBerryHandler }) {
     return(
         <>
             <div className="hover-card-container">
+
                 <div className="card-hover-filter">
+                    <label
+                        htmlFor="filter-field"
+                    >
+                        <ButtonReset
+                            children="x"
+                            resetHandler={resetSearch}
+                        />
 
-                    <ButtonReset
-                        children="X"
-                        resetHandler={resetSearch}
-                    />
-
-                    <input
-                        type="text"
-                        onChange={e => setSearchString(e.target.value)}
-                        value={searchString}
-                        className="filter-by-letter"
-                        placeholder="berry name"
-                    />
+                        <input
+                            type="text"
+                            onChange={e => setSearchString(e.target.value)}
+                            value={searchString}
+                            className="filter-by-letter"
+                            placeholder="berry name"
+                            id="filter-field"
+                        />
+                    </label>
                 </div>
+
             </div>
 
             {berryData &&
@@ -52,7 +58,7 @@ function CardBerry({ berryData, infoBerryHandler }) {
                                         <h3>id: {item.id}</h3>
                                     </div>
 
-                                    <div className="content">Pick me!</div>
+                                    <div className="content"> {item.natural_gift_type.name} pokemon</div>
                                 </div>
                             </div>
                         </>

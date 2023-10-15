@@ -23,7 +23,6 @@ function PokemonListPage() {
     //const [notFound, setNotFound] = useState(false);
 
 
-    //const [favorites, setFavorites] = useState([]);
     const [favorites, setFavorites] = useState(() => {
         //getting stored value
         const saved = localStorage.getItem("favorite");
@@ -100,7 +99,6 @@ function PokemonListPage() {
     //localStorage.clear();
 
 
-
     //function that handles page change
     function handlePageChange(newPage) {
         setPokemonData([]); //clear existing data
@@ -125,6 +123,14 @@ function PokemonListPage() {
 
                         <div className="button-group-container">
 
+                            <Pagination
+                                page={page}
+                                totalPages={totalPages}
+                                favoritePokemon={favorites.length}
+                                chosenFavs={favorites}
+                            />
+
+
                             { previousEndpoint &&
                                 <Button
                                     styling="game-button"
@@ -134,17 +140,8 @@ function PokemonListPage() {
                             }
 
 
-                            <Pagination
-                                page={page}
-                                totalPages={totalPages}
-                                favoritePokemon={favorites.length}
-                                chosenFavs={favorites}
-                            />
 
-
-
-                            {
-                                nextEndpoint &&
+                            { nextEndpoint &&
 
                                 <Button
                                     styling="game-button"
@@ -154,6 +151,8 @@ function PokemonListPage() {
                             }
 
                         </div>
+
+
 
                         <PokemonCard
                             pokemon={pokemonData}
@@ -193,6 +192,8 @@ function PokemonListPage() {
                             <Pagination
                                 page={page}
                                 totalPages={totalPages}
+                                favoritePokemon={favorites.length}
+                                chosenFavs={favorites}
                             />
 
                         </div>

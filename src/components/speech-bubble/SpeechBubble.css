@@ -1,0 +1,39 @@
+.speech-bubble {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    background: white;
+    border-radius: .4em;
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    box-sizing: content-box;
+
+}
+
+.speech-bubble p {
+    font-size: 18px;
+}
+
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 32px solid transparent;
+    border-bottom-color: white;
+    border-top: 0;
+    border-left: 0;
+    margin-left: -16px;
+    margin-top: -32px;
+}
+
+.speech-bubble:hover {
+    background-color: white;
+}

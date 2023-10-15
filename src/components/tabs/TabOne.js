@@ -7,6 +7,7 @@ import PokemonHabitat from "../pokemon-habitat/PokemonHabitat";
 import ButtonReset from "../button-reset/ButtonReset";
 import {AiOutlineArrowLeft} from "react-icons/ai";
 import {Link} from "react-router-dom";
+import SpeechBubble from "../speech-bubble/SpeechBubble";
 
 function TabOne({singlePokemon}) {
 
@@ -121,11 +122,7 @@ function TabOne({singlePokemon}) {
 
                     :
 
-                    <div className="speech-bubble">
-
-                    <p>Information is loading. Thank you for waiting...</p>
-
-                    </div>
+                <SpeechBubble/>
             }
 
             <div className="button-and-bubble-container">

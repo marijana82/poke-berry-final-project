@@ -1,4 +1,13 @@
 
+.left-content-container, .right-content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 1 auto;
+    flex-basis: 50%;
+}
 
 
 

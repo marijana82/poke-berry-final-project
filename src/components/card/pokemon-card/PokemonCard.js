@@ -32,11 +32,11 @@ function PokemonCard({ pokemon, pokemonClick }) {
                         onChange={e => setSearchString(e.target.value)}
                         value={searchString}
                         className="filter-by-letter"
-                        placeholder="search"
+                        placeholder="pokemon"
                     />
 
                     <ButtonReset
-                        children="reset"
+                        children="x"
                         resetHandler={resetSearch}
                     />
                     </div>

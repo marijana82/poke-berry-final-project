@@ -9,7 +9,7 @@ function BerryListPage() {
 
     const [berryData, setBerryData] = useState([]);
     const [berryDex, setBerryDex] = useState();
-    const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry/?limit=18&offset=18");
+    const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry/?limit=24&offset=70");
     const [nextEndpointBerry, setNextEndpointBerry] = useState("");
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
     const [loading, toggleLoading] = useState(false);
@@ -65,6 +65,39 @@ function BerryListPage() {
             <div className="main-pokemon-list-container">
                 <div className="left-content-container">
 
+                    <div className="button-group-container">
+                        <Button>All</Button>
+                        <Button>Taste</Button>
+                        <Button>Firmness</Button>
+
+                    </div>
+
+
+                    <div className="button-group-container">
+                        {previousEndpointBerry &&
+                            <Button
+                                styling="game-button"
+                                clickHandler={() => {
+                                    setBerryData([]);
+                                    setEndpointBerry(previousEndpointBerry)
+                                }}
+                            >Previous
+                            </Button>
+                        }
+
+                        {nextEndpointBerry &&
+                            <Button
+                                styling="game-button"
+                                clickHandler={() => {
+                                    setBerryData([]);
+                                    setEndpointBerry(nextEndpointBerry)
+                                }}
+                            >Next
+                            </Button>
+                        }
+                    </div>
+
+
                     {/*parameter dataContainer has to be filled with data from CardBerry*/}
                     <CardBerry
                         berryData={berryData}
@@ -94,7 +127,10 @@ function BerryListPage() {
                             </Button>
                         }
                     </div>
+
                 </div>
+
+
 
                 <div className="right-content-container">
                     <BerryInfo

@@ -9,6 +9,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 10px;
+    cursor: pointer;
 }
 
 .hover-card-container .card-hover {
@@ -58,6 +59,7 @@
     visibility: hidden;
     opacity: 0;
     transition: 0.3s ease-in-out;
+
 }
 
 

@@ -1,7 +1,8 @@
 .filter-by-letter {
     display: flex;
-    width: 100%;
     height: 50px;
+    width: 110px;
+    transition: width 2s;
     border: none;
     background-color: lightyellow;
     padding: 5px;
@@ -9,9 +10,11 @@
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 15px;
+    margin-left: 20px;
 }
 
 .filter-by-letter:hover {
+    width: 180px;
     box-shadow:
             rgb(85, 91, 255) 0px 0px 0px 3px,
             rgb(31, 193, 27) 0px 0px 0px 6px,
@@ -28,6 +31,14 @@
     padding: 10px;
     margin: 5px;
     width: 400px;
+}
+
+.card-hover-filter label {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 5px;
 }
 
 
@@ -119,7 +130,7 @@
 
 .berry-hover-card-container .berry-card-hover .content {
     position: relative;
-    bottom: 25px;
+    bottom: 35px;
     padding: 10px 10px;
     color: darkblue;
     font-family: 'Mooli', sans-serif;
