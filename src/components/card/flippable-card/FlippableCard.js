@@ -18,9 +18,12 @@ function FlippableCard() {
                 classNames="flip"
             >
                     <Card
+                        clickToRegister="Click here to register"
+                        flipToPlay="Or flip to play"
                         onClick={() => {
                             setShowFrontOne((currentValue) => !currentValue);
                         }}/>
+
 
             </CSSTransition>
 

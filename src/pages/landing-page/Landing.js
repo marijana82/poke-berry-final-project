@@ -15,7 +15,10 @@ function Landing() {
         <>
             <Header/>
             <Main>
-                <Pikachu/>
+                <Link to={"/"}>
+                    <Pikachu/>
+                </Link>
+
             </Main>
             <Footer/>
         </>
