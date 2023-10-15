@@ -2,6 +2,7 @@ import "./CardFlavorsAll.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Flavor from "../card-item-one/flavor/Flavor";
+import Button from "../button/Button";
 
 
 function CardFlavorsAll() {
@@ -45,11 +46,11 @@ function CardFlavorsAll() {
                     flavors.map((flavor, index) => {
                     return(
                         <>
-                            <button
+                            <Button
                                 key={index}
-                                onClick={() => handleButtonClick(flavor)}
-                            ><p>{flavor.name}</p>
-                            </button>
+                                clickHandler={() => handleButtonClick(flavor)}
+                            >{flavor.name}
+                            </Button>
                         </>
                     )
                 } ) )

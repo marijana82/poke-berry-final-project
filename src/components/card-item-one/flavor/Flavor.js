@@ -1,6 +1,7 @@
 import "./Flavor.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import Button from "../../button/Button";
 
 
 
@@ -9,6 +10,8 @@ function Flavor({flavorUrl}) {
     const [flavorData, setFlavorData] = useState(null);
     const [filteredBerries, setFilteredBerries] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
+    const [potencyArray, setPotencyArray] = useState ([10, 15, 20, 25, 30]);
+    const [selectedPotency, setSelectedPotency] = useState(10);
 
     async function fetchFlavorData() {
         try {
@@ -36,7 +39,16 @@ function Flavor({flavorUrl}) {
     const berryFilter = (potency) => {
         let filteredPotency = flavorData.berries.filter(berry => berry.potency === potency);
         setFilteredBerries(filteredPotency);
+        setSelectedPotency(potency);
     }
+
+
+   /* const handlePotencyChange = (event) => {
+        setSelectedPotency(event.target.value);
+        console.log(event.target.value);
+    }*/
+
+
 
 
 
@@ -47,28 +59,71 @@ function Flavor({flavorUrl}) {
                     <div>
                         <h3>{flavorData.name} berry is {flavorData.contest_type.name}!</h3>
                         <div className="button-group-container">
-                            <button onClick={() => berryFilter(10)}>10</button>
-                            <button onClick={() => berryFilter(15)}>15</button>
-                            <button onClick={() => berryFilter(20)}>20</button>
-                            <button onClick={() => berryFilter(25)}>25</button>
-                            <button onClick={() => berryFilter(30)}>30</button>
+
+                            {potencyArray.map((potency) => {
+                                return(
+                                    <Button
+                                        key={potency}
+                                        clickHandler={() => berryFilter(potency)}
+                                        styling="potency-filter-button"
+                                        type="button"
+                                    >{potency}
+                                    </Button>
+                                )
+                            })}
+
+                           {/* <div className="radio-group-container">
+                                <form>
+                                    <fieldset>
+                                        <legend>choose berry potency</legend>
+                                <input
+                                    type="radio"
+                                    name="potency"
+                                    id="potency-10"
+                                    value="10"
+                                    checked={selectedPotency === 10}
+                                    onChange={() => berryFilter(10)}
+                                    //onChange={handlePotencyChange}
+                                />
+                                <label htmlFor="potency-10">potency 10</label>
+
+                                <input
+                                    type="radio"
+                                    name="potency"
+                                    id="potency-20"
+                                    value="20"
+                                    checked={selectedPotency === 20}
+                                    onChange={() => berryFilter(20)}
+                                    //onChange={handlePotencyChange}
+                                />
+                                <label htmlFor="potency-20">potency 20</label>
+
+
+                                    </fieldset>
+
+                                </form>
+
+                                <p>chosen potency: {selectedPotency}</p>
+
+                            </div>
+*/}
+
                         </div>
 
 
                         <h3>All {flavorData.name} berries in one list: </h3>
 
-
                         {
                             flavorData &&
                             flavorData.berries &&
-                            filteredBerries
+                            filteredBerries.length > 0
 
                             ?
 
-                            filteredBerries.map((pokemon, index) => (
+                            filteredBerries.map((berry, index) => (
                                 <li key={index}>
-                                    <p>{pokemon.berry.name}</p>
-                                    <p>{pokemon.potency}</p>
+                                    <p>{berry.berry.name}</p>
+                                    <p>{berry.potency}</p>
                                 </li>
                             ))
 

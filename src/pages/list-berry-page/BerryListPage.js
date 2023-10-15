@@ -21,7 +21,11 @@ function BerryListPage() {
     const [flavorDex, setFlavorDex] = useState();
 
     const [isFirmnessOnClick, setIsFirmnessOnClick] = useState(false);
+    const [pokeFirmness, setPokeFirmness] = useState({});
+
     const [isAllBerriesOnClick, setIsAllBerriesOnClick] = useState(false);
+
+
 
     async function fetchBerryData() {
         toggleLoading(true);
@@ -69,16 +73,39 @@ function BerryListPage() {
     }, [endpointBerry]);
 
 
+
+    /*all*/
+    const handleClickAll = event => {
+        setIsAllBerriesOnClick(current => !current);
+    }
+
+    const resetSearchAll = () => {
+        console.log("button is clicked")
+        setIsAllBerriesOnClick(false);
+    }
+
+
+
     /*flavor*/
     const handleClickFlavor = event => {
         setIsFlavorOnClick(current => !current);
-        setPokeFlavor({}); //tabOneInfo.evolves_from_species.url
+        //setPokeFlavor({}); //tabOneInfo.evolves_from_species.url
     }
 
     const resetSearchFlavor = () => {
         console.log("button is clicked")
         setIsFlavorOnClick(false);
-        setPokeFlavor({});
+    }
+
+
+    /*firmness*/
+    const handleClickFirmness = event => {
+        setIsFirmnessOnClick(current => !current);
+    }
+
+    const resetSearchFirmness = () => {
+        console.log("button is clicked")
+        setIsFirmnessOnClick(false);
     }
 
 
@@ -89,7 +116,9 @@ function BerryListPage() {
                 <div className="left-content-container">
 
                     <div className="button-group-container">
-                        <Button>All</Button>
+                        <Button
+                            clickHandler={handleClickAll}
+                        >All</Button>
                         <Button
                             clickHandler={handleClickFlavor}
                         >Flavor</Button>
@@ -121,20 +150,26 @@ function BerryListPage() {
                         }
                     </div>
 
-
-
                     {/*parameter dataContainer has to be filled with data from CardBerry*/}
-                    <CardBerry
-                        berryData={berryData}
-                        key={berryData.id}
-                        infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
-                    />
+
+                    {
+                        isAllBerriesOnClick
+                            ?
+                            <CardBerry
+                                berryData={berryData}
+                                key={berryData.id}
+                                infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
+                            />
+                            :
+                            <p>click on All for overview</p>
+                    }
+
 
                     {isFlavorOnClick
                         ?
                         <CardFlavorsAll/>
                         :
-                        <p>no flavor available</p>
+                        <p>Click on Flavor for overview</p>
                     }
 
                     {/*<CardFlavor/>*/}
