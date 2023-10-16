@@ -150,7 +150,7 @@ function Flavor({flavorUrl, infoFlavorHandler}) {
                                         <div
                                             onClick={() => infoFlavorHandler(berry)}
                                             role="button"
-                                            //key={index}
+                                            key={index}
                                             className="berry-button-flavor"
                                         >
                                             <>
