@@ -8,18 +8,15 @@ import BerryFlavor from "../berry-flavor/BerryFlavor";
 function BerryInfo({ data }) {
     console.log(data);
 
-    const [isShownOnClick, setIsShownOnClick] = useState(false);
-    const [isDataShown, setisDataShown] = useState(false);
+    const [isDataShown, setIsDataShown] = useState(false);
 
     const handleClick = event => {
         console.log("the button is clicked!")
-        setIsShownOnClick(current => !current);
-        setisDataShown(current => !current);
+        setIsDataShown(current => !current);
     }
 
 
     return(
-
         <>
 
         { (!isDataShown && data) &&
@@ -33,14 +30,12 @@ function BerryInfo({ data }) {
 
                     <BerryItem itemUrl={data.item.url}/>
 
-                    <Button
+                    {/*<Button
                         type="button"
-                        clickHandler={handleClick}
+                        clickHandler={() => setIsShownOnClick(true)}
                         styling="button-favorite"
                     >SHOW ME MORE!
-                    </Button>
-
-                    {isShownOnClick &&
+                    </Button>*/}
 
                         <div className="base-stat">
                             <h3>Berry {data.name} is {data.firmness.name}.</h3>
@@ -49,7 +44,7 @@ function BerryInfo({ data }) {
                             <h3>Its power is {data.natural_gift_power} hp.</h3>
                             <h3>It has the size of {data.size} mm.</h3>
                         </div>
-                    }
+
                     </>
 
                     </div>
