@@ -2,6 +2,7 @@ import "./Flavor.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Button from "../../button/Button";
+import FilteredItem from "../../filtered-item/FilteredItem";
 
 
 
@@ -143,14 +144,23 @@ function Flavor({flavorUrl, infoFlavorHandler}) {
 
                             ?
                                 filteredBerries.map((berry, index) => (
-                                    <div
-                                        key={index}
-                                        className="berry-button-flavor"
-                                        onClick={() => infoFlavorHandler(berry)}
-                                    >
-                                        <p>{berry.berry.name}</p>
-                                        <p>{berry.potency}</p>
-                                    </div>
+
+                                    <>
+
+                                        <div
+                                            onClick={() => infoFlavorHandler(berry)}
+                                            role="button"
+                                            //key={index}
+                                            className="berry-button-flavor"
+                                        >
+                                            <>
+                                                <p>{berry.berry.name}</p>
+                                                <p>{berry.potency}</p>
+                                            </>
+                                        </div>
+
+
+                                    </>
 
                                     ))
                             :
