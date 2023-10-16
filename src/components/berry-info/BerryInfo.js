@@ -5,9 +5,8 @@ import Button from "../button/Button";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
 
 
-function BerryInfo({ data, dataFlavor }) {
+function BerryInfo({ data }) {
     console.log(data);
-    console.log(dataFlavor);
 
     const [isShownOnClick, setIsShownOnClick] = useState(false);
     const [isDataShown, setisDataShown] = useState(false);
@@ -18,9 +17,6 @@ function BerryInfo({ data, dataFlavor }) {
         setisDataShown(current => !current);
     }
 
-    const handleDataFlavorClick = () => {
-        setisDataShown(current => !current);
-    }
 
     return(
 
