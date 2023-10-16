@@ -78,6 +78,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .berry-button-flavor:hover {

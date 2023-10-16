@@ -17,16 +17,6 @@ function BerryListPage() {
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState(false);
     const [buttonText, setButtonText] = useState("Click me");
-    //to click and unclick
-    const [isFlavorOnClick, setIsFlavorOnClick] = useState(false);
-    const [pokeFlavor, setPokeFlavor] = useState({});
-
-
-    const [isFirmnessOnClick, setIsFirmnessOnClick] = useState(false);
-    const [pokeFirmness, setPokeFirmness] = useState({});
-
-    const [isAllBerriesOnClick, setIsAllBerriesOnClick] = useState(false);
-
 
     async function fetchBerryData() {
         toggleLoading(true);
@@ -36,8 +26,6 @@ function BerryListPage() {
             const response = await axios.get(endpointBerry);
             setNextEndpointBerry(response.data.next);
             setPreviousEndpointBerry(response.data.previous);
-
-            //call getBerry function, and pass it response.data.results as parameter
             //this parameter contains an array, consisting of objects with a key-value pair (name, url)
             getBerry(response.data.results);
             //toggleLoading(false);
@@ -74,7 +62,6 @@ function BerryListPage() {
     }, [endpointBerry]);
 
 
-
     /*all*/
     const handleButtonClick = event => {
         setButtonText("Click me");
@@ -82,8 +69,7 @@ function BerryListPage() {
 
     setTimeout(() => {
         setButtonText("Previous");
-    }, 2000);
-
+    }, 3000);
 
 
     return(
@@ -128,7 +114,7 @@ function BerryListPage() {
 
                 <div className="right-content-container">
 
-                    {berryDex ? <BerryInfo data={berryDex}/> : <p>nothing chosen</p>}
+                    {berryDex ? <BerryInfo data={berryDex}/> : <p>no berries chosen</p>}
 
                 </div>
 

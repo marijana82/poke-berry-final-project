@@ -5,10 +5,10 @@ import CardFirmnessAll from "../../card-items-all/CardFirmnessAll";
 import FilterInfo from "../../filter-info/FilterInfo";
 
 
-
 function TabContainerFilter() {
     const [activeTab, setActiveTab] = useState("tab 1");
     const [flavorDex, setFlavorDex] = useState();
+    const [firmnessDex, setFirmnessDex] = useState();
 
     //functions to handle tab switching
     function handleTabOne() {
@@ -46,10 +46,19 @@ function TabContainerFilter() {
                         infoFlavorHandler={flavorDataContainer => setFlavorDex(flavorDataContainer)}
                     />
                     :
-                    <CardFirmnessAll/>
+                    <CardFirmnessAll
+                        infoFirmnessHandler={firmnessDataContainer => setFirmnessDex(firmnessDataContainer)}
+                    />
                 }
 
-                {flavorDex ? <FilterInfo dataFlavor={flavorDex}/> : <p>no flavors chosen</p>}
+                {flavorDex || firmnessDex ?
+                    <FilterInfo
+                    dataFlavor={flavorDex}
+                    dataFirmness={firmnessDex}
+                    />
+                    :
+                    <p>no flavors or firmness chosen</p>
+                }
 
             </div>
 

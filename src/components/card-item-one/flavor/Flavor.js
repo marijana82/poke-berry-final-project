@@ -67,6 +67,10 @@ function Flavor({flavorUrl, infoFlavorHandler}) {
                                 <h3>{filteredBerries.length} {flavorData.name} berries with potency {selectedPotency} </h3>
                             </div>
 
+                                <div className="filtered-berry-title">
+                                <h3>click below on potency button or berry name to see more info! </h3>
+                            </div>
+
                         </div>
 
 
