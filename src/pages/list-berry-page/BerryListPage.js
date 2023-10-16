@@ -16,7 +16,7 @@ function BerryListPage() {
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState(false);
-    const [buttonTextAll, setButtonTextAll] = useState("All berries");
+    const [buttonText, setButtonText] = useState("Click me");
     //to click and unclick
     const [isFlavorOnClick, setIsFlavorOnClick] = useState(false);
     const [pokeFlavor, setPokeFlavor] = useState({});
@@ -76,43 +76,13 @@ function BerryListPage() {
 
 
     /*all*/
-    const handleClickAll = event => {
-        setIsAllBerriesOnClick(current => !current);
-        setButtonTextAll("Close me");
+    const handleButtonClick = event => {
+        setButtonText("Click me");
     }
 
     setTimeout(() => {
-        setButtonTextAll("All berries");
-    }, 1000);
-
-
-    const resetSearchAll = () => {
-        console.log("button is clicked")
-        setIsAllBerriesOnClick(true);
-    }
-
-
-    /*flavor*/
-    const handleClickFlavor = event => {
-        setIsFlavorOnClick(current => !current);
-        //setPokeFlavor({}); //tabOneInfo.evolves_from_species.url
-    }
-
-    const resetSearchFlavor = () => {
-        console.log("button is clicked")
-        setIsFlavorOnClick(false);
-    }
-
-
-    /*firmness*/
-    const handleClickFirmness = event => {
-        setIsFirmnessOnClick(current => !current);
-    }
-
-    const resetSearchFirmness = () => {
-        console.log("button is clicked")
-        setIsFirmnessOnClick(false);
-    }
+        setButtonText("Previous");
+    }, 2000);
 
 
 
@@ -120,18 +90,6 @@ function BerryListPage() {
         <>
             <div className="main-pokemon-list-container">
                 <div className="left-content-container">
-                {/*<div className="left-content-container">
-
-                    <div className="button-group-container">
-                        <Button
-                            clickHandler={handleClickAll}
-                        >{buttonTextAll}</Button>
-                        <Button
-                            clickHandler={handleClickFlavor}
-                        >Flavor</Button>
-                        <Button>Firmness</Button>
-                    </div>*/}
-
 
                     <div className="button-group-container">
                         {previousEndpointBerry &&
@@ -140,8 +98,9 @@ function BerryListPage() {
                                 clickHandler={() => {
                                     setBerryData([]);
                                     setEndpointBerry(previousEndpointBerry);
+                                    handleButtonClick();
                                 }}
-                            >Previous
+                            >{buttonText}
                             </Button>
                         }
 
@@ -166,33 +125,6 @@ function BerryListPage() {
 
                 </div>
             </div>
-
-
-                    {/*{ isAllBerriesOnClick ? (
-                            <CardBerry
-                                berryData={berryData}
-                                key={berryData.id}
-                                infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
-                            />
-                        )  :  isFlavorOnClick ? (
-                        <CardFlavorsAll
-                            infoFlavorHandler={flavorDataContainer => setFlavorDex(flavorDataContainer)}
-                        />
-
-                        ) : isFirmnessOnClick ? (
-                            <CardFirmnessAll/>
-
-                        ) : (
-                        <CardBerry
-                            berryData={berryData}
-                            key={berryData.id}
-                            infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
-                        />
-
-                        )}*/}
-
-
-
 
                 <div className="right-content-container">
 
