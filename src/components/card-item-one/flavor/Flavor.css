@@ -1,0 +1,108 @@
+.title-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 15px;
+
+
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.filtered-berry-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 15px;
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.filtered-berry-title:hover {
+    box-shadow:
+            rgba(17, 17, 26, 0.1) 0px 4px 16px,
+            rgba(17, 17, 26, 0.1) 0px 8px 24px,
+            rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.filtered-berry-title, h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.filtered-berry-cards-container {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.filter-button-group-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.berry-button-flavor {
+    border: none;
+    background: gold;
+    opacity: 1;
+    height: 50px;
+    width: 100px;
+    border-radius: 25% 0;
+    margin: 7px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.berry-button-flavor:hover {
+    background: forestgreen;
+    opacity: 0.8;
+    color: white;
+    font-weight: bold;
+    box-shadow:
+            rgba(0, 0, 0, 0.15) 0px 15px 25px,
+            rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.filtered-berries-container {
+    box-sizing: border-box;
+}
+
+.left-content-container-flavors {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 1 auto;
+    flex-basis: 50%;
+}
+
+
+

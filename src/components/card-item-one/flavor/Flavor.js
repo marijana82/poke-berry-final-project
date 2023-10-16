@@ -5,7 +5,7 @@ import Button from "../../button/Button";
 
 
 
-function Flavor({flavorUrl}) {
+function Flavor({flavorUrl, infoFlavorHandler}) {
 
     const [flavorData, setFlavorData] = useState(null);
     const [filteredBerries, setFilteredBerries] = useState([]);
@@ -49,16 +49,28 @@ function Flavor({flavorUrl}) {
     }*/
 
 
-
-
-
     return(
         <>
             <div>
                 {flavorData &&
-                    <div>
-                        <h3>{flavorData.name} berry is {flavorData.contest_type.name}!</h3>
-                        <div className="button-group-container">
+                    <div className="left-content-container-flavors">
+
+                        <span className="title-button-container">
+
+                            <div className="title-container">
+
+                            <div className="filtered-berry-title">
+                                <h3>{flavorData.name} berry is {flavorData.contest_type.name}!</h3>
+                            </div>
+
+                            <div className="filtered-berry-title">
+                                <h3>{filteredBerries.length} {flavorData.name} berries with potency {selectedPotency} </h3>
+                            </div>
+
+                        </div>
+
+
+                        <div className="filter-button-group-container">
 
                             {potencyArray.map((potency) => {
                                 return(
@@ -71,6 +83,13 @@ function Flavor({flavorUrl}) {
                                     </Button>
                                 )
                             })}
+
+                        </div>
+
+
+                        </span>
+
+
 
                            {/* <div className="radio-group-container">
                                 <form>
@@ -108,10 +127,10 @@ function Flavor({flavorUrl}) {
                             </div>
 */}
 
-                        </div>
 
+                        <span className="filtered-berries-container">
 
-                        <h3>All {flavorData.name} berries in one list: </h3>
+                            <div className="filtered-berry-cards-container">
 
                         {
                             flavorData &&
@@ -119,36 +138,27 @@ function Flavor({flavorUrl}) {
                             filteredBerries.length > 0
 
                             ?
+                                filteredBerries.map((berry, index) => (
+                                    <div
+                                        key={index}
+                                        className="berry-button-flavor"
+                                        onClick={() => infoFlavorHandler(berry)}
+                                    >
+                                        <p>{berry.berry.name}</p>
+                                        <p>{berry.potency}</p>
+                                    </div>
 
-                            filteredBerries.map((berry, index) => (
-                                <li key={index}>
-                                    <p>{berry.berry.name}</p>
-                                    <p>{berry.potency}</p>
-                                </li>
-                            ))
-
+                                    ))
                             :
 
                             <p>{errorMessage}</p>
-
-
-                            /*flavorData.berries.map((berry, index) => {
-                                return(
-                                    <>
-                                        <li key={index}>
-                                            <p>{berry.berry.name}</p>
-                                            <p>{berry.potency}</p>
-                                        </li>
-
-                                    </>
-
-                                )
-                            })*/
                         }
+                            </div>
 
+
+
+                    </span>
                     </div>
-
-
                 }
             </div>
         </>

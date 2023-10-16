@@ -5,7 +5,7 @@ import Flavor from "../card-item-one/flavor/Flavor";
 import Button from "../button/Button";
 
 
-function CardFlavorsAll() {
+function CardFlavorsAll({infoFlavorHandler}) {
 
     const [endpointFlavors, setEndpointFlavors] = useState(`https://pokeapi.co/api/v2/berry-flavor/`);
     const [flavors, setFlavors] = useState();
@@ -38,22 +38,23 @@ function CardFlavorsAll() {
 
 
     return(
-        <>
+        <div className="button-group-container">
             { !isClickedFlavor
                 ?
 
-                (flavors &&
+                    (flavors &&
                     flavors.map((flavor, index) => {
                     return(
-                        <>
-                            <Button
-                                key={index}
-                                clickHandler={() => handleButtonClick(flavor)}
-                            >{flavor.name}
-                            </Button>
-                        </>
-                    )
-                } ) )
+
+                    <Button
+                    key={index}
+                    clickHandler={() => handleButtonClick(flavor)}
+                    styling="filter-button-flavor"
+                    >{flavor.name}
+                    </Button>
+
+                )
+            } ) )
 
                 :
 
@@ -67,16 +68,20 @@ function CardFlavorsAll() {
 
                             <Flavor
                                 flavorUrl={selectedFlavor.url}
+                                infoFlavorHandler={infoFlavorHandler}
                             />
                         )}
+
                         <button
                             onClick={() => setIsClickedFlavor(false)}
-                        >Go back
+                            className="filter-button-flavor"
+                        >Flavors
                         </button>
+
                 </div>
 
                 )}
-        </>
+        </div>
     );
 }
 

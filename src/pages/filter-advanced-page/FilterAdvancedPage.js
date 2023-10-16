@@ -8,12 +8,18 @@ import Sidebar from "../../components/filter-functionality-components/sidebar-ca
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
 import CardFilter from "../../components/filter-functionality-components/card-filter/CardFilter";
+import TabContainer from "../../components/tabs/TabContainer";
+import TabContainerFilter from "../../components/tabs/tabs-filter/TabContainerFilter";
 
 
 function FilterAdvancedPage() {
 
     return(
         <>
+
+            <TabContainerFilter/>
+
+
         </>
     );
 }

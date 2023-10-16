@@ -5,31 +5,37 @@ import Button from "../button/Button";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
 
 
-function BerryInfo({ data }) {
+function BerryInfo({ data, dataFlavor }) {
     console.log(data);
+    console.log(dataFlavor);
 
     const [isShownOnClick, setIsShownOnClick] = useState(false);
+    const [isDataShown, setisDataShown] = useState(false);
 
     const handleClick = event => {
         console.log("the button is clicked!")
         setIsShownOnClick(current => !current);
+        setisDataShown(current => !current);
+    }
+
+    const handleDataFlavorClick = () => {
+        setisDataShown(current => !current);
     }
 
     return(
-        <div className="main-berry-info-container">
-            { (!data) ? <h2>Click on the berry to get more info</h2> :
+
+        <>
+
+        { (!isDataShown && data) &&
+            <div className="main-berry-info-container" onClick={handleClick}>
+
+
                 <>
                     <h1 className="berry-name">{data.item.name}</h1>
 
-                    <BerryFlavor
-                        berryFlavor={data.flavors}
-                    />
+                    <BerryFlavor berryFlavor={data.flavors}/>
 
-                    <BerryItem
-                        itemUrl={data.item.url}
-                    />
-
-
+                    <BerryItem itemUrl={data.item.url}/>
 
                     <Button
                         type="button"
@@ -47,15 +53,15 @@ function BerryInfo({ data }) {
                             <h3>Its power is {data.natural_gift_power} hp.</h3>
                             <h3>It has the size of {data.size} mm.</h3>
                         </div>
-
                     }
-
                     </>
 
-                    }
-
-
                     </div>
+        }
+
+
+
+        </>
 
     );
 
