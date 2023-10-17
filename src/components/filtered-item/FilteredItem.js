@@ -32,9 +32,6 @@ function FilteredItem({filteredItemUrl}) {
         <>
             {berryData &&
                 berryData.name &&
-                berryData.size &&
-                berryData.growth_time &&
-                berryData.soil_dryness &&
                 berryData.natural_gift_type.name &&
                 berryData.natural_gift_type.url &&
 
