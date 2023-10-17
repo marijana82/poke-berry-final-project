@@ -13,8 +13,12 @@ function BerryNaturalGift({ naturalGiftUrl }) {
         try {
 
             const resultGift = await axios.get(naturalGiftUrl);
-            console.log(resultGift.data);
-            setNaturalGift(resultGift.data);
+            //to sort pokemon in alphabetical order
+            const sortedPokemon = resultGift.data.pokemon.sort((a,b) => a.pokemon.name.localeCompare(b.pokemon.name));
+            setNaturalGift({ pokemon: sortedPokemon });
+            //console.log(resultGift.data);
+            //setNaturalGift(resultGift.data);
+
 
 
         } catch(e) {
@@ -28,19 +32,18 @@ function BerryNaturalGift({ naturalGiftUrl }) {
     }, [naturalGiftUrl]);
 
 
+
     return(
         <>
             {naturalGift &&
                 naturalGift.pokemon &&
                 naturalGift.pokemon.map((poke) => {
                     return(
-
-
-                            <div>
+                            <div key={poke.pokemon.name}>
                                 <Link
                                     to={`/single-pokemon-page/${poke.pokemon.name}`}
                                 >
-                                <p>{poke.pokemon.name}</p>
+                                <h3>{poke.pokemon.name}</h3>
                                 </Link>
                             </div>
 

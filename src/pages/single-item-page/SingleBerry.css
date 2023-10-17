@@ -1,0 +1,18 @@
+.single-page-main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.single-pokemon-container, .single-item-container {
+    width: 50%;
+    border: 1px solid green;
+}
+
+.single-item-container {
+
+}

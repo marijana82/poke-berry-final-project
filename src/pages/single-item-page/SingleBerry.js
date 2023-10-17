@@ -2,6 +2,12 @@ import "./SingleBerry.css";
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import axios from "axios";
+import BerryNaturalGift from "../../components/berry-natural-gift/BerryNaturalGift";
+import BerryItem from "../../components/berry-item/BerryItem";
+import Flavor from "../../components/card-item-one/flavor/Flavor";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import Main from "../../components/main/Main";
 
 
 
@@ -41,12 +47,49 @@ function SingleBerry() {
 
     }, [id]);
 
+
+
     return(
         <>
+            <Header/>
+
+            <Main>
+
             {singleBerry &&
-                <h1>Hi there {singleBerry.name}!
-                </h1>
+                singleBerry.natural_gift_type &&
+                singleBerry.natural_gift_type.url &&
+                singleBerry.item &&
+                singleBerry.item.url &&
+
+
+                <div className="single-page-main-container">
+                    <div className="single-pokemon-container">
+                        <h1>Hi there {singleBerry.name}!</h1>
+
+                        <BerryNaturalGift
+                            naturalGiftUrl={singleBerry.natural_gift_type.url}
+                        />
+
+                    </div>
+
+                    <div className="single-item-container">
+                        <BerryItem
+                            itemUrl={singleBerry.item.url}
+                        />
+                    </div>
+
+
+
+
+
+                </div>
+
+
             }
+
+            </Main>
+
+            <Footer/>
         </>
     )
 }

@@ -32,9 +32,11 @@ function BerryInfo({ data }) {
                 <>
                         <h1 className="berry-name">{data.item.name}</h1>
 
-                    <BerryFlavor berryFlavor={data.flavors}/>
+                    <BerryFlavor
+                        berryFlavor={data.flavors}
+                    />
 
-                    <BerryItem itemUrl={data.item.url}/>
+                   {/* <BerryItem itemUrl={data.item.url}/>*/}
 
                     {/*<Button
                         type="button"
