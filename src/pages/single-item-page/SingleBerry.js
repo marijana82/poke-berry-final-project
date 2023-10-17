@@ -69,7 +69,7 @@ function SingleBerry() {
                         <Link to={`/berry-list-page`}>
                             <AiOutlineArrowLeft
                                 style={
-                                    {color: 'blue', fontSize: '34px', fontWeight: 'bold'}}
+                                    {color: 'blue', fontSize: '44px', fontWeight: 'bold'}}
                             />
                         </Link>
                     </div>
