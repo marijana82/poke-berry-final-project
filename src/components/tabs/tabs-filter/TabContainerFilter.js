@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import CardFlavorsAll from "../../card-items-all/CardFlavorsAll";
 import CardFirmnessAll from "../../card-items-all/CardFirmnessAll";
 import FilterInfo from "../../filter-info/FilterInfo";
+import {Link} from "react-router-dom";
 
 
 function TabContainerFilter() {
@@ -52,10 +53,17 @@ function TabContainerFilter() {
                 }
 
                 {flavorDex || firmnessDex ?
-                    <FilterInfo
-                    dataFlavor={flavorDex}
-                    dataFirmness={firmnessDex}
-                    />
+
+
+
+                        <FilterInfo
+                            dataFlavor={flavorDex}
+                            dataFirmness={firmnessDex}
+                        />
+
+
+
+
                     :
                     <p>no flavors or firmness chosen</p>
                 }

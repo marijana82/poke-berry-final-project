@@ -30,7 +30,7 @@ function SinglePokemon() {
 
                 const singleResponse = await
                     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`,
-                        {signal: controller.signal})
+                        {signal: controller.signal});
 
                 if (singleResponse.data) {
                     console.log(singleResponse.data);

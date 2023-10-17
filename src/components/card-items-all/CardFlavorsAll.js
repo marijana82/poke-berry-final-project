@@ -61,10 +61,6 @@ function CardFlavorsAll({infoFlavorHandler}) {
                 (
                     <div>
                         {selectedFlavor && (
-                            /*<div>
-                                <p>{selectedFlavor.name}</p>
-                                <p>{selectedFlavor.url}</p>
-                            </div>*/
 
                             <Flavor
                                 flavorUrl={selectedFlavor.url}

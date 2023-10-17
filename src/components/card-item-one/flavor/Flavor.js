@@ -4,8 +4,6 @@ import axios from "axios";
 import Button from "../../button/Button";
 import FilteredItem from "../../filtered-item/FilteredItem";
 
-
-
 function Flavor({flavorUrl, infoFlavorHandler}) {
 
     const [flavorData, setFlavorData] = useState(null);
@@ -42,12 +40,6 @@ function Flavor({flavorUrl, infoFlavorHandler}) {
         setFilteredBerries(filteredPotency);
         setSelectedPotency(potency);
     }
-
-
-   /* const handlePotencyChange = (event) => {
-        setSelectedPotency(event.target.value);
-        console.log(event.target.value);
-    }*/
 
 
     return(
@@ -90,51 +82,9 @@ function Flavor({flavorUrl, infoFlavorHandler}) {
                             })}
 
                         </div>
-
-
                         </span>
 
-
-
-                           {/* <div className="radio-group-container">
-                                <form>
-                                    <fieldset>
-                                        <legend>choose berry potency</legend>
-                                <input
-                                    type="radio"
-                                    name="potency"
-                                    id="potency-10"
-                                    value="10"
-                                    checked={selectedPotency === 10}
-                                    onChange={() => berryFilter(10)}
-                                    //onChange={handlePotencyChange}
-                                />
-                                <label htmlFor="potency-10">potency 10</label>
-
-                                <input
-                                    type="radio"
-                                    name="potency"
-                                    id="potency-20"
-                                    value="20"
-                                    checked={selectedPotency === 20}
-                                    onChange={() => berryFilter(20)}
-                                    //onChange={handlePotencyChange}
-                                />
-                                <label htmlFor="potency-20">potency 20</label>
-
-
-                                    </fieldset>
-
-                                </form>
-
-                                <p>chosen potency: {selectedPotency}</p>
-
-                            </div>
-*/}
-
-
                         <span className="filtered-berries-container">
-
                             <div className="filtered-berry-cards-container">
 
                         {
@@ -168,8 +118,6 @@ function Flavor({flavorUrl, infoFlavorHandler}) {
                             <p>{errorMessage}</p>
                         }
                             </div>
-
-
 
                     </span>
                     </div>
