@@ -22,7 +22,7 @@ function TabContainerFilter() {
     }
 
     return(
-        <div className="tab-container">
+        <div className="tab-container-filter">
             {/*Tab navigation*/}
 
             <ul className="tab-navigation">
@@ -39,7 +39,7 @@ function TabContainerFilter() {
                 </li>
             </ul>
 
-            <div className="tab-content-container">
+            <div className="tab-content-container-filter">
                 {/*Content will be shown here*/}
                 { activeTab === "tab 1"
                     ?
@@ -52,18 +52,13 @@ function TabContainerFilter() {
                     />
                 }
 
+                //TODO: create another component where info of tab two will be rendered
                 {flavorDex || firmnessDex ?
-
-
 
                         <FilterInfo
                             dataFlavor={flavorDex}
                             dataFirmness={firmnessDex}
                         />
-
-
-
-
                     :
                     <p>no flavors or firmness chosen</p>
                 }

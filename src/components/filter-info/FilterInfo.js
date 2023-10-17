@@ -22,7 +22,7 @@ function FilterInfo({dataFlavor}) {
         <>
             {!isDataShown && dataFlavor &&
                 <div
-                    className="main-berry-info-container"
+                    className="result-introduction-container"
                     div={handleDataFlavorClick}
                 >
 

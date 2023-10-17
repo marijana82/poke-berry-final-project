@@ -37,8 +37,7 @@ function FilteredItem({filteredItemUrl}) {
 
                 <>
 
-                    <h1>{berryData.name} is type {berryData.natural_gift_type.name} berry</h1>
-                    <h2>pokemon who eat {berryData.name}:</h2>
+                    <h2>{berryData.name} is type {berryData.natural_gift_type.name} berry</h2>
 
                     <BerryNaturalGift
                         naturalGiftUrl={berryData.natural_gift_type.url}

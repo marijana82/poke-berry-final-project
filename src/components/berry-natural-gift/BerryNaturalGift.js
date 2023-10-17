@@ -41,31 +41,27 @@ function BerryNaturalGift({ naturalGiftUrl }) {
                 </div>
             }
 
-
+            <div className="result-introduction-container">
             { naturalGift &&
                 naturalGift.pokemon &&
-
                 naturalGift.pokemon.map((poke) => {
                     return(
-                            <div
-                                key={poke.pokemon.name}
-                                className="pokemon-list"
-                            >
+                            <div key={poke.pokemon.name}>
                                 <Link
                                     to={`/single-pokemon-page/${poke.pokemon.name}`}
                                     style={{textDecoration: 'none', color: 'white'}}
                                 >
-                                    <div>
+                                    <div
+                                    className="pokemon-list-button-this">
                                         <h3>{poke.pokemon.name}</h3>
                                     </div>
-
                                 </Link>
                             </div>
+                            )
+                    })
+                }
+            </div>
 
-                    )
-                })
-
-            }
         </>
     )
 }

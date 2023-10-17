@@ -43,6 +43,7 @@ ul.tab-navigation li:hover {
 
 ul.tab-navigation li.active {
     font-size: 22px;
+    background-color: deepskyblue;
     box-shadow:
             rgb(85, 91, 255) 0px 0px 0px 3px,
             rgb(31, 193, 27) 0px 0px 0px 6px,

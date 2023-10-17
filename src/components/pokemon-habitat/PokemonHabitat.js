@@ -8,9 +8,6 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
 
     const [pokemonHabitat, setPokemonHabitat] = useState({});
 
-
-
-
     async function fetchPokemonHabitat() {
         try{
             const resultHabitat = await axios.get(`${habitat}`);
@@ -52,10 +49,6 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
                     <h4>{evolvesFrom} lives in {pokemonHabitat.name}, just like the other {pokemonHabitat.pokemon_species.length} pokemon: </h4>
                 </div>
             }
-
-
-
-
 
             <div className="result-introduction-container">
                 {pokemonHabitat &&

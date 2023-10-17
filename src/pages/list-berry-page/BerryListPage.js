@@ -115,7 +115,7 @@ function BerryListPage() {
 
                 <div className="right-content-container">
 
-                    {berryDex ? <BerryInfo data={berryDex}/> : <p>choose a berry!</p>}
+                    {berryDex ? <BerryInfo data={berryDex}/> : <div className="filtered-berry-title"><h3>choose a berry!</h3></div>}
 
                 </div>
 

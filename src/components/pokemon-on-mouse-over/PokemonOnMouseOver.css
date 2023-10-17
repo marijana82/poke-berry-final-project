@@ -14,7 +14,7 @@
 }
 
 .pokemon-list-button-this {
-    width: 90px;
+    width: 120px;
     height: 40px;
     background-color: yellowgreen;
     border: none;
@@ -23,12 +23,11 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 3px;
-    margin: 2px;
+    padding: 10px;
+    margin: 5px;
     cursor: pointer;
     transition: transform .2s;
     transition-timing-function: ease-in;
-
 }
 
 .pokemon-list-button-this:hover{

@@ -4,21 +4,27 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    border: 1px solid red;
     padding: 10px;
+    background-color: mintcream;
+    border-radius: 35px;
 }
 
 .single-page-container-left, .single-page-container-right {
-    width: 50%;
-    border: 1px solid green;
+    width: 65%;
+    border-radius: 35px;
     display: flex;
     flex-direction: column;
+}
 
+.single-page-container-right {
+    width: 35%;
+    height: 100vh;
+    background-color: navajowhite;
 }
 
 
 .single-berry-name-container {
-    font-size: 54px;
+    font-size: 44px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -35,8 +35,6 @@ function CardFlavorsAll({infoFlavorHandler}) {
         setSelectedFlavor(flavor);
     }
 
-
-
     return(
         <div className="button-group-container">
             { !isClickedFlavor
@@ -44,6 +42,7 @@ function CardFlavorsAll({infoFlavorHandler}) {
 
                     (flavors &&
                     flavors.map((flavor, index) => {
+
                     return(
 
                     <Button
@@ -53,7 +52,7 @@ function CardFlavorsAll({infoFlavorHandler}) {
                     >{flavor.name}
                     </Button>
 
-                )
+                    )
             } ) )
 
                 :
