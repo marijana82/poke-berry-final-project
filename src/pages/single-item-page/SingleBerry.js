@@ -7,7 +7,7 @@ import axios from "axios";
 
 function SingleBerry() {
 
-    const [singleBerry, setSingleBerry] = useState({});
+    const [singleBerry, setSingleBerry] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const { id } = useParams();
@@ -25,7 +25,8 @@ function SingleBerry() {
                     axios.get(`https://pokeapi.co/api/v2/berry/${id}`,
                         {signal: controller.signal});
 
-                console.log(singleResponse);
+                console.log(singleResponse.data);
+                setSingleBerry(singleResponse.data);
 
             } catch(e) {
                 console.error(e);
@@ -42,7 +43,10 @@ function SingleBerry() {
 
     return(
         <>
-            {singleBerry && <h1>Hi there {singleBerry.name}!</h1>}
+            {singleBerry &&
+                <h1>Hi there {singleBerry.name}!
+                </h1>
+            }
         </>
     )
 }

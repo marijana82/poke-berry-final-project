@@ -1,30 +1,27 @@
 import "./BerryInfo.css";
 import React, {useState} from "react";
 import BerryItem from "../berry-item/BerryItem";
-import Button from "../button/Button";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
+
 
 
 function BerryInfo({ data }) {
     console.log(data);
 
-    const [isDataShown, setIsDataShown] = useState(false);
-
     const handleClick = event => {
         console.log("the button is clicked!")
-        setIsDataShown(current => !current);
     }
 
 
     return(
         <>
 
-        { (!isDataShown && data) &&
+        { (data) ?
             <div className="main-berry-info-container" onClick={handleClick}>
 
 
                 <>
-                    <h1 className="berry-name">{data.item.name}</h1>
+                        <h1 className="berry-name">{data.item.name}</h1>
 
                     <BerryFlavor berryFlavor={data.flavors}/>
 
@@ -37,6 +34,7 @@ function BerryInfo({ data }) {
                     >SHOW ME MORE!
                     </Button>*/}
 
+
                         <div className="base-stat">
                             <h3>Berry {data.name} is {data.firmness.name}.</h3>
                             <h3>It is favorite food of {data.natural_gift_type.name} pokemon. </h3>
@@ -45,9 +43,14 @@ function BerryInfo({ data }) {
                             <h3>It has the size of {data.size} mm.</h3>
                         </div>
 
+
                     </>
 
                     </div>
+
+            :
+
+            <p>empty container</p>
         }
 
 

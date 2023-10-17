@@ -38,7 +38,7 @@ function App() {
             <Route path="/single-pokemon-page/:id" element={<SinglePokemon/>}/>
 
             <Route path="/berry-list-page" element={<BerryListPage/>}/>
-            <Route path="berry-list-page/:id" element={<SingleBerry/>}/>
+            <Route path="/single-berry-page/:id" element={<SingleBerry/>}/>
 
             <Route path="/game-page" element={<Game/>}/>
             <Route path="/filter-advanced-page" element={<FilterAdvancedPage/>}/>

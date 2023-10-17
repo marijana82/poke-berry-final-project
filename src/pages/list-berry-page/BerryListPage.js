@@ -6,6 +6,7 @@ import Button from "../../components/button/Button";
 import axios from "axios";
 import CardFlavorsAll from "../../components/card-items-all/CardFlavorsAll";
 import CardFirmnessAll from "../../components/card-items-all/CardFirmnessAll";
+import {Link} from "react-router-dom";
 
 function BerryListPage() {
 
@@ -114,7 +115,7 @@ function BerryListPage() {
 
                 <div className="right-content-container">
 
-                    {berryDex ? <BerryInfo data={berryDex}/> : <p>no berries chosen</p>}
+                    {berryDex ? <BerryInfo data={berryDex}/> : <p>choose a berry!</p>}
 
                 </div>
 
