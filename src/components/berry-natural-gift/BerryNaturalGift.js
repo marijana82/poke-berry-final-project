@@ -6,7 +6,8 @@ import {Link} from "react-router-dom";
 
 function BerryNaturalGift({ naturalGiftUrl }) {
 
-    const [naturalGift, setNaturalGift] = useState(null);
+    const [naturalGift, setNaturalGift] = useState([]);
+    const [selectedLetter, setSelectedLetter] = useState("");
 
     async function fetchNaturalGift() {
 
@@ -16,15 +17,10 @@ function BerryNaturalGift({ naturalGiftUrl }) {
             //to sort pokemon in alphabetical order
             const sortedPokemon = resultGift.data.pokemon.sort((a,b) => a.pokemon.name.localeCompare(b.pokemon.name));
             setNaturalGift({ pokemon: sortedPokemon });
-            //console.log(resultGift.data);
-            //setNaturalGift(resultGift.data);
-
-
 
         } catch(e) {
             console.error(e);
         }
-
     }
 
     useEffect(() => {
@@ -33,23 +29,38 @@ function BerryNaturalGift({ naturalGiftUrl }) {
 
 
 
+
     return(
         <>
-            {naturalGift &&
+
+            { naturalGift &&
                 naturalGift.pokemon &&
+
+                <div className="single-berry-name-container">
+                    <p>There are <b>{naturalGift.pokemon.length} pokemon </b> who love to eat you:</p>
+                </div>
+            }
+
+
+            { naturalGift &&
+                naturalGift.pokemon &&
+
                 naturalGift.pokemon.map((poke) => {
                     return(
-                            <div key={poke.pokemon.name}>
+                            <div
+                                key={poke.pokemon.name}
+                                className="pokemon-list"
+                            >
                                 <Link
                                     to={`/single-pokemon-page/${poke.pokemon.name}`}
+                                    style={{textDecoration: 'none', color: 'white'}}
                                 >
-                                <h3>{poke.pokemon.name}</h3>
+                                    <div>
+                                        <h3>{poke.pokemon.name}</h3>
+                                    </div>
+
                                 </Link>
                             </div>
-
-
-
-
 
                     )
                 })

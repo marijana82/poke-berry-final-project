@@ -8,11 +8,22 @@
     padding: 10px;
 }
 
-.single-pokemon-container, .single-item-container {
+.single-page-container-left, .single-page-container-right {
     width: 50%;
     border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.single-item-container {
 
+.single-berry-name-container {
+    font-size: 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
 }
+

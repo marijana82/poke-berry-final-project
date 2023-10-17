@@ -11,14 +11,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50px;
-    width: 150px;
-    padding: 10px;
-    margin: 5px;
+    height: 80px;
+    width: 220px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.berry-image {
+
+    width: 100%;
+
 }
 
 .berry-titles {
-    color: gold;
+    color: white;
+    font-size: 32px;
 }
 
 
