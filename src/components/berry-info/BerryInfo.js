@@ -1,8 +1,8 @@
 import "./BerryInfo.css";
-import React, {useState} from "react";
+import React from "react";
 import BerryItem from "../berry-item/BerryItem";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
-
+import {Link} from "react-router-dom";
 
 
 function BerryInfo({ data }) {
@@ -17,7 +17,16 @@ function BerryInfo({ data }) {
         <>
 
         { (data) ?
+
+
+
+
             <div className="main-berry-info-container" onClick={handleClick}>
+
+                <Link
+                    to={`/single-berry-page/${data.name}`}
+                    style={{textDecoration: 'none', color: 'darkblue'}}
+                >
 
 
                 <>
@@ -46,12 +55,16 @@ function BerryInfo({ data }) {
 
                     </>
 
+                </Link>
+
                     </div>
 
             :
 
             <p>empty container</p>
         }
+
+
 
 
 

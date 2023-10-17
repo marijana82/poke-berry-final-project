@@ -43,4 +43,5 @@
     padding: 20px;
     border-radius: 18px;
     background: linear-gradient(to right, deepskyblue, lightblue);
+    cursor: pointer;
 }
