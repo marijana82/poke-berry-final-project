@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import PokemonResults from "../../components/pokemon-results/PokemonResults";
 import QueryPokemon from "../../components/pokemon-query/QueryPokemon";
 import {POKEMON_URL} from "../../constants";
-
-
+import Header from "../../components/header/Header";
 
 function PokemonSearchPage() {
 
     const [endpointPoke, setEndpointPoke] = useState(POKEMON_URL);
     const [searchItem, setSearchItem] = useState("");
     const [pokeDetails, setPokeDetails] = useState([]);
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
 
@@ -45,22 +45,21 @@ function PokemonSearchPage() {
 
                 if (pokemon.name === searchItem) {
                     pokeDetailsUrl();
+
                 }
             });
         }
 
-
     }, [searchItem]);
-
-
 
 
     return(
         <>
+            <Header/>
 
-            <QueryPokemon
-                searchItemHandler={setSearchItem}
-            />
+                <QueryPokemon
+                    searchItemHandler={setSearchItem}
+                />
 
             <div className="container-pokemon-results">
                 {Object.keys(pokeDetails).length > 0
@@ -68,7 +67,9 @@ function PokemonSearchPage() {
 
                     <article className="berry-result-container">
 
-                        <PokemonResults pokeDetails={pokeDetails}/>
+                        <PokemonResults
+                            pokeDetails={pokeDetails}
+                        />
 
                     </article>
 

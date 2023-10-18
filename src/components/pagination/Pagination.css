@@ -4,3 +4,9 @@
     justify-content: center;
     align-items: flex-start;
 }
+
+.page-counter-container ul {
+    list-style-type: none;
+    color: black;
+}
+

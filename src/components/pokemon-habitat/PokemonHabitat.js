@@ -41,6 +41,7 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
 
     return(
         <div className="main-result-container-habitat">
+
             { pokemonHabitat &&
                 pokemonHabitat.name &&
                 pokemonHabitat.pokemon_species &&

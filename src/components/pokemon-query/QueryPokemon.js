@@ -13,14 +13,15 @@ function QueryPokemon({searchItemHandler}) {
     }
 
 
-
     return(
         <article className="query-container">
 
-            <form id="search-form" onSubmit={onFormSubmit}>
+            <form
+                id="search-form"
+                onSubmit={onFormSubmit}>
                 <label
                     htmlFor="query-field"
-                >WHO'S YOUR POKEMON?
+                >SEARCH FOR POKEMON EVOLUTION
 
                     <input
                         type="text"
@@ -30,6 +31,7 @@ function QueryPokemon({searchItemHandler}) {
                         onChange={(e) => setQuery(e.target.value.toLowerCase())}
                         placeholder="bulbasaur, ivysaur, pikachu ..."
                     />
+
                 </label>
 
                 <Button
@@ -38,8 +40,6 @@ function QueryPokemon({searchItemHandler}) {
                     disabled={!query}
                 >Search me!
                 </Button>
-
-
 
             </form>
 

@@ -11,6 +11,13 @@ function NavBarLandingPage() {
             <div className="inner-container-navigation">
                 <ul className="nav-container">
                     <li>
+
+                        <NavLink
+                            to="/search-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Search
+                        </NavLink>
+
                         <NavLink
                             to="/registration-page"
                             className={({isActive}) => isActive === true ? "active-link" : "default-link"}

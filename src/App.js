@@ -29,6 +29,7 @@ function App() {
         <NavBarLandingPage/>
 
         <Routes>
+            <Route path="/search-page" element={<PokemonSearchPage/>}/>
             <Route path="/landing-page" element={<Landing/>}/>
             <Route path="/" element={<Home/>}/>
             <Route path="/registration-page" element={<Registration/>}/>

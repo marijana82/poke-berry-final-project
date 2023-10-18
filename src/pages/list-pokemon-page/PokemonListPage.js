@@ -27,7 +27,8 @@ function PokemonListPage() {
         //getting stored value
         const saved = localStorage.getItem("favorite");
         const initialValue = JSON.parse(saved);
-        return initialValue || "";
+        console.log(initialValue);
+        return initialValue || " ";
     });
 
 
@@ -91,12 +92,6 @@ function PokemonListPage() {
         window.localStorage.setItem(favoritesKey, JSON.stringify(updatedPokeFav));
         setFavorites(updatedPokeFav);
     }
-
-    //to clear an item from local storage
-    //localStorage.removeItem('favoritesKey');
-
-    //to clear whole data stored in localStorage
-    //localStorage.clear();
 
 
     //function that handles page change

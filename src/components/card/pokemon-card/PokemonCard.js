@@ -45,7 +45,7 @@ function PokemonCard({ pokemon, pokemonClick }) {
             </div>
 
 
-            {
+            { pokemon &&
                 pokemon.filter(startsWith(searchString)).map((onePokemon) => {
                         const onClickHeart = () => {
                             updateFavoritePokemon(onePokemon.name);

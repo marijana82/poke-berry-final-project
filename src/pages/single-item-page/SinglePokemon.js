@@ -78,8 +78,6 @@ function SinglePokemon() {
 
                     <div className="left-content-container-single">
 
-
-
                         { singlePokemon &&
                             <div className="single-pokemon-name-container">
                                 <div className="name">

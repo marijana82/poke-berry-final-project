@@ -4,6 +4,8 @@ import BerryInfo from "../../components/berry-info/BerryInfo";
 import CardBerry from "../../components/card/card-berry/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
+import { addItem, removeItem } from "../../components/compare-items/actions/actions";
+
 import CardFlavorsAll from "../../components/card-items-all/CardFlavorsAll";
 import CardFirmnessAll from "../../components/card-items-all/CardFirmnessAll";
 import {Link} from "react-router-dom";
@@ -108,6 +110,8 @@ function BerryListPage() {
                         berryData={berryData}
                         key={berryData.id}
                         infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
+                        addItem={addItem}
+                        removeItem={removeItem}
                     />
 
                 </div>
