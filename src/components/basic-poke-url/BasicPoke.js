@@ -1,8 +1,6 @@
 import "./BasicPoke.css"
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {POKEMON_URL} from "../../constants";
-import {useParams} from "react-router-dom";
 
 function BasicPoke({pokemonId}) {
 

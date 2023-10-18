@@ -27,10 +27,6 @@ function EvolutionStageOne({ evolvesInto, evolutionUrl }) {
     }, [evolutionUrl]);
 
 
-
-
-
-
     return(
         <>
             {evolvesInto && evolutionStageOne &&
