@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    color: red;
+    font-size: 16px;
 }
 
 .page-counter-container ul {

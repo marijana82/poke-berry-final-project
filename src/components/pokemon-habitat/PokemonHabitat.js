@@ -24,20 +24,6 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
     }, [habitat]);
 
 
-//TODO: user hover in another component, in this component it's too much
-
-   /* //to show the hover image:
-    const handleMouseOver = () => {
-        setIsHovering(true);
-        //setHoverInfo(pokemonHabitat.url);
-        console.log("mouse is hovering");
-    }
-
-    const handleMouseOut = () => {
-        setIsHovering(false);
-    }*/
-
-
 
     return(
         <div className="main-result-container-habitat">

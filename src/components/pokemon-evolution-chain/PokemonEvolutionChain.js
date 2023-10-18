@@ -4,9 +4,10 @@ import axios from "axios";
 import EvolutionStageOne from "../evolution-stage-one/EvolutionStageOne";
 import EvolutionStageTwo from "../evolution-stage-two/EvolutionStageTwo";
 import BasicPoke from "../basic-poke-url/BasicPoke";
+import SpeechBubble from "../speech-bubble/SpeechBubble";
 
 
-function PokemonEvolutionChain({ evolutionId, pokeImage }) {
+function PokemonEvolutionChain({ evolutionId, pokeImage, pokeName }) {
 
     const [evolutionChain, setEvolutionChain] = useState([]);
 
@@ -33,6 +34,7 @@ function PokemonEvolutionChain({ evolutionId, pokeImage }) {
         <div className="result-container-evolution">
 
             { evolutionChain &&
+                pokeName &&
                 evolutionChain.species &&
                 evolutionChain.species.name &&
                 evolutionChain.evolves_to[0] &&
@@ -48,9 +50,9 @@ function PokemonEvolutionChain({ evolutionId, pokeImage }) {
                         evolutionChain.species.name &&
                         <div className="single-pokemon-name-container">
                             <div className="name">
-                                <h2>Hi there {evolutionChain.species.name}!</h2>
+                                <h2>Hi there {pokeName}!</h2>
+                                <p>You belong to {evolutionChain.species.name} evolution species.</p>
                             </div>
-
                         </div>
                     }
 
@@ -64,7 +66,11 @@ function PokemonEvolutionChain({ evolutionId, pokeImage }) {
 
                 :
 
-                <p>Sorry, there is no evolution chain available for this specific pokemon. Please try again.</p>
+                <SpeechBubble
+                    bubbleMessage="Sorry, there is no evolution chain available for this specific pokemon. Please try again."
+                />
+
+
             }
 
             { evolutionChain &&

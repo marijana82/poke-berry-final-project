@@ -45,10 +45,14 @@ function TabOne({singlePokemon}) {
         setPokeEvolution(tabOneInfo.evolves_from_species.url);
     }
 
-    const resetSearchEvolution = () => {
+    const resetSearch = () => {
         console.log("button is clicked")
         setIsEvolutionOnClick(false);
         setPokeEvolution({});
+        setIsHabitatOnClick(false);
+        setPokeHabitat({});
+        setIsColorOnClick(false);
+        setPokeColor({});
     }
 
     /*color*/
@@ -138,12 +142,12 @@ function TabOne({singlePokemon}) {
             }
 
             <div className="button-and-bubble-container">
+                {isEvolutionOnClick || isColorOnClick || isHabitatOnClick
 
-                {isEvolutionOnClick && singlePokemon && tabOneInfo
                     ?
                     <ButtonReset
                         children="close"
-                        resetHandler={resetSearchEvolution}
+                        resetHandler={resetSearch}
                     />
 
                     :
@@ -163,13 +167,8 @@ function TabOne({singlePokemon}) {
                                 />
                             </Link>
                         </SpeechBubble>
-
-
-
                     </>
                 }
-
-
             </div>
 
 
@@ -184,10 +183,17 @@ function TabOne({singlePokemon}) {
 
                 &&
 
+                <Link
+                    to={"/search-page"}
+                    style={{textDecoration: 'none', color: 'white'}}
+                >
+
                     <PokemonEvolution
                         dataEvolution={pokeEvolution}
                         evolvesFrom={singlePokemon.name}
                     />
+
+                </Link>
             }
 
             {/*color*/}
@@ -211,7 +217,7 @@ function TabOne({singlePokemon}) {
 
                 &&
 
-                //TODO compare how I did this to how I want to implement the hover function
+
                 <PokemonHabitat
                     habitat={pokeHabitat}
                     evolvesFrom={singlePokemon.name}

@@ -20,7 +20,7 @@ function QuizGame() {
         setUserGuess("");
 
         try {
-            const randomPokemonId = Math.floor(Math.random() * 1000) + 1;
+            const randomPokemonId = Math.floor(Math.random() * 1100) + 1;
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}/`);
             console.log(response.data);
             setPokemonData(response.data);

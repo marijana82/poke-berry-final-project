@@ -1,6 +1,7 @@
 import "./PokemonColor.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 
 function PokemonColor({color, evolvesFrom}) {
@@ -45,9 +46,16 @@ function PokemonColor({color, evolvesFrom}) {
 
                     return(
 
-                        <div className="pokemon-list-button-this">
-                            <h3 className="habitat-lettertype"> {pokeSpecies.name}</h3>
-                        </div>
+                        <Link
+                            to={"/search-page"}
+                            style={{textDecoration: 'none', color: 'white'}}
+                        >
+                            <div className="pokemon-list-button-this">
+                                <h3 className="habitat-lettertype"> {pokeSpecies.name}</h3>
+                            </div>
+                        </Link>
+
+
 
                     )
             })}

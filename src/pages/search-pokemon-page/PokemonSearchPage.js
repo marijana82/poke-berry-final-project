@@ -6,6 +6,9 @@ import PokemonResults from "../../components/pokemon-results/PokemonResults";
 import QueryPokemon from "../../components/pokemon-query/QueryPokemon";
 import {POKEMON_URL} from "../../constants";
 import Header from "../../components/header/Header";
+import Main from "../../components/main/Main";
+import Footer from "../../components/footer/Footer";
+import SpeechBubble from "../../components/speech-bubble/SpeechBubble";
 
 function PokemonSearchPage() {
 
@@ -57,6 +60,8 @@ function PokemonSearchPage() {
         <>
             <Header/>
 
+            <Main>
+
                 <QueryPokemon
                     searchItemHandler={setSearchItem}
                 />
@@ -75,15 +80,18 @@ function PokemonSearchPage() {
 
                     :
 
-                    <div className="empty-berry-card">
-                        <p>Or click <Link to={"/berry-overview-page"}>here</Link> for a full berry list.</p>
-                    </div>
+                    <SpeechBubble
+                    >Or click <Link to={"/pokemon-list-page"}>here</Link> for a full pokemon list.
+                    </SpeechBubble>
+
+
                 }
 
             </div>
 
+            </Main>
 
-
+            <Footer/>
         </>
     )
 }

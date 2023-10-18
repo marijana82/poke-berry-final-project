@@ -7,10 +7,11 @@ import {Link} from "react-router-dom";
 function Pagination({page, totalPages, favoritePokemon, chosenFavs}) {
     return(
         <>
+
             <div className="page-counter-container">
                 <p>Page <b>{page} </b> of {totalPages}</p>
-                <p>Total chosen: {favoritePokemon}</p>
-                <p>Chosen favorites:
+                <p>Chosen: {favoritePokemon}</p>
+                <p>Your favorites:
                     <ul>
                         {/*can't map the favs because there are no objects with keys in the array*/}
                         <li>{chosenFavs[0]}</li>

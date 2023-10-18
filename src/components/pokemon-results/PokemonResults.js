@@ -8,6 +8,7 @@ import PokemonSpecies from "../pokemon-species/PokemonSpecies";
 import {DiVim} from "react-icons/di";
 import PokemonEvolutionChain from "../pokemon-evolution-chain/PokemonEvolutionChain";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
+import {Link} from "react-router-dom";
 
 
 function PokemonResults({pokeDetails}) {
@@ -26,15 +27,34 @@ function PokemonResults({pokeDetails}) {
                 pokeDetails.species &&
 
                 <div>
-                    <h2>you've been searching for {pokeDetails.name}</h2>
-                    <SpeechBubble
-                        bubbleMessage="you've been searching for..."
-                        dynamicData={pokeDetails.name}
-                    />
-                    <PokemonEvolutionChain
-                        evolutionId={pokeDetails.id}
-                        pokeImage={pokeDetails.sprites.other.dream_world.front_default}
-                    />
+                    {/*<h2>you've been searching for {pokeDetails.name}</h2>*/}
+                    <div className="speech-bubble-container">
+
+                        <SpeechBubble
+                            bubbleMessage="you've been searching for..."
+                            dynamicData={pokeDetails.name}
+                        />
+
+                        <SpeechBubble
+                        >Interested in more pokemon? Click <Link to={"/pokemon-list-page"}>here</Link> for a full pokemon list.
+                        </SpeechBubble>
+
+                    </div>
+
+                    {
+                        pokeDetails &&
+                        pokeDetails.name &&
+
+                        <PokemonEvolutionChain
+                            pokeName={pokeDetails.name}
+                            evolutionId={pokeDetails.id}
+                            pokeImage={pokeDetails.sprites.other.dream_world.front_default}
+                        />
+
+                    }
+
+
+
 
                 </div>
 
