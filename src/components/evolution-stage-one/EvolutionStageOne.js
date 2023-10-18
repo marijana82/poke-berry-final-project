@@ -32,7 +32,6 @@ function EvolutionStageOne({ evolvesInto, evolutionUrl }) {
             {evolvesInto && evolutionStageOne &&
                 <>
                     <h2>Evolves into: {evolvesInto}</h2>
-
                     <BasicPoke
                         pokemonId={evolutionStageOne.id}
                     />

@@ -40,12 +40,26 @@ function PokemonEvolutionChain({ evolutionId, pokeImage }) {
 
                 ?
 
+                <div className="left-content-container-single">
+
                 <div className="single-pokemon-image-container">
-                    {/*<h1>Hi there {evolutionChain.species.name}!</h1>*/}
+
+                    {evolutionChain.species &&
+                        evolutionChain.species.name &&
+                        <div className="single-pokemon-name-container">
+                            <div className="name">
+                                <h2>Hi there {evolutionChain.species.name}!</h2>
+                            </div>
+
+                        </div>
+                    }
+
                     <img
                         src={pokeImage}
                         className="single-pokemon-image"
                     />
+                </div>
+
                 </div>
 
                 :

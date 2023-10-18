@@ -132,7 +132,9 @@ function TabOne({singlePokemon}) {
 
                     :
 
-                <SpeechBubble/>
+                <SpeechBubble
+                    bubbleMessage="Information is loading. Thank you for waiting..."
+                />
             }
 
             <div className="button-and-bubble-container">
@@ -147,19 +149,23 @@ function TabOne({singlePokemon}) {
                     :
 
                     <>
-                        <div className="speech-bubble">
-                            <p>choose color, living area or evolution for more information</p>
-                        </div>
+                        <SpeechBubble
+                            bubbleMessage="choose color, living area or evolution for more information"
+                        />
 
-                        <div className="speech-bubble">
+                        <SpeechBubble
+                            bubbleMessage="or click on arrow to go back to pokemon overview"
+                        >
                             <Link to={`/pokemon-list-page`}>
                                 <AiOutlineArrowLeft
                                     style={
                                         {color: 'blue', fontSize: '34px', fontWeight: 'bold'}}
                                 />
                             </Link>
-                            <p>or click on arrow to go back to pokemon overview</p>
-                        </div>
+                        </SpeechBubble>
+
+
+
                     </>
                 }
 

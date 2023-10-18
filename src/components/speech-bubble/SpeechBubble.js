@@ -2,10 +2,12 @@ import "./SpeechBubble.css";
 import React from "react";
 
 
-function SpeechBubble() {
+function SpeechBubble({bubbleMessage, dynamicData, children}) {
     return(
             <div className="speech-bubble">
-                <p>Information is loading. Thank you for waiting...</p>
+                {children}
+                <p>{bubbleMessage}</p>
+                <p>{dynamicData}</p>
             </div>
     );
 }

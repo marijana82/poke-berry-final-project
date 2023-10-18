@@ -7,8 +7,6 @@ function BasicPoke({pokemonId}) {
     const [singlePokemon, setSinglePokemon] = useState({});
     const [loading, setLoading] = useState(false);
 
-    //const {id} = useParams();
-
 
     useEffect(() => {
 

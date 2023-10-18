@@ -7,6 +7,7 @@ import TabOne from "../tabs/TabOne";
 import PokemonSpecies from "../pokemon-species/PokemonSpecies";
 import {DiVim} from "react-icons/di";
 import PokemonEvolutionChain from "../pokemon-evolution-chain/PokemonEvolutionChain";
+import SpeechBubble from "../speech-bubble/SpeechBubble";
 
 
 function PokemonResults({pokeDetails}) {
@@ -24,11 +25,18 @@ function PokemonResults({pokeDetails}) {
                 pokeDetails.sprites.other.dream_world.front_default &&
                 pokeDetails.species &&
 
-
+                <div>
+                    <h2>you've been searching for {pokeDetails.name}</h2>
+                    <SpeechBubble
+                        bubbleMessage="you've been searching for..."
+                        dynamicData={pokeDetails.name}
+                    />
                     <PokemonEvolutionChain
                         evolutionId={pokeDetails.id}
                         pokeImage={pokeDetails.sprites.other.dream_world.front_default}
                     />
+
+                </div>
 
 
             }
