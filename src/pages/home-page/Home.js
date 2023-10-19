@@ -1,16 +1,12 @@
 import "./Home.css";
 import React, {useContext} from "react";
-
 import FlippableCard from "../../components/card/flippable-card/FlippableCard";
 import Header from "../../components/header/Header";
-import Pagination from "../../components/pagination/Pagination";
 import FavoritesContext from "../../context/FavoritesContext";
+import Footer from "../../components/footer/Footer";
 
 
 function Home() {
-
-    //favorites context destructuring
-    const { favoritePokemon, updateFavoritePokemon } = useContext(FavoritesContext);
 
     return (
         <>
@@ -24,9 +20,10 @@ function Home() {
 
                 <FlippableCard/>
                 <FlippableCard/>
-
-
             </div>
+
+
+            <Footer/>
 
 
         </>
