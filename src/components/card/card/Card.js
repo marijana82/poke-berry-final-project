@@ -4,7 +4,7 @@ import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
 
 
 
-function Card({clickToRegister, flipToPlay, onClick, pokemonImage, pokemonName, pokemonType, pokemonStatName, pokemonStats, pokemonExtra}) {
+function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClick}) {
 
     return(
         <div className="card" onClick={onClick}>
@@ -19,14 +19,8 @@ function Card({clickToRegister, flipToPlay, onClick, pokemonImage, pokemonName, 
                     </div>
 
                     <div className="back-content-container">
-                        <h2 className="pokemon-name">Play!{pokemonName}</h2>
-                        {/*<span className="pokemon-type">Type{pokemonType}</span>*/}
-
-                        <div className="pokemon-stats">
-                            <p>{pokemonStatName} {pokemonStats}</p>
-                        </div>
-                        <h2 className="pokemon-logo">Or click here to register{pokemonExtra}</h2>
-
+                        <h2 className="pokemon-name">{playMessage}</h2>
+                        <p className="pokemon-logo">{registerMessage}</p>
                     </div>
 
                 </div>

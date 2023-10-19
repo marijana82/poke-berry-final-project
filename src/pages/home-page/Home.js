@@ -17,8 +17,6 @@ function Home() {
 
 
             <div className="pokemon-card-container">
-
-                <FlippableCard/>
                 <FlippableCard/>
             </div>
 
