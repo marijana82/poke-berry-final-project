@@ -18,10 +18,9 @@ function FlippableCard() {
                 classNames="flip"
             >
                     <Card
-                        clickToRegister="Click here to register"
-                        playMessage="Play!"
+                        clickToRegister="Wanna have some fun? Flip the card to play a game!"
+                        playMessage="Play now!"
                         registerMessage="Or click here to register"
-                        flipToPlay="Or flip to play"
                         onClick={() => {
                             setShowFrontOne((currentValue) => !currentValue);
                         }}/>

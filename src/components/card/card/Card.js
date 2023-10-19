@@ -1,6 +1,7 @@
 import "./Card.css";
 import React from "react";
 import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
+import {Link} from "react-router-dom";
 
 
 
@@ -19,8 +20,20 @@ function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClic
                     </div>
 
                     <div className="back-content-container">
-                        <h2 className="pokemon-name">{playMessage}</h2>
-                        <p className="pokemon-logo">{registerMessage}</p>
+                        <Link
+                            to={"/game-page"}
+                            style={{textDecoration: 'none', color: 'white'}}
+                        >
+                            <h2 className="pokemon-name">{playMessage}</h2>
+                        </Link>
+
+                        <Link
+                            to={"/registration-page"}
+                            style={{textDecoration: 'none', color: 'black'}}
+                        >
+                            <p className="pokemon-logo">{registerMessage}</p>
+                        </Link>
+
                     </div>
 
                 </div>

@@ -2,6 +2,8 @@ import "./QuizGame.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Button from "../../button/Button";
+import Pokeball from "../../pokeball/Pokeball";
+import {Link} from "react-router-dom";
 
 function QuizGame() {
 
@@ -146,9 +148,15 @@ function QuizGame() {
                                         styling="game-button"
                                     >Try again!
                                     </Button>
-
-
                                 </div>
+
+                                <Link
+                                    to={"/"}
+                                    style={{textDecoration: 'none', color: 'black'}}
+                                >
+                                    <Pokeball ballMessage="or click here to go back to home page"/>
+                                </Link>
+
                             </div>
                         </div>
                     )}
