@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import EvolutionStageOne from "../evolution-stage-one/EvolutionStageOne";
 import EvolutionStageTwo from "../evolution-stage-two/EvolutionStageTwo";
-import BasicPoke from "../basic-poke-url/BasicPoke";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
 
 
@@ -15,9 +14,6 @@ function PokemonEvolutionChain({ evolutionUrl, evolutionId, pokeImage, pokeName 
         try {
             const resultEvolution = await axios.get(evolutionUrl);
             console.log(resultEvolution.data);
-            //const resultEvolutionChain = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${evolutionId}/`);
-            //console.log(resultEvolutionChain.data.chain);
-            //setEvolutionChain(resultEvolutionChain.data.chain);
             setEvolutionChain(resultEvolution.data.chain);
 
         } catch(e) {
