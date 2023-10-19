@@ -9,7 +9,6 @@ function PokemonSpecies({ speciesUrl, speciesId, pokeImage }) {
 
     async function fetchPokeSpecies() {
         try {
-
             const resultSpecies = await axios.get(`${speciesUrl}`);
             console.log(resultSpecies.data);
             setSpecies(resultSpecies.data);
