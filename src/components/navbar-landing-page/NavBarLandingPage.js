@@ -14,31 +14,6 @@ function NavBarLandingPage() {
 
                     <li>
                         <NavLink
-                            to="/search-page"
-                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                        >Search
-                        </NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink
-                            to="/registration-page"
-                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                        >Register
-                        </NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink
-                            to="/login-page"
-                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                        >Login
-                        </NavLink>
-                    </li>
-
-
-                    <li>
-                        <NavLink
                             to="/landing-page"
                             className={({isActive}) => isActive === true ? "active-link" : "default-link"}
                         >Landing page
@@ -71,9 +46,9 @@ function NavBarLandingPage() {
 
                     <li>
                         <NavLink
-                            to="/game-page"
+                            to="/search-page"
                             className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                        >Games
+                        >Search
                         </NavLink>
                     </li>
 
@@ -82,6 +57,31 @@ function NavBarLandingPage() {
                             to="/filter-advanced-page"
                             className={({isActive}) => isActive === true ? "active-link" : "default-link"}
                         >Berry Filter
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink
+                            to="/game-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Games
+                        </NavLink>
+                    </li>
+
+
+                    <li>
+                        <NavLink
+                            to="/registration-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Register
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink
+                            to="/login-page"
+                            className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                        >Login
                         </NavLink>
                     </li>
 
