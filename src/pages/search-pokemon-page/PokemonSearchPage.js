@@ -91,7 +91,9 @@ function PokemonSearchPage() {
 
             </Main>
 
-            <Footer/>
+            <Footer
+                buttonMessage="Back to top"
+            />
         </>
     )
 }

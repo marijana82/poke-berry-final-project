@@ -20,7 +20,7 @@ function Landing() {
                 </Link>
 
             </Main>
-            <Footer/>
+
         </>
     )
 }

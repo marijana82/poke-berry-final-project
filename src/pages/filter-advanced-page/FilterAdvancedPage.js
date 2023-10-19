@@ -14,7 +14,9 @@ function FilterAdvancedPage() {
             <Main>
                 <TabContainerFilter/>
             </Main>
-            <Footer/>
+            <Footer
+                buttonMessage="Back to top"
+            />
 
         </>
     );

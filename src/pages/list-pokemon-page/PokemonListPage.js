@@ -200,7 +200,9 @@ function PokemonListPage() {
 
             </FavoritesProvider>
 
-            <Footer/>
+            <Footer
+                buttonMessage="Back to top"
+            />
         </>
     )
 }

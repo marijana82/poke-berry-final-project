@@ -5,6 +5,7 @@ import CardBerry from "../../components/card/card-berry/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
 import { addItem, removeItem } from "../../components/compare-items/actions/actions";
+import Footer from "../../components/footer/Footer";
 
 function BerryListPage() {
 
@@ -115,6 +116,10 @@ function BerryListPage() {
                     {berryDex ? <BerryInfo data={berryDex}/> : <div className="filtered-berry-title"><h3>choose a berry!</h3></div>}
 
                 </div>
+
+            <Footer
+                buttonMessage="Back to top"
+            />
 
 
 

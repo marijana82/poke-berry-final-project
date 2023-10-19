@@ -60,7 +60,6 @@ function Home() {
 
             </Main>
 
-            <Footer/>
 
         </>
     )
