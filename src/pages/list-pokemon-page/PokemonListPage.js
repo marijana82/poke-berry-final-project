@@ -20,9 +20,6 @@ function PokemonListPage() {
     const [pokedex, setPokedex] = useState();
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
-    //const [notFound, setNotFound] = useState(false);
-
-
     const [favorites, setFavorites] = useState(() => {
         //getting stored value
         const saved = localStorage.getItem("favorite");
@@ -31,10 +28,12 @@ function PokemonListPage() {
         return initialValue || " ";
     });
 
-
     const itemsPerPage = 24;
 
+    //why is the destructured favoritePokemon not used?
     const { favoritePokemon } = useContext(FavoritesContext);
+
+    const controller = new AbortController();
 
     //function 1: fetching the general pokemon data + previous and next
     async function fetchPokeData() {
@@ -42,7 +41,9 @@ function PokemonListPage() {
         setError(false);
 
         try {
-            const response = await axios.get(endpoint);
+            const response = await axios.get(endpoint,
+                {signal: controller.signal});
+
             setNextEndpoint(response.data.next);
             setPreviousEndpoint(response.data.previous);
             setTotalPages(Math.ceil(response.data.count / itemsPerPage)); //calculate total pages
@@ -75,7 +76,15 @@ function PokemonListPage() {
 
     useEffect(() => {
         fetchPokeData();
+
+
     }, [endpoint]);
+
+    /*where to render the return statement of cleanup function?*/
+
+    /*return function cleanup() {
+        controller.abort();
+    }*/
 
 
 
@@ -137,7 +146,6 @@ function PokemonListPage() {
 
 
                             { nextEndpoint &&
-
                                 <Button
                                     styling="game-button"
                                     clickHandler={() => handlePageChange(page + 1)}
@@ -147,8 +155,6 @@ function PokemonListPage() {
 
                         </div>
 
-
-
                         <PokemonCard
                             pokemon={pokemonData}
                             loading={loading}
@@ -156,15 +162,10 @@ function PokemonListPage() {
                             pokemonClick={poke => setPokedex(poke)}
                         />
 
-
                         <div className="button-group-container">
                             { previousEndpoint &&
                                 <Button
                                     styling="game-button"
-                                    /* clickHandler={() => {
-                                         setPokemonData([])
-                                         setEndpoint(previousEndpoint)
-                                     }}*/
                                     clickHandler={() => handlePageChange(page - 1)}
                                 >Previous
                                 </Button>
@@ -175,10 +176,6 @@ function PokemonListPage() {
 
                                 <Button
                                     styling="game-button"
-                                    /*clickHandler={() => {
-                                        setPokemonData([])
-                                        setEndpoint(nextEndpoint)
-                                    }}*/
                                     clickHandler={() => handlePageChange(page + 1)}
                                 >Next
                                 </Button>

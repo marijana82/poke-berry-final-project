@@ -28,7 +28,7 @@ export const GlobalProvider = (props) => {
 
     function isFavorite(pokemonName) {
         if(pokemonName) {
-            const myFav = favorites.find((x) => x.id === pokemonName.id)
+            const myFav = favorites.find((x) => x === pokemonName)
             return myFav ? true : false
         }
         return false;
@@ -50,7 +50,7 @@ export const GlobalProvider = (props) => {
     }
 
     const removeFromFavorites = (pokemonName) => {
-        favorites = favorites.filter(x => x.id !== pokemonName.id)
+        favorites = favorites.filter(x => x !== pokemonName)
         setFavorites(favorites);
         localStorage.setItem(localStorageKey, JSON.stringify(favorites))
         console.log("remove");

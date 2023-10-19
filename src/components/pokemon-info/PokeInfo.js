@@ -57,14 +57,8 @@ function PokeInfo({ data }) {
                             </div>
 
                     </>
-
-
-
-
-
                 )
             }
-
 
         </div>
     )

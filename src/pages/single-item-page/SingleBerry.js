@@ -4,13 +4,10 @@ import {Link, useParams} from "react-router-dom";
 import axios from "axios";
 import BerryNaturalGift from "../../components/berry-natural-gift/BerryNaturalGift";
 import BerryItem from "../../components/berry-item/BerryItem";
-import Flavor from "../../components/card-item-one/flavor/Flavor";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Main from "../../components/main/Main";
 import {AiOutlineArrowLeft} from "react-icons/ai";
-
-
 
 function SingleBerry() {
 
