@@ -44,12 +44,26 @@ function PokemonResults({pokeDetails}) {
                     {
                         pokeDetails &&
                         pokeDetails.name &&
+                        pokeDetails.species &&
+                        pokeDetails.sprites.other.dream_world &&
 
-                        <PokemonEvolutionChain
-                            pokeName={pokeDetails.name}
-                            evolutionId={pokeDetails.id}
-                            pokeImage={pokeDetails.sprites.other.dream_world.front_default}
-                        />
+                        <>
+
+                            <PokemonSpecies
+                                speciesUrl={pokeDetails.species.url}
+                                pokeImage={pokeDetails.sprites.other.dream_world.front_default}
+                            />
+
+                            {/*<PokemonEvolutionChain
+                                pokeName={pokeDetails.name}
+                                evolutionId={pokeDetails.id}
+                                pokeImage={pokeDetails.sprites.other.dream_world.front_default}
+                            />*/}
+
+
+                        </>
+
+
 
                     }
 

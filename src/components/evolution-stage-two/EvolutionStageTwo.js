@@ -36,7 +36,11 @@ function EvolutionStageTwo({ evolvesInto, evolutionUrl }) {
                 ?
 
                 <>
-                    <h2>Evolves into: {evolvesInto}</h2>
+
+                    <SpeechBubble
+                        bubbleMessage="Evolves into "
+                        dynamicData={evolvesInto}
+                    />
 
                     <BasicPoke
                         pokemonId={evolutionStageTwo.id}

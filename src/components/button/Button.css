@@ -2,10 +2,8 @@ button {
     width: 25vh;
     height: 8vh;
     border: 3px solid rebeccapurple;
-    padding: 3px;
     font-size: 25px;
     font-weight: bold;
-    font-family: "Didact Gothic";
     color: aliceblue;
     background: mediumpurple;
     cursor: pointer;
@@ -35,9 +33,6 @@ button:hover {
     cursor: pointer;
 }
 
-button-favorite:hover {
-
-}
 
 .navigate-button {
     border: none;

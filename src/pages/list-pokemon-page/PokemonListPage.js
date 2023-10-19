@@ -6,6 +6,7 @@ import Button from "../../components/button/Button";
 import PokemonCard from "../../components/card/pokemon-card/PokemonCard";
 import FavoritesContext, { FavoritesProvider } from "../../context/FavoritesContext";
 import Pagination from "../../components/pagination/Pagination";
+import Footer from "../../components/footer/Footer";
 
 //favorites key
 const favoritesKey = "favorite";
@@ -122,9 +123,7 @@ function PokemonListPage() {
             >
 
                 <div className="main-pokemon-list-container">
-
                     <div className="left-content-container">
-
                         <div className="button-group-container">
 
                             <Pagination
@@ -200,6 +199,8 @@ function PokemonListPage() {
 
 
             </FavoritesProvider>
+
+            <Footer/>
         </>
     )
 }

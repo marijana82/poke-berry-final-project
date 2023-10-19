@@ -6,10 +6,6 @@ import Button from "../../components/button/Button";
 import axios from "axios";
 import { addItem, removeItem } from "../../components/compare-items/actions/actions";
 
-import CardFlavorsAll from "../../components/card-items-all/CardFlavorsAll";
-import CardFirmnessAll from "../../components/card-items-all/CardFirmnessAll";
-import {Link} from "react-router-dom";
-
 function BerryListPage() {
 
     const [berryData, setBerryData] = useState([]);
@@ -29,9 +25,8 @@ function BerryListPage() {
             const response = await axios.get(endpointBerry);
             setNextEndpointBerry(response.data.next);
             setPreviousEndpointBerry(response.data.previous);
-            //this parameter contains an array, consisting of objects with a key-value pair (name, url)
             getBerry(response.data.results);
-            //toggleLoading(false);
+            toggleLoading(false);
 
         } catch(e) {
             console.error(e);
@@ -39,7 +34,6 @@ function BerryListPage() {
         }
     };
 
-    //2. here create async function getBerry, to which we pass response as parameter
     async function getBerry(response) {
         try {
             response.map(async(berry) => {
@@ -79,7 +73,6 @@ function BerryListPage() {
         <>
             <div className="main-pokemon-list-container">
                 <div className="left-content-container">
-
                     <div className="button-group-container">
                         {previousEndpointBerry &&
                             <Button

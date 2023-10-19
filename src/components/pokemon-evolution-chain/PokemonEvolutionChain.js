@@ -7,15 +7,18 @@ import BasicPoke from "../basic-poke-url/BasicPoke";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
 
 
-function PokemonEvolutionChain({ evolutionId, pokeImage, pokeName }) {
+function PokemonEvolutionChain({ evolutionUrl, evolutionId, pokeImage, pokeName }) {
 
     const [evolutionChain, setEvolutionChain] = useState([]);
 
     async function fetchPokemonEvolutionChain() {
         try {
-            const resultEvolutionChain = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${evolutionId}/`);
-            console.log(resultEvolutionChain.data.chain);
-            setEvolutionChain(resultEvolutionChain.data.chain);
+            const resultEvolution = await axios.get(evolutionUrl);
+            console.log(resultEvolution.data);
+            //const resultEvolutionChain = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${evolutionId}/`);
+            //console.log(resultEvolutionChain.data.chain);
+            //setEvolutionChain(resultEvolutionChain.data.chain);
+            setEvolutionChain(resultEvolution.data.chain);
 
         } catch(e) {
             console.error(e);
@@ -24,7 +27,7 @@ function PokemonEvolutionChain({ evolutionId, pokeImage, pokeName }) {
 
     useEffect(() => {
         fetchPokemonEvolutionChain();
-    }, [evolutionId]);
+    }, [evolutionUrl]);
 
     return(
         <>
@@ -35,6 +38,7 @@ function PokemonEvolutionChain({ evolutionId, pokeImage, pokeName }) {
 
             { evolutionChain &&
                 pokeName &&
+                pokeImage &&
                 evolutionChain.species &&
                 evolutionChain.species.name &&
                 evolutionChain.evolves_to[0] &&
@@ -46,20 +50,15 @@ function PokemonEvolutionChain({ evolutionId, pokeImage, pokeName }) {
 
                 <div className="single-pokemon-image-container">
 
-                    {evolutionChain.species &&
-                        evolutionChain.species.name &&
                         <div className="single-pokemon-name-container">
                             <div className="name">
                                 <h2>Hi there {pokeName}!</h2>
-                                <p>You belong to {evolutionChain.species.name} evolution species.</p>
+                                <img
+                                    src={pokeImage}
+                                    className="single-pokemon-image"
+                                />
                             </div>
                         </div>
-                    }
-
-                    <img
-                        src={pokeImage}
-                        className="single-pokemon-image"
-                    />
                 </div>
 
                 </div>
