@@ -2,6 +2,7 @@ import "./QueryPokemon.css";
 import React, { useState } from "react";
 import Button from "../button/Button";
 import PokemonRandom from "../pokemon-random/PokemonRandom";
+import FormInput from "../form-input/FormInput";
 
 function QueryPokemon({searchItemHandler}) {
 
@@ -22,24 +23,22 @@ function QueryPokemon({searchItemHandler}) {
                 onSubmit={onFormSubmit}>
 
                 <div className="query-container">
-                <label
-                    htmlFor="query-field"
-                >SEARCH FOR POKEMON EVOLUTION
 
-                    <input
-                        type="text"
-                        name="query"
-                        id="query-field"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value.toLowerCase())}
-                        placeholder="bulbasaur, ivysaur, pikachu ..."
+                    <FormInput
+                        idAttribute="query-field"
+                        labelText="SEARCH FOR POKEMON EVOLUTION"
+                        inputType="text"
+                        placeholder="type your pokemon name here"
+                        nameAttribute="query"
+                        stateValue={query}
+                        stateSetter={setQuery}
                     />
-                </label>
+
                     <Button
                         type="submit"
                         className="search-button"
                         disabled={!query}
-                    >Search me!
+                    >Search!
                     </Button>
 
                     <PokemonRandom/>

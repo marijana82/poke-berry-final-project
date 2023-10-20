@@ -14,7 +14,7 @@ function FormInput({ idAttribute, labelText, inputType, placeholder, nameAttribu
                     name={nameAttribute}
                     id={idAttribute}
                     value={stateValue}
-                    onChange={(e) => stateSetter(e.target.value)}
+                    onChange={(e) => stateSetter(e.target.value.toLowerCase())}
                 />
             </label>
         </div>
