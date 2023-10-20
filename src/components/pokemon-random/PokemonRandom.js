@@ -4,7 +4,7 @@ import axios from "axios";
 import Button from "../button/Button";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
 
-function PokemonRandom() {
+function PokemonRandom({connectChildToParent}) {
 
     const [randomPokeData, setRandomPokeData] = useState([]);
     const [randomPokeName, setRandomPokeName] = useState("");
@@ -18,6 +18,7 @@ function PokemonRandom() {
             setRandomPokeData(responseRandom.data);
             setRandomPokeName(responseRandom.data.name);
 
+
         } catch(e) {
             console.error(e);
         }
@@ -30,7 +31,10 @@ function PokemonRandom() {
 
 
     return(
-        <div className="random-pokemon-container">
+        <div
+            className="random-pokemon-container"
+            onClick={() => connectChildToParent(randomPokeName)}
+        >
             <Button
                 type="button"
                 clickHandler={() => fetchRandomPokemon()}

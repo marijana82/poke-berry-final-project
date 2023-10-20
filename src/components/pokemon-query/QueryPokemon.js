@@ -10,11 +10,16 @@ import SpeechBubble from "../speech-bubble/SpeechBubble";
 function QueryPokemon({searchItemHandler}) {
 
     const [query, setQuery] = useState("");
+    const [placeholder, setPlaceholder] = useState("type your pokemon name here");
 
     function onFormSubmit(e) {
         e.preventDefault();
         console.log("I am searching for something!");
         searchItemHandler(query);
+    }
+
+    function connectChildToParent() {
+
     }
 
 
@@ -29,7 +34,7 @@ function QueryPokemon({searchItemHandler}) {
                     <FormInput
                         idAttribute="query-field"
                         inputType="text"
-                        placeholder="type your pokemon name here"
+                        placeholder={placeholder}
                         nameAttribute="query"
                         stateValue={query}
                         stateSetter={setQuery}
@@ -42,7 +47,9 @@ function QueryPokemon({searchItemHandler}) {
                     >Search!
                     </Button>
 
-                    <PokemonRandom/>
+                    <PokemonRandom
+                        connectChildToParent={parameter => setPlaceholder(parameter)}
+                    />
                 </div>
             </form>
         </article>
