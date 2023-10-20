@@ -1,0 +1,44 @@
+import "./PokemonRandom.css";
+import React, {useEffect, useState} from "react";
+import axios from "axios";
+import Button from "../button/Button";
+
+function PokemonRandom() {
+
+    const [randomPokeData, setRandomPokeData] = useState([]);
+    const [randomPokeName, setRandomPokeName] = useState("");
+
+    async function fetchRandomPokemon() {
+
+        try {
+            const randomPokemonId = Math.floor(Math.random() * 1100) + 1;
+            const responseRandom = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}/`);
+            console.log(responseRandom.data);
+            setRandomPokeData(responseRandom.data);
+            setRandomPokeName(responseRandom.data.name);
+
+        } catch(e) {
+            console.error(e);
+        }
+    }
+
+    useEffect(() => {
+        fetchRandomPokemon();
+    }, []);
+
+
+
+    return(
+        <div className="random-pokemon-container">
+            <Button
+                type="button"
+                clickHandler={() => fetchRandomPokemon()}
+                styling="random-button"
+            >{randomPokeName}
+            </Button>
+
+        </div>
+    )
+}
+
+export default PokemonRandom;

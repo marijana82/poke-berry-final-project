@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import CardFlavorsAll from "../../card-items-all/CardFlavorsAll";
 import CardFirmnessAll from "../../card-items-all/CardFirmnessAll";
 import FilterInfo from "../../filter-info/FilterInfo";
-import {Link} from "react-router-dom";
 
 
 function TabContainerFilter() {
@@ -35,7 +34,7 @@ function TabContainerFilter() {
                 <li
                     className={activeTab === "tab 2" ? "active" : ""}
                     onClick={handleTabTwo}
-                >Firmness filter
+                >Filter firmness
                 </li>
             </ul>
 
@@ -52,15 +51,25 @@ function TabContainerFilter() {
                     />
                 }
 
-                //TODO: create another component where info of tab two will be rendered
-                {flavorDex || firmnessDex ?
+
+                {flavorDex  ?
 
                         <FilterInfo
                             dataFlavor={flavorDex}
                             dataFirmness={firmnessDex}
                         />
                     :
-                    <p>no flavors or firmness chosen</p>
+                    <p>no flavors chosen</p>
+                }
+
+                {
+                    firmnessDex ?
+
+                        <FilterInfo/>
+
+                        :
+
+                        <p>no firmness chosen</p>
                 }
 
             </div>

@@ -51,7 +51,6 @@ function CardFlavorsAll({infoFlavorHandler}) {
                     styling="filter-button-flavor"
                     >{flavor.name}
                     </Button>
-
                     )
             } ) )
 
@@ -59,23 +58,28 @@ function CardFlavorsAll({infoFlavorHandler}) {
 
                 (
                     <div>
-                        {selectedFlavor && (
+                        {selectedFlavor &&
 
                             <Flavor
                                 flavorUrl={selectedFlavor.url}
                                 infoFlavorHandler={infoFlavorHandler}
                             />
-                        )}
+                        }
 
-                        <button
-                            onClick={() => setIsClickedFlavor(false)}
-                            className="filter-button-flavor"
-                        >Flavors
-                        </button>
+
+                        <Button
+                            clickHandler={() => setIsClickedFlavor(false)}
+                            styling="filter-button-flavor"
+                            children="Back To Flavors Overview"
+                        >
+                        </Button>
+
 
                 </div>
 
-                )}
+                )
+            }
+
         </div>
     );
 }

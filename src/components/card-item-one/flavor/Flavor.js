@@ -4,7 +4,7 @@ import axios from "axios";
 import Button from "../../button/Button";
 import FilteredItem from "../../filtered-item/FilteredItem";
 
-function Flavor({flavorUrl, infoFlavorHandler}) {
+function Flavor({ flavorUrl, infoFlavorHandler }) {
 
     const [flavorData, setFlavorData] = useState(null);
     const [filteredBerries, setFilteredBerries] = useState([]);
@@ -49,22 +49,20 @@ function Flavor({flavorUrl, infoFlavorHandler}) {
                     <div className="left-content-container-flavors">
 
                         <span className="title-button-container">
-
                             <div className="title-container">
 
-                            <div className="filtered-berry-title">
+                                <div className="filtered-berry-title">
                                 <h3>{flavorData.name} berry is {flavorData.contest_type.name}!</h3>
-                            </div>
+                                </div>
 
-                            <div className="filtered-berry-title">
+                                <div className="filtered-berry-title">
                                 <h3>{filteredBerries.length} {flavorData.name} berries with potency {selectedPotency} </h3>
-                            </div>
+                                </div>
 
                                 <div className="filtered-berry-title">
                                 <h3>click below on potency button or berry name to see more info! </h3>
-                            </div>
-
-                        </div>
+                                </div>
+                             </div>
 
 
                         <div className="filter-button-group-container">

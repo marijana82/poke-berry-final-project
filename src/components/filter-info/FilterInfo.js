@@ -1,7 +1,6 @@
 import "./FilterInfo.css";
 import React, {useState} from "react";
 import FilteredItem from "../filtered-item/FilteredItem";
-import {Link} from "react-router-dom";
 
 function FilterInfo({dataFlavor}) {
 
@@ -23,7 +22,7 @@ function FilterInfo({dataFlavor}) {
             {!isDataShown && dataFlavor &&
                 <div
                     className="result-introduction-container"
-                    div={handleDataFlavorClick}
+                    onClick={handleDataFlavorClick}
                 >
 
                         <FilteredItem

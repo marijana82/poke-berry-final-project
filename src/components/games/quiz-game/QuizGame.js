@@ -15,7 +15,6 @@ function QuizGame() {
     const [error, setError] = useState(false);
 
     //to fetch random pokemon from api
-
     async function fetchRandomPokemon() {
         toggleIsLoading(true);
         setError(false);

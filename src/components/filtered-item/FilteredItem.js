@@ -45,8 +45,6 @@ function FilteredItem({filteredItemUrl}) {
 
                 </>
 
-
-
             }
 
             </>
