@@ -76,7 +76,7 @@ button:hover {
     background: deepskyblue;
     opacity: 0.7;
     height: 50px;
-    width: 150px;
+    width: fit-content;
     border-radius: 25% 0;
 }
 
@@ -93,6 +93,18 @@ button:hover {
             rgb(255, 156, 85) 30px -30px,
             rgb(255, 255, 255) 40px -40px 0px -3px,
             rgb(255, 85, 85) 40px -40px;
+}
+
+.back-to-top {
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: fit-content;
+    width: fit-content;
+}
+
+.back-to-top:hover {
+    background-color: powderblue;
 }
 
 

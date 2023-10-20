@@ -16,6 +16,7 @@ function Footer({ buttonMessage, message, description }) {
                     <h4 className="footer-message">{message}</h4>
                     <p className="footer-description">{description}</p>
                     <button
+                        className="back-to-top"
                         onClick={() => {
                             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
                         }}

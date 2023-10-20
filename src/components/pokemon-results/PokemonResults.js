@@ -27,7 +27,7 @@ function PokemonResults({pokeDetails}) {
                         />
 
                         <SpeechBubble
-                        >Interested in more pokemon? Click <Link to={"/pokemon-list-page"}>here</Link> for a full pokemon list.
+                        >Interested in more pokemon? Search again or click <Link to={"/pokemon-list-page"}>here</Link> for a full pokemon list.
                         </SpeechBubble>
 
                     </div>
@@ -39,10 +39,16 @@ function PokemonResults({pokeDetails}) {
                         pokeDetails.sprites.other.dream_world &&
 
 
+
                             <PokemonSpecies
                                 speciesUrl={pokeDetails.species.url}
                                 pokeImage={pokeDetails.sprites.other.dream_world.front_default}
                             />
+
+
+
+
+
 
                     }
 

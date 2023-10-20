@@ -7,7 +7,10 @@ function FormInput({ idAttribute, labelText, inputType, placeholder, nameAttribu
         <div className="input-label-container">
             <label
                 htmlFor={idAttribute}
-            >{labelText}
+            >
+                <p className="label-text"
+                >{labelText}
+                </p>
                 <input
                     type={inputType}
                     placeholder={placeholder}

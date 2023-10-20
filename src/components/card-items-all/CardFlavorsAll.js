@@ -69,7 +69,7 @@ function CardFlavorsAll({infoFlavorHandler}) {
 
                         <Button
                             clickHandler={() => setIsClickedFlavor(false)}
-                            styling="filter-button-flavor"
+                            styling="back-to-top"
                             children="Back To Flavors Overview"
                         >
                         </Button>

@@ -59,7 +59,9 @@ function PokemonSearchPage() {
 
     return(
         <>
-            <Header/>
+            <Header
+                message="Search for Pokemon evolution!"
+            />
 
             <Main>
 
@@ -83,7 +85,7 @@ function PokemonSearchPage() {
                     :
 
                     <SpeechBubble
-                    >Or click <Link to={"/pokemon-list-page"}>here</Link> for a full pokemon list.
+                    >Search for pokemon or click <Link to={"/pokemon-list-page"}>here</Link> for a full pokemon list.
                     </SpeechBubble>
 
 

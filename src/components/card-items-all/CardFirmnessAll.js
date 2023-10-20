@@ -81,7 +81,7 @@ function CardFirmnessAll({infoFirmnessHandler}) {
 
                 <Button
                 clickHandler={() => setIsClickedFirmness(false)}
-                styling="filter-button-flavor"
+                styling="back-to-top"
                 children="Back To Firmness Overview"
                 >
                 </Button>

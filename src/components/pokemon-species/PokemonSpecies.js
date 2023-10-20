@@ -2,6 +2,7 @@ import "./PokemonSpecies.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PokemonEvolutionChain from "../pokemon-evolution-chain/PokemonEvolutionChain";
+import {Link} from "react-router-dom";
 
 function PokemonSpecies({ speciesUrl, speciesId, pokeImage }) {
 
@@ -33,11 +34,16 @@ function PokemonSpecies({ speciesUrl, speciesId, pokeImage }) {
 
                 <>
 
-                    <PokemonEvolutionChain
-                        evolutionUrl={species.evolution_chain.url}
-                        pokeImage={pokeImage}
-                        pokeName={species.name}
-                    />
+
+                        <PokemonEvolutionChain
+                            evolutionUrl={species.evolution_chain.url}
+                            pokeImage={pokeImage}
+                            pokeName={species.name}
+                        />
+
+
+
+
                 </>
             }
 

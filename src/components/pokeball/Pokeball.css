@@ -5,19 +5,20 @@
     align-items: center;
     padding: 15px;
     margin: 15px;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 5px solid mintcream;
     background-color: mintcream;
-    opacity: 0.5;
+    opacity: 0.8;
     border-radius: 50%;
 }
 
 .poke-ball-container:hover {
-    background-color: mintcream;
-    opacity: 0.8;
+    background-color: white;
+    opacity: 1;
     box-shadow:
             rgba(17, 17, 26, 0.1) 0px 4px 16px,
             rgba(17, 17, 26, 0.1) 0px 8px 24px,
             rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    color: red;
 }

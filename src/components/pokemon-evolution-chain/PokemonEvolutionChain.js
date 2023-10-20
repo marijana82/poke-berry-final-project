@@ -4,6 +4,7 @@ import axios from "axios";
 import EvolutionStageOne from "../evolution-stage-one/EvolutionStageOne";
 import EvolutionStageTwo from "../evolution-stage-two/EvolutionStageTwo";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
+import {Link} from "react-router-dom";
 
 
 function PokemonEvolutionChain({ evolutionUrl, evolutionId, pokeImage, pokeName }) {
@@ -74,11 +75,17 @@ function PokemonEvolutionChain({ evolutionUrl, evolutionId, pokeImage, pokeName 
                     return(
                         <>
                             <div>
+                                <Link
+                                    to={`/single-pokemon-page/${chain.species.name}`}
+                                    style={{textDecoration: 'none', color: 'lightblue'}}
+                                >
 
                                 <EvolutionStageOne
                                     evolvesInto={chain.species.name}
                                     evolutionUrl={chain.species.url}
                                 />
+
+                                </Link>
                             </div>
 
 
@@ -86,10 +93,17 @@ function PokemonEvolutionChain({ evolutionUrl, evolutionId, pokeImage, pokeName 
 
                         return(
 
+                            <Link
+                                to={`/single-pokemon-page/${chainTwo.species.name}`}
+                                style={{textDecoration: 'none', color: 'lightblue'}}
+                            >
+
                                 <EvolutionStageTwo
                                     evolvesInto={chainTwo.species.name}
                                     evolutionUrl={chainTwo.species.url}
                                 />
+
+                            </Link>
 
                         )
                     })}

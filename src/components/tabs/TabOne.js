@@ -9,6 +9,7 @@ import {AiOutlineArrowLeft} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
 import onKeyDown from "../../helpers/onKeyDown";
+import Pokeball from "../pokeball/Pokeball";
 
 function TabOne({singlePokemon}) {
 
@@ -158,7 +159,7 @@ function TabOne({singlePokemon}) {
                         />
 
                         <SpeechBubble
-                            bubbleMessage="or click on arrow to go back to pokemon overview"
+                            bubbleMessage="go to pokemon overview"
                         >
                             <Link to={`/pokemon-list-page`}>
                                 <AiOutlineArrowLeft
@@ -167,6 +168,16 @@ function TabOne({singlePokemon}) {
                                 />
                             </Link>
                         </SpeechBubble>
+
+                        <Link
+                            to={`/search-page`}
+                            style={{textDecoration: 'none', color: 'lightblue'}}
+                        >
+                            <Pokeball
+                                ballMessage="go to search page"
+                            />
+                        </Link>
+
                     </>
                 }
             </div>
