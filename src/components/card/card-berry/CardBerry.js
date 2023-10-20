@@ -1,36 +1,10 @@
 import "./CardBerry.css";
 import React, {useState} from "react";
-import { CHERRY_BERRY } from "../../../assets/images/constants";
 import ButtonReset from "../../button-reset/ButtonReset";
-import {addItem} from "../../compare-items/actions/actions";
-
-
-
 
 function CardBerry({ berryData, infoBerryHandler }) {
 
     const [searchString, setSearchString] = useState("");
-    //compare-items functionality
-    const [compare, setCompare] = useState({
-        added: false
-    });
-
-    //add to compare
-    const addItem = item => {
-        addItem(item);
-        setCompare({
-            added: true
-        });
-    };
-
-    //remove from compare
-    const removeItem = item => {
-        removeItem(item);
-        setCompare({
-            added: false
-        });
-    };
-
 
     const startsWith = str => word => str ? word.name.slice(0,str.length).toLowerCase() === str.toLowerCase() : true;
 
@@ -79,15 +53,6 @@ function CardBerry({ berryData, infoBerryHandler }) {
                                     <div className="image-container">
                                         <h2>{item.name}</h2>
                                         <h3>id: {item.id}</h3>
-
-
-
-                                        {/*maximum call stack size exceeded*/}
-                                               {/* <button
-                                                    onClick={() => addItem(item)}
-                                                    className="compare-button"
-                                                >
-                                                </button>*/}
 
 
                                     </div>

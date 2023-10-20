@@ -4,7 +4,6 @@ import BerryInfo from "../../components/berry-info/BerryInfo";
 import CardBerry from "../../components/card/card-berry/CardBerry";
 import Button from "../../components/button/Button";
 import axios from "axios";
-import { addItem, removeItem } from "../../components/compare-items/actions/actions";
 import Footer from "../../components/footer/Footer";
 
 function BerryListPage() {
@@ -104,8 +103,6 @@ function BerryListPage() {
                         berryData={berryData}
                         key={berryData.id}
                         infoBerryHandler={dataContainer => setBerryDex(dataContainer)}
-                        addItem={addItem}
-                        removeItem={removeItem}
                     />
 
                 </div>
