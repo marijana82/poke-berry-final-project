@@ -2,6 +2,7 @@ import "./PokemonHabitat.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PokemonOnMouseOver from "../pokemon-on-mouse-over/PokemonOnMouseOver";
+import {Link} from "react-router-dom";
 
 
 function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
@@ -43,10 +44,17 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
                     pokemonHabitat.pokemon_species.map((habitatSpecies) => {
                         return(
 
+                            <Link
+                                to={`/single-pokemon-page/${habitatSpecies.name}`}
+                                style={{textDecoration: 'none', color: 'white'}}
+                            >
+
                                     <PokemonOnMouseOver
                                         key={`${habitatSpecies.name}-${habitatSpecies.url}`}
                                         endpointHabitatSpecies={habitatSpecies.url}
                                     />
+
+                            </Link>
 
                         )
                     })}

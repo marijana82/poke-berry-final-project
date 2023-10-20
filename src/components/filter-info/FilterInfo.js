@@ -19,7 +19,10 @@ function FilterInfo({dataFlavor}) {
 
     return(
         <>
-            {!isDataShown && dataFlavor &&
+            {!isDataShown && dataFlavor
+
+                &&
+
                 <div
                     className="result-introduction-container"
                     onClick={handleDataFlavorClick}
@@ -30,6 +33,7 @@ function FilterInfo({dataFlavor}) {
                         />
 
                 </div>
+
             }
 
         </>

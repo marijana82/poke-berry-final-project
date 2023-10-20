@@ -8,6 +8,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Main from "../../components/main/Main";
 import {AiOutlineArrowLeft} from "react-icons/ai";
+import Pokeball from "../../components/pokeball/Pokeball";
 
 function SingleBerry() {
 
@@ -88,6 +89,17 @@ function SingleBerry() {
                         <BerryItem
                             itemUrl={singleBerry.item.url}
                         />
+
+                        <Link
+                            to={`/filter-advanced-page/`}
+                            style={{textDecoration: 'none', color: 'black'}}
+                        >
+
+                        <Pokeball
+                            ballMessage="go to berry filter page"
+                        />
+
+                        </Link>
                     </div>
 
 

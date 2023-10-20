@@ -9,8 +9,9 @@
     border-radius: 35px;
 }
 
-.single-page-container-left, .single-page-container-right {
+.single-page-container-left {
     width: 65%;
+    height: 100%;
     border-radius: 35px;
     display: flex;
     flex-direction: column;
@@ -18,7 +19,11 @@
 
 .single-page-container-right {
     width: 35%;
-    height: 100vh;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
     background-color: navajowhite;
 }
 

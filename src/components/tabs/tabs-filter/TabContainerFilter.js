@@ -52,25 +52,11 @@ function TabContainerFilter() {
                 }
 
 
-                {flavorDex  ?
-
-                        <FilterInfo
-                            dataFlavor={flavorDex}
-                            dataFirmness={firmnessDex}
-                        />
-                    :
-                    <p>no flavors chosen</p>
-                }
-
                 {
-                    firmnessDex ?
-
-                        <FilterInfo/>
-
-                        :
-
-                        <p>no firmness chosen</p>
+                    flavorDex  &&
+                        <FilterInfo dataFlavor={flavorDex}/>
                 }
+
 
             </div>
 

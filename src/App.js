@@ -47,22 +47,6 @@ function App() {
 
         </Routes>
 
-
-
-        {/*<PokemonSearchPage/>*/}
-
-       {/* <PokemonListPage/>*/}
-
-        {/*<BerryListPage/>*/}
-
-
-
-
-
-
-
-
-
     </>
   );
 }

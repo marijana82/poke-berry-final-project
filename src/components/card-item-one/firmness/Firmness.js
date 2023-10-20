@@ -2,6 +2,7 @@ import "./Firmness.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Button from "../../button/Button";
+import {Link} from "react-router-dom";
 
 
 function Firmness({ firmnessUrl, infoFirmnessHandler }) {
@@ -36,9 +37,17 @@ function Firmness({ firmnessUrl, infoFirmnessHandler }) {
                     firmnessData.berries &&
                     firmnessData.berries.map((berry) => {
                         return(
-                            <div className="berry-button-flavor">
-                                <p>{berry.name}</p>
-                            </div>
+
+
+                            <Link
+                                to={`/single-berry-page/${berry.name}`}
+                                style={{textDecoration: 'none', color: 'black'}}
+                            >
+                                <div className="berry-button-flavor">
+                                    <p>{berry.name}</p>
+                                </div>
+                            </Link>
+
                         )
                     })
                 }

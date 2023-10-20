@@ -47,7 +47,7 @@ function PokemonColor({color, evolvesFrom}) {
                     return(
 
                         <Link
-                            to={"/search-page"}
+                            to={`/single-pokemon-page/${pokeSpecies.name}`}
                             style={{textDecoration: 'none', color: 'white'}}
                         >
                             <div className="pokemon-list-button-this">
