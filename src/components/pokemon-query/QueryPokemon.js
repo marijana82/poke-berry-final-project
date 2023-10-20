@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import Button from "../button/Button";
 import PokemonRandom from "../pokemon-random/PokemonRandom";
 import FormInput from "../form-input/FormInput";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
-import SpeechBubble from "../speech-bubble/SpeechBubble";
+import ButtonReset from "../button-reset/ButtonReset";
 
 function QueryPokemon({searchItemHandler}) {
 
@@ -16,12 +14,23 @@ function QueryPokemon({searchItemHandler}) {
         e.preventDefault();
         console.log("I am searching for something!");
         searchItemHandler(query);
-    }
-
-    function connectChildToParent() {
 
     }
 
+
+    const resetSearch = () => {
+        setQuery("");
+        setPlaceholder("type your pokemon name here");
+    }
+
+    const removeLetterByLetter = () => {
+        if (placeholder.length > 0 &&
+            query.length > 0 &&
+            query.length > placeholder.length) {
+            const updatedPlaceholder = placeholder.slice(1);
+            setPlaceholder(updatedPlaceholder);
+        }
+    }
 
     return(
 
@@ -31,13 +40,16 @@ function QueryPokemon({searchItemHandler}) {
                 onSubmit={onFormSubmit}>
 
                 <div className="query-container">
+
                     <FormInput
                         idAttribute="query-field"
                         inputType="text"
                         placeholder={placeholder}
+                        labelText="Type your pokemon's name here to find out its evolution chain"
                         nameAttribute="query"
                         stateValue={query}
                         stateSetter={setQuery}
+                        removeLetterByLetter={removeLetterByLetter}
                     />
 
                     <Button
@@ -50,6 +62,12 @@ function QueryPokemon({searchItemHandler}) {
                     <PokemonRandom
                         connectChildToParent={parameter => setPlaceholder(parameter)}
                     />
+
+                    <ButtonReset
+                        children="x"
+                        resetHandler={resetSearch}
+                    />
+
                 </div>
             </form>
         </article>
