@@ -2,12 +2,12 @@ import "./BerryNaturalGift.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import ButtonReset from "../button-reset/ButtonReset";
 
 
 function BerryNaturalGift({ naturalGiftUrl }) {
 
     const [naturalGift, setNaturalGift] = useState([]);
-    const [selectedLetter, setSelectedLetter] = useState("");
 
     async function fetchNaturalGift() {
 
@@ -52,7 +52,9 @@ function BerryNaturalGift({ naturalGiftUrl }) {
                                     style={{textDecoration: 'none', color: 'white'}}
                                 >
                                     <div
-                                    className="pokemon-list-button-this">
+                                    className="pokemon-list-button-this"
+                                    role="button"
+                                    >
                                         <h3>{poke.pokemon.name}</h3>
                                     </div>
                                 </Link>

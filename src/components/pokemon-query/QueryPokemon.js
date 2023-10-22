@@ -2,17 +2,16 @@ import "./QueryPokemon.css";
 import React, { useState } from "react";
 import Button from "../button/Button";
 import PokemonRandom from "../pokemon-random/PokemonRandom";
-import FormInput from "../form-input/FormInput";
 import ButtonReset from "../button-reset/ButtonReset";
+import FormPokemonQuery from "../form-input-pokemon-query/FormPokemonQuery";
 
 function QueryPokemon({searchItemHandler}) {
 
     const [query, setQuery] = useState("");
-    const [placeholder, setPlaceholder] = useState("type your pokemon name here");
+    const [placeholder, setPlaceholder] = useState("your pokemon name");
 
     function onFormSubmit(e) {
         e.preventDefault();
-        console.log("I am searching for something!");
         searchItemHandler(query);
 
     }
@@ -20,7 +19,11 @@ function QueryPokemon({searchItemHandler}) {
 
     const resetSearch = () => {
         setQuery("");
-        setPlaceholder("type your pokemon name here");
+        setPlaceholder("your pokemon name");
+    }
+
+    const addSearch = () => {
+        setQuery(placeholder);
     }
 
     const removeLetterByLetter = () => {
@@ -34,18 +37,18 @@ function QueryPokemon({searchItemHandler}) {
 
     return(
 
-        <article className="query-container">
+        <article className="query-container-main">
             <form
                 id="search-form"
                 onSubmit={onFormSubmit}>
 
                 <div className="query-container">
 
-                    <FormInput
+                    <FormPokemonQuery
                         idAttribute="query-field"
                         inputType="text"
                         placeholder={placeholder}
-                        labelText="Type your pokemon's name here to find out its evolution chain"
+                        labelText="Type your pokemon's name here to find out its evolution chain!"
                         nameAttribute="query"
                         stateValue={query}
                         stateSetter={setQuery}
@@ -59,16 +62,28 @@ function QueryPokemon({searchItemHandler}) {
                     >Search!
                     </Button>
 
-                    <PokemonRandom
-                        connectChildToParent={parameter => setPlaceholder(parameter)}
-                    />
-
-                    <ButtonReset
-                        children="x"
-                        resetHandler={resetSearch}
-                    />
-
                 </div>
+
+                    <div className="random-button-controllers">
+                        <PokemonRandom
+                            connectChildToParent={parameter => setPlaceholder(parameter)}
+                        />
+
+                        <ButtonReset
+                            children="+"
+                            styling="reset-button-tab-two"
+                            resetHandler={addSearch}
+                        />
+
+                        <ButtonReset
+                            children="x"
+                            styling="reset-button-tab"
+                            resetHandler={resetSearch}
+                        />
+
+                    </div>
+
+
             </form>
         </article>
 

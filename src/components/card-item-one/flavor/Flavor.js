@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Button from "../../button/Button";
 import FilteredItem from "../../filtered-item/FilteredItem";
+import ButtonReset from "../../button-reset/ButtonReset";
 
 function Flavor({ flavorUrl, infoFlavorHandler }) {
 
@@ -84,6 +85,7 @@ function Flavor({ flavorUrl, infoFlavorHandler }) {
 
                         <span className="filtered-berries-container">
                             <div className="filtered-berry-cards-container">
+
 
                         {
                             flavorData &&

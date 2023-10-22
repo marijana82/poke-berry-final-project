@@ -13,7 +13,7 @@ function Header({ message, description }) {
             <div className="header-inner-conainer">
                 <div className="header-content-container">
                     <h1>{message}</h1>
-                    <h2 className="header-description">{description}</h2>
+                    <p className="header-description">{description}</p>
                 </div>
             </div>
         </header>

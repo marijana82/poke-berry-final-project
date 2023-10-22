@@ -21,9 +21,6 @@ function FormLogin() {
         setPasswordLogin("");
     }
 
-
-
-
     return(
         <form
             className="registration-form"

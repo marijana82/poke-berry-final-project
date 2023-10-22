@@ -1,8 +1,7 @@
-import "./FormInput.css";
+import "./FormPokemonQuery.css";
 import React from "react";
 
-
-function FormInput({ idAttribute, labelText, inputType, placeholder, nameAttribute, stateValue, stateSetter}) {
+function FormPokemonQuery({ removeLetterByLetter, idAttribute, labelText, inputType, placeholder, nameAttribute, stateValue, stateSetter}) {
     return(
         <div className="input-label-container">
             <label
@@ -18,7 +17,8 @@ function FormInput({ idAttribute, labelText, inputType, placeholder, nameAttribu
                     id={idAttribute}
                     value={stateValue}
                     onChange={(e) => {
-                        stateSetter(e.target.value);
+                        stateSetter(e.target.value.toLowerCase());
+                        removeLetterByLetter(e.target.value.toLowerCase());
                     }}
                 />
             </label>
@@ -26,4 +26,4 @@ function FormInput({ idAttribute, labelText, inputType, placeholder, nameAttribu
     )
 }
 
-export default FormInput;
+export default FormPokemonQuery;

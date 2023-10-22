@@ -38,6 +38,7 @@ function PokemonCard({ pokemon, pokemonClick }) {
                     <ButtonReset
                         children="x"
                         resetHandler={resetSearch}
+                        styling="reset-button-tab"
                     />
                     </div>
 

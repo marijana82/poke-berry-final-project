@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import CardFlavorsAll from "../../card-items-all/CardFlavorsAll";
 import CardFirmnessAll from "../../card-items-all/CardFirmnessAll";
 import FilterInfo from "../../filter-info/FilterInfo";
+import ButtonReset from "../../button-reset/ButtonReset";
 
 
 function TabContainerFilter() {
@@ -42,9 +43,12 @@ function TabContainerFilter() {
                 {/*Content will be shown here*/}
                 { activeTab === "tab 1"
                     ?
+
                     <CardFlavorsAll
                         infoFlavorHandler={flavorDataContainer => setFlavorDex(flavorDataContainer)}
                     />
+
+
                     :
                     <CardFirmnessAll
                         infoFirmnessHandler={firmnessDataContainer => setFirmnessDex(firmnessDataContainer)}
@@ -52,9 +56,10 @@ function TabContainerFilter() {
                 }
 
 
-                {
-                    flavorDex  &&
-                        <FilterInfo dataFlavor={flavorDex}/>
+                {flavorDex
+
+                    &&
+                    <FilterInfo dataFlavor={flavorDex}/>
                 }
 
 

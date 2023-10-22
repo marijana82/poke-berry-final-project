@@ -13,7 +13,10 @@ function Landing() {
 
     return (
         <>
-            <Header/>
+            <Header
+                message="Welcome to pokeberry app!"
+                description="Click on Pikachu to start your journey now!"
+            />
             <Main>
                 <Link to={"/"}>
                     <Pikachu/>

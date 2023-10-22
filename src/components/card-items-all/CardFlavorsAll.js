@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Flavor from "../card-item-one/flavor/Flavor";
 import Button from "../button/Button";
+import ButtonReset from "../button-reset/ButtonReset";
 
 
 function CardFlavorsAll({infoFlavorHandler}) {
@@ -35,6 +36,7 @@ function CardFlavorsAll({infoFlavorHandler}) {
         setSelectedFlavor(flavor);
     }
 
+
     return(
         <div className="button-group-container">
             { !isClickedFlavor
@@ -58,21 +60,28 @@ function CardFlavorsAll({infoFlavorHandler}) {
 
                 (
                     <div>
+
                         {selectedFlavor &&
 
-                            <Flavor
-                                flavorUrl={selectedFlavor.url}
-                                infoFlavorHandler={infoFlavorHandler}
-                            />
-                        }
+                            <>
 
+                                <Flavor
+                                    flavorUrl={selectedFlavor.url}
+                                    infoFlavorHandler={infoFlavorHandler}
+                                />
+
+                            </>
+
+
+                        }
 
                         <Button
                             clickHandler={() => setIsClickedFlavor(false)}
                             styling="back-to-top"
                             children="Back To Flavors Overview"
-                        >
-                        </Button>
+                        />
+
+
 
 
                 </div>

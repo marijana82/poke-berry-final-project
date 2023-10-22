@@ -47,7 +47,6 @@ function TabOne({singlePokemon}) {
     }
 
     const resetSearch = () => {
-        console.log("button is clicked")
         setIsEvolutionOnClick(false);
         setPokeEvolution({});
         setIsHabitatOnClick(false);
@@ -67,6 +66,8 @@ function TabOne({singlePokemon}) {
         setIsHabitatOnClick(current => !current);
         setPokeHabitat(tabOneInfo.habitat.url);
     }
+
+
 
     return(
         <div className="tab-one">
@@ -149,6 +150,7 @@ function TabOne({singlePokemon}) {
                     <ButtonReset
                         children="close"
                         resetHandler={resetSearch}
+                        styling="reset-button-tab"
                     />
 
                     :

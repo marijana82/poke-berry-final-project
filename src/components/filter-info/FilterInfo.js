@@ -1,25 +1,24 @@
 import "./FilterInfo.css";
 import React, {useState} from "react";
 import FilteredItem from "../filtered-item/FilteredItem";
+import ButtonReset from "../button-reset/ButtonReset";
 
 function FilterInfo({dataFlavor}) {
 
     const [isShownOnClick, setIsShownOnClick] = useState(false);
     const [isDataShown, setisDataShown] = useState(false);
 
-    const handleClick = event => {
-        console.log("the button is clicked!")
-        setIsShownOnClick(current => !current);
-        setisDataShown(current => !current);
-    }
 
     const handleDataFlavorClick = () => {
         setisDataShown(current => !current);
+        setIsShownOnClick(current => !current);
+        console.log("click!")
     }
+
 
     return(
         <>
-            {!isDataShown && dataFlavor
+            {!isDataShown && !isShownOnClick && dataFlavor
 
                 &&
 

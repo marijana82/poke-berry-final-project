@@ -35,6 +35,7 @@ function PokemonRandom({connectChildToParent}) {
             className="random-pokemon-container"
             onClick={() => connectChildToParent(randomPokeName)}
         >
+            <p>Need a hint?</p>
             <Button
                 type="button"
                 clickHandler={() => fetchRandomPokemon()}

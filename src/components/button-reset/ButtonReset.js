@@ -1,11 +1,11 @@
 import "./ButtonReset.css";
 import React from "react";
 
-function ButtonReset({children, resetHandler}) {
+function ButtonReset({children, resetHandler, styling}) {
     return(
 
                 <button
-                    className="reset-button-tab"
+                    className={styling}
                     onClick={resetHandler}
                 >{children}
                 </button>
