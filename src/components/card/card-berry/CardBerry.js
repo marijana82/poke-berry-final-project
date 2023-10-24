@@ -24,6 +24,7 @@ function CardBerry({ berryData, infoBerryHandler }) {
                         <ButtonReset
                             children="x"
                             resetHandler={resetSearch}
+                            styling="reset-button-tab"
                         />
 
                         <input

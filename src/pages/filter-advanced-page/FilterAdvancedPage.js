@@ -10,7 +10,9 @@ function FilterAdvancedPage() {
 
     return(
         <>
-            <Header/>
+            <Header
+                message="Filter your berry info!"
+            />
             <Main>
                 <TabContainerFilter/>
             </Main>

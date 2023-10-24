@@ -63,7 +63,9 @@ function BerrySearch() {
 
     return(
         <>
-            <Header/>
+            <Header
+                message="All berry info in one place"
+            />
 
             <Main>
 
