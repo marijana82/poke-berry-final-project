@@ -9,6 +9,8 @@ function PokemonRandom({connectChildToParent}) {
     const [randomPokeData, setRandomPokeData] = useState([]);
     const [randomPokeName, setRandomPokeName] = useState("");
 
+
+
     async function fetchRandomPokemon() {
 
         try {
@@ -17,7 +19,6 @@ function PokemonRandom({connectChildToParent}) {
             console.log(responseRandom.data);
             setRandomPokeData(responseRandom.data);
             setRandomPokeName(responseRandom.data.name);
-
 
         } catch(e) {
             console.error(e);
@@ -30,19 +31,26 @@ function PokemonRandom({connectChildToParent}) {
 
 
 
+
     return(
         <div
             className="random-pokemon-container"
             onClick={() => connectChildToParent(randomPokeName)}
         >
-            <p>Need a hint?</p>
-            <Button
-                type="button"
-                clickHandler={() => fetchRandomPokemon()}
-                styling="random-button"
-            >{randomPokeName}
-            </Button>
+
+                <>
+                    <p>Need a hint?</p>
+                    <Button
+                        type="button"
+                        clickHandler={() => fetchRandomPokemon()}
+                        styling="random-button"
+                    >{randomPokeName}
+                    </Button>
+                </>
+
         </div>
+
+
     )
 }
 
