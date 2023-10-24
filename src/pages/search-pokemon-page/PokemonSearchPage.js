@@ -16,10 +16,11 @@ function PokemonSearchPage() {
     const [endpointPoke, setEndpointPoke] = useState(POKEMON_URL);
     const [searchItem, setSearchItem] = useState("");
     const [pokeDetails, setPokeDetails] = useState([]);
-    const [errorMessage, setErrorMessage] = useState("");
+    //const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
 
+        const controller = new AbortController();
         async function fetchPokeData() {
             try {
                 const result = await axios.get(endpointPoke);
@@ -46,12 +47,15 @@ function PokemonSearchPage() {
                         console.error(e);
                     }
                 }
-
                 if (pokemon.name === searchItem) {
                     pokeDetailsUrl();
-
                 }
+
             });
+        }
+
+        return function cleanup() {
+            controller.abort();
         }
 
     }, [searchItem]);

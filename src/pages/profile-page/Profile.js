@@ -47,7 +47,7 @@ function Profile() {
                 <div className="main-profile-container">
                     <div className="profile-welcome-user">
                         <p>Hi {user.username} !</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, tempora.</p>
+                        <p>Welcome to your profile page. Here you can check your account information.</p>
                     </div>
 
                     <div className="profile-user-data">

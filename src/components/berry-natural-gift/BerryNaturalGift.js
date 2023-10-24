@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import ButtonReset from "../button-reset/ButtonReset";
 
 
-function BerryNaturalGift({ naturalGiftUrl }) {
+function BerryNaturalGift({ naturalGiftUrl, naturalGiftName }) {
 
     const [naturalGift, setNaturalGift] = useState([]);
 

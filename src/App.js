@@ -15,6 +15,7 @@ import FilterAdvancedPage from "./pages/filter-advanced-page/FilterAdvancedPage"
 import SinglePokemon from "./pages/single-item-page/SinglePokemon";
 import SingleBerry from "./pages/single-item-page/SingleBerry";
 import Profile from "./pages/profile-page/Profile";
+import BerrySearch from "./pages/search-berry-page/BerrySearch";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/game-page" element={<Game/>}/>
             <Route path="/profile-page" element={isAuthenticated ? <Profile/> : <Navigate to="/login-page"/>} />
             <Route path="/search-page" element={ isAuthenticated ? <PokemonSearchPage/> : <Home/>  }/>
+            <Route path="/search-page-berry" element={ isAuthenticated ? <BerrySearch/> : <Home/>  }/>
             <Route path="/pokemon-list-page" element={ isAuthenticated ? <PokemonListPage/> : <Home/> }/>
             <Route path="/single-pokemon-page/:id" element={<SinglePokemon/>}/>
             <Route path="/berry-list-page" element={ isAuthenticated ? <BerryListPage/> : <Home/> }/>

@@ -43,7 +43,15 @@ function NavBarLandingPage() {
                                 <NavLink
                                     to="/search-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Search
+                                >Search Poke
+                                </NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink
+                                    to="/search-page-berry"
+                                    className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                                >Search Berry
                                 </NavLink>
                             </li>
 

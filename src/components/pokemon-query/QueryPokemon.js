@@ -13,7 +13,6 @@ function QueryPokemon({searchItemHandler}) {
     function onFormSubmit(e) {
         e.preventDefault();
         searchItemHandler(query);
-
     }
 
 
@@ -48,7 +47,7 @@ function QueryPokemon({searchItemHandler}) {
                         idAttribute="query-field"
                         inputType="text"
                         placeholder={placeholder}
-                        labelText="Type your pokemon's name here to find out its evolution chain!"
+                        labelText="Type your pokemon's name here or hit the hint button to find out its evolution chain!"
                         nameAttribute="query"
                         stateValue={query}
                         stateSetter={setQuery}
