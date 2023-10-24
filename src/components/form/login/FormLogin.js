@@ -4,16 +4,40 @@ import {Link, useNavigate} from "react-router-dom";
 import FormInput from "../../form-input/FormInput";
 import Button from "../../button/Button";
 import {LoginContext} from "../../../context/LoginContext";
+import axios from "axios";
 
 
 function FormLogin() {
 
     const [nameLogin, setNameLogin] = useState("");
     const [passwordLogin, setPasswordLogin] = useState("");
+    const [error, toggleError] = useState(false);
+    const [loginSuccess, setLoginSuccess] = useState(false);
+
+    const { loginFunction } = useContext(LoginContext);
+
+    const navigate = useNavigate();
 
 
-   // const { loginFunction } = useContext(LoginContext);
-   // const navigate = useNavigate();
+    async function logUserIn(e) {
+        e.preventDefault();
+        toggleError(false);
+
+        try {
+            const responseLogin = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
+                username: nameLogin,
+                password: passwordLogin,
+            });
+
+            console.log(responseLogin.data.accessToken);
+            loginFunction(responseLogin.data.accessToken);
+
+        } catch(e) {
+            console.error(e);
+            toggleError(true);
+        }
+    }
+
 
     //button reset
     function handleReset() {
@@ -21,10 +45,11 @@ function FormLogin() {
         setPasswordLogin("");
     }
 
+
     return(
         <form
             className="registration-form"
-            //onSubmit={logUserIn)
+            onSubmit={logUserIn}
         >
             <div className="container-register-form">
                 <p className="title-registration-form">Login form</p>
@@ -61,6 +86,15 @@ function FormLogin() {
                 >Reset all
                 </Button>
             </div>
+
+
+            { loginSuccess
+                ?
+                <p>You have been successfully registered! <Link to={"/login-page"}>You can now log in!</Link></p>
+                :
+                <p>Something went wrong, please try again</p> }
+
+
 
             <div className="container-sign-in">
                 <p>Don't have an account yet? <Link to="/registration-page">Register here!</Link></p>

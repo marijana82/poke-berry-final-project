@@ -31,6 +31,7 @@ function Profile() {
                 console.error(e);
             }
         }
+        void fetchProfileData();
 
     }, []);
 

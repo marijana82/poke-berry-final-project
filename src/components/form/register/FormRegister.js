@@ -4,6 +4,7 @@ import FormInput from "../../form-input/FormInput";
 import {Link, useNavigate} from "react-router-dom";
 import isValidEmail from "../../../helpers/IsValidEmail";
 import Button from "../../button/Button";
+import axios from "axios";
 
 
 function FormRegister() {
@@ -21,6 +22,39 @@ function FormRegister() {
 
     const navigate = useNavigate();
 
+    //async function made to handle registration, connected to the form and to the submit button
+
+    async function onSubmitRegistration(e) {
+        e.preventDefault();
+        toggleError(false);
+        toggleLoading(true);
+
+        try {
+            //endpoint for registration
+            const responseRegister = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
+                //data we need to send to the backend
+                username: nameValue,
+                email: emailValue,
+                password: passwordValue,
+                info: optionalInfoUser,
+                role: userRole,
+            });
+
+            //no authorization header here!
+            console.log(responseRegister);
+            setRegisterSuccess(true);
+            navigate("/login-page");
+
+        } catch(e) {
+            console.error(e);
+            toggleError(true);
+            //toggleLoading(false);
+        }
+
+
+    }
+
+
     function handleReset() {
         setNameValue("");
         setEmailValue("");
@@ -33,7 +67,7 @@ function FormRegister() {
     return(
         <form
             className="registration-form"
-            //onSubmit={onSubmitRegistration}
+            onSubmit={onSubmitRegistration}
         >
             <div className="container-register-form">
                 <p className="title-registration-form">Registration form</p>
@@ -120,7 +154,12 @@ function FormRegister() {
 
             </div>
 
-            {registerSuccess && <p>You have been successfully registered! <Link to={"/login-page"}>You can now log in!</Link></p>}
+            { registerSuccess
+                ?
+                <p>You have been successfully registered! <Link to={"/login-page"}>You can now log in!</Link></p>
+                :
+                <p>Something went wrong, please try again</p> }
+
 
             <div className="container-sign-in">
                 <p>Already have an account? <Link to={"/login-page"}>Log in here!</Link></p>
