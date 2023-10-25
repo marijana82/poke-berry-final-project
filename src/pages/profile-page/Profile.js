@@ -5,15 +5,16 @@ import axios from "axios";
 import Header from "../../components/header/Header";
 import Main from "../../components/main/Main";
 import Footer from "../../components/footer/Footer";
+import {CustomFavoritesContext} from "../../context/FavoritesContext";
 
 
 function Profile() {
 
     const [profileData, setProfileData] = useState({});
     const { user } = useContext(LoginContext);
+    const { favoritePokemon } = useContext(CustomFavoritesContext);
 
     useEffect(() => {
-
         async function fetchProfileData() {
             const token = localStorage.getItem('token');
 
@@ -49,7 +50,6 @@ function Profile() {
                         <p>Hi {user.username} !</p>
                         <p>Welcome to your profile page. Here you can check your account information.</p>
                     </div>
-
                     <div className="profile-user-data">
                         <p>User data:</p>
                         {Object.keys(profileData).length > 0 &&
@@ -62,9 +62,29 @@ function Profile() {
                         }
                     </div>
 
-                    <div className="profile-navigation-links">
-                        <p>here some links</p>
-                    </div>
+
+                    {/*FIX THIS!!! NOT WORKING HOW I WROTE IT NOW!!!*/}
+                    {favoritePokemon &&
+
+                        favoritePokemon.map((oneFavorite) => {
+                            return(
+
+                                <div className="favorites-message-container">
+                                    <h2>{oneFavorite.name}</h2>
+                                </div>
+
+                            )
+                        })
+
+                    }
+
+
+
+
+
+
+
+
 
                 </div>
 

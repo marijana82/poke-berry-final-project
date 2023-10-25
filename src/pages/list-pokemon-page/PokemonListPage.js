@@ -4,7 +4,7 @@ import axios from "axios";
 import PokeInfo from "../../components/pokemon-info/PokeInfo";
 import Button from "../../components/button/Button";
 import PokemonCard from "../../components/card/pokemon-card/PokemonCard";
-import FavoritesContext, { FavoritesProvider } from "../../context/FavoritesContext";
+import {CustomFavoritesContext} from "../../context/FavoritesContext";
 import Pagination from "../../components/pagination/Pagination";
 import Footer from "../../components/footer/Footer";
 
@@ -19,6 +19,8 @@ function PokemonListPage() {
     const [nextEndpoint, setNextEndpoint] = useState('');
     const [previousEndpoint, setPreviousEndpoint] = useState('');
     const [pokedex, setPokedex] = useState();
+    //const [favdex, setFavdex] = useState([]);
+
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [favorites, setFavorites] = useState(() => {
@@ -32,7 +34,7 @@ function PokemonListPage() {
     const itemsPerPage = 24;
 
     //why is the destructured favoritePokemon not used?
-    const { favoritePokemon } = useContext(FavoritesContext);
+    const { favoritePokemon, updateFavoritePokemon } = useContext(CustomFavoritesContext);
 
     const controller = new AbortController();
 
@@ -90,18 +92,18 @@ function PokemonListPage() {
 
 
     //favorites update function
-    function updateFavoritePokemon(name) {
-        const updatedPokeFav = [...favorites];
-        const indexFavorites = favorites.indexOf(name);
-        if(indexFavorites >= 0) {
-            updatedPokeFav.splice(indexFavorites, 1);
-        } else {
-            updatedPokeFav.push(name);
-        }
-
-        window.localStorage.setItem(favoritesKey, JSON.stringify(updatedPokeFav));
-        setFavorites(updatedPokeFav);
-    }
+    // function updateFavoritePokemon(name) {
+    //     const updatedPokeFav = [...favorites];
+    //     const indexFavorites = favorites.indexOf(name);
+    //     if(indexFavorites >= 0) {
+    //         updatedPokeFav.splice(indexFavorites, 1);
+    //     } else {
+    //         updatedPokeFav.push(name);
+    //     }
+    //
+    //     window.localStorage.setItem(favoritesKey, JSON.stringify(updatedPokeFav));
+    //     setFavorites(updatedPokeFav);
+    // }
 
 
     //function that handles page change
@@ -115,13 +117,6 @@ function PokemonListPage() {
 
     return(
         <>
-            <FavoritesProvider
-                value={{
-                    favoritePokemon: favorites,
-                    updateFavoritePokemon: updateFavoritePokemon,
-                }}
-            >
-
                 <div className="main-pokemon-list-container">
                     <div className="left-content-container">
                         <div className="button-group-container">
@@ -129,8 +124,8 @@ function PokemonListPage() {
                             <Pagination
                                 page={page}
                                 totalPages={totalPages}
-                                favoritePokemon={favorites.length}
-                                chosenFavs={favorites}
+                                favoritePokemon={favoritePokemon.length}
+                                //chosenFavs={favorites}
                             />
 
 
@@ -183,8 +178,8 @@ function PokemonListPage() {
                             <Pagination
                                 page={page}
                                 totalPages={totalPages}
-                                favoritePokemon={favorites.length}
-                                chosenFavs={favorites}
+                                //favoritePokemon={favorites.length}
+                                //chosenFavs={favorites}
                             />
 
                         </div>
@@ -193,12 +188,12 @@ function PokemonListPage() {
 
                     </div>
                     <div className="right-content-container">
-                        <PokeInfo data={pokedex}/>
+                        <PokeInfo
+                            data={pokedex}
+                            //favoritesClick={favs => setFavdex(favs)}
+                        />
                     </div>
                 </div>
-
-
-            </FavoritesProvider>
 
             <Footer
                 buttonMessage="Back to top"

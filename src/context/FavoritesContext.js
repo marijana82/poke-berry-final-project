@@ -1,10 +1,22 @@
-import React from "react";
+import React, {createContext, useState} from "react";
 
-const FavoritesContext = React.createContext({
-    favoritePokemon: [],
-    updateFavoritePokemon: (id) => null
-});
+export const CustomFavoritesContext = createContext({});
 
-export const FavoritesProvider = FavoritesContext.Provider;
+function FavoritesContext({children}) {
 
+    const [favorite, setFavorite] = useState([]);
+
+    const contextDataFavorite = {
+        favoritePokemon: favorite,
+        updateFavoritePokemon: setFavorite
+    }
+
+return (
+    <>
+        <CustomFavoritesContext.Provider value={contextDataFavorite}>
+            {children}
+        </CustomFavoritesContext.Provider>
+    </>
+)
+        }
 export default FavoritesContext;
