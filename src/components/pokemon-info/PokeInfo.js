@@ -12,14 +12,25 @@ function PokeInfo({ data }) {
 
     const {favoritePokemon, updateFavoritePokemon} = useContext(CustomFavoritesContext);
 
-        function addToFavorites() {
+
+        function isPokemonFavorite(pokemonName) {
+            if(pokemonName) {
+                const myFavoritePokemon = favoritePokemon.find((search) => search.name === pokemonName.name);
+                return myFavoritePokemon ? true : false;
+            }
+            return false;
+        }
+
+
+        function addToFavorites(pokemonName) {
+            if (!isPokemonFavorite(pokemonName)) {  //===>delete this if not working
             setPokemonFavoritesList((stateFavorites) => {
                 stateFavorites = [...stateFavorites, data];
                 return stateFavorites;
             });
+
+            } return ""     //===>delete this if not working
         }
-            console.log(pokemonFavoritesList);
-            console.log(favoritePokemon);
 
     console.log(pokemonFavoritesList);
     console.log(favoritePokemon);
