@@ -2,8 +2,8 @@ import "./PokeInfo.css";
 import React, {useContext, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {CustomFavoritesContext} from "../../context/FavoritesContext";
-import FavoriteCard from "../card/card-favorite/FavoriteCard";
-import login from "../../pages/login-page/Login";
+import ButtonFavorite from "../card/button-favorite/ButtonFavorite";
+import {AiFillHeart} from "react-icons/ai";
 
 
 function PokeInfo({ data }) {
@@ -13,8 +13,7 @@ function PokeInfo({ data }) {
     const {favoritePokemon, updateFavoritePokemon} = useContext(CustomFavoritesContext);
 
         function addToFavorites() {
-
-            setPokemonFavoritesList(stateFavorites => {
+            setPokemonFavoritesList((stateFavorites) => {
                 stateFavorites = [...stateFavorites, data];
                 return stateFavorites;
             });
@@ -22,11 +21,23 @@ function PokeInfo({ data }) {
             console.log(pokemonFavoritesList);
             console.log(favoritePokemon);
 
+    console.log(pokemonFavoritesList);
+    console.log(favoritePokemon);
+
+
+        function removeFromFavorites(namePokemon) {
+            setPokemonFavoritesList((stateFavorites) => {
+                const removeFavorite = stateFavorites.filter(
+                    (pokemon) => pokemon.name !== namePokemon
+                );
+                return removeFavorite;
+            });
+        }
+
 
     useEffect(() => {
         updateFavoritePokemon(pokemonFavoritesList);
     }, [pokemonFavoritesList]);
-
 
 
     return(
@@ -53,12 +64,33 @@ function PokeInfo({ data }) {
                         </span>
                         </Link>
 
-                        {/*ADD TO FAVORITES BUTTON*/}
-                        <button
-                            className="favorites-message-container"
-                            onClick={addToFavorites}
-                        >ADD TO FAVORITES
-                        </button>
+                        <>
+                            {favoritePokemon.some((pokemon) => pokemon.name === data.name) ?
+                                (
+                                    <ButtonFavorite
+                                        clickHandler={() => removeFromFavorites(data.name)}
+                                        styling="favorite-button-tab"
+                                    ><AiFillHeart style={{color: 'deeppink'}}/>
+                                    </ButtonFavorite>
+
+                                ) :
+
+                                (
+                                    <ButtonFavorite
+                                        clickHandler={addToFavorites}
+                                        styling="favorite-button-tab-two"
+                                    ><AiFillHeart style={{color: 'green'}}/>
+                                    </ButtonFavorite>
+
+
+                                )
+
+                            }
+
+
+                        </>
+
+
 
                         <div className="abilities">
                             {data.abilities && data.abilities.map((ability) => {

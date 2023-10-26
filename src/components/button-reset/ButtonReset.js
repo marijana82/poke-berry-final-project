@@ -1,13 +1,14 @@
 import "./ButtonReset.css";
 import React from "react";
 
-function ButtonReset({children, resetHandler, styling}) {
+function ButtonReset({children, resetHandler, styling, label}) {
     return(
 
                 <button
                     className={styling}
                     onClick={resetHandler}
-                >{children}
+                >{label}
+                    {children}
                 </button>
 
 

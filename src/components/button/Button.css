@@ -20,19 +20,6 @@ button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.button-favorite {
-    width: 10vh;
-    height: 4vh;
-    border: 1px solid gold;
-    padding: 1px;
-    margin: 1px;
-    font-size: 14px;
-    font-weight: bold;
-    color: gold;
-    background: transparent;
-    cursor: pointer;
-}
-
 
 .navigate-button {
     border: none;

@@ -6,6 +6,8 @@ import Header from "../../components/header/Header";
 import Main from "../../components/main/Main";
 import Footer from "../../components/footer/Footer";
 import {CustomFavoritesContext} from "../../context/FavoritesContext";
+import {AiFillHeart} from "react-icons/ai";
+import Button from "../../components/button/Button";
 
 
 function Profile() {
@@ -37,6 +39,11 @@ function Profile() {
 
     }, []);
 
+   /* function onClickHeart(name){
+        console.log(name)
+        favoritePokemon.push(name)
+    }*/
+
 
     return (
         <>
@@ -65,8 +72,24 @@ function Profile() {
                     <div className="favorites-message-container">
                     {favoritePokemon &&
                         favoritePokemon.map((oneFavorite) => {
+
+                            /*const heart =
+                                favoritePokemon &&
+                                favoritePokemon.includes(oneFavorite) &&
+                                <AiFillHeart/>;*/
+
                             return(
+                                <>
+
                                     <h2>{oneFavorite.name}</h2>
+                            {/*<Button
+                                clickHandler={() => onClickHeart(oneFavorite.name)}
+                                styling="button-favorite"
+                            >Favorite
+                                {heart}
+                            </Button>*/}
+
+                                </>
                             )
                         })}
                     </div>

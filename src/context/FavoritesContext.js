@@ -6,10 +6,12 @@ function FavoritesContext({children}) {
 
     const [favorite, setFavorite] = useState([]);
 
+
     const contextDataFavorite = {
         favoritePokemon: favorite,
-        updateFavoritePokemon: setFavorite
+        updateFavoritePokemon: setFavorite,
     }
+
 
 return (
     <>
