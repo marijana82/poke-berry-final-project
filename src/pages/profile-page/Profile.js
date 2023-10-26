@@ -11,6 +11,7 @@ import {CustomFavoritesContext} from "../../context/FavoritesContext";
 function Profile() {
 
     const [profileData, setProfileData] = useState({});
+
     const { user } = useContext(LoginContext);
     const { favoritePokemon } = useContext(CustomFavoritesContext);
 
@@ -61,34 +62,15 @@ function Profile() {
                             </ul>
                         }
                     </div>
-
-
-                    {/*FIX THIS!!! NOT WORKING HOW I WROTE IT NOW!!!*/}
+                    <div className="favorites-message-container">
                     {favoritePokemon &&
-
                         favoritePokemon.map((oneFavorite) => {
                             return(
-
-                                <div className="favorites-message-container">
                                     <h2>{oneFavorite.name}</h2>
-                                </div>
-
                             )
-                        })
-
-                    }
-
-
-
-
-
-
-
-
-
+                        })}
+                    </div>
                 </div>
-
-
             </Main>
 
             <Footer

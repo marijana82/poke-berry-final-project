@@ -124,8 +124,8 @@ function PokemonListPage() {
                             <Pagination
                                 page={page}
                                 totalPages={totalPages}
-                                favoritePokemon={favoritePokemon.length}
-                                //chosenFavs={favorites}
+                                favoritesLength={favoritePokemon.length}
+                                chosenFavorites={favoritePokemon}
                             />
 
 
@@ -178,7 +178,7 @@ function PokemonListPage() {
                             <Pagination
                                 page={page}
                                 totalPages={totalPages}
-                                //favoritePokemon={favorites.length}
+                                favoritePokemon={favoritePokemon.length}
                                 //chosenFavs={favorites}
                             />
 

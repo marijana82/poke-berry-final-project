@@ -13,9 +13,8 @@ function PokeInfo({ data }) {
     const {favoritePokemon, updateFavoritePokemon} = useContext(CustomFavoritesContext);
 
         function addToFavorites() {
-            console.log("clicked button to add to favorites")
+
             setPokemonFavoritesList(stateFavorites => {
-                //1.save existing array, 2.add new array to it
                 stateFavorites = [...stateFavorites, data];
                 return stateFavorites;
             });
@@ -24,13 +23,9 @@ function PokeInfo({ data }) {
             console.log(favoritePokemon);
 
 
-
-    //IMPORTANT!!! HERE DO SOMETHING WITH SPREAD OPERATOR SO THAT THE DATA DOESN'T GET OVERWRITTEN BUT ADDED TO THE LIST!
     useEffect(() => {
         updateFavoritePokemon(pokemonFavoritesList);
-        //===>this has to stay here until i get things working!!
-        //updateFavoritePokemon(data);
-    }, [data]);
+    }, [pokemonFavoritesList]);
 
 
 
