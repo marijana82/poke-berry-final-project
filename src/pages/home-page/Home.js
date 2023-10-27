@@ -33,11 +33,20 @@ function Home() {
                         <FlippableCard/>
                     </div>
 
-                    <div className="about-us-container">
+                    <div className="wrapper-container">
+                        <Link
+                            to={"/about-page"}
+                            style={{textDecoration: 'none', color: 'white'}}
+                        >
                         <Article
                             title="About us"
-                            message="find out more about us and what we do"
+                            message="find out more about Pokemon and berries"
+                            stylingTitle="about-us-title"
+                            stylingMessage="about-us-message"
                         />
+                        </Link>
+
+
                         <Link
                             to={"/registration-page"}
                             style={{textDecoration: 'none', color: 'black'}}
@@ -47,11 +56,20 @@ function Home() {
                     </div>
 
 
-                    <div className="about-us-container">
+                    <div className="wrapper-container">
+
+                        <Link
+                            to={"/about-page"}
+                            style={{textDecoration: 'none', color: 'white'}}
+                        >
                         <Article
-                            title="About poke berry app"
-                            message="find out more about pokemon and berries and test how they match each other"
+                            title="Contact us"
+                            message="let us know what you think about this app"
+                            stylingTitle="about-us-title"
+                            stylingMessage="about-us-message"
                         />
+                        </Link>
+
                         <Link
                             to={"/login-page" }
                             style={{textDecoration: 'none', color: 'black'}}

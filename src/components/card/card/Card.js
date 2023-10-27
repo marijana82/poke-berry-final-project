@@ -1,6 +1,6 @@
 import "./Card.css";
 import React from "react";
-import {POKEMON_DREAM_WORLD} from "../../../assets/images/constants";
+import {BULBASAUR} from "../../../assets/images/constants";
 import {Link} from "react-router-dom";
 
 
@@ -20,7 +20,7 @@ function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClic
                         >
                         <img
                             className="pokemon-image"
-                            src={POKEMON_DREAM_WORLD}
+                            src={BULBASAUR}
                             alt="pokemon-image"
                         />
                         </Link>

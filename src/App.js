@@ -36,7 +36,7 @@ function App() {
             <Route path="/registration-page" element={<Registration/>}/>
             <Route path="/login-page" element={<Login/>}/>
             <Route path="/game-page" element={<Game/>}/>
-            <Route path="/about-page" element={<About/>}/>
+            <Route path="/about-page/" element={<About/>}/>
             <Route path="/profile-page" element={isAuthenticated ? <Profile/> : <Navigate to="/login-page"/>} />
             <Route path="/search-page" element={ isAuthenticated ? <PokemonSearchPage/> : <Home/>  }/>
             <Route path="/search-page-berry" element={ isAuthenticated ? <BerrySearch/> : <Home/>  }/>
