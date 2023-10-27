@@ -1,7 +1,7 @@
 import "./FormLogin.css";
 import React, {useContext, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import FormInput from "../../form-input/FormInput";
+import Input from "../../input/Input";
 import Button from "../../button/Button";
 import {LoginContext} from "../../../context/LoginContext";
 import axios from "axios";
@@ -53,9 +53,18 @@ function FormLogin() {
         >
             <div className="container-register-form">
                 <p className="title-registration-form">Login form</p>
-                <p>Please fill in the login form and press the Log in button in order to log in.</p>
 
-                <FormInput
+                { !loginSuccess
+                    ?
+                    <p>Please fill in the login form and press the Log in button in order to log in.</p>
+                    :
+                    <p>You have been successfully logged in!</p>
+                }
+
+
+
+
+                <Input
                     labelText="Your unique username"
                     idAttribute="name"
                     inputType="text"
@@ -64,7 +73,7 @@ function FormLogin() {
                     stateValue={nameLogin}
                     stateSetter={setNameLogin}
                 />
-                <FormInput
+                <Input
                     labelText="Your secret password"
                     idAttribute="password"
                     inputType="password"
@@ -86,14 +95,6 @@ function FormLogin() {
                 >Reset all
                 </Button>
             </div>
-
-
-            { loginSuccess
-                ?
-                <p>You have been successfully registered! <Link to={"/login-page"}>You can now log in!</Link></p>
-                :
-                <p>Something went wrong, please try again</p> }
-
 
 
             <div className="container-sign-in">

@@ -19,7 +19,11 @@ function Landing() {
             />
             <Main>
                 <Link to={"/"}>
-                    <Pikachu/>
+                    <Pikachu
+                        stylingSmile="smile"
+                        stylingNose="nose-cheeks"
+                        stylingPikachu="pikachu"
+                    />
                 </Link>
 
             </Main>

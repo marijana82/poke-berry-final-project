@@ -1,4 +1,4 @@
-import "./NavBarLandingPage.css";
+import "./NavBar.css";
 import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import {LoginContext} from "../../context/LoginContext";
@@ -7,7 +7,7 @@ import Button from "../button/Button";
 //to this navbar I can further integrate a <SearchBar/> , I just have to put a component between a <li></li>
 //in css listnavbar is equivalent to my ul
 
-function NavBarLandingPage() {
+function NavBar() {
 
     const { isAuthenticated, logoutFunction } = useContext(LoginContext);
 
@@ -99,7 +99,7 @@ function NavBarLandingPage() {
                                 <NavLink
                                     to="/landing-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Landing page
+                                >Landing
                                 </NavLink>
                             </li>
 
@@ -107,7 +107,7 @@ function NavBarLandingPage() {
                                 <NavLink
                                     to="/"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Home page
+                                >Home
                                 </NavLink>
                             </li>
 
@@ -116,7 +116,15 @@ function NavBarLandingPage() {
                                 <NavLink
                                     to="/game-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Games
+                                >Play
+                                </NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink
+                                    to="/about-page"
+                                    className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                                >About
                                 </NavLink>
                             </li>
 
@@ -146,4 +154,4 @@ function NavBarLandingPage() {
     );
 }
 
-export default NavBarLandingPage;
+export default NavBar;

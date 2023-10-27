@@ -11,13 +11,22 @@ function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClic
         <div className="card" onClick={onClick}>
             <div className="card-back">
                 <div className="back-main-card-container">
+
+
                     <div className="back-image-container">
+                        <Link
+                            to={"/game-page"}
+                            style={{textDecoration: 'none', color: 'white'}}
+                        >
                         <img
                             className="pokemon-image"
                             src={POKEMON_DREAM_WORLD}
                             alt="pokemon-image"
                         />
+                        </Link>
+
                     </div>
+
 
                     <div className="back-content-container">
                         <Link
@@ -29,11 +38,10 @@ function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClic
 
                         <Link
                             to={"/registration-page"}
-                            style={{textDecoration: 'none', color: 'black'}}
+                            style={{color: 'yellow'}}
                         >
                             <p className="pokemon-logo">{registerMessage}</p>
                         </Link>
-
                     </div>
 
                 </div>

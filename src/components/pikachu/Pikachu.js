@@ -1,11 +1,11 @@
 import "./Pikachu.css";
 import React from "react";
 
-function Pikachu() {
+function Pikachu({ stylingSmile, stylingNose, stylingPikachu }) {
     return(
-        <div className="pikachu">
-            <div className="nose-cheeks"></div>
-            <div className="smile"></div>
+        <div className={stylingPikachu}>
+            <div className={stylingNose}></div>
+            <div className={stylingSmile}></div>
         </div>
     )
 }

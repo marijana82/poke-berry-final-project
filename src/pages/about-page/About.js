@@ -1,37 +1,41 @@
 import "./About.css";
 import React from "react";
+import Article from "../../components/article-component/Article";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 
 function About() {
     return (
         <>
-            <div className="introduction-container">
-                <h1>About the Poke Berry App</h1>
-            </div>
+            <Header
+                message="About page"
+                description="Here you can find out more about pokemon and berries "
+            />
 
-            <section>
-                <article>
-                    <h2>Why PokeBerry?</h2>
+                <Article
+                    message="What are pokemon?"
+                >
                     <p>bla bla bla</p>
                     <p>bla bla bla</p>
-                </article>
-            </section>
+                </Article>
 
-            <section>
-                <article>
-                    <h2>Why not PokeBerry?</h2>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                </article>
-            </section>
 
-            <section>
-                <article>
-                    <h2>How to get in touch?</h2>
+                <Article
+                    message="What are berries?"
+                >
                     <p>bla bla bla</p>
                     <p>bla bla bla</p>
-                </article>
-            </section>
+                </Article>
+
+                <Article
+                    message="Fill in the form to get in touch or send us your feedback! "
+                >
+
+
+                </Article>
+
+            <Footer/>
 
         </>
     )

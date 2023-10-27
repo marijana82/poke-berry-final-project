@@ -1,6 +1,6 @@
 import "./FormRegister.css";
 import React, {useState} from "react";
-import FormInput from "../../form-input/FormInput";
+import Input from "../../input/Input";
 import {Link, useNavigate} from "react-router-dom";
 import isValidEmail from "../../../helpers/IsValidEmail";
 import Button from "../../button/Button";
@@ -23,7 +23,6 @@ function FormRegister() {
     const navigate = useNavigate();
 
     //async function made to handle registration, connected to the form and to the submit button
-
     async function onSubmitRegistration(e) {
         e.preventDefault();
         toggleError(false);
@@ -48,10 +47,8 @@ function FormRegister() {
         } catch(e) {
             console.error(e);
             toggleError(true);
-            //toggleLoading(false);
+            toggleLoading(false);
         }
-
-
     }
 
 
@@ -71,10 +68,16 @@ function FormRegister() {
         >
             <div className="container-register-form">
                 <p className="title-registration-form">Registration form</p>
-                <p>Please fill in the registration form and press the Register button in order to create account.</p>
 
-                {nameValue.length < 3 ? <p className="warning-messages">Please type in your username.</p> : <p className="message-validated">Great username!</p>}
-                <FormInput
+                { !registerSuccess
+                    ?
+                    <p>Please fill in the registration form and press the Register button in order to create your personal account.</p>
+                    :
+                    <p>You have been successfully registered! <Link to={"/login-page"}>You can now log in!</Link></p>
+                }
+
+
+                <Input
                     labelText="Your unique username"
                     idAttribute="name"
                     inputType="text"
@@ -82,12 +85,11 @@ function FormRegister() {
                     nameAttribute="name"
                     stateValue={nameValue}
                     stateSetter={setNameValue}
-
                 />
+                {nameValue.length < 3 ? <p className="warning-messages">Your username has to be at least 3 characters long.</p> : <p className="message-validated">Great username!</p>}
+                {error && <p>This account already exists. Try registering with a different username or email.</p>}
 
-                {emailValue.length < 6 && <p className="warning-messages">Please make sure your email is at least 6 characters long.</p> }
-                {!isValidEmail(emailValue) ? <p className="warning-messages">Don't forget to use @ and your email domain.</p> : <p className="message-validated">Thank you!</p>}
-                <FormInput
+                <Input
                     labelText="Your precious email"
                     idAttribute="email"
                     inputType="email"
@@ -96,9 +98,12 @@ function FormRegister() {
                     stateValue={emailValue}
                     stateSetter={setEmailValue}
                 />
+                {emailValue.length < 6 && <p className="warning-messages">Your email has to be at least 6 characters long.</p> }
+                {!isValidEmail(emailValue) ? <p className="warning-messages">Don't forget to use @ and your email domain.</p> : <p className="message-validated">Thank you!</p>}
+                {error && <p>This account already exists. Try registering with a different username or email.</p>}
 
-                {passwordValue.length < 6 ? <p className="warning-messages">Please make sure your password is at least 6 characters long.</p> : <p className="message-validated">Good choice!</p>}
-                <FormInput
+
+                <Input
                     labelText="Your secret password"
                     idAttribute="password"
                     inputType="password"
@@ -107,9 +112,10 @@ function FormRegister() {
                     stateValue={passwordValue}
                     stateSetter={setPasswordValue}
                 />
+                {passwordValue.length < 6 ? <p className="warning-messages">Your password has to be at least 3 characters long.</p> : <p className="message-validated">Good choice!</p>}
 
-                {optionalInfoUser < 3 ? <p className="warning-messages">Please let us know where you're from.</p> : <p className="message-validated">Thank you!</p>}
-                <FormInput
+
+                <Input
                     labelText="Additional information"
                     idAttribute="text"
                     inputType="text"
@@ -118,9 +124,10 @@ function FormRegister() {
                     stateValue={optionalInfoUser}
                     stateSetter={setOptionalInfoUser}
                 />
+                {optionalInfoUser < 3 ? <p className="warning-messages">Please let us know where you're from.</p> : <p className="message-validated">Thank you!</p>}
 
-                {userRole === "user" ? <p className="message-validated">That's right!</p> : <p className="warning-messages">Please log in as "user".</p> }
-                <FormInput
+
+                <Input
                     labelText="Your role"
                     idAttribute="text"
                     inputType="text"
@@ -129,8 +136,8 @@ function FormRegister() {
                     stateValue={userRole}
                     stateSetter={setUserRole}
                 />
+                {userRole === "user" ? <p className="message-validated">That's right!</p> : <p className="warning-messages">Please log in as "user".</p> }
 
-                {error && <p>This account already exists. Try registering with a different username and email.</p>}
 
                 <Button
                     className="registration-button"
@@ -153,13 +160,6 @@ function FormRegister() {
                 </Button>
 
             </div>
-
-            { registerSuccess
-                ?
-                <p>You have been successfully registered! <Link to={"/login-page"}>You can now log in!</Link></p>
-                :
-                <p>Something went wrong, please try again</p> }
-
 
             <div className="container-sign-in">
                 <p>Already have an account? <Link to={"/login-page"}>Log in here!</Link></p>

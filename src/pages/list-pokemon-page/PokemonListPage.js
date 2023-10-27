@@ -179,7 +179,6 @@ function PokemonListPage() {
                                 page={page}
                                 totalPages={totalPages}
                                 favoritePokemon={favoritePokemon.length}
-                                //chosenFavs={favorites}
                             />
 
                         </div>
@@ -190,7 +189,6 @@ function PokemonListPage() {
                     <div className="right-content-container">
                         <PokeInfo
                             data={pokedex}
-                            //favoritesClick={favs => setFavdex(favs)}
                         />
                     </div>
                 </div>

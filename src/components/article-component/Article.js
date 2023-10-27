@@ -1,6 +1,5 @@
 import "./Article.css";
 import React from "react";
-import Pokeball from "../pokeball/Pokeball";
 import {Link} from "react-router-dom";
 
 
@@ -10,7 +9,7 @@ function Article({title, message, children}) {
             <article>
                 <div className="about-us-title">
                     <Link
-                        to={"/game-page"}
+                        to={"/about-page"}
                         style={{textDecoration: 'none', color: 'white'}}
                     >
                         <h2>{title}</h2>
@@ -19,7 +18,7 @@ function Article({title, message, children}) {
                 </div>
 
                 <div className="about-us-message">
-                    <p>{message}</p>
+                    <h2>{message}</h2>
                     {children}
                 </div>
             </article>

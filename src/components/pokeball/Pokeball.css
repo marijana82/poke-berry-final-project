@@ -13,6 +13,11 @@
     border-radius: 50%;
 }
 
+.poke-ball-container h3 {
+    font-size: 18px;
+
+}
+
 .poke-ball-container:hover {
     background-color: white;
     opacity: 1;

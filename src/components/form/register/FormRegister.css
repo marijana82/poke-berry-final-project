@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: normal;
+    width: 800px;
 }
 
 .container-register-form {
@@ -11,6 +12,7 @@
     justify-content: center;
     align-items: center;
     padding: 25px;
+    width: 100%;
 }
 
 .container-sign-in {
@@ -27,7 +29,6 @@ input {
     height: 8vh;
     border: 3px solid rebeccapurple;
     font-size: 30px;
-    font-family: Didact Gothic;
     font-weight: bold;
     border-radius: 35px;
 }
@@ -43,6 +44,7 @@ input:focus {
 
 .warning-messages {
     color: crimson;
+    margin: 5px;
 }
 
 .message-validated {
@@ -56,7 +58,6 @@ input:focus {
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
-    font-family: "Didact Gothic";
     color: aliceblue;
     background: mediumpurple;
     cursor: pointer;
@@ -83,14 +84,3 @@ a:hover {
     padding: 10px;
 }
 
-label {
-    font-weight: bold;
-    padding: 10px;
-}
-
-.label-container {
-    padding: 10px;
-    margin: 3px;
-    border: 2px solid white;
-    width: 100vh;
-}

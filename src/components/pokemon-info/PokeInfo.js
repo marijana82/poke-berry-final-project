@@ -4,11 +4,14 @@ import {Link} from "react-router-dom";
 import {CustomFavoritesContext} from "../../context/FavoritesContext";
 import ButtonFavorite from "../card/button-favorite/ButtonFavorite";
 import {AiFillHeart} from "react-icons/ai";
+import Pokeball from "../pokeball/Pokeball";
 
 
 function PokeInfo({ data }) {
 
     const [pokemonFavoritesList, setPokemonFavoritesList] = useState([]);
+    //const [maxCounter, setMaxCounter] = useState();
+    const [maxReached, setMaxReached] = useState("you cannot add more than 15 pokemon to the favorites list");
 
     const {favoritePokemon, updateFavoritePokemon} = useContext(CustomFavoritesContext);
 
@@ -23,6 +26,7 @@ function PokeInfo({ data }) {
 
 
         function addToFavorites(pokemonName) {
+            if(favoritePokemon.length < 15) {      //===>delete this if not working
             if (!isPokemonFavorite(pokemonName)) {  //===>delete this if not working
             setPokemonFavoritesList((stateFavorites) => {
                 stateFavorites = [...stateFavorites, data];
@@ -30,6 +34,7 @@ function PokeInfo({ data }) {
             });
 
             } return ""     //===>delete this if not working
+            } return maxReached;
         }
 
     console.log(pokemonFavoritesList);
@@ -81,7 +86,9 @@ function PokeInfo({ data }) {
                                     <ButtonFavorite
                                         clickHandler={() => removeFromFavorites(data.name)}
                                         styling="favorite-button-tab"
-                                    ><AiFillHeart style={{color: 'deeppink'}}/>
+                                    >
+                                        <AiFillHeart style={{color: 'deeppink'}}/>
+
                                     </ButtonFavorite>
 
                                 ) :
@@ -90,7 +97,15 @@ function PokeInfo({ data }) {
                                     <ButtonFavorite
                                         clickHandler={addToFavorites}
                                         styling="favorite-button-tab-two"
-                                    ><AiFillHeart style={{color: 'green'}}/>
+                                    > { favoritePokemon.length < 15
+                                        ?
+                                        <AiFillHeart style={{color: 'green'}}/>
+                                        :
+                                        <Pokeball
+                                            ballMessage={maxReached}
+                                        />
+                                    }
+
                                     </ButtonFavorite>
 
 

@@ -1,8 +1,8 @@
-import "./FormInput.css";
+import "./Input.css";
 import React from "react";
 
 
-function FormInput({ idAttribute, labelText, inputType, placeholder, nameAttribute, stateValue, stateSetter}) {
+function Input({ idAttribute, labelText, inputType, placeholder, nameAttribute, stateValue, stateSetter}) {
     return(
         <div className="input-label-container">
             <label
@@ -26,4 +26,4 @@ function FormInput({ idAttribute, labelText, inputType, placeholder, nameAttribu
     )
 }
 
-export default FormInput;
+export default Input;

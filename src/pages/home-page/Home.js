@@ -8,6 +8,7 @@ import Main from "../../components/main/Main";
 import Article from "../../components/article-component/Article";
 import Pokeball from "../../components/pokeball/Pokeball";
 import {Link} from "react-router-dom";
+import Pikachu from "../../components/pikachu/Pikachu";
 
 
 function Home() {
@@ -16,8 +17,14 @@ function Home() {
         <>
 
             <Header
-                message="This is Home page"
-            />
+            >
+                <Pikachu
+                    stylingPikachu="pikachu-home-page"
+                    stylingNose="nose-cheeks-home-page"
+                    stylingSmile="smile-home-page"
+                />
+
+            </Header>
 
             <Main>
 

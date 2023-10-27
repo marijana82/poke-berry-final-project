@@ -1,5 +1,7 @@
 import "./Pagination.css";
 import React from "react";
+import {AiFillHeart} from "react-icons/ai";
+import ButtonFavorite from "../card/button-favorite/ButtonFavorite";
 
 function Pagination({page, totalPages, favoritesLength, chosenFavorites}) {
 

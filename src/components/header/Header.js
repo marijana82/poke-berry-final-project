@@ -4,7 +4,7 @@ import {POKEMON_SPRITES_CHARMANDER} from "../../assets/images/constants";
 import {Link, useNavigate} from "react-router-dom";
 
 
-function Header({ message, description }) {
+function Header({ message, description, children }) {
 
     //const navigate = useNavigate();
 
@@ -14,6 +14,7 @@ function Header({ message, description }) {
                 <div className="header-content-container">
                     <h1>{message}</h1>
                     <p className="header-description">{description}</p>
+                    {children}
                 </div>
             </div>
         </header>

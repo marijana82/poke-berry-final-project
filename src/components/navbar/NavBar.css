@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 75px;
     position: fixed;
     margin: 0;
     padding: 10px;
@@ -21,7 +21,7 @@
     margin: 5px;
     padding: 5px;
     width: 100%;
-    height: 55px;
+    height: 45px;
 }
 
 
@@ -75,9 +75,9 @@ nav ul a:hover {
 
 
 .active-link {
-    border: 5px solid lightskyblue;
-    border-radius: 50px;
-    background-color: deepskyblue;
+    border: 5px solid white;
+    background-color: transparent;
+    border-radius: 25px;
     color: lightcyan;
     font-weight: bold;
 }
