@@ -1,13 +1,13 @@
 import "./About.css";
 import React, {useState} from "react";
-import Article from "../../components/article-component/Article";
+import Article from "../../components/article/Article";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import {
     CHERRY_BERRY,
     CHESTO_BERRY,
     KYOGRE,
-    MAGO_BERRY,
+    MAGO_BERRY, MEW_TWO,
     PECHA_BERRY,
     SNORLAX
 } from "../../assets/images/constants";
@@ -16,6 +16,10 @@ import Input from "../../components/input/Input";
 import Select from "../../components/select/Select";
 import Textarea from "../../components/textarea/Textarea";
 import Button from "../../components/button/Button";
+import ButtonReset from "../../components/button-reset/ButtonReset";
+import {Link} from "react-router-dom";
+import {AiOutlineArrowLeft} from "react-icons/ai";
+import Pokeball from "../../components/pokeball/Pokeball";
 
 
 function About() {
@@ -24,6 +28,9 @@ function About() {
     const [emailValue, setEmailValue] = useState("");
     const [feedbackValue, setFeedbackValue] = useState("");
     const [selectValue, setSelectValue] = useState("Berries in general");
+    const [isSent, setIsSent] = useState(false);
+
+
     function onSubmitSend(e) {
         e.preventDefault();
         console.log({
@@ -32,18 +39,34 @@ function About() {
             "select":`${selectValue}`,
             "feedback":`${feedbackValue}`
         });
+        setIsSent(true);
     }
 
-
+    function resetSearch() {
+        setNameValue("");
+        setEmailValue("");
+        setFeedbackValue("");
+        setSelectValue("Berries in general");
+        setIsSent(current => !current);
+    }
 
     return (
         <>
             <Header
-                message="About page"
-                description="Here you can find out more about pokemon and berries "
+                message="About and Contact page"
+                description="Here you can find out more about pokemon and berries or just get in touch with us!"
             />
 
             <Main>
+
+                <div className="arrow-back">
+                    <Link to={`/`}>
+                        <AiOutlineArrowLeft
+                            style={
+                                {color: 'blue', fontSize: '44px', fontWeight: 'bold'}}
+                        />
+                    </Link>
+                </div>
                 <section className="wrapper-container-about">
                     <div className="article-container-about">
                     <Article
@@ -62,7 +85,6 @@ function About() {
                         </div>
                     </aside>
                 </section>
-
 
                 <section className="wrapper-container-about">
                     <aside>
@@ -141,26 +163,58 @@ function About() {
                             stateSetter={setFeedbackValue}
                         />
 
+                            <div className="button-container">
+
                             <Button
                                 type="submit"
                                 className="registration-button"
+                                disabled={
+                                    nameValue.length === 0 &&
+                                    emailValue.length === 0
+                                }
                             >Send
                             </Button>
 
+                            <ButtonReset
+                                children="x"
+                                resetHandler={resetSearch}
+                                styling="reset-button-tab"
+                            />
+
+                            </div>
                         </form>
 
+                        { isSent ?
+                            <div className="success-message">
+                                <div className="image-container-about">
+                                    <img src={MEW_TWO} alt="charmander" className="about-image-charmander"/>
+                                </div>
+                                <p>Your feedback has been successfully sent! We'll get in touch with you as soon as possible!</p>
+                            </div>
+                            :
+                            <p>Don't hesitate to get in touch!</p>
+                        }
 
                     </Article>
+                </section>
+
+                <section className="wrapper-container-about">
+                    <Link
+                        to={"/"}
+                        style={{textDecoration: 'none', color: 'black'}}
+                    >
+                        <Pokeball ballMessage="back to home"/>
+                    </Link>
 
                 </section>
 
 
 
-
-
             </Main>
 
-            <Footer/>
+            <Footer
+                buttonMessage="Back to top"
+            />
 
         </>
     )

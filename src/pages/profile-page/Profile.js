@@ -6,8 +6,13 @@ import Header from "../../components/header/Header";
 import Main from "../../components/main/Main";
 import Footer from "../../components/footer/Footer";
 import {CustomFavoritesContext} from "../../context/FavoritesContext";
-import {AiFillHeart} from "react-icons/ai";
+import {AiFillHeart, AiOutlineArrowLeft} from "react-icons/ai";
 import Button from "../../components/button/Button";
+import {DITTO} from "../../assets/images/constants";
+import Article from "../../components/article/Article";
+import Pokeball from "../../components/pokeball/Pokeball";
+import NavBar from "../../components/navbar/NavBar";
+import {Link} from "react-router-dom";
 
 
 function Profile() {
@@ -49,27 +54,40 @@ function Profile() {
         <>
             <Header
                 message="Welcome to your profile page!"
+                description="check your account information and see the list of your recently added favorites"
             />
 
             <Main>
+                <div className="arrow-back">
+                    <Link to={`/`}>
+                        <AiOutlineArrowLeft
+                            style={
+                                {color: 'blue', fontSize: '44px', fontWeight: 'bold'}}
+                        />
+                    </Link>
+                </div>
 
-                <div className="main-profile-container">
-                    <div className="profile-welcome-user">
-                        <p>Hi {user.username} !</p>
-                        <p>Welcome to your profile page. Here you can check your account information.</p>
-                    </div>
-                    <div className="profile-user-data">
-                        <p>User data:</p>
+                <div className="main-container-profile">
+
+                <div className="wrapper-container-profile">
                         {Object.keys(profileData).length > 0 &&
-                            <ul>
-                                <li>Your email:<p className="welcome-text-username"> {user.email}</p></li>
-                                <li>Your ID number: <p className="welcome-text-username"> {user.id}</p></li>
-                                <li>Your profile photo: <p className="welcome-text-username"> Here comes profile photo </p></li>
-                                <li>Recently viewed items: <p className="welcome-text-username">Here come recently viewed items</p></li>
-                            </ul>
+                            <section>
+                                <h2>Your username: {user.username}</h2>
+                                <h2>Your email: {user.email}</h2>
+                                <h2>Your ID number:  {user.id}</h2>
+                                <h2>Your profile photo: </h2>
+                                <div className="image-container-about">
+                                <img src={DITTO} alt="profiile-photo" className="about-image-charmander"/>
+                                </div>
+                            </section>
                         }
-                    </div>
-                    <div className="favorites-message-container">
+                </div>
+
+                <div className="wrapper-container-profile">
+                    <Article
+                        message="recently added favorites:"
+                    />
+
                     {favoritePokemon &&
                         favoritePokemon.map((oneFavorite) => {
 
@@ -82,7 +100,7 @@ function Profile() {
                                 <>
 
                                     <h2>{oneFavorite.name}</h2>
-                            {/*<Button
+                                    {/*<Button
                                 clickHandler={() => onClickHeart(oneFavorite.name)}
                                 styling="button-favorite"
                             >Favorite
@@ -92,8 +110,21 @@ function Profile() {
                                 </>
                             )
                         })}
-                    </div>
                 </div>
+
+                </div>
+
+                <section className="wrapper-container-about">
+                    <Link
+                        to={"/about-page"}
+                        style={{textDecoration: 'none', color: 'black'}}
+                    >
+                        <Pokeball ballMessage="contact us"/>
+                    </Link>
+
+                </section>
+
+
             </Main>
 
             <Footer

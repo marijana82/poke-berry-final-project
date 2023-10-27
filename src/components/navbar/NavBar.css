@@ -18,8 +18,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    padding: 5px;
+    margin: 4px;
+    padding: 4px;
     width: 100%;
     height: 45px;
 }
@@ -35,16 +35,16 @@
     height: 45px;
     background: transparent;
     position: fixed;
-    margin: 5px;
-    padding: 5px;
+    margin: 4px;
+    padding: 4px;
 }
 
 nav ul a,
 nav ul a:visited {
     text-decoration: none;
-    font-size: 22px;
-    padding: 10px;
-    margin: 5px;
+    font-size: 18px;
+    padding: 8px;
+    margin: 4px;
     color: lightgoldenrodyellow;
 }
 
@@ -67,15 +67,15 @@ nav ul a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
     text-decoration: snow;
     flex-shrink: 0;
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 
 .active-link {
-    border: 5px solid white;
+    border: 3px solid white;
     background-color: transparent;
     border-radius: 25px;
     color: lightcyan;
@@ -85,6 +85,5 @@ nav ul a:hover {
 .default-link {
     border: none;
 }
-
 
 

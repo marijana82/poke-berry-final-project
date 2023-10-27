@@ -27,7 +27,7 @@ function NavBar() {
                                 <NavLink
                                     to="/pokemon-list-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Pokemon list
+                                >Pokemon
                                 </NavLink>
                             </li>
 
@@ -35,7 +35,7 @@ function NavBar() {
                                 <NavLink
                                     to="/berry-list-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Berry list
+                                >Berries
                                 </NavLink>
                             </li>
 
@@ -59,7 +59,7 @@ function NavBar() {
                                 <NavLink
                                     to="/filter-advanced-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Berry Filter
+                                >Filter Berry
                                 </NavLink>
                             </li>
 
@@ -67,7 +67,15 @@ function NavBar() {
                                 <NavLink
                                     to="/game-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
-                                >Games
+                                >Play
+                                </NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink
+                                    to="/about-page"
+                                    className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                                >About
                                 </NavLink>
                             </li>
 

@@ -16,3 +16,8 @@ select {
 select:hover {
     background-color: gold;
 }
+
+select.arrow {
+    appearance: none;
+    color: red;
+}

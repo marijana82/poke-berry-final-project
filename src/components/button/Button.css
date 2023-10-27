@@ -96,10 +96,10 @@ button:hover {
 
 .logout-button {
     border: none;
-    font-size: 22px;
+    font-size: 18px;
     color: orange;
     background-color: lightgoldenrodyellow;
-    width: 18vh;
+    width: 12vh;
     height: 6vh;
     border-radius: 35px;
     margin: 15px;

@@ -149,13 +149,6 @@ function QuizGame() {
                                     </Button>
                                 </div>
 
-                                <Link
-                                    to={"/"}
-                                    style={{textDecoration: 'none', color: 'black'}}
-                                >
-                                    <Pokeball ballMessage="or click here to go back to home page"/>
-                                </Link>
-
                             </div>
                         </div>
                     )}

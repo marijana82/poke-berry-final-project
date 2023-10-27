@@ -21,10 +21,6 @@
     margin: 5px;
 }
 
-aside {
-    width: 35%;
-}
-
 .image-container-about {
     padding: 5px;
     margin: 5px;
@@ -47,4 +43,24 @@ aside {
 
 .about-image-charmander {
     width: 200px;
+}
+
+aside {
+    width: 35%;
+}
+
+.success-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

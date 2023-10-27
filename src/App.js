@@ -17,7 +17,6 @@ import SingleBerry from "./pages/single-item-page/SingleBerry";
 import Profile from "./pages/profile-page/Profile";
 import BerrySearch from "./pages/search-berry-page/BerrySearch";
 import About from "./pages/about-page/About";
-import Header from "./components/header/Header";
 
 
 function App() {

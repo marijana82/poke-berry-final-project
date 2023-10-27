@@ -1,11 +1,14 @@
 import "./Card.css";
-import React from "react";
+import React, {useContext} from "react";
 import {BULBASAUR} from "../../../assets/images/constants";
 import {Link} from "react-router-dom";
+import {LoginContext} from "../../../context/LoginContext";
 
 
 
 function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClick}) {
+
+    const { isAuthenticated, logoutFunction } = useContext(LoginContext);
 
     return(
         <div className="card" onClick={onClick}>
@@ -36,12 +39,15 @@ function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClic
                             <h2 className="pokemon-name">{playMessage}</h2>
                         </Link>
 
+                        {isAuthenticated ? "" :
+
                         <Link
                             to={"/registration-page"}
                             style={{color: 'yellow'}}
                         >
                             <p className="pokemon-logo">{registerMessage}</p>
                         </Link>
+                        }
                     </div>
 
                 </div>

@@ -119,6 +119,7 @@ function PokemonListPage() {
         <>
                 <div className="main-pokemon-list-container">
                     <div className="left-content-container">
+
                         <div className="button-group-container">
 
                             <Pagination

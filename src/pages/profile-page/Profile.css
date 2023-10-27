@@ -1,0 +1,24 @@
+.main-container-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.wrapper-container-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 5px;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.wrapper-container-profile:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

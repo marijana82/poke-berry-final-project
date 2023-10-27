@@ -5,13 +5,16 @@ import Header from "../../components/header/Header";
 import FavoritesContext from "../../context/FavoritesContext";
 import Footer from "../../components/footer/Footer";
 import Main from "../../components/main/Main";
-import Article from "../../components/article-component/Article";
+import Article from "../../components/article/Article";
 import Pokeball from "../../components/pokeball/Pokeball";
 import {Link} from "react-router-dom";
 import Pikachu from "../../components/pikachu/Pikachu";
+import {LoginContext} from "../../context/LoginContext";
 
 
 function Home() {
+
+    const { isAuthenticated, logoutFunction } = useContext(LoginContext);
 
     return (
         <>
@@ -39,25 +42,37 @@ function Home() {
                             style={{textDecoration: 'none', color: 'white'}}
                         >
                         <Article
-                            title="About us"
+                            title="About"
                             message="find out more about Pokemon and berries"
                             stylingTitle="about-us-title"
                             stylingMessage="about-us-message"
                         />
                         </Link>
 
+                        {isAuthenticated ?
 
+                            <Link
+                                to={"/about-page"}
+                                style={{textDecoration: 'none', color: 'black'}}
+                            >
+                                <Pokeball ballMessage="contact us"/>
+                            </Link>
+
+                            :
                         <Link
                             to={"/registration-page"}
                             style={{textDecoration: 'none', color: 'black'}}
                         >
                             <Pokeball ballMessage="or click here to register"/>
                         </Link>
+                        }
+
                     </div>
+
+                    {!isAuthenticated ?
 
 
                     <div className="wrapper-container">
-
                         <Link
                             to={"/about-page"}
                             style={{textDecoration: 'none', color: 'white'}}
@@ -74,9 +89,37 @@ function Home() {
                             to={"/login-page" }
                             style={{textDecoration: 'none', color: 'black'}}
                         >
+
                             <Pokeball ballMessage="or click here to log in"/>
+
                         </Link>
                     </div>
+
+                        :
+
+                        <div className="wrapper-container">
+                            <Link
+                                to={"/profile-page"}
+                                style={{textDecoration: 'none', color: 'white'}}
+                            >
+                                <Article
+                                    title="My profile"
+                                    message="check your profile information"
+                                    stylingTitle="about-us-title"
+                                    stylingMessage="about-us-message"
+                                />
+                            </Link>
+
+                            <Link
+                                to={"/profile-page" }
+                                style={{textDecoration: 'none', color: 'black'}}
+                            >
+
+                                <Pokeball ballMessage="my favorites"/>
+
+                            </Link>
+                        </div>
+                    }
 
 
 

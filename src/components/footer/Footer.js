@@ -2,7 +2,7 @@ import "./Footer.css";
 import React, {useEffect} from "react";
 
 
-function Footer({ buttonMessage, message, description }) {
+function Footer({ buttonMessage, message, description, children }) {
 
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -21,6 +21,8 @@ function Footer({ buttonMessage, message, description }) {
                             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
                         }}
                     >{buttonMessage}
+
+                        {children}
 
                     </button>
                 </div>

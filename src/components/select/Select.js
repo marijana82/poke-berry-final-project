@@ -22,10 +22,9 @@ function Select({labelText, stateValue, stateSetter}) {
             >
                 <option value="Berries">Berries in general</option>
                 <option value="Pokemon">Pokemon in general</option>
-                <option value="Berry flavors">Berry flavors only</option>
-                <option value="Pokemon HP">Pokemon HP only</option>
                 <option value="Both">Both pokemon and berries</option>
                 <option value="None">I have no interest in Pokemon or berries</option>
+                <option value="Say hi">Just want to say hi!</option>
                 <option value="Other">I want to send a feedback</option>
             </select>
 
