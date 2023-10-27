@@ -1,10 +1,9 @@
 import "./About.css";
-import React from "react";
+import React, {useState} from "react";
 import Article from "../../components/article-component/Article";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import {
-    BULBASAUR,
     CHERRY_BERRY,
     CHESTO_BERRY,
     KYOGRE,
@@ -15,9 +14,28 @@ import {
 import Main from "../../components/main/Main";
 import Input from "../../components/input/Input";
 import Select from "../../components/select/Select";
+import Textarea from "../../components/textarea/Textarea";
+import Button from "../../components/button/Button";
 
 
 function About() {
+
+    const [nameValue, setNameValue] = useState("");
+    const [emailValue, setEmailValue] = useState("");
+    const [feedbackValue, setFeedbackValue] = useState("");
+    const [selectValue, setSelectValue] = useState("Berries in general");
+    function onSubmitSend(e) {
+        e.preventDefault();
+        console.log({
+            "name":`${nameValue}`,
+            "email": `${emailValue}`,
+            "select":`${selectValue}`,
+            "feedback":`${feedbackValue}`
+        });
+    }
+
+
+
     return (
         <>
             <Header
@@ -83,12 +101,20 @@ function About() {
                         message="Fill in the form to get in touch or send us your feedback! "
                         stylingTitle="about-us-title"
                     >
+
+                        <form
+                            className="registration-form"
+                            onSubmit={onSubmitSend}
+                        >
                         <Input
                             labelText="Your precious email"
                             idAttribute="email"
                             inputType="email"
                             placeholder="pikachu@pikachu.com"
                             nameAttribute="email"
+                            type="email"
+                            stateValue={emailValue}
+                            stateSetter={setEmailValue}
                         />
 
                         <Input
@@ -97,11 +123,33 @@ function About() {
                             inputType="text"
                             placeholder="Pikachu Charmander"
                             nameAttribute="name"
+                            type="text"
+                            stateValue={nameValue}
+                            stateSetter={setNameValue}
                         />
 
                         <Select
                             labelText="Select your main interest"
+                            stateValue={selectValue}
+                            stateSetter={setSelectValue}
                         />
+
+                        <Textarea
+                            labelText="We appreciate your feedback!"
+                            placeholder="Curious what you have to say! :)"
+                            stateValue={feedbackValue}
+                            stateSetter={setFeedbackValue}
+                        />
+
+                            <Button
+                                type="submit"
+                                className="registration-button"
+                            >Send
+                            </Button>
+
+                        </form>
+
+
                     </Article>
 
                 </section>

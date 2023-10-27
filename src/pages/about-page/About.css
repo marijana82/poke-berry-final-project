@@ -11,6 +11,10 @@
     border-radius: 25px;
 }
 
+.wrapper-container-about:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .article-container-about {
     width: 65%;
     padding: 10px;
