@@ -1,10 +1,10 @@
-import React, {createContext, useState} from "react";
+import React, {createContext, useEffect, useState} from "react";
 
 export const CustomFavoritesContext = createContext({});
 
 function FavoritesContext({children}) {
-
     const [favorite, setFavorite] = useState([]);
+
 
 
     const contextDataFavorite = {

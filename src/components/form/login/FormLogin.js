@@ -62,8 +62,6 @@ function FormLogin() {
                 }
 
 
-
-
                 <Input
                     labelText="Your unique username"
                     idAttribute="name"
@@ -73,6 +71,8 @@ function FormLogin() {
                     stateValue={nameLogin}
                     stateSetter={setNameLogin}
                 />
+                {error && <p>This account does not exist. Try registering with a different username.</p>}
+
                 <Input
                     labelText="Your secret password"
                     idAttribute="password"
@@ -82,6 +82,8 @@ function FormLogin() {
                     stateValue={passwordLogin}
                     stateSetter={setPasswordLogin}
                 />
+                {error && <p>This account does not exist. Try registering with a different password.</p>}
+
                 <Button
                     className="registration-button"
                     type="submit"

@@ -4,9 +4,6 @@ import { NavLink } from "react-router-dom";
 import {LoginContext} from "../../context/LoginContext";
 import Button from "../button/Button";
 
-//to this navbar I can further integrate a <SearchBar/> , I just have to put a component between a <li></li>
-//in css listnavbar is equivalent to my ul
-
 function NavBar() {
 
     const { isAuthenticated, logoutFunction } = useContext(LoginContext);

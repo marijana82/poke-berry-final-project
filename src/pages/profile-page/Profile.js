@@ -20,7 +20,8 @@ function Profile() {
     const [profileData, setProfileData] = useState({});
 
     const { user } = useContext(LoginContext);
-    const { favoritePokemon } = useContext(CustomFavoritesContext);
+    const { favoritePokemon, updateFavoritePokemon } = useContext(CustomFavoritesContext);
+    const localStorageKey = 'favoritesList';
 
     useEffect(() => {
         async function fetchProfileData() {
@@ -44,10 +45,17 @@ function Profile() {
 
     }, []);
 
-   /* function onClickHeart(name){
+   /*function onClickHeart(name){
         console.log(name)
         favoritePokemon.push(name)
     }*/
+
+
+
+    useEffect(() => {
+        localStorage.setItem(localStorageKey, JSON.stringify(favoritePokemon));
+    }, [favoritePokemon]);
+
 
 
     return (
@@ -98,12 +106,11 @@ function Profile() {
 
                             return(
                                 <>
-
                                     <h2>{oneFavorite.name}</h2>
                                     {/*<Button
-                                clickHandler={() => onClickHeart(oneFavorite.name)}
+                                //clickHandler={() => removeFromFavorites(oneFavorite.name)}
                                 styling="button-favorite"
-                            >Favorite
+                            >remove
                                 {heart}
                             </Button>*/}
 

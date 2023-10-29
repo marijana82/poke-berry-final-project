@@ -9,13 +9,14 @@ import Pokeball from "../pokeball/Pokeball";
 
 function PokeInfo({ data }) {
 
-    const [pokemonFavoritesList, setPokemonFavoritesList] = useState([]);
-    //const [maxCounter, setMaxCounter] = useState();
-    const [maxReached, setMaxReached] = useState("you cannot add more than 15 pokemon to the favorites list");
+    let [pokemonFavoritesList, setPokemonFavoritesList] = useState([]);
+    const [maxReached, setMaxReached] = useState("you cannot add more than 8 pokemon to the favorites list");
 
     const {favoritePokemon, updateFavoritePokemon} = useContext(CustomFavoritesContext);
+    const localStorageKey = 'favoritesList';
 
 
+        //checks if pokemon is already on the favorites list
         function isPokemonFavorite(pokemonName) {
             if(pokemonName) {
                 const myFavoritePokemon = favoritePokemon.find((search) => search.name === pokemonName.name);
@@ -24,36 +25,58 @@ function PokeInfo({ data }) {
             return false;
         }
 
-
+        //adds pokemon to favorites list
         function addToFavorites(pokemonName) {
-            if(favoritePokemon.length < 15) {      //===>delete this if not working
+            if(favoritePokemon.length < 8) {      //===>delete this if not working
             if (!isPokemonFavorite(pokemonName)) {  //===>delete this if not working
             setPokemonFavoritesList((stateFavorites) => {
                 stateFavorites = [...stateFavorites, data];
+                console.log("added to favorites");
+                console.log(stateFavorites);
                 return stateFavorites;
             });
 
-            } return ""     //===>delete this if not working
+            } return ""
             } return maxReached;
         }
+    //check from here
+    updateFavoritePokemon(pokemonFavoritesList);
 
-    console.log(pokemonFavoritesList);
-    console.log(favoritePokemon);
 
-
+        //removes from favorites list
         function removeFromFavorites(namePokemon) {
             setPokemonFavoritesList((stateFavorites) => {
                 const removeFavorite = stateFavorites.filter(
                     (pokemon) => pokemon.name !== namePokemon
                 );
+                console.log("removed from favorites")
+                console.log(removeFavorite);
                 return removeFavorite;
             });
         }
 
 
     useEffect(() => {
+        //updateFavoritePokemon(pokemonFavoritesList);
+        //localStorage.setItem(localStorageKey, JSON.stringify(favoritePokemon));
+        localStorage.setItem(localStorageKey, JSON.stringify(favoritePokemon))
+    }, [favoritePokemon]);  //==>> addToFavorites
+
+
+    useEffect(() => {
+        const favorites = JSON.parse(localStorage.getItem(localStorageKey));
+        if(favorites) {
+            setPokemonFavoritesList(favorites);
+        }
+    }, []);
+
+
+
+    useEffect(() => {
         updateFavoritePokemon(pokemonFavoritesList);
-    }, [pokemonFavoritesList]);
+        localStorage.setItem(localStorageKey, JSON.stringify(favoritePokemon));
+    }, [removeFromFavorites]);
+
 
 
     return(
@@ -97,7 +120,7 @@ function PokeInfo({ data }) {
                                     <ButtonFavorite
                                         clickHandler={addToFavorites}
                                         styling="favorite-button-tab-two"
-                                    > { favoritePokemon.length < 15
+                                    > { favoritePokemon.length < 8
                                         ?
                                         <AiFillHeart style={{color: 'green'}}/>
                                         :
@@ -107,12 +130,8 @@ function PokeInfo({ data }) {
                                     }
 
                                     </ButtonFavorite>
-
-
                                 )
-
                             }
-
 
                         </>
 
