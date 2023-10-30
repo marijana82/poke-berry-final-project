@@ -113,7 +113,7 @@ function FormRegister() {
 
                 <Input
                     labelText="Additional information"
-                    idAttribute="text"
+                    idAttribute="text_origin"
                     inputType="text"
                     placeholder="Where do you come from?"
                     nameAttribute="additional information"
@@ -125,7 +125,7 @@ function FormRegister() {
 
                 <Input
                     labelText="Your role"
-                    idAttribute="text"
+                    idAttribute="text_role"
                     inputType="text"
                     placeholder="What is your role?"
                     nameAttribute="role"

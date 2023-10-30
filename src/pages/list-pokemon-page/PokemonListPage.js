@@ -131,7 +131,7 @@ function PokemonListPage() {
                         <PokemonCard
                             pokemon={pokemonData}
                             loading={loading}
-                            key={pokemonData.id}
+                            key={`${pokemonData.name}-${pokemonData.id}`}
                             pokemonClick={poke => setPokedex(poke)}
                         />
 

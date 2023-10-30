@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import {AiFillHeart, AiOutlineArrowLeft} from "react-icons/ai";
 import Article from "../../components/article/Article";
 import ButtonReset from "../../components/button-reset/ButtonReset";
+import Footer from "../../components/footer/Footer";
 
 
 function Favorites() {
@@ -36,7 +37,9 @@ function Favorites() {
 
     return(
         <>
-            <Header/>
+            <Header
+                message="Favorites page"
+            />
             <Main>
                 <div className="arrow-back">
                     <Link to={`/`}>
@@ -86,6 +89,7 @@ function Favorites() {
                 </div>
 
             </Main>
+           <Footer/>
 
         </>
     )

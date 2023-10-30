@@ -10,11 +10,10 @@ import Pokeball from "../pokeball/Pokeball";
 function PokeInfo({ data }) {
 
     let [pokemonFavoritesList, setPokemonFavoritesList] = useState([]);
-    const [maxReached, setMaxReached] = useState("you cannot add more than 8 pokemon to the favorites list");
+    const [maxReached, setMaxReached] = useState("You have reached the max of 8 favorites. Go to favorites page to remove them from the list");
 
     const {favoritePokemon, updateFavoritePokemon } = useContext(CustomFavoritesContext);
     const localStorageKey = 'favoritesList';
-
 
         //checks if pokemon is already on the favorites list
     function isPokemonFavorite(pokemonName) {
@@ -24,7 +23,6 @@ function PokeInfo({ data }) {
         }
         return false;
     }
-
 
         //adds pokemon to favorites list
         function addToFavorites(pokemonName) {
@@ -100,6 +98,7 @@ function PokeInfo({ data }) {
                             />
                         </span>
                         </Link>
+                        { maxReached && <Pokeball ballMessage={maxReached} styling="container-pokeball"/> }
 
                         <>
                             {favoritePokemon.some((pokemon) => pokemon.name === data.name) ?
@@ -118,14 +117,13 @@ function PokeInfo({ data }) {
                                         clickHandler={addToFavorites}
                                         styling="favorite-button-tab-two"
                                     > { favoritePokemon.length < 8
-                                        ?
+                                        &&
                                         <AiFillHeart style={{color: 'green'}}/>
-                                        :
+                                       /* :
                                         <Pokeball
                                             ballMessage={maxReached}
-                                        />
+                                        />*/
                                     }
-
                                     </ButtonFavorite>
                                 )
                             }

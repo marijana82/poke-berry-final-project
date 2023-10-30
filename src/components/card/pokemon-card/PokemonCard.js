@@ -43,7 +43,7 @@ function PokemonCard({ pokemon, pokemonClick }) {
                         <>
                             <div
                                 className="hover-card-container"
-                                key={onePokemon.id}
+                                key={`${onePokemon.id}-${onePokemon.name}`}
                                 onClick={() => pokemonClick(onePokemon)}
                             >
                                 <div className="card-hover">
