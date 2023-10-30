@@ -2,8 +2,7 @@ import "./QuizGame.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Button from "../../button/Button";
-import Pokeball from "../../pokeball/Pokeball";
-import {Link} from "react-router-dom";
+import ButtonReset from "../../button-reset/ButtonReset";
 
 function QuizGame() {
 
@@ -13,12 +12,20 @@ function QuizGame() {
     const [message, setMessage] = useState("");
     const [isLoading, toggleIsLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [firstLetter, setFirstLetter] = useState("");
+    const [firstThreeLetters, setFirstThreeLetters] = useState("");
+    const [pokeNameLength, setPokeNameLength] = useState(0);
+    const [goodAnswers, setGoodAnswers] = useState(0);
+    const [badAnswers, setBadAnswers] = useState(0);
 
     //to fetch random pokemon from api
     async function fetchRandomPokemon() {
         toggleIsLoading(true);
         setError(false);
         setUserGuess("");
+        setFirstLetter("");
+        setFirstThreeLetters("");
+        setPokeNameLength(0);
 
         try {
             const randomPokemonId = Math.floor(Math.random() * 1100) + 1;
@@ -26,8 +33,10 @@ function QuizGame() {
             console.log(response.data);
             setPokemonData(response.data);
             setPokemonName(response.data.name);
+            setFirstLetter(response.data.name.charAt(0));
+            setFirstThreeLetters(response.data.name.slice(0, 3));
+            setPokeNameLength(response.data.name.length);
             setMessage("");
-
 
         } catch(e) {
             console.error(e);
@@ -37,22 +46,21 @@ function QuizGame() {
     }
 
 
-
     //to check user's guess
-    function checkUserGuess() {
+    function checkUserGuess(e) {
+        e.preventDefault();
         if (userGuess.toLowerCase() === pokemonData.name.toLowerCase()) {
             setMessage("Well done! This pokemon's name is " + userGuess.toUpperCase() + " ! ");
+            setGoodAnswers(goodAnswers + 1);
         } else {
             setMessage("It seems you gave a wrong answer. This pokemon's name is: " + pokemonName.toUpperCase() + ".")
+            setBadAnswers(badAnswers + 1);
         }
     }
-
-
 
     useEffect(() => {
         fetchRandomPokemon();
     }, []);
-
 
 
     //to handle user input
@@ -60,7 +68,11 @@ function QuizGame() {
         setUserGuess(e.target.value);
     }
 
-
+    //to reset score
+    function resetScore() {
+        setGoodAnswers(0);
+        setBadAnswers(0);
+    }
 
 
     return(
@@ -72,7 +84,6 @@ function QuizGame() {
                     :
                     (
                         <div className="game-stats-container">
-
                             <div className="game-title-container">
                                 <h1 className="game-title">Pokemon Quiz Game</h1>
                             </div>
@@ -85,16 +96,32 @@ function QuizGame() {
                                         className="game-image"
                                     />
                                 }
-
                             </div>
+
+                            { firstLetter &&
+                                <div>
+                                    <h3>This pokemon's name starts with letter " {firstLetter} "</h3>
+                                </div>
+                            }
 
                             <div className="game-navigation-container">
 
-                               {/*TESTING FROM HERE TO THE INPUT TAG*/}
                                 {userGuess.length > 0 && userGuess !== pokemonData.name ?
 
                                     (
                                         <div className="hints-container">
+
+                                            { firstThreeLetters &&
+                                                <div>
+                                                    <h3>This pokemon's first three letters are: " {firstThreeLetters} "</h3>
+                                                </div>
+                                            }
+
+                                            { pokeNameLength &&
+                                                <div>
+                                                    <h3>This pokemon's name has {pokeNameLength} letters. </h3>
+                                                </div>
+                                            }
                                             <h3>This pokemon <b>weights {pokemonData.weight} gram </b> and has <b>base experience of {pokemonData.base_experience} hp.</b></h3>
                                             <br/>
                                             <h2><b>Abilities</b></h2>
@@ -122,12 +149,20 @@ function QuizGame() {
                                     ) :
 
                                     <p className="correct-answer">{message}</p>
-
                                 }
 
+                                {goodAnswers && <p>Well done: {goodAnswers}</p>}
+                                {badAnswers && <p>Try again: {badAnswers}</p>}
+                                <ButtonReset
+                                    type="button"
+                                    resetHandler={resetScore}
+                                    styling="reset-button-tab"
+                                > x </ButtonReset>
+
+                                <form onSubmit={checkUserGuess}>
                                 <input
                                     type="text"
-                                    placeholder="Need a hint? Start typing..."
+                                    placeholder="Need more hints?"
                                     value={userGuess}
                                     onChange={handleInputChange}
                                     className="game-input"
@@ -135,8 +170,7 @@ function QuizGame() {
 
                                 <div className="game-button-container">
                                     <Button
-                                        type="button"
-                                        clickHandler={checkUserGuess}
+                                        type="submit"
                                         styling="game-button"
                                     >I feel lucky!
                                     </Button>
@@ -148,6 +182,7 @@ function QuizGame() {
                                     >Try again!
                                     </Button>
                                 </div>
+                                </form>
 
                             </div>
                         </div>

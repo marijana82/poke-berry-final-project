@@ -10,7 +10,7 @@ function BerryListPage() {
 
     const [berryData, setBerryData] = useState([]);
     const [berryDex, setBerryDex] = useState();
-    const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry/?limit=24&offset=70");
+    const [endpointBerry, setEndpointBerry] = useState("https://pokeapi.co/api/v2/berry/?limit=24&offset=24");
     const [nextEndpointBerry, setNextEndpointBerry] = useState("");
     const [previousEndpointBerry, setPreviousEndpointBerry] = useState("");
     const [loading, toggleLoading] = useState(false);
@@ -31,6 +31,7 @@ function BerryListPage() {
         } catch(e) {
             console.error(e);
             setError(true);
+            toggleLoading(false);
         }
     };
 

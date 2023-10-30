@@ -14,10 +14,8 @@ function FormRegister() {
     const [passwordValue, setPasswordValue] = useState("");
     const [optionalInfoUser, setOptionalInfoUser] = useState("");
     const [userRole, setUserRole] = useState("");
-    //state for functionality
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
-    //state for registration
     const [registerSuccess, setRegisterSuccess] = useState(false);
 
     const navigate = useNavigate();
@@ -31,7 +29,6 @@ function FormRegister() {
         try {
             //endpoint for registration
             const responseRegister = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
-                //data we need to send to the backend
                 username: nameValue,
                 email: emailValue,
                 password: passwordValue,
@@ -39,7 +36,6 @@ function FormRegister() {
                 role: userRole,
             });
 
-            //no authorization header here!
             console.log(responseRegister);
             setRegisterSuccess(true);
             navigate("/login-page");
