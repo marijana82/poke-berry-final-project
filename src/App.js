@@ -17,6 +17,7 @@ import SingleBerry from "./pages/single-item-page/SingleBerry";
 import Profile from "./pages/profile-page/Profile";
 import BerrySearch from "./pages/search-berry-page/BerrySearch";
 import About from "./pages/about-page/About";
+import Favorites from "./pages/favorites-page/Favorites";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/game-page" element={<Game/>}/>
             <Route path="/about-page/" element={<About/>}/>
             <Route path="/profile-page" element={isAuthenticated ? <Profile/> : <Navigate to="/login-page"/>} />
+            <Route path="/favorites-page" element={isAuthenticated ? <Favorites/> : <Home/>} />
             <Route path="/search-page" element={ isAuthenticated ? <PokemonSearchPage/> : <Home/>  }/>
             <Route path="/search-page-berry" element={ isAuthenticated ? <BerrySearch/> : <Home/>  }/>
             <Route path="/pokemon-list-page" element={ isAuthenticated ? <PokemonListPage/> : <Home/> }/>

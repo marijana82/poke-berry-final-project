@@ -8,8 +8,6 @@ import {CustomFavoritesContext} from "../../context/FavoritesContext";
 import Pagination from "../../components/pagination/Pagination";
 import Footer from "../../components/footer/Footer";
 
-//favorites key
-const favoritesKey = "favorite";
 
 function PokemonListPage() {
     const [pokemonData, setPokemonData] = useState([]);
@@ -19,23 +17,19 @@ function PokemonListPage() {
     const [nextEndpoint, setNextEndpoint] = useState('');
     const [previousEndpoint, setPreviousEndpoint] = useState('');
     const [pokedex, setPokedex] = useState();
-    //const [favdex, setFavdex] = useState([]);
-
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
-    const [favorites, setFavorites] = useState(() => {
+
+    /*const [favorites, setFavorites] = useState(() => {
         //getting stored value
         const saved = localStorage.getItem("favorite");
         const initialValue = JSON.parse(saved);
         console.log(initialValue);
         return initialValue || " ";
-    });
+    });*/
 
     const itemsPerPage = 24;
-
-    //why is the destructured favoritePokemon not used?
-    const { favoritePokemon, updateFavoritePokemon } = useContext(CustomFavoritesContext);
-
+    const { favoritePokemon } = useContext(CustomFavoritesContext);
     const controller = new AbortController();
 
     //function 1: fetching the general pokemon data + previous and next
@@ -88,22 +82,6 @@ function PokemonListPage() {
     /*return function cleanup() {
         controller.abort();
     }*/
-
-
-
-    //favorites update function
-    // function updateFavoritePokemon(name) {
-    //     const updatedPokeFav = [...favorites];
-    //     const indexFavorites = favorites.indexOf(name);
-    //     if(indexFavorites >= 0) {
-    //         updatedPokeFav.splice(indexFavorites, 1);
-    //     } else {
-    //         updatedPokeFav.push(name);
-    //     }
-    //
-    //     window.localStorage.setItem(favoritesKey, JSON.stringify(updatedPokeFav));
-    //     setFavorites(updatedPokeFav);
-    // }
 
 
     //function that handles page change

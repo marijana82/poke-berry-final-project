@@ -203,7 +203,10 @@ function About() {
                         to={"/"}
                         style={{textDecoration: 'none', color: 'black'}}
                     >
-                        <Pokeball ballMessage="back to home"/>
+                        <Pokeball
+                            ballMessage="back to home"
+                            styling="poke-ball-container"
+                        />
                     </Link>
 
                 </section>

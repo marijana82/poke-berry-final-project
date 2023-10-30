@@ -15,7 +15,6 @@
 
 .poke-ball-container h3 {
     font-size: 18px;
-
 }
 
 .poke-ball-container:hover {
@@ -27,3 +26,4 @@
             rgba(17, 17, 26, 0.1) 0px 16px 56px;
     color: red;
 }
+

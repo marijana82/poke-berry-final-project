@@ -16,7 +16,6 @@ function PokemonSearchPage() {
     const [endpointPoke, setEndpointPoke] = useState(POKEMON_URL);
     const [searchItem, setSearchItem] = useState("");
     const [pokeDetails, setPokeDetails] = useState([]);
-    //const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
 

@@ -97,6 +97,7 @@ function SingleBerry() {
 
                         <Pokeball
                             ballMessage="go to berry filter page"
+                            styling="poke-ball-container"
                         />
 
                         </Link>

@@ -12,23 +12,24 @@ function PokeInfo({ data }) {
     let [pokemonFavoritesList, setPokemonFavoritesList] = useState([]);
     const [maxReached, setMaxReached] = useState("you cannot add more than 8 pokemon to the favorites list");
 
-    const {favoritePokemon, updateFavoritePokemon} = useContext(CustomFavoritesContext);
+    const {favoritePokemon, updateFavoritePokemon } = useContext(CustomFavoritesContext);
     const localStorageKey = 'favoritesList';
 
 
         //checks if pokemon is already on the favorites list
-        function isPokemonFavorite(pokemonName) {
-            if(pokemonName) {
-                const myFavoritePokemon = favoritePokemon.find((search) => search.name === pokemonName.name);
-                return myFavoritePokemon ? true : false;
-            }
-            return false;
+    function isPokemonFavorite(pokemonName) {
+        if(pokemonName) {
+            const myFavoritePokemon = favoritePokemon.find((search) => search.name === pokemonName.name);
+            return myFavoritePokemon ? true : false;
         }
+        return false;
+    }
+
 
         //adds pokemon to favorites list
         function addToFavorites(pokemonName) {
-            if(favoritePokemon.length < 8) {      //===>delete this if not working
-            if (!isPokemonFavorite(pokemonName)) {  //===>delete this if not working
+            if(favoritePokemon.length < 8) {
+            if (!isPokemonFavorite(pokemonName)) {
             setPokemonFavoritesList((stateFavorites) => {
                 stateFavorites = [...stateFavorites, data];
                 console.log("added to favorites");
@@ -38,9 +39,7 @@ function PokeInfo({ data }) {
 
             } return ""
             } return maxReached;
-        }
-    //check from here
-    updateFavoritePokemon(pokemonFavoritesList);
+        } updateFavoritePokemon(pokemonFavoritesList);
 
 
         //removes from favorites list
@@ -56,13 +55,13 @@ function PokeInfo({ data }) {
         }
 
 
+    //add to favorites
     useEffect(() => {
-        //updateFavoritePokemon(pokemonFavoritesList);
-        //localStorage.setItem(localStorageKey, JSON.stringify(favoritePokemon));
         localStorage.setItem(localStorageKey, JSON.stringify(favoritePokemon))
-    }, [favoritePokemon]);  //==>> addToFavorites
+    }, [favoritePokemon]);
 
 
+    //local storage get item
     useEffect(() => {
         const favorites = JSON.parse(localStorage.getItem(localStorageKey));
         if(favorites) {
@@ -71,7 +70,7 @@ function PokeInfo({ data }) {
     }, []);
 
 
-
+    //remove from favorites
     useEffect(() => {
         updateFavoritePokemon(pokemonFavoritesList);
         localStorage.setItem(localStorageKey, JSON.stringify(favoritePokemon));
@@ -84,7 +83,6 @@ function PokeInfo({ data }) {
 
             {
                 (!data) ? <h2>"Want to get to know your pokemon? Click on one on the left side of the screen to see how cool they are!..."</h2> : (
-
                     <>
                         <Link
                             to={`/single-pokemon-page/${data.name}`}
@@ -111,7 +109,6 @@ function PokeInfo({ data }) {
                                         styling="favorite-button-tab"
                                     >
                                         <AiFillHeart style={{color: 'deeppink'}}/>
-
                                     </ButtonFavorite>
 
                                 ) :
@@ -132,20 +129,14 @@ function PokeInfo({ data }) {
                                     </ButtonFavorite>
                                 )
                             }
-
                         </>
-
-
 
                         <div className="abilities">
                             {data.abilities && data.abilities.map((ability) => {
                                 return(
-                                    <>
                                         <div className="group">
                                             <h2 className="transition">{ability.ability.name}</h2>
                                         </div>
-
-                                    </>
                                 )
                             })}
                         </div>
@@ -153,15 +144,10 @@ function PokeInfo({ data }) {
                             <div className="base-stat">
                                 {data.stats && data.stats.map((stat) => {
                                     return(
-                                        <>
                                             <h3>{stat.stat.name} : {stat.base_stat}</h3>
-
-                                        </>
                                     )
                                 })}
-
                             </div>
-
                     </>
                 )
             }

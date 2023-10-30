@@ -70,6 +70,14 @@ function NavBar() {
 
                             <li>
                                 <NavLink
+                                    to="/favorites-page"
+                                    className={({isActive}) => isActive === true ? "active-link" : "default-link"}
+                                >Favorites
+                                </NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink
                                     to="/about-page"
                                     className={({isActive}) => isActive === true ? "active-link" : "default-link"}
                                 >About

@@ -9,7 +9,6 @@ import Pikachu from "../../components/pikachu/Pikachu";
 
 
 function Landing() {
-    //const navigate = useNavigate();
 
     return (
         <>

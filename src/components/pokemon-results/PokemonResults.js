@@ -4,7 +4,6 @@ import PokemonSpecies from "../pokemon-species/PokemonSpecies";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
 import {Link} from "react-router-dom";
 
-
 function PokemonResults({pokeDetails}) {
     console.log(pokeDetails);
 
@@ -38,17 +37,10 @@ function PokemonResults({pokeDetails}) {
                         pokeDetails.species &&
                         pokeDetails.sprites.other.dream_world &&
 
-
-
                             <PokemonSpecies
                                 speciesUrl={pokeDetails.species.url}
                                 pokeImage={pokeDetails.sprites.other.dream_world.front_default}
                             />
-
-
-
-
-
 
                     }
 

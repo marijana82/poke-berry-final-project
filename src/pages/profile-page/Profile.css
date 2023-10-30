@@ -1,6 +1,6 @@
 .main-container-profile {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
@@ -8,9 +8,10 @@
 
 .wrapper-container-profile {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 15px;
     margin: 5px;
     width: 100%;
@@ -22,3 +23,47 @@
 .wrapper-container-profile:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+
+.profile-favorite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    width: 100px;
+    height: 220px;
+    border-radius: 18px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.profile-favorites-image {
+    height: 120px;
+    width: fit-content;
+}
+
+.poke-favorite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.profile-favorite p {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.profile-favorite p:hover {
+    color: red;
+}
+
+.profile-favorite:hover {
+    box-shadow:
+            rgba(17, 17, 26, 0.1) 0px 4px 16px,
+            rgba(17, 17, 26, 0.1) 0px 8px 24px,
+            rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+

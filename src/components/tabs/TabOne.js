@@ -177,6 +177,7 @@ function TabOne({singlePokemon}) {
                         >
                             <Pokeball
                                 ballMessage="go to search page"
+                                styling="poke-ball-container"
                             />
                         </Link>
 

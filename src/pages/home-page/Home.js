@@ -55,7 +55,10 @@ function Home() {
                                 to={"/about-page"}
                                 style={{textDecoration: 'none', color: 'black'}}
                             >
-                                <Pokeball ballMessage="contact us"/>
+                                <Pokeball
+                                    ballMessage="contact us"
+                                    styling="poke-ball-container"
+                                />
                             </Link>
 
                             :
@@ -63,7 +66,10 @@ function Home() {
                             to={"/registration-page"}
                             style={{textDecoration: 'none', color: 'black'}}
                         >
-                            <Pokeball ballMessage="or click here to register"/>
+                            <Pokeball
+                                ballMessage="or click here to register"
+                                styling="poke-ball-container"
+                            />
                         </Link>
                         }
 
@@ -90,7 +96,10 @@ function Home() {
                             style={{textDecoration: 'none', color: 'black'}}
                         >
 
-                            <Pokeball ballMessage="or click here to log in"/>
+                            <Pokeball
+                                ballMessage="or click here to log in"
+                                styling="poke-ball-container"
+                            />
 
                         </Link>
                     </div>
@@ -115,7 +124,10 @@ function Home() {
                                 style={{textDecoration: 'none', color: 'black'}}
                             >
 
-                                <Pokeball ballMessage="my favorites"/>
+                                <Pokeball
+                                    ballMessage="my favorites"
+                                    styling="poke-ball-container"
+                                />
 
                             </Link>
                         </div>
