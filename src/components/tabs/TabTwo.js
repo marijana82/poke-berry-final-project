@@ -32,8 +32,6 @@ function TabTwo({singlePokemon}) {
         <div className="second-tab">
 
             {/*Second tab content will go here*/}
-
-
                 {tabTwoInfo
                     && tabTwoInfo.abilities
                     &&

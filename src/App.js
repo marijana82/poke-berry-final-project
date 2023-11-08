@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useContext } from "react";
-import {Routes, Route, Navigate, Link} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 import { LoginContext } from "./context/LoginContext";
 import Landing from "./pages/landing-page/Landing";
 import NavBar from "./components/navbar/NavBar";

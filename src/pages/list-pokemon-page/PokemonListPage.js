@@ -20,14 +20,6 @@ function PokemonListPage() {
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
 
-    /*const [favorites, setFavorites] = useState(() => {
-        //getting stored value
-        const saved = localStorage.getItem("favorite");
-        const initialValue = JSON.parse(saved);
-        console.log(initialValue);
-        return initialValue || " ";
-    });*/
-
     const itemsPerPage = 24;
     const { favoritePokemon } = useContext(CustomFavoritesContext);
     const controller = new AbortController();
@@ -49,6 +41,7 @@ function PokemonListPage() {
         } catch(e) {
             console.error(e);
             setError(true);
+            setLoading(false);
         }
     };
 
@@ -157,7 +150,8 @@ function PokemonListPage() {
                             <Pagination
                                 page={page}
                                 totalPages={totalPages}
-                                favoritePokemon={favoritePokemon.length}
+                                favoritesLength={favoritePokemon.length}
+                                chosenFavorites={favoritePokemon}
                             />
 
                         </div>

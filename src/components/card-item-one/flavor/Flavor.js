@@ -2,8 +2,6 @@ import "./Flavor.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Button from "../../button/Button";
-import FilteredItem from "../../filtered-item/FilteredItem";
-import ButtonReset from "../../button-reset/ButtonReset";
 
 function Flavor({ flavorUrl, infoFlavorHandler }) {
 
@@ -16,7 +14,6 @@ function Flavor({ flavorUrl, infoFlavorHandler }) {
     async function fetchFlavorData() {
         try {
             const resultFlavor = await axios.get(flavorUrl);
-            console.log(resultFlavor.data);
             setFlavorData(resultFlavor.data);
 
             if(resultFlavor.data.berries) {

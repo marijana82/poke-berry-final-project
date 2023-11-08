@@ -5,7 +5,6 @@ import SpeechBubble from "../speech-bubble/SpeechBubble";
 import {Link} from "react-router-dom";
 
 function PokemonResults({pokeDetails}) {
-    console.log(pokeDetails);
 
     return(
         <div className="">

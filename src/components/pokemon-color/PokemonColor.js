@@ -13,7 +13,6 @@ function PokemonColor({color, evolvesFrom}) {
         try{
 
             const resultColor = await axios.get(`${color}`);
-            console.log(resultColor.data);
             setPokemonColor(resultColor.data);
 
         } catch(e) {

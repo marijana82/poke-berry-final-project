@@ -1,6 +1,5 @@
 import "./ButtonFavorite.css";
 import React from "react";
-import {AiFillHeart} from "react-icons/ai";
 
 
 function ButtonFavorite({ clickHandler, label, children, styling}) {

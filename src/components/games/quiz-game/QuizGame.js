@@ -30,7 +30,6 @@ function QuizGame() {
         try {
             const randomPokemonId = Math.floor(Math.random() * 1100) + 1;
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}/`);
-            console.log(response.data);
             setPokemonData(response.data);
             setPokemonName(response.data.name);
             setFirstLetter(response.data.name.charAt(0));
@@ -153,6 +152,7 @@ function QuizGame() {
 
                                 {goodAnswers && <p>Well done: {goodAnswers}</p>}
                                 {badAnswers && <p>Try again: {badAnswers}</p>}
+
                                 <ButtonReset
                                     type="button"
                                     resetHandler={resetScore}
@@ -175,12 +175,28 @@ function QuizGame() {
                                     >I feel lucky!
                                     </Button>
 
-                                    <Button
-                                        type="button"
-                                        clickHandler={() => fetchRandomPokemon()}
-                                        styling="game-button"
-                                    >Try again!
-                                    </Button>
+
+                                    {userGuess !== pokemonData.name ?
+                                        <Button
+                                            type="button"
+                                            disabled={true}
+                                            styling="game-button"
+                                        >Try again
+                                        </Button>
+
+                                        :
+
+                                        <Button
+                                            type="button"
+                                            clickHandler={() => fetchRandomPokemon()}
+                                            styling="game-button"
+                                        >Try again!
+                                        </Button>
+                                    }
+
+
+
+
                                 </div>
                                 </form>
 

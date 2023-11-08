@@ -4,7 +4,7 @@ import axios from "axios";
 
 function PokemonOnMouseOver({ endpointHabitatSpecies }) {
 
-    const [pokemonInHabitat, setPokemonInHabitat] = useState({}); //or null???
+    const [pokemonInHabitat, setPokemonInHabitat] = useState({});
     //to show a component on hover
     const [isHovering, setIsHovering] = useState(false);
 
@@ -23,7 +23,6 @@ function PokemonOnMouseOver({ endpointHabitatSpecies }) {
     //to show the hover image:
    const handleMouseOver = () => {
        setIsHovering(true);
-       //setHoverInfo(pokemonHabitat.url);
        console.log("mouse is hovering");
    }
 

@@ -1,7 +1,6 @@
 import "./FilterInfo.css";
 import React, {useState} from "react";
 import FilteredItem from "../filtered-item/FilteredItem";
-import ButtonReset from "../button-reset/ButtonReset";
 
 function FilterInfo({dataFlavor}) {
 

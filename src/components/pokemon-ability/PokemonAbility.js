@@ -13,7 +13,6 @@ function PokemonAbility({ability}) {
         try {
 
             const resultAbility = await axios.get(`${ability}`);
-            console.log(resultAbility.data);
             setAbilityState(resultAbility.data); //two endpoints
 
         } catch(e) {
@@ -58,8 +57,6 @@ function PokemonAbility({ability}) {
                 <div className="ability-flavor-text">
                     <h4>{abilityState.effect_entries[1].effect}</h4>
                 </div>
-
-
 
             }
 

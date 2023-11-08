@@ -2,7 +2,6 @@ import "./PokemonSpecies.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PokemonEvolutionChain from "../pokemon-evolution-chain/PokemonEvolutionChain";
-import {Link} from "react-router-dom";
 
 function PokemonSpecies({ speciesUrl, speciesId, pokeImage }) {
 
@@ -11,7 +10,6 @@ function PokemonSpecies({ speciesUrl, speciesId, pokeImage }) {
     async function fetchPokeSpecies() {
         try {
             const resultSpecies = await axios.get(`${speciesUrl}`);
-            console.log(resultSpecies.data);
             setSpecies(resultSpecies.data);
 
         } catch(e) {

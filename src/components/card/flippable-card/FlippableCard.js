@@ -4,11 +4,9 @@ import Card from "../card/Card";
 import {CSSTransition} from "react-transition-group";
 import { useState } from "react";
 
-
 function FlippableCard() {
 
     const [showFrontOne, setShowFrontOne] = useState(true);
-    //const [showFrontTwo, setShowFrontTwo] = useState(true);
 
     return(
         <div className="flippable-card-container">
@@ -24,7 +22,6 @@ function FlippableCard() {
                         onClick={() => {
                             setShowFrontOne((currentValue) => !currentValue);
                         }}/>
-
 
             </CSSTransition>
 

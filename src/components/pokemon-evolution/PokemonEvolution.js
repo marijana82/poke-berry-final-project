@@ -9,7 +9,6 @@ function PokemonEvolution({dataEvolution, evolvesFrom}) {
     async function fetchEvolutionData() {
         try {
             const resultEvolution = await axios.get(`${dataEvolution}`);
-            console.log(resultEvolution.data);
             setEvolution(resultEvolution.data);
 
         } catch(e) {

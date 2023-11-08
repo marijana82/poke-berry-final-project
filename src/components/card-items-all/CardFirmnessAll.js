@@ -16,7 +16,6 @@ function CardFirmnessAll({infoFirmnessHandler}) {
     async function fetchAllFirmness() {
         try {
             const resultFirmness = await axios.get(endpointFirmness);
-            console.log(resultFirmness.data.results);
             setFirmness(resultFirmness.data.results);
 
         } catch(e) {
@@ -58,7 +57,7 @@ function CardFirmnessAll({infoFirmnessHandler}) {
                 :
 
                 (firmness &&
-                        firmness.map((firm, index) => {
+                        firmness.map((firm) => {
                             return(
 
                                 <>

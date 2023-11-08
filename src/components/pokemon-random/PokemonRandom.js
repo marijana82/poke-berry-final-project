@@ -9,14 +9,11 @@ function PokemonRandom({connectChildToParent}) {
     const [randomPokeData, setRandomPokeData] = useState([]);
     const [randomPokeName, setRandomPokeName] = useState("");
 
-
-
     async function fetchRandomPokemon() {
 
         try {
             const randomPokemonId = Math.floor(Math.random() * 1100) + 1;
             const responseRandom = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}/`);
-            console.log(responseRandom.data);
             setRandomPokeData(responseRandom.data);
             setRandomPokeName(responseRandom.data.name);
 

@@ -14,8 +14,11 @@ function FilterAdvancedPage() {
                 message="Filter your berry info!"
             />
             <Main>
+
                 <TabContainerFilter/>
+
             </Main>
+
             <Footer
                 buttonMessage="Back to top"
             />

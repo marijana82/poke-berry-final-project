@@ -1,25 +1,18 @@
 import "./BerryInfo.css";
 import React from "react";
-import BerryItem from "../berry-item/BerryItem";
 import BerryFlavor from "../berry-flavor/BerryFlavor";
 import {Link} from "react-router-dom";
 
-
 function BerryInfo({ data }) {
-    console.log(data);
 
     const handleClick = event => {
-        console.log("the button is clicked!")
+        console.log("the button is clicked!");
     }
-
 
     return(
         <>
 
         { (data) ?
-
-
-
 
             <div className="main-berry-info-container" onClick={handleClick}>
 
@@ -28,23 +21,12 @@ function BerryInfo({ data }) {
                     style={{textDecoration: 'none', color: 'darkblue'}}
                 >
 
-
                 <>
                         <h1 className="berry-name">{data.item.name}</h1>
 
                     <BerryFlavor
                         berryFlavor={data.flavors}
                     />
-
-                   {/* <BerryItem itemUrl={data.item.url}/>*/}
-
-                    {/*<Button
-                        type="button"
-                        clickHandler={() => setIsShownOnClick(true)}
-                        styling="button-favorite"
-                    >SHOW ME MORE!
-                    </Button>*/}
-
 
                         <div className="base-stat">
                             <h3>Berry {data.name} is {data.firmness.name}.</h3>
@@ -65,9 +47,6 @@ function BerryInfo({ data }) {
 
             <p>empty container</p>
         }
-
-
-
 
 
         </>

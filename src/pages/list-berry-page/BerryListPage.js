@@ -39,11 +39,10 @@ function BerryListPage() {
         try {
             response.map(async(berry) => {
                 const resultBerry = await axios.get(berry.url);
-                console.log(resultBerry.data);
 
-                //this whole object we store in state by using setBerryData
+                //to store object in state
                 setBerryData(stateBerry => {
-                    //here we create a new array and add new item in the array, which is result.data
+                    //create new array and add new item in the array
                     stateBerry = [...stateBerry, resultBerry.data];
                     stateBerry.sort((a, b) => a.id > b.id ? 1 : -1 );
                     return stateBerry;

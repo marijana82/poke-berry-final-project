@@ -42,7 +42,7 @@ function Favorites() {
             />
             <Main>
                 <div className="arrow-back">
-                    <Link to={`/`}>
+                    <Link to={`/pokemon-list-page`}>
                         <AiOutlineArrowLeft
                             style={
                                 {color: 'blue', fontSize: '44px', fontWeight: 'bold'}}
@@ -51,9 +51,23 @@ function Favorites() {
                 </div>
 
                 <div className="wrapper-container-profile">
-                    <Article
-                        message="your recently added favorites:"
-                    />
+
+
+                    {favoritePokemon.length === 8 ?
+                        <Article
+                            title="maximum reached!"
+                            message="to add new Pokemon, delete some old ones first!"
+                            stylingArticle="favorites-article"
+                        />
+
+                        :
+
+                        <Article
+                            title={favoritePokemon.length}
+                            message="pokemon added to the favorites list"
+                            stylingArticle="favorites-article"
+                        />
+                    }
 
                     { favoritePokemon &&
                         favoritePokemon.map((oneFavorite) => {

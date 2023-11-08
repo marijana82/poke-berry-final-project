@@ -9,18 +9,23 @@ import Header from "../../components/header/Header";
 import Main from "../../components/main/Main";
 import Footer from "../../components/footer/Footer";
 import SpeechBubble from "../../components/speech-bubble/SpeechBubble";
-import PokemonRandom from "../../components/pokemon-random/PokemonRandom";
+
 
 function PokemonSearchPage() {
 
     const [endpointPoke, setEndpointPoke] = useState(POKEMON_URL);
     const [searchItem, setSearchItem] = useState("");
     const [pokeDetails, setPokeDetails] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
 
         const controller = new AbortController();
         async function fetchPokeData() {
+            setLoading(true);
+            setError(false);
+
             try {
                 const result = await axios.get(endpointPoke);
                 console.log(result.data.results);
@@ -28,6 +33,8 @@ function PokemonSearchPage() {
 
             } catch (e) {
                 console.error(e);
+                setError(true);
+                setLoading(false);
             }
         }
 
@@ -71,6 +78,8 @@ function PokemonSearchPage() {
                 <QueryPokemon
                     searchItemHandler={setSearchItem}
                 />
+
+                {error && <p>This pokemon does not exist in the database. Try again.</p>}
 
 
             <div className="container-pokemon-results">

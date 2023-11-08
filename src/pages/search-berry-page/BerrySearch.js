@@ -4,7 +4,6 @@ import axios from "axios";
 import Header from "../../components/header/Header";
 import Main from "../../components/main/Main";
 import QueryBerry from "../../components/berry-query/QueryBerry";
-import PokemonResults from "../../components/pokemon-results/PokemonResults";
 import SpeechBubble from "../../components/speech-bubble/SpeechBubble";
 import {Link} from "react-router-dom";
 import BerryItem from "../../components/berry-item/BerryItem";
@@ -25,7 +24,6 @@ function BerrySearch() {
         async function fetchBerryData() {
             try {
                 const resultBerry = await axios.get(endpointBerry);
-                console.log(resultBerry.data.results);
                 getBerryDetails(resultBerry.data.results);
 
             } catch(e) {

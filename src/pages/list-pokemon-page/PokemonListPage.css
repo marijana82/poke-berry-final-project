@@ -34,10 +34,11 @@ body{
     display: flex;
     text-align: center;
     color: black;
-    position: fixed;
+    position: absolute;
     top: 200px;
     right: 10px;
     width: 35%;
+    z-index: auto;
 }
 
 

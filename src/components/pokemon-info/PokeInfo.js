@@ -10,12 +10,11 @@ import Pokeball from "../pokeball/Pokeball";
 function PokeInfo({ data }) {
 
     let [pokemonFavoritesList, setPokemonFavoritesList] = useState([]);
-    const [maxReached, setMaxReached] = useState("You have reached the max of 8 favorites. Go to favorites page to remove them from the list");
+    const [maxReached, setMaxReached] = useState("Max of 8 favorites reached. Go to favorites to cut the list.");
 
     const {favoritePokemon, updateFavoritePokemon } = useContext(CustomFavoritesContext);
     const localStorageKey = 'favoritesList';
 
-        //checks if pokemon is already on the favorites list
     function isPokemonFavorite(pokemonName) {
         if(pokemonName) {
             const myFavoritePokemon = favoritePokemon.find((search) => search.name === pokemonName.name);
@@ -24,7 +23,7 @@ function PokeInfo({ data }) {
         return false;
     }
 
-        //adds pokemon to favorites list
+
         function addToFavorites(pokemonName) {
             if(favoritePokemon.length < 8) {
             if (!isPokemonFavorite(pokemonName)) {
@@ -40,7 +39,6 @@ function PokeInfo({ data }) {
         } updateFavoritePokemon(pokemonFavoritesList);
 
 
-        //removes from favorites list
         function removeFromFavorites(namePokemon) {
             setPokemonFavoritesList((stateFavorites) => {
                 const removeFavorite = stateFavorites.filter(
@@ -88,9 +86,7 @@ function PokeInfo({ data }) {
                         >
                             <h1 className="transition">{data.name}</h1>
 
-                            <span
-                                className="poke-image-container"
-                            >
+                            <span className="poke-image-container">
                             <img
                                 src={data.sprites.other.home.front_default}
                                 alt="image-pokemon-front"
@@ -98,7 +94,15 @@ function PokeInfo({ data }) {
                             />
                         </span>
                         </Link>
-                        { maxReached && <Pokeball ballMessage={maxReached} styling="container-pokeball"/> }
+                        { favoritePokemon.length === 8
+                            &&
+                            <Link
+                                to={"/favorites-page"}
+                                style={{textDecoration: 'none', color: 'lightblue'}}
+                            >
+                            <Pokeball ballMessage={maxReached} styling="poke-ball-container"/>
+                            </Link>
+                        }
 
                         <>
                             {favoritePokemon.some((pokemon) => pokemon.name === data.name) ?
@@ -119,10 +123,6 @@ function PokeInfo({ data }) {
                                     > { favoritePokemon.length < 8
                                         &&
                                         <AiFillHeart style={{color: 'green'}}/>
-                                       /* :
-                                        <Pokeball
-                                            ballMessage={maxReached}
-                                        />*/
                                     }
                                     </ButtonFavorite>
                                 )

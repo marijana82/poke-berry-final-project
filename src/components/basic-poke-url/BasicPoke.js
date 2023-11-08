@@ -6,6 +6,7 @@ function BasicPoke({pokemonId}) {
 
     const [singlePokemon, setSinglePokemon] = useState({});
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
 
     useEffect(() => {
@@ -13,6 +14,7 @@ function BasicPoke({pokemonId}) {
         const controller = new AbortController();
         async function fetchSinglePokemon() {
             setLoading(true);
+            setError(false);
 
             try {
                 const singleResponse = await
@@ -30,6 +32,8 @@ function BasicPoke({pokemonId}) {
 
             } catch(e) {
                 console.error(e);
+                setError(true);
+                setLoading(false);
             }
         }
 

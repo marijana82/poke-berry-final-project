@@ -12,7 +12,6 @@ function PokemonHabitat({habitat, evolvesFrom, singlePokemon}) {
     async function fetchPokemonHabitat() {
         try{
             const resultHabitat = await axios.get(`${habitat}`);
-            console.log(resultHabitat.data);
             setPokemonHabitat(resultHabitat.data);
 
         } catch(e) {

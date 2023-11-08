@@ -2,7 +2,6 @@ import "./EvolutionStageOne.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import BasicPoke from "../basic-poke-url/BasicPoke";
-import SinglePokemon from "../../pages/single-item-page/SinglePokemon";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
 
 

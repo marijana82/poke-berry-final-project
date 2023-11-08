@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Flavor from "../card-item-one/flavor/Flavor";
 import Button from "../button/Button";
-import ButtonReset from "../button-reset/ButtonReset";
 
 
 function CardFlavorsAll({infoFlavorHandler}) {
@@ -17,7 +16,6 @@ function CardFlavorsAll({infoFlavorHandler}) {
 
         try {
             const resultFlavors = await axios.get(endpointFlavors);
-            console.log(resultFlavors.data.results);
             setFlavors(resultFlavors.data.results);
 
         } catch(e) {

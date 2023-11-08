@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import CardFlavorsAll from "../../card-items-all/CardFlavorsAll";
 import CardFirmnessAll from "../../card-items-all/CardFirmnessAll";
 import FilterInfo from "../../filter-info/FilterInfo";
-import ButtonReset from "../../button-reset/ButtonReset";
 
 
 function TabContainerFilter() {
@@ -11,9 +10,7 @@ function TabContainerFilter() {
     const [flavorDex, setFlavorDex] = useState();
     const [firmnessDex, setFirmnessDex] = useState();
 
-    //functions to handle tab switching
     function handleTabOne() {
-        //update the state to tab 1
         setActiveTab("tab 1");
     }
 
@@ -23,7 +20,6 @@ function TabContainerFilter() {
 
     return(
         <div className="tab-container-filter">
-            {/*Tab navigation*/}
 
             <ul className="tab-navigation">
                 <li

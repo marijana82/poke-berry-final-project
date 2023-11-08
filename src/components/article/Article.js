@@ -1,12 +1,11 @@
 import "./Article.css";
 import React from "react";
-import {Link} from "react-router-dom";
 
 
-function Article({title, message, children, stylingTitle, stylingMessage}) {
+function Article({title, message, children, stylingTitle, stylingMessage, stylingArticle}) {
 
     return(
-            <article>
+            <article className={stylingArticle}>
                 <div className={stylingTitle}>
                     <h2>{title}</h2>
                 </div>

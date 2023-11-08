@@ -2,18 +2,15 @@ import "./FilteredItem.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import BerryNaturalGift from "../berry-natural-gift/BerryNaturalGift";
-import ButtonReset from "../button-reset/ButtonReset";
 
 
 function FilteredItem({filteredItemUrl}) {
 
     const [berryData, setBerryData] = useState(null);
-    const [isShownOnClick, setIsShownOnClick] = useState(false);
 
     async function fetchFilteredItemData () {
          try {
              const naturalGiftType = await axios.get(filteredItemUrl);
-             console.log(naturalGiftType.data);
              setBerryData(naturalGiftType.data);
 
          } catch (e) {

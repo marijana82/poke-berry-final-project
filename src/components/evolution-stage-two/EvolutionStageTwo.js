@@ -4,7 +4,6 @@ import axios from "axios";
 import BasicPoke from "../basic-poke-url/BasicPoke";
 import SpeechBubble from "../speech-bubble/SpeechBubble";
 
-
 function EvolutionStageTwo({ evolvesInto, evolutionUrl }) {
 
     const [evolutionStageTwo, setEvolutionStageTwo] = useState({});
@@ -13,7 +12,6 @@ function EvolutionStageTwo({ evolvesInto, evolutionUrl }) {
 
         try {
             const resultEvolutionTwo = await axios.get(evolutionUrl);
-            console.log(resultEvolutionTwo.data);
             setEvolutionStageTwo(resultEvolutionTwo.data);
 
         } catch(e) {

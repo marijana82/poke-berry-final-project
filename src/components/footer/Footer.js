@@ -15,6 +15,7 @@ function Footer({ buttonMessage, message, description, children }) {
                 <div className="footer-content-container">
                     <h4 className="footer-message">{message}</h4>
                     <p className="footer-description">{description}</p>
+
                     <button
                         className="back-to-top"
                         onClick={() => {
@@ -23,8 +24,8 @@ function Footer({ buttonMessage, message, description, children }) {
                     >{buttonMessage}
 
                         {children}
-
                     </button>
+
                 </div>
             </article>
         </footer>

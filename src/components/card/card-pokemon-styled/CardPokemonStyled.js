@@ -7,7 +7,6 @@ function CardPokemonStyled({pokemonName, pokemonType, pokemonStats, pokemonExtra
 
     const navigate = useNavigate();
 
-
     return(
         <div className="main-pokemon-card-container">
 

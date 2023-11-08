@@ -104,9 +104,6 @@ function SingleBerry() {
                     </div>
 
 
-
-
-
                 </div>
 
 

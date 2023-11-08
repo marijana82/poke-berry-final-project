@@ -2,8 +2,6 @@ import "./Home.css";
 import React, {useContext} from "react";
 import FlippableCard from "../../components/card/flippable-card/FlippableCard";
 import Header from "../../components/header/Header";
-import FavoritesContext from "../../context/FavoritesContext";
-import Footer from "../../components/footer/Footer";
 import Main from "../../components/main/Main";
 import Article from "../../components/article/Article";
 import Pokeball from "../../components/pokeball/Pokeball";
@@ -14,7 +12,7 @@ import {LoginContext} from "../../context/LoginContext";
 
 function Home() {
 
-    const { isAuthenticated, logoutFunction } = useContext(LoginContext);
+    const { isAuthenticated } = useContext(LoginContext);
 
     return (
         <>

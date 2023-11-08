@@ -17,7 +17,6 @@ function TabOne({singlePokemon}) {
     const [pokeEvolution, setPokeEvolution] = useState({});
     const [pokeColor, setPokeColor] = useState({});
     const [pokeHabitat, setPokeHabitat] = useState({});
-    //to click and unclick
     const [isEvolutionOnClick, setIsEvolutionOnClick] = useState(false);
     const [isColorOnClick, setIsColorOnClick] = useState(false);
     const [isHabitatOnClick, setIsHabitatOnClick] = useState(false);
@@ -172,11 +171,11 @@ function TabOne({singlePokemon}) {
                         </SpeechBubble>
 
                         <Link
-                            to={`/search-page`}
+                            to={`/favorites-page`}
                             style={{textDecoration: 'none', color: 'lightblue'}}
                         >
                             <Pokeball
-                                ballMessage="go to search page"
+                                ballMessage="go to favorites page"
                                 styling="poke-ball-container"
                             />
                         </Link>

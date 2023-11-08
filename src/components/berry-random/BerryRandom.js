@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Button from "../button/Button";
 
-
 function BerryRandom({connectChildToParent}) {
 
     const [randomBerryData, setRandomBerryData] = useState([]);
@@ -15,7 +14,6 @@ function BerryRandom({connectChildToParent}) {
         try {
             const randomBerryId = Math.floor(Math.random() * 64) + 1;
             const responseRandomBerry = await axios.get(`https://pokeapi.co/api/v2/berry/${randomBerryId}`);
-            console.log(responseRandomBerry.data);
             setRandomBerryData(responseRandomBerry.data);
             setRandomBerryName(responseRandomBerry.data.name);
 

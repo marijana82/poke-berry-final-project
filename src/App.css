@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-image: linear-gradient(gold, goldenrod);
+    background-image: linear-gradient(gol, goldenrod);
     width: 100%;
 }
 

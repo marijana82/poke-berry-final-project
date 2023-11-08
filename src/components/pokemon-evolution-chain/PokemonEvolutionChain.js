@@ -14,7 +14,6 @@ function PokemonEvolutionChain({ evolutionUrl, evolutionId, pokeImage, pokeName 
     async function fetchPokemonEvolutionChain() {
         try {
             const resultEvolution = await axios.get(evolutionUrl);
-            console.log(resultEvolution.data);
             setEvolutionChain(resultEvolution.data.chain);
 
         } catch(e) {

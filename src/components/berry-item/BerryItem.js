@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import HeldByPokemon from "../held-by-pokemon/HeldByPokemon";
 
-
 function BerryItem({ itemUrl }) {
 
     const [berryItem, setBerryItem] = useState([]);
@@ -11,7 +10,6 @@ function BerryItem({ itemUrl }) {
     async function fetchItemUrl() {
         try {
             const result = await axios.get(itemUrl);
-            console.log(result.data);
             setBerryItem(result.data);
 
         } catch(e) {

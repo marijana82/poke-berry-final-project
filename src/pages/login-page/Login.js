@@ -27,10 +27,6 @@ function Login() {
             </Main>
 
 
-
-
-
-
             <Footer
                 message="All Rights Reserved"
                 description="Copyright Poke Berry App"

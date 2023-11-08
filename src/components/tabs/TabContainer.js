@@ -9,7 +9,6 @@ function TabContainer({singlePokemon}) {
 
     //functions to handle tab switching
     function handleTabOne() {
-        //update the state to tab 1
         setActiveTab("tab 1");
     }
 
@@ -19,7 +18,6 @@ function TabContainer({singlePokemon}) {
 
     return(
         <div className="tab-container">
-            {/*Tab navigation*/}
 
             <ul className="tab-navigation">
                 <li

@@ -94,7 +94,7 @@ function FormRegister() {
                     stateValue={emailValue}
                     stateSetter={setEmailValue}
                 />
-                {emailValue.length < 6 && <p className="warning-messages">Your email has to be at least 6 characters long.</p> }
+                {emailValue.length < 6 && <p className="warning-messages">Your email must be at least 6 characters long, must include one capital letter and a number between 1 - 9.</p> }
                 {!isValidEmail(emailValue) ? <p className="warning-messages">Don't forget to use @ and your email domain.</p> : <p className="message-validated">Thank you!</p>}
                 {error && <p>This account already exists. Try registering with a different username or email.</p>}
 

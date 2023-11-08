@@ -3,7 +3,6 @@ import React from "react";
 
 function ButtonReset({children, resetHandler, styling, label, type}) {
     return(
-
                 <button
                     type={type}
                     className={styling}
@@ -11,8 +10,6 @@ function ButtonReset({children, resetHandler, styling, label, type}) {
                 >{label}
                     {children}
                 </button>
-
-
 
     )
 }

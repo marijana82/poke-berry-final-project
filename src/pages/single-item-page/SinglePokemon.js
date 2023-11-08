@@ -3,7 +3,6 @@ import React, {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
 import {AiOutlineArrowLeft} from "react-icons/ai";
-
 import Header from "../../components/header/Header";
 import Main from "../../components/main/Main";
 import Footer from "../../components/footer/Footer";
@@ -97,7 +96,7 @@ function SinglePokemon() {
                                     alt="image of pokemon"
                                     className="single-pokemon-image"
                                 />
-                                {/*here maybe create image slider*/}
+
                             </div>
                         }
 

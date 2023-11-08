@@ -4,17 +4,14 @@ import {BULBASAUR} from "../../../assets/images/constants";
 import {Link} from "react-router-dom";
 import {LoginContext} from "../../../context/LoginContext";
 
-
-
 function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClick}) {
 
-    const { isAuthenticated, logoutFunction } = useContext(LoginContext);
+    const { isAuthenticated } = useContext(LoginContext);
 
     return(
         <div className="card" onClick={onClick}>
             <div className="card-back">
                 <div className="back-main-card-container">
-
 
                     <div className="back-image-container">
                         <Link
@@ -27,9 +24,7 @@ function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClic
                             alt="pokemon-image"
                         />
                         </Link>
-
                     </div>
-
 
                     <div className="back-content-container">
                         <Link
@@ -52,6 +47,7 @@ function Card({playMessage, registerMessage, clickToRegister, flipToPlay, onClic
 
                 </div>
             </div>
+
             <div className ="card-front">
                 <div className="clickable-text">
                     <h3>{clickToRegister}</h3>

@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import Button from "../button/Button";
 import ButtonReset from "../button-reset/ButtonReset";
 import FormBerryQuery from "../form-input-berry-query/FormBerryQuery";
-import PokemonRandom from "../pokemon-random/PokemonRandom";
 import BerryRandom from "../berry-random/BerryRandom";
 
 function QueryBerry({searchItemHandler}) {
