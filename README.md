@@ -44,24 +44,8 @@ This application is using the educational backend of Novi Hogeschool.
 
 ## ***3. Visual overview of PokeBerry App***
 
-### _Landing page_
-![landing](landing-page.png)
+![pokemon](assets/screenshots/single-pokemon.png)
 
-### _Home page_
-![home](home-page.png)
-
-### _Registration page_
-![register](register.png)
-
-### _Favorites page_
-![favorites](favorites-page.png)
-
-### _Pokemon overview_
-![pokemons](pokemon-overview.png)
-
-### _Single Pokemon_
-![single-page](..%2F..%2FDesktop%2Fpokebery%20screenshots%2Fscreenshots%20application%2FScreenshot%202023-11-01%20at%2020.54.20.png)
-   
 
 ## ***4.Installation Guide***
 
