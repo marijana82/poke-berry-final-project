@@ -38,14 +38,26 @@ This application is using the educational backend of Novi Hogeschool https://git
 
 ## 3.A. Installation Guide
 
-1. To clone the project to your computer go to https://github.com/marijana82/pokemon-endproject-may
-2. Click the Code button, choose SSH key and click on Copy
-3. Go to Webstorm, open File - New - Project from Version Control
-4. Paste the URL link into the empty URL field, then click the button Clone
-5. To install the project, type the following command in the terminal: npm install, then press enter
-6. To run the project, type the following command in the terminal: npm run start, then press enter
-7. The project will open on http://localhost:3000/
-8. If you want to stop running the page in browser use CTRL + C in the temrinal. You can rerun the browser with the commands mentioned above. 
+1. To clone the project to your computer go to 
+```
+https://github.com/marijana82/pokemon-endproject-may
+```
+
+2. Click the `Code` button, choose `SSH key` and click on `Copy`
+3. Go to `Webstorm`, open File - New - Project from Version Control
+4. Paste the URL link into the empty URL field, then click the button `Clone`
+5. To install the project, type the following command in the terminal:
+```
+npm install
+```
+then press enter.
+6. To run the project, type the following command in the terminal:
+```
+npm run start 
+```
+then press enter.
+7. The project will open on `http://localhost:3000/`
+8. If you want `to stop running` the page in browser use `CTRL + C` in the terminal. You can rerun the browser with the commands mentioned above. 
 
 
 ## 3.B. Functionalities
