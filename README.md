@@ -25,7 +25,7 @@ Use this app in combination with Pokemon videogames, or just for fun.
 Poke Berry App is a simple application built in `React`, the library for web and native user interfaces.
 
 ### **PokeAPI documentation**
-This application is using The RESTful Pokemon API. 
+This application is using `The RESTful Pokemon API`. 
 RESTful APIs are the most commonly used APIs that use HTTP protocol to create, read, update and delete data (CRUD).
 
 >[!NOTE]
@@ -45,22 +45,22 @@ This application is using the educational backend of Novi Hogeschool.
 ## ***3. Visual overview of PokeBerry App***
 
 ### _Landing page_
-![landing-page.png](...)
+![landing](landing-page.png)
 
 ### _Home page_
-![home-page.png](...)
+![home](home-page.png)
 
 ### _Registration page_
-![register.png](...)
+![register](register.png)
 
 ### _Favorites page_
-![favorites-page.png](...)
+![favorites](favorites-page.png)
 
 ### _Pokemon overview_
-![pokemon-overview.png](...)
+![pokemons](pokemon-overview.png)
 
 ### _Single Pokemon_
-![single-pokemon.png](...)
+![single](...)
    
 
 ## ***4.Installation Guide***
@@ -130,8 +130,9 @@ Make sure the username and password contain `at least one number and one capital
 >Example username: Scorbunny1
 >Example password: Scorbunny1
 
->[!NOTE]
->A personal token is saved automatically in the backend. The user does not need the token to log in.
+A personal token is saved automatically in the backend. The user does not need the token to log in.
+
+>[!WARNING]
 >The personal token expires in an hour. To regain your access rights, you will have to create a new account. 
 
 
