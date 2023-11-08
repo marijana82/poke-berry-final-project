@@ -22,12 +22,12 @@ Simple application with easy access to information about Pokemon berries. The go
 This project has been built as `end assignment` of Frontend bootcamp for `NOVI Hogeschool`.
 Poke Berry App is a simple application built in `React`.
 This application is using The `RESTful Pokemon API`. 
-The documentation of Pokemon API can be found on https://pokeapi.co/docs/v2 .
-This application is using the educational backend of Novi Hogeschool https://github.com/hogeschoolnovi/novi-educational-backend-documentation
+>The documentation of Pokemon API can be found on https://pokeapi.co/docs/v2 .
+>This application is using the educational backend of Novi Hogeschool https://github.com/hogeschoolnovi/novi-educational-backend-documentation
 
 ## **3. Screenshot of Poke Berry pages**
 1. Homepage
-   
+   ![Pokeberry landingpage](assets/screenshots/landing-page.png)
 2. Login
    
 3. Register
