@@ -44,7 +44,7 @@ This application is using the educational backend of Novi Hogeschool.
 
 ## ***3. Visual overview of PokeBerry App***
 
-![pokemon](assets/screenshots/single-pokemon.png)
+![pokemon](../assets/screenshots/single-pokemon.png)
 
 
 ## ***4.Installation Guide***
