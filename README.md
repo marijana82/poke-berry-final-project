@@ -1,35 +1,39 @@
 # Getting started with Poke Berry App
 
 ## Table of Contents
-1. Name of the project and project description
-2. Screenshots of several application pages
-3. Installation guide
-4. Application functionalities
-5. Login information
+1. Introduction
+2. General information
+3. Screenshots of several application pages
+4. Installation guide
+5. Application functionalities
+6. Login information
 
-## 1. Name of the project
+## **1. Introduction**
+
+### **1.A. Project name**
 POKE BERRY APP
 
-## 1.A. Description
+### **1.B. Project description**
 
 Simple application with easy access to information about Pokemon berries. The goal of the app is to match the berries to the right Pokemon who eat them. Use this app in combination with Pokemon videogames, or just for fun.
 
-## 1.B. Explanation
+### **2. General information**
 
-This project was built for NOVI as eindopdracht leerlijn Frontend.
-Poke Berry App is a simple application built in React.
-This application is using The RESTful Pokemon API. The documentation of Pokemon API can be found on https://pokeapi.co/docs/v2 .
+This project has been built as `end assignment` of Frontend bootcamp for `NOVI Hogeschool`.
+Poke Berry App is a simple application built in `React`.
+This application is using The `RESTful Pokemon API`. 
+The documentation of Pokemon API can be found on https://pokeapi.co/docs/v2 .
 This application is using the educational backend of Novi Hogeschool https://github.com/hogeschoolnovi/novi-educational-backend-documentation
 
-## 2. Screenshot of Poke Berry pages
+## **3. Screenshot of Poke Berry pages**
 1. Homepage
-   ![homepage.png](src%2Fassets%2Fhomepage.png)
+   
 2. Login
-   ![login.png](src%2Fassets%2Flogin.png)
+   
 3. Register
-   ![registration.png](src%2Fassets%2Fregistration.png)
+   
 4. Overview
-   ![overview.png](src%2Fassets%2Foverview.png)
+   
 
 
 ## 3.A. Installation Guide
