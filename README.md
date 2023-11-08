@@ -60,7 +60,7 @@ This application is using the educational backend of Novi Hogeschool.
 ![pokemons](pokemon-overview.png)
 
 ### _Single Pokemon_
-![single](...)
+![single-page](..%2F..%2FDesktop%2Fpokebery%20screenshots%2Fscreenshots%20application%2FScreenshot%202023-11-01%20at%2020.54.20.png)
    
 
 ## ***4.Installation Guide***
