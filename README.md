@@ -12,12 +12,12 @@
 ## ***1. Introduction***
 
 PokeBerry App has been built as end assignment of Frontend bootcamp for NOVI Hogeschool.
-
-`PokeBerry is a simple application that offers easy access to information about _Pokemon and pokeberries_. 
+```
+PokeBerry is a simple application that offers easy access to information about _Pokemon and pokeberries_. 
 The goal of the app is to match the berries to the right Pokemon who eat them. 
 Users can list through a full overview of Pokemon and berries, filter berries according to their firmness and flavor, search for Pokemon evolution chains, play Pokemon name-guessing game and much more!
-Use this app in combination with Pokemon videogames, or just for fun.` 
-
+Use this app in combination with Pokemon videogames, or just for fun. 
+```
 
 ## ***2. General information***
 
@@ -59,7 +59,7 @@ This application is using the educational backend of _Novi Hogeschool_.
 > 
 >To run this web application, you will need an IDE such as [Webstorm](https://jetbrains.com/webstorm/).
 >
->You will also need Node.js to run the PokeBerry App. If you still don't have it installed, [please proceed with the installation of Node.js](https://nodejs.org/en) before you continue.
+>You will also need Node.js to run the commands in the terminal of PokeBerry App. If you still don't have it installed, [please proceed with the installation of Node.js](https://nodejs.org/en) before you continue.
 
 ### **1. Go to PokeBerry App on GitHub**
 
