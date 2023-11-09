@@ -28,7 +28,6 @@ function PokemonSearchPage() {
 
             try {
                 const result = await axios.get(endpointPoke);
-                console.log(result.data.results);
                 getPokeDetails(result.data.results);
 
             } catch (e) {

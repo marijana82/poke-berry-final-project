@@ -26,7 +26,6 @@ function TabOne({singlePokemon}) {
 
         try {
             const result = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${singlePokemon.id}`)
-            console.log(result.data);
             setTabOneInfo(result.data);
 
         } catch(e) {

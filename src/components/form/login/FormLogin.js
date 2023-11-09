@@ -1,6 +1,6 @@
 import "./FormLogin.css";
 import React, {useContext, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Input from "../../input/Input";
 import Button from "../../button/Button";
 import {LoginContext} from "../../../context/LoginContext";
@@ -15,8 +15,6 @@ function FormLogin() {
     const [loginSuccess, setLoginSuccess] = useState(false);
 
     const { loginFunction } = useContext(LoginContext);
-
-    const navigate = useNavigate();
 
 
     async function logUserIn(e) {

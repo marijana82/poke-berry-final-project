@@ -24,7 +24,7 @@ function PokemonListPage() {
     const { favoritePokemon } = useContext(CustomFavoritesContext);
     const controller = new AbortController();
 
-    //function 1: fetching the general pokemon data + previous and next
+
     async function fetchPokeData() {
         setLoading(true);
         setError(false);
@@ -46,13 +46,13 @@ function PokemonListPage() {
     };
 
 
-    //function 2: fetching data about specific pokemon, by passing response as parameter
+
     async function getPokemon(response) {
         try {
             response.map(async(poke) => {
                 const result = await axios.get(poke.url);
                 setPokemonData(statePoke => {
-                    //1. save existing array, 2. add new array to it
+
                     statePoke = [...statePoke, result.data];
                     statePoke.sort((a,b) => a.id > b.id ? 1 : -1);
                     return statePoke;
@@ -70,14 +70,7 @@ function PokemonListPage() {
 
     }, [endpoint]);
 
-    /*where to render the return statement of cleanup function?*/
 
-    /*return function cleanup() {
-        controller.abort();
-    }*/
-
-
-    //function that handles page change
     function handlePageChange(newPage) {
         setPokemonData([]); //clear existing data
         setPage(newPage);

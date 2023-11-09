@@ -7,7 +7,7 @@ import TabTwo from "./TabTwo";
 function TabContainer({singlePokemon}) {
     const [activeTab, setActiveTab] = useState("tab 1");
 
-    //functions to handle tab switching
+
     function handleTabOne() {
         setActiveTab("tab 1");
     }
@@ -34,7 +34,7 @@ function TabContainer({singlePokemon}) {
             </ul>
 
             <div className="tab-content-container">
-                {/*Content will be shown here*/}
+
                 { activeTab === "tab 1" ? <TabOne singlePokemon={singlePokemon}/> : <TabTwo singlePokemon={singlePokemon}/> }
 
             </div>

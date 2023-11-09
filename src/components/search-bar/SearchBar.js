@@ -4,7 +4,7 @@ import React from "react";
 
 function SearchBar({ placeholder, pokeDetails }) {
 
-    //search and filter data
+
     return(
         <div className="search">
             <div className="search-inputs">

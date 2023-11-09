@@ -13,7 +13,6 @@ function EvolutionStageOne({ evolvesInto, evolutionUrl }) {
 
         try {
             const resultEvolutionOne = await axios.get(evolutionUrl);
-            console.log(resultEvolutionOne.data);
             setEvolutionStageOne(resultEvolutionOne.data);
 
         } catch(e) {

@@ -11,7 +11,6 @@ function FilterInfo({dataFlavor}) {
     const handleDataFlavorClick = () => {
         setisDataShown(current => !current);
         setIsShownOnClick(current => !current);
-        console.log("click!")
     }
 
 

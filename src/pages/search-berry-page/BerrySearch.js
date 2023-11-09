@@ -22,12 +22,17 @@ function BerrySearch() {
 
         const controller = new AbortController();
         async function fetchBerryData() {
+            setLoading(true);
+            setError(false);
+
             try {
                 const resultBerry = await axios.get(endpointBerry);
                 getBerryDetails(resultBerry.data.results);
 
             } catch(e) {
                 console.error(e);
+                setError(true);
+                setLoading(false);
             }
         }
 

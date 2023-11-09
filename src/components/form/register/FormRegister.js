@@ -20,14 +20,12 @@ function FormRegister() {
 
     const navigate = useNavigate();
 
-    //async function made to handle registration, connected to the form and to the submit button
     async function onSubmitRegistration(e) {
         e.preventDefault();
         toggleError(false);
         toggleLoading(true);
 
         try {
-            //endpoint for registration
             const responseRegister = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
                 username: nameValue,
                 email: emailValue,
@@ -108,7 +106,7 @@ function FormRegister() {
                     stateValue={passwordValue}
                     stateSetter={setPasswordValue}
                 />
-                {passwordValue.length < 6 ? <p className="warning-messages">Your password has to be at least 3 characters long.</p> : <p className="message-validated">Good choice!</p>}
+                {passwordValue.length < 6 ? <p className="warning-messages">Your password has to be at least 6 characters long.</p> : <p className="message-validated">Good choice!</p>}
 
 
                 <Input
@@ -139,7 +137,7 @@ function FormRegister() {
                     className="registration-button"
                     type="submit"
                     disabled={
-                        nameValue.length < 6 &&
+                        nameValue.length < 3 &&
                         emailValue.length < 6 &&
                         !isValidEmail(emailValue) &&
                         passwordValue.length < 6 &&

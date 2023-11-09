@@ -22,21 +22,20 @@ Use this app in combination with Pokemon videogames, or just for fun.`
 ## ***2. General information***
 
 ### **React**
-Poke Berry App is a simple application built in [React](https://react.dev/), the library for web and native user interfaces.
+_Poke Berry App_ is a simple application built in [React](https://react.dev/), the library for web and native user interfaces.
 
 ### **PokeAPI documentation**
 
 
 This application is using [RESTful PokeAPI](https://pokeapi.co/docs/v2).
 
-RESTful APIs are the most commonly used APIs that use HTTP protocol to create, read, update and delete data (CRUD).
-
+_RESTful APIs are the most commonly used APIs that use HTTP protocol to create, read, update and delete data (CRUD)._
 
 ### **API key**
-PokeAPI is not using API keys, therefore no API keys are required to run the PokeBerry App.
+PokeAPI is not using API keys, therefore _no API keys are required_ to run the PokeBerry App.
 
 ### **Backend**
-This application is using the educational backend of Novi Hogeschool.
+This application is using the educational backend of _Novi Hogeschool_.
 
 >[!NOTE]
 >Please visit [Novi Hogeschool's educational backend](https://github.com/hogeschoolnovi/novi-educational-backend-documentation) for more information.
@@ -115,9 +114,17 @@ A personal token is saved automatically in the backend. The user does not need t
 >The personal token expires in an hour. To regain your access rights, you will have to create a new account.
 You can register and login to this application by creating your own private account.
 
-Users can register by creating a private account, which requires filling in a unique username, email, password, additional information and user role.  
+Creating a private account requires filling in:
+-unique username
+-email
+-password
+-additional information and 
+-user role 
+
+>[!NOTE]
+> Make sure the username and password contain `at least one number and one capital letter and are at least 6 characters long`.
+
 Users can log in by their previously registered username and password.
-Make sure the username and password contain `at least one number and one capital letter and are at least 6 characters long`.
 
 >Example username: Scorbunny1
 
@@ -130,6 +137,10 @@ Make sure the username and password contain `at least one number and one capital
 ![onePokemon](/../assets/screenshots/single-pokemon.png)
 
 ![pokemons](/../assets/screenshots/pokemon-overview.png)
+
+
+_[Go to top](#table-of-contents "Go to table of contents")_
+
 
 
 

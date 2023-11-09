@@ -1,11 +1,9 @@
 import "./CardPokemonStyled.css";
 import React from "react";
 import Button from "../../button/Button";
-import {useNavigate} from "react-router-dom";
 
 function CardPokemonStyled({pokemonName, pokemonType, pokemonStats, pokemonExtra, pokemonImage, pokemonStatName, onClick}) {
 
-    const navigate = useNavigate();
 
     return(
         <div className="main-pokemon-card-container">

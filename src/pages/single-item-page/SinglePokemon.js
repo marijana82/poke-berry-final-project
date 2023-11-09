@@ -14,7 +14,6 @@ function SinglePokemon() {
     const [loading, setLoading] = useState(false);
 
 
-    //name is an object of useParams
     const {id} = useParams();
 
     useEffect(() => {

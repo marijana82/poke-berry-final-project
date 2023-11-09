@@ -18,7 +18,6 @@ function QuizGame() {
     const [goodAnswers, setGoodAnswers] = useState(0);
     const [badAnswers, setBadAnswers] = useState(0);
 
-    //to fetch random pokemon from api
     async function fetchRandomPokemon() {
         toggleIsLoading(true);
         setError(false);
@@ -45,7 +44,6 @@ function QuizGame() {
     }
 
 
-    //to check user's guess
     function checkUserGuess(e) {
         e.preventDefault();
         if (userGuess.toLowerCase() === pokemonData.name.toLowerCase()) {
@@ -62,12 +60,12 @@ function QuizGame() {
     }, []);
 
 
-    //to handle user input
+
     function handleInputChange(e) {
         setUserGuess(e.target.value);
     }
 
-    //to reset score
+
     function resetScore() {
         setGoodAnswers(0);
         setBadAnswers(0);

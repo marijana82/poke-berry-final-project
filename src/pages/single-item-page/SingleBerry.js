@@ -30,7 +30,6 @@ function SingleBerry() {
                     axios.get(`https://pokeapi.co/api/v2/berry/${id}`,
                         {signal: controller.signal});
 
-                console.log(singleResponse.data);
                 setSingleBerry(singleResponse.data);
 
             } catch(e) {

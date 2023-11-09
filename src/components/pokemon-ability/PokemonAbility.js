@@ -13,7 +13,7 @@ function PokemonAbility({ability}) {
         try {
 
             const resultAbility = await axios.get(`${ability}`);
-            setAbilityState(resultAbility.data); //two endpoints
+            setAbilityState(resultAbility.data);
 
         } catch(e) {
             console.error(e);

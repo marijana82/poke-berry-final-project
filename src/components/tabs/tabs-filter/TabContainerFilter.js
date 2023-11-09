@@ -36,7 +36,7 @@ function TabContainerFilter() {
             </ul>
 
             <div className="tab-content-container-filter">
-                {/*Content will be shown here*/}
+
                 { activeTab === "tab 1"
                     ?
 

@@ -15,7 +15,7 @@ function Favorites() {
     const { favoritePokemon, updateFavoritePokemon } = useContext(CustomFavoritesContext);
     const localStorageKey = 'favoritesList';
 
-    //removes from favorites list
+
     function removeFromFavorites(namePokemon) {
         updateFavoritePokemon((stateFavorites) => {
             const removeFavorite = stateFavorites.filter(

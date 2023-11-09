@@ -13,7 +13,7 @@ function BerryNaturalGift({ naturalGiftUrl }) {
         try {
 
             const resultGift = await axios.get(naturalGiftUrl);
-            //to sort pokemon in alphabetical order
+
             const sortedPokemon = resultGift.data.pokemon.sort((a,b) => a.pokemon.name.localeCompare(b.pokemon.name));
             setNaturalGift({ pokemon: sortedPokemon });
 

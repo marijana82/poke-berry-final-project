@@ -12,7 +12,6 @@ function TabTwo({singlePokemon}) {
 
         try {
             const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${singlePokemon.id}/`);
-            console.log(result.data);
             setTabTwoInfo(result.data);
 
         } catch (e) {

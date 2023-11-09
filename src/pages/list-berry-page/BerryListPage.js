@@ -40,9 +40,9 @@ function BerryListPage() {
             response.map(async(berry) => {
                 const resultBerry = await axios.get(berry.url);
 
-                //to store object in state
+
                 setBerryData(stateBerry => {
-                    //create new array and add new item in the array
+
                     stateBerry = [...stateBerry, resultBerry.data];
                     stateBerry.sort((a, b) => a.id > b.id ? 1 : -1 );
                     return stateBerry;
@@ -98,7 +98,7 @@ function BerryListPage() {
                         }
                     </div>
 
-                    {/*parameter dataContainer has to be filled with data from CardBerry*/}
+
                     <CardBerry
                         berryData={berryData}
                         key={berryData.id}

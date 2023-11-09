@@ -2,7 +2,7 @@ import "./PokemonRandom.css";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Button from "../button/Button";
-import SpeechBubble from "../speech-bubble/SpeechBubble";
+
 
 function PokemonRandom({connectChildToParent}) {
 

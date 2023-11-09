@@ -26,7 +26,7 @@ function HeldByPokemon({ berryItem }) {
 
                 :
 
-                <p>zero pokemon</p>
+                <p>this berry is held by zero pokemon</p>
             }
 
         </>
