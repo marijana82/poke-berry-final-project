@@ -122,12 +122,16 @@ A personal token is saved automatically in the backend. The user does not need t
 >The personal token expires in an hour. To regain your access rights, you will have to create a new account.
 You can register and login to this application by creating your own private account.
 
+----
+
 ***Creating a private account requires filling in:***
 - unique username
 - email
 - password
 - additional information and 
 - user role 
+
+----
 
 >[!NOTE]
 > Make sure the username and password contain `at least one number and one capital letter and are at least 6 characters long`.
@@ -146,6 +150,7 @@ You can register and login to this application by creating your own private acco
 
 ![pokemons](/../assets/screenshots/pokemon-overview.png)
 
+----
 
 _[Go to top](#table-of-contents "Go to table of contents")_
 
