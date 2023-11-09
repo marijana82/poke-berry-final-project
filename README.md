@@ -11,13 +11,13 @@
 
 ## ***1. Introduction***
 
-PokeBerry App has been built as end assignment of Frontend bootcamp for NOVI Hogeschool.
-```
+**PokeBerry App has been built as end assignment of Frontend bootcamp for NOVI Hogeschool.**
+`
 PokeBerry is a simple application that offers easy access to information about _Pokemon and pokeberries_. 
 The goal of the app is to match the berries to the right Pokemon who eat them. 
 Users can list through a full overview of Pokemon and berries, filter berries according to their firmness and flavor, search for Pokemon evolution chains, play Pokemon name-guessing game and much more!
 Use this app in combination with Pokemon videogames, or just for fun. 
-```
+`
 
 ## ***2. General information***
 
@@ -29,7 +29,7 @@ _Poke Berry App_ is a simple application built in [React](https://react.dev/), t
 
 This application is using [RESTful PokeAPI](https://pokeapi.co/docs/v2).
 
-_RESTful APIs are the most commonly used APIs that use HTTP protocol to create, read, update and delete data (CRUD)._
+>_RESTful APIs are the most commonly used APIs that use HTTP protocol to create, read, update and delete data (CRUD)._
 
 ### **API key**
 PokeAPI is not using API keys, therefore _no API keys are required_ to run the PokeBerry App.
@@ -42,15 +42,15 @@ This application is using the educational backend of _Novi Hogeschool_.
 
 ## ***3. Application functionalities***
 
--Register and login
--Play Pokemon game
--Browse through the lists of Pokemon and berries
--Search for berries in query field
--Filter berries
--Search for Pokemon evolution chain in query field
--Add Pokemon to Favorites list
--Match berries to Pokemon
--Get detailed Pokemon and berry information on single Pokemon/berry page
+- Register and login
+- Play Pokemon game
+- Browse through the lists of Pokemon and berries
+- Search for berries in query field
+- Filter berries
+- Search for Pokemon evolution chain in query field
+- Add Pokemon to Favorites list
+- Match berries to Pokemon
+- Get detailed Pokemon and berry information on single Pokemon/berry page
 
 
 ## ***4. Installation Guide***
@@ -60,6 +60,8 @@ This application is using the educational backend of _Novi Hogeschool_.
 >To run this web application, you will need an IDE such as [Webstorm](https://jetbrains.com/webstorm/).
 >
 >You will also need Node.js to run the commands in the terminal of PokeBerry App. If you still don't have it installed, [please proceed with the installation of Node.js](https://nodejs.org/en) before you continue.
+
+----
 
 ### **1. Go to PokeBerry App on GitHub**
 
@@ -104,6 +106,8 @@ If you want to exit the project type `CTRL + C` in the terminal.
 
 In case you want to re-run the project, type `npm start` in the terminal, then press Enter key. 
 
+----
+
 
 >[!NOTE]
 >PokeBerry App is using [React Transition Group](https://reactcommunity.org/react-transition-group/).
@@ -118,17 +122,17 @@ A personal token is saved automatically in the backend. The user does not need t
 >The personal token expires in an hour. To regain your access rights, you will have to create a new account.
 You can register and login to this application by creating your own private account.
 
-Creating a private account requires filling in:
--unique username
--email
--password
--additional information and 
--user role 
+***Creating a private account requires filling in:***
+- unique username
+- email
+- password
+- additional information and 
+- user role 
 
 >[!NOTE]
 > Make sure the username and password contain `at least one number and one capital letter and are at least 6 characters long`.
 
-Users can log in by their previously registered username and password.
+**Users can log in by their previously registered username and password.**
 
 >Example username: Scorbunny1
 
