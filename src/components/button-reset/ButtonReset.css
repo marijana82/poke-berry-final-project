@@ -1,0 +1,44 @@
+.reset-button-tab, .reset-button-tab-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    margin: 15px;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.reset-button-tab {
+    color: red;
+
+}
+
+.reset-button-tab:hover {
+    background-color: red;
+}
+
+.reset-button-tab-two {
+    color: lawngreen;
+}
+
+
+.reset-button-tab-two:hover {
+    background-color: lawngreen;
+
+}
+
+.reset-button-tab:hover, .reset-button-tab-two:hover {
+    box-shadow:
+            rgb(85, 91, 255) 0px 0px 0px 3px,
+            rgb(31, 193, 27) 0px 0px 0px 6px,
+            rgb(255, 217, 19) 0px 0px 0px 9px,
+            rgb(255, 156, 85) 0px 0px 0px 12px,
+            rgb(255, 85, 85) 0px 0px 0px 15px;
+    color: transparent;
+}
+
+
+

@@ -1,0 +1,31 @@
+.pokemon-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 7px;
+    margin: 7px;
+}
+
+.pokemon-list h3 {
+    font-size: 32px;
+    padding: 3px;
+    margin: 3px;
+
+
+}
+
+.pokemon-list h3:hover {
+    color: deepskyblue;
+    background: white;
+    border-radius: 30px;
+    box-shadow:
+            rgb(85, 91, 255) 0px 0px 0px 3px,
+            rgb(31, 193, 27) 0px 0px 0px 6px,
+            rgb(255, 217, 19) 0px 0px 0px 9px,
+            rgb(255, 156, 85) 0px 0px 0px 12px,
+            rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+

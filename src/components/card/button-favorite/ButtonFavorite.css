@@ -1,0 +1,64 @@
+.favorite-card {
+    border: 1px solid red;
+}
+
+.favorites-message-container{
+    cursor: pointer;
+}
+
+.button-favorite {
+    width: 12vh;
+    height: 6vh;
+    border: 1px solid gold;
+    padding: 3px;
+    margin: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: gold;
+    background: transparent;
+    cursor: pointer;
+}
+
+/*using this one*/
+
+.favorite-button-tab, .favorite-button-tab-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    margin: 15px;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    border: none;
+}
+
+.favorite-button-tab {
+    color: red;
+
+}
+
+.favorite-button-tab:hover {
+    background-color: red;
+}
+
+.favorite-button-tab-two {
+    color: lawngreen;
+}
+
+
+.favorite-button-tab-two:hover {
+    background-color: lawngreen;
+
+}
+
+.favorite-button-tab:hover, .favorite-button-tab-two:hover {
+    box-shadow:
+            rgb(85, 91, 255) 0px 0px 0px 3px,
+            rgb(31, 193, 27) 0px 0px 0px 6px,
+            rgb(255, 217, 19) 0px 0px 0px 9px,
+            rgb(255, 156, 85) 0px 0px 0px 12px,
+            rgb(255, 85, 85) 0px 0px 0px 15px;
+    color: transparent;
+}

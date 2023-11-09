@@ -1,0 +1,66 @@
+.wrapper-container-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 5px;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.wrapper-container-about:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.article-container-about {
+    width: 65%;
+    padding: 10px;
+    margin: 5px;
+}
+
+.image-container-about {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.berry-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+.about-image-charmander {
+    width: 200px;
+}
+
+aside {
+    width: 35%;
+}
+
+.success-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

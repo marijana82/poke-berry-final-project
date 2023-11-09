@@ -1,0 +1,86 @@
+.tab-one-container-text {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.tab-one-title-container {
+    padding: 5px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 25px;
+}
+
+
+.pokemon-stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+    margin: 5px;
+    font-size: 18px;
+}
+
+.tab-one p {
+    font-size: 10px;
+    text-align: center;
+}
+
+
+
+.evolution-container {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+
+.color-container {
+    cursor: pointer;
+}
+
+.tab-title-container {
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0.3px 0.3px 0.7px 0.7px lightskyblue;
+    color: darkblue;
+
+}
+
+
+.change-color-on-hover-evolution:hover {
+    color: royalblue;
+}
+
+.change-color-on-hover-color:hover {
+    color: royalblue;
+}
+
+.change-color-on-hover-habitat:hover {
+    color: royalblue;
+}
+
+
+.tab-one-click-results {
+
+}
+
+.page-is-loading p {
+    border: 1px solid red;
+    font-size: 18px;
+}
+
+
+
+

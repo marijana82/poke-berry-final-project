@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pikachu {
+    position: relative;
+    height: 50vmin;
+    width: 50vmin;
+    background: #fad61f;
+    border: none;
+    border-radius: 10%;
+    border-bottom: 2vmin solid darkkhaki;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pikachu::after {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 3.5vmin;
+    width: 3.5vmin;
+    border-radius: 50%;
+    top: 16vmin;
+    left: 11vmin;
+    box-shadow: 24vmin 0 white;
+}
+
+.pikachu::before {
+    content: '';
+    position: absolute;
+    background: #494738;
+    height: 10vmin;
+    width: 10vmin;
+    border-radius: 50%;
+    top: 14.5vmin;
+    left: 7vmin;
+    box-shadow: 26vmin 0 #494738;
+}
+
+.nose-cheeks {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 2.5vmin solid transparent;
+    border-right: 2.5vmin solid transparent;
+    border-top: 1.5vmin solid black;
+    top: 5vmin;
+}
+
+
+.nose-cheeks::after {
+    content: '';
+    position: absolute;
+    background: red;
+    height: 18vmin;
+    width: 10vmin;
+    border-radius: 1vmin 15vmin 15vmin 1vmin;
+    left: -25vmin;
+}
+
+.nose-cheeks::before {
+    content: '';
+    position: absolute;
+    background: red;
+    height: 18vmin;
+    width: 10vmin;
+    border-radius: 15vmin 1vmin 1vmin 15vmin;
+    left: 15vmin;
+}
+
+
+.smile {
+    position: relative;
+    background: transparent;
+    height: 4.5vmin;
+    width: 7.5vmin;
+    border-radius: 60%;
+    border-bottom: 0.7vmin solid #494738;
+    top: 7vmin;
+    left: -3.4vmin;
+}
+
+.smile::after {
+    content: '';
+    position: absolute;
+    height: 4vmin;
+    width: 8vmin;
+    border-radius: 60%;
+    border-bottom: 0.7vmin solid #494738;
+    left: 7.4vmin;
+}
+
+.pikachu:hover {
+    border: none;
+    transform: translatey(1vmin);
+    cursor: pointer;
+}
+
+/*home page pikachu*/
+
+.pikachu-home-page {
+    position: relative;
+    height: 25vmin;
+    width: 35vmin;
+    background: #fad61f;
+    border: none;
+    border-radius: 10%;
+    border-bottom: 2vmin solid darkkhaki;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.smile-home-page {
+    position: relative;
+    background: transparent;
+    height: 4vmin;
+    width: 6vmin;
+    border-radius: 50%;
+    border-bottom: 0.5vmin solid #494738;
+    top: 2vmin;
+    left: -3vmin;
+}
+
+.smile-home-page::after {
+    content: '';
+    position: absolute;
+    height: 3.5vmin;
+    width: 6vmin;
+    border-radius: 50%;
+    border-bottom: 0.5vmin solid #494738;
+    left: 6vmin;
+}
+
+.nose-cheeks-home-page {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 2.5vmin solid transparent;
+    border-right: 2.5vmin solid transparent;
+    border-top: 1.5vmin solid black;
+    top: 1vh;
+}
+
+.nose-cheeks-home-page::after {
+    content: '';
+    position: absolute;
+    background: red;
+    height: 8vmin;
+    width: 5vmin;
+    border-radius: 1vmin 15vmin 15vmin 1vmin;
+    left: -17.5vmin;
+}
+
+.nose-cheeks-home-page::before {
+    content: '';
+    position: absolute;
+    background: red;
+    height: 8vmin;
+    width: 5vmin;
+    border-radius: 15vmin 1vmin 1vmin 15vmin;
+    left: 12.5vmin;
+}
+
+

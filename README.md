@@ -1,70 +1,159 @@
-# Getting Started with Create React App
+# Getting started with PokeBerry App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
+1. _[Introduction](#1-introduction "Go to Introduction")_
+2. _[General information](#2-general-information "Go to General information")_
+3. _[Application functionalities](#3-application-functionalities "Go to Application functionalities")_
+4. _[Installation guide](#4-installation-guide "Go to Installation guide")_
+5. _[User access](#5-user-access "Go to user access")_
+6. _[Visuals](#6-visuals "Go to visuals")_
 
-## Available Scripts
 
-In the project directory, you can run:
+## ***1. Introduction***
 
-### `npm start`
+**PokeBerry App has been built as end assignment of Frontend bootcamp for NOVI Hogeschool.**
+`
+PokeBerry is a simple application that offers easy access to information about _Pokemon and pokeberries_. 
+The goal of the app is to match the berries to the right Pokemon who eat them. 
+Users can list through a full overview of Pokemon and berries, filter berries according to their firmness and flavor, search for Pokemon evolution chains, play Pokemon name-guessing game and much more!
+Use this app in combination with Pokemon videogames, or just for fun. 
+`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ***2. General information***
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **React**
+_Poke Berry App_ is a simple application built in [React](https://react.dev/), the library for web and native user interfaces.
 
-### `npm test`
+### **PokeAPI documentation**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+This application is using [RESTful PokeAPI](https://pokeapi.co/docs/v2).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+>_RESTful APIs are the most commonly used APIs that use HTTP protocol to create, read, update and delete data (CRUD)._
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **API key**
+PokeAPI is not using API keys, therefore _no API keys are required_ to run the PokeBerry App.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Backend**
+This application is using the educational backend of _Novi Hogeschool_.
 
-### `npm run eject`
+>[!NOTE]
+>Please visit [Novi Hogeschool's educational backend](https://github.com/hogeschoolnovi/novi-educational-backend-documentation) for more information.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ***3. Application functionalities***
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Register and login
+- Play Pokemon game
+- Browse through the lists of Pokemon and berries
+- Search for berries in query field
+- Filter berries
+- Search for Pokemon evolution chain in query field
+- Add Pokemon to Favorites list
+- Match berries to Pokemon
+- Get detailed Pokemon and berry information on single Pokemon/berry page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ***4. Installation Guide***
 
-## Learn More
+>[!NOTE]
+> 
+>To run this web application, you will need an IDE such as [Webstorm](https://jetbrains.com/webstorm/).
+>
+>You will also need Node.js to run the commands in the terminal of PokeBerry App. If you still don't have it installed, [please proceed with the installation of Node.js](https://nodejs.org/en) before you continue.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+----
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **1. Go to PokeBerry App on GitHub**
 
-### Code Splitting
+[PokeBerry App on Github](https://github.com/marijana82/poke-berry-final-project)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **2. Download the application via SSH link**
 
-### Analyzing the Bundle Size
+1. Click the `Code` button, choose `SSH key` and click on `Copy`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **3. Follow the steps in your Webstorm**
 
-### Making a Progressive Web App
+1. Go to `Webstorm`, open File - New - Project from Version Control
+2. Paste the URL link into the empty URL field, then click the button `Clone`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### **4. Install the project**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To install the project, type the following command in the terminal. Press Enter key after typing the command.
+```
+npm install
+```
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **5. Run the project**
 
-### `npm run build` fails to minify
+To run the project, type the following command in the terminal. Press Enter key after typing the command.
+```
+npm run start 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### **6. Open the project**
+
+The project will open on [Localhost 3000](http://localhost:3000/)
+
+### **7.Exit the project**
+
+If you want to exit the project type `CTRL + C` in the terminal. 
+
+
+### **8.Re-run the project**
+
+In case you want to re-run the project, type `npm start` in the terminal, then press Enter key. 
+
+----
+
+
+>[!NOTE]
+>PokeBerry App is using [React Transition Group](https://reactcommunity.org/react-transition-group/).
+>Please follow the instructions in the link to install it to your project if necessary.
+
+## ***5. User access***
+
+### **Registration and login**
+A personal token is saved automatically in the backend. The user does not need the token to log in.
+
+>[!IMPORTANT]
+>The personal token expires in an hour. To regain your access rights, you will have to create a new account.
+You can register and login to this application by creating your own private account.
+
+----
+
+***Creating a private account requires filling in:***
+- unique username
+- email
+- password
+- additional information and 
+- user role 
+
+----
+
+>[!NOTE]
+> Make sure the username and password contain `at least one number and one capital letter and are at least 6 characters long`.
+
+**Users can log in by their previously registered username and password.**
+
+>Example username: Scorbunny1
+
+>Example password: Scorbunny1
+
+
+## ***6. Visuals***
+![pikachu](/../assets/screenshots/landing-page.png)
+
+![onePokemon](/../assets/screenshots/single-pokemon.png)
+
+![pokemons](/../assets/screenshots/pokemon-overview.png)
+
+----
+
+_[Go to top](#table-of-contents "Go to table of contents")_
+
+
+
+

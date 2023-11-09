@@ -1,0 +1,42 @@
+.berry-information-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.berry-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+    width: 220px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.berry-image {
+
+    width: 100%;
+
+}
+
+.berry-titles {
+    color: white;
+    font-size: 32px;
+}
+
+
+.berry-name-container {
+    padding-top: 10px;
+    margin-top: 5px;
+
+}
+
+.berry-effect-container {
+    padding: 10px;
+    margin: 3px;
+
+}

@@ -1,0 +1,15 @@
+.tab-container-filter {
+    width: 800px;
+    height: auto;
+    min-height: 600px;
+    background: lightcyan;
+    padding: 30px;
+    color: black;
+    border-radius: 25px;
+}
+
+
+.tab-content-container-filter {
+    background-color: deepskyblue;
+
+}

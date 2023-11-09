@@ -1,0 +1,23 @@
+.label-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-label-container {
+    width: 100%;
+
+}
+
+label {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.label-container {
+    padding: 10px;
+    margin: 3px;
+    border: 2px solid white;
+    width: 100vh;
+}

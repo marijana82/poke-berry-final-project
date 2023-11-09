@@ -1,0 +1,31 @@
+.pokemon-list-button {
+    width: 100px;
+    height: 40px;
+    background-color: darkblue;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.pokemon-list-button:hover {
+    background-color: white;
+}
+
+
+.habitat-lettertype {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+.random-pokemon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.random-button {
+    border: none;
+    background-color: lightskyblue;
+    padding: 10px;
+    margin: 0;
+}
+
+.random-pokemon-container p {
+    padding: 8px;
+    color: white;
+}

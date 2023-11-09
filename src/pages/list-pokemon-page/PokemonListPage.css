@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Merriweather&family=Roboto:wght@300&family=Rock+Salt&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(gold, lightyellow);
+}
+
+.main-pokemon-list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+    padding-top: 100px;
+}
+
+.left-content-container, .right-content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 1 auto;
+    flex-basis: 50%;
+}
+
+
+.right-content-container {
+    display: flex;
+    text-align: center;
+    color: black;
+    position: absolute;
+    top: 200px;
+    right: 10px;
+    width: 35%;
+    z-index: auto;
+}
+
+
+.right-content-container img {
+    margin: 5px;
+    padding: 5px;
+    height: 300px;
+}
+
+.right-content-container h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+.button-group-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+    padding-left: 25px;
+}
+
+.page-counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+
+}
+
+.favorites-message-container {
+    border: 1px solid red;
+}
+
