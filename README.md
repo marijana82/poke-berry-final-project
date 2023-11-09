@@ -105,6 +105,10 @@ If you want to exit the project type `CTRL + C` in the terminal.
 In case you want to re-run the project, type `npm start` in the terminal, then press Enter key. 
 
 
+>[!NOTE]
+>PokeBerry App is using [React Transition Group](https://reactcommunity.org/react-transition-group/).
+>Please follow the instructions in the link to install it to your project if necessary.
+
 ## ***5. User access***
 
 ### **Registration and login**
